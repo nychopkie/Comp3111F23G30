@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="changed smth">
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="added the team formation form">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -90,7 +90,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695445524384</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added the team formation form">
+      <option name="closed" value="true" />
+      <created>1695446939448</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1695446939448</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -109,6 +117,7 @@
     <MESSAGE value="finally got it" />
     <MESSAGE value="added a placeholder in case something really wrong happens" />
     <MESSAGE value="changed smth" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed smth" />
+    <MESSAGE value="added the team formation form" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the team formation form" />
   </component>
 </project>
