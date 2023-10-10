@@ -17,4 +17,4 @@ Tom and Jerry in maze game
 ### Project ID:
 TnJ1
 
-You are Tom, the scheming cat. You have only one goal: to catch Jerry, the spunky mouse before he reaches the exit of the maze.
+You are Jerry, the mouse, try reach the exit before Tom the cat catches you
