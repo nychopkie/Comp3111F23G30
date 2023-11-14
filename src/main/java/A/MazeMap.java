@@ -78,6 +78,18 @@ public class MazeMap extends JPanel{
     }
 }
 
+
+/**
+ * =========== Vertex Class ===========
+ * @attributes:
+ * 1. x,y: the coordinates<br>
+ * 2. vertex_type: the type of vertex<br>
+ * 3. colours of the square
+ *
+ * @operations:
+ * 1. mouseclick >> change colour if clicked
+ *
+ * */
 class Vertex extends JPanel implements MouseListener {
 
     /** the coordinate of the vertex */
