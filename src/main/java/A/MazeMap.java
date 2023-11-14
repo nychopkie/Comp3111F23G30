@@ -24,7 +24,7 @@ import javax.swing.JLabel;
  *
  * @operations:
  * 1. load_MazeMap(csv path)<br>
- * &nbsp;&nbsp;&nbsp;&nbsp;- the function to load a pre-exisiting
+ * &nbsp;&nbsp;&nbsp;&nbsp;- the function to load a pre-existing
  * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map to the screen
  *
  * */
@@ -128,21 +128,21 @@ class Vertex extends JPanel implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        // TODO Auto-generated method stub
+        // pass
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        // TODO Auto-generated method stub
+        // pass
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        // TODO Auto-generated method stub
+        // pass
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        // TODO Auto-generated method stub
+        // pass
     }
 }
