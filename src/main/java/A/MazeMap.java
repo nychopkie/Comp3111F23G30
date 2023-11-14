@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 /**
 * ============ MazeMap Class ============
 * @attributes:
- * 1. int [30][30] MazeMapData: the map of the maze in an int 2D array<br>
+ * 1. Vertex [30][30] MazeMapData: the map of the maze in a 2D array<br>
  *    &nbsp;&nbsp;&nbsp;&nbsp;- have 4 different values to
  *    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represent different things in the
  *    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map<br>
@@ -30,37 +30,35 @@ import javax.swing.JLabel;
  * */
 public class MazeMap extends JPanel{
     // variables for the class
-    int[][] MazeMapData;
+    /** the maze map containing all Vertices */
+    Vertex[][] MazeMapData;
+    /** the value for the map sizing*/
     private static final int ROWS = 30, COLS = 30,  PIXEL_SIZE = 30, GAP = 1;
 
 
-    // default constructor of the map
+    /** default constructor of the map */
     public MazeMap(){
         super();
-        // initialize the map to be all empty
-        this.MazeMapData = new int[30][30];
-        for (int i = 0; i < 30; i++){
-            for (int j = 0; j < 30; j++){
-                this.MazeMapData[i][j] = 0;
-            }
-        }
         setBackground(Color.pink);
         setLayout(new GridLayout(ROWS, COLS, GAP, GAP));
-
+        // init the attribute in default mode
+        this.MazeMapData = new Vertex[ROWS][COLS];
         for (int i = 0; i < ROWS; i++){
             for (int j = 0; j < COLS; j++){
-                Vertex newVertex = new Vertex(PIXEL_SIZE,i,j,MazeMapData[i][j]);
-                newVertex.setTheColor(MazeMapData[i][j] == 1 ? Color.DARK_GRAY : Color.WHITE);
-                add(newVertex);
+                // each of the cell in the MazeMap
+                this.MazeMapData[i][j] = new Vertex(PIXEL_SIZE,i,j,0);
+                add(this.MazeMapData[i][j]);
             }
         }
 
         setPreferredSize(new Dimension(ROWS*(PIXEL_SIZE+GAP),COLS*(PIXEL_SIZE+GAP)));
     }
     // load the map data csv
+    // change the mazedatya data lmao
     //void load_MazeMap(//the csv )
 
     // save the edited map to a csv
+    // loop thru mazemapdata and like write type only
     // void save_MazeMap()
 
     // edit the maze map
@@ -80,21 +78,30 @@ public class MazeMap extends JPanel{
 
 class Vertex extends JPanel implements MouseListener {
 
-    private final int sizeOfSquare;
-    private static final Color BARRIER_COLOUR = Color.DARK_GRAY;
-    private static final Color CLEAR_VERTEX_COLOUR = Color.WHITE;
-
-    int x;
-    int y;
+    /** the coordinate of the vertex */
+    int x, y;
 
     /**
-     * vertex-type:
-     * 0: clear vertex path
-     * 1: barrier
-     * 2: entry
+     * vertex-type:<br>
+     * 0 clear vertex path<br>
+     * 1: barrier<br>
+     * 2: entry<br>
      * 3: exit
      */
     int vertex_type;
+
+    /** the pixel size of each vertex */
+    private final int sizeOfSquare;
+
+    /** colour of vertex-type 0 PATH*/
+    private static final Color CLEAR_VERTEX_COLOUR = Color.WHITE;
+    /** colour of vertex-type 1 BARRIER*/
+    private static final Color BARRIER_COLOUR = Color.DARK_GRAY;
+    /** colour of vertex-type 2 ENTRY */
+    private static final Color ENTRY_VERTEX_COLOUR = Color.CYAN;
+    /** colour of vertex-type 3 EXIT */
+    private static final Color EXIT_VERTEX_COLOUR = Color.YELLOW;
+
 
     Vertex (int sizeOfSquare,int x,int y, int vertex_type){
         this.sizeOfSquare = sizeOfSquare;
