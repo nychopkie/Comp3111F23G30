@@ -39,8 +39,10 @@ public class MazeMap extends JPanel{
     /** default constructor of the map */
     public MazeMap(){
         super();
+        // the gap colour
         setBackground(Color.pink);
         setLayout(new GridLayout(ROWS, COLS, GAP, GAP));
+
         // init the attribute in default mode
         this.MazeMapData = new Vertex[ROWS][COLS];
         for (int i = 0; i < ROWS; i++){
@@ -51,6 +53,7 @@ public class MazeMap extends JPanel{
             }
         }
 
+        // set size of the map
         setPreferredSize(new Dimension(ROWS*(PIXEL_SIZE+GAP),COLS*(PIXEL_SIZE+GAP)));
     }
     // TODO: loadmapdata
@@ -116,7 +119,7 @@ class Vertex extends JPanel implements MouseListener {
     /** colour of vertex-type 3 EXIT */
     private static final Color EXIT_VERTEX_COLOUR = Color.YELLOW;
 
-
+    /** the constructor for Vertex */
     Vertex (int sizeOfSquare,int x,int y, int vertex_type){
         this.sizeOfSquare = sizeOfSquare;
         this.x = x;
@@ -127,25 +130,25 @@ class Vertex extends JPanel implements MouseListener {
         addMouseListener(this);
     }
 
+    /** action if click on vertex change colour based on type*/
     @Override
     public void mouseClicked(MouseEvent e) {
+        // if the vertex is a PATH >>> change to BARRIER
         if (this.vertex_type == 0){
             setTheColor(BARRIER_COLOUR);
             this.vertex_type = 1;
 
         }
+        // if the vertex is a BARRIER >>> change to PATH
         else{
             setTheColor(CLEAR_VERTEX_COLOUR);
             this.vertex_type = 0;
         }
     }
 
+    /** modifier function to handle the colour of the vertex */
     void setTheColor(Color theColor) {
         setBackground(theColor);
-    }
-
-    int getSizeOfSquare(){
-        return sizeOfSquare;
     }
 
     @Override
