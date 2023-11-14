@@ -37,6 +37,7 @@ public class MazeMap extends JPanel{
     // default constructor of the map
     public MazeMap(){
         super();
+        // initialize the map to be all empty
         this.MazeMapData = new int[30][30];
         for (int i = 0; i < 30; i++){
             for (int j = 0; j < 30; j++){

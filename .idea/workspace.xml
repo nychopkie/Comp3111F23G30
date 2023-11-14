@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="write the docstring, better documentation">
+      <change afterPath="$PROJECT_DIR$/src/main/java/A/Interface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/A/MazeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/A/MazeMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/A/DrawingPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/A/Library.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/A/MazeMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/A/MazeMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/A/Square.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/A/create_map.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/placeholder/placeholder.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +249,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699978473535</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="write the docstring, better documentation">
+      <option name="closed" value="true" />
+      <created>1699978554442</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1699978554442</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -256,7 +271,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="lab7_UnitTest" />
+                        <option value="func-A" />
                       </list>
                     </value>
                   </entry>
