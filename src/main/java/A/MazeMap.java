@@ -7,6 +7,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import java.util.concurrent.ThreadLocalRandom;
 
 
 /**
@@ -44,10 +45,21 @@ public class MazeMap extends JPanel{
 
         // init the attribute in default mode
         this.MazeMapData = new Vertex[ROWS][COLS];
+        // helper var for choosing vertex type
+        int v_type = 0;
+        // determine an entry and exit pos
+        int entry = ThreadLocalRandom.current().nextInt(1, 29);
+        int exit = ThreadLocalRandom.current().nextInt(1, 29);
         for (int i = 0; i < ROWS; i++){
             for (int j = 0; j < COLS; j++){
+                // determine the v_type first
+                if (i == entry && j == 0) v_type = 2;                        // entry
+                else if (i == exit && j == 29) v_type = 3;                    // exit
+                else if (i == 0 || i == 29 || j == 0 || j == 29) v_type = 1; // barrier
+                else v_type = 0;                                             // clear vertex path
+
                 // each of the cell in the MazeMap
-                this.MazeMapData[i][j] = new Vertex(PIXEL_SIZE,i,j,0);
+                this.MazeMapData[i][j] = new Vertex(PIXEL_SIZE,i,j,v_type);
                 add(this.MazeMapData[i][j]);
             }
         }
@@ -125,13 +137,28 @@ class Vertex extends JPanel implements MouseListener {
         this.y = y;
         this.vertex_type = vertex_type;
         setPreferredSize(new Dimension(sizeOfSquare , sizeOfSquare));
-        setTheColor(CLEAR_VERTEX_COLOUR);
+        if (vertex_type == 0){
+            setTheColor(CLEAR_VERTEX_COLOUR);
+        }
+        else if (vertex_type == 1){
+            setTheColor(BARRIER_COLOUR);
+        }
+        else if (vertex_type == 2){
+            setTheColor(ENTRY_VERTEX_COLOUR);
+        }
+        else{
+            setTheColor(EXIT_VERTEX_COLOUR);
+        }
         addMouseListener(this);
     }
 
     /** action if click on vertex change colour based on type*/
     @Override
     public void mouseClicked(MouseEvent e) {
+        // if the point is the entry or exit or outermost barrier then no change
+        if (this.vertex_type == 2 || this.vertex_type == 3 || this.x*this.y == 0 || this.x == 29 || this.y == 29){
+            return;
+        }
         // if the vertex is a PATH >>> change to BARRIER
         if (this.vertex_type == 0){
             setTheColor(BARRIER_COLOUR);
