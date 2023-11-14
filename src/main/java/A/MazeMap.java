@@ -40,7 +40,7 @@ public class MazeMap extends JPanel{
     public MazeMap(){
         super();
         // the gap colour
-        setBackground(Color.pink);
+        setBackground(Color.GRAY);
         setLayout(new GridLayout(ROWS, COLS, GAP, GAP));
 
         // init the attribute in default mode
@@ -128,7 +128,7 @@ class Vertex extends JPanel implements MouseListener {
     /** colour of vertex-type 2 ENTRY */
     private static final Color ENTRY_VERTEX_COLOUR = Color.CYAN;
     /** colour of vertex-type 3 EXIT */
-    private static final Color EXIT_VERTEX_COLOUR = Color.YELLOW;
+    private static final Color EXIT_VERTEX_COLOUR = Color.RED;
 
     /** the constructor for Vertex */
     Vertex (int sizeOfSquare,int x,int y, int vertex_type){
