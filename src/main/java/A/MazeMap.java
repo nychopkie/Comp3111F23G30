@@ -53,18 +53,20 @@ public class MazeMap extends JPanel{
 
         setPreferredSize(new Dimension(ROWS*(PIXEL_SIZE+GAP),COLS*(PIXEL_SIZE+GAP)));
     }
+    // TODO: loadmapdata
     // load the map data csv
     // change the mazedatya data lmao
     //void load_MazeMap(//the csv )
 
+    // TODO: savemapdata
     // save the edited map to a csv
     // loop thru mazemapdata and like write type only
     // void save_MazeMap()
 
+    // TODO: editmapdata
     // edit the maze map
     // void edit_MazeMap
 
-    // need to figure out how to only edit if choose to edit
     // TESTING FOR NOW
     public static void main(String[] args0) {
 
