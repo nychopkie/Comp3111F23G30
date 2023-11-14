@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="lab_7 task,&#10;initial thoughts of the program,&#10;think about the jframe things">
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="created the MazeMap class and the function to draw barriers (bare minimum)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/A/create_map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/A/create_map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/A/MazeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/A/MazeMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/A/create_map.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/A/create_map.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +219,23 @@
       <option name="project" value="LOCAL" />
       <updated>1698467101837</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="created the MazeMap class and the function to draw barriers (bare minimum)">
+      <option name="closed" value="true" />
+      <created>1699977386221</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1699977386221</updated>
+    </task>
+    <task id="LOCAL-00011" summary="created the MazeMap class and the function to draw barriers (bare minimum)">
+      <option name="closed" value="true" />
+      <created>1699977395890</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1699977395890</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -254,7 +271,8 @@
     <MESSAGE value="updates README.md and the project requirements" />
     <MESSAGE value="added meeting#1 minutes to the repo for reference and for easier keeping track for submission" />
     <MESSAGE value="lab_7 task,&#10;initial thoughts of the program,&#10;think about the jframe things" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab_7 task,&#10;initial thoughts of the program,&#10;think about the jframe things" />
+    <MESSAGE value="created the MazeMap class and the function to draw barriers (bare minimum)" />
+    <option name="LAST_COMMIT_MESSAGE" value="created the MazeMap class and the function to draw barriers (bare minimum)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

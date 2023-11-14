@@ -5,17 +5,33 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.Random;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 
 
-
+/**
+* ============ MazeMap Class ============
+* @attributes:
+ * 1. int [30][30] MazeMapData: the map of the maze in an int 2D array<br>
+ *    &nbsp;&nbsp;&nbsp;&nbsp;- have 4 different values to
+ *    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represent different things in the
+ *    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map<br>
+ * 2. ROWS: the number of rows in the map<br>
+ * 3. COLS: the number of cols in the map<br>
+ * 4. PIXEL_SIZE: the size of each vertex<br>
+ * 5. GAP: the size of each gap
+ *
+ * @operations:
+ * 1. load_MazeMap(csv path)<br>
+ * &nbsp;&nbsp;&nbsp;&nbsp;- the function to load a pre-exisiting
+ * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map to the screen
+ *
+ * */
 public class MazeMap extends JPanel{
     // variables for the class
     int[][] MazeMapData;
-    private static final int ROWS = 30, COLS = 30,  PIXEL_SIZE = 30, GAP = 1; //change gap to 1 for example if you want to set a gap between squares
+    private static final int ROWS = 30, COLS = 30,  PIXEL_SIZE = 30, GAP = 1;
 
 
     // default constructor of the map
@@ -40,22 +56,16 @@ public class MazeMap extends JPanel{
 
         setPreferredSize(new Dimension(ROWS*(PIXEL_SIZE+GAP),COLS*(PIXEL_SIZE+GAP)));
     }
-    // create the maze map, jframe handling
-    // returns nothing, but need to save the map
-    void create_mazeMap(){
-        // first initialize a plain grid for the map
-        for (int i = 0; i < 30; i++){
-            for (int j = 0; j < 30; j++){
-                MazeMapData[i][j] = 0;
-            }
-        }
-    }
-
-
     // load the map data csv
-    //public static void load_mazeMap(//the csv )
+    //void load_MazeMap(//the csv )
 
+    // save the edited map to a csv
+    // void save_MazeMap()
 
+    // edit the maze map
+    // void edit_MazeMap
+
+    // need to figure out how to only edit if choose to edit
     // TESTING FOR NOW
     public static void main(String[] args0) {
 
