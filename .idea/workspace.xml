@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="updates README.md and the project requirements">
-      <change afterPath="$PROJECT_DIR$/src/ok.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/placeholder/MazaMap_TnJ.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/placeholder/MazeGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/MazeGameTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +23,19 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="func-C" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="main" />
@@ -49,12 +63,22 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "func-C",
+    "last_opened_file_path": "/Users/meng/IdeaProjects/Comp3111F23G30/src/main/java/placeholder",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "configurable.group.build"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/placeholder" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\annie\Desktop\COMP3111\Comp3111F23G30\Project Requirments" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -122,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696904205016</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="updates README.md and the project requirements">
+      <option name="closed" value="true" />
+      <created>1700118480104</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700118480104</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
