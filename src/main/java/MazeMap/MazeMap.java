@@ -115,10 +115,6 @@ public class MazeMap extends JPanel{
         }
     }
 
-    // TODO: editmapdata
-    // edit the maze map
-    // void edit_MazeMap
-
     public Vertex[][] getMazedata(){
         return MazeMapData;
     }
