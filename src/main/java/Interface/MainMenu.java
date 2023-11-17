@@ -10,8 +10,9 @@ public class MainMenu extends JPanel {
 
     public MainMenu(){
         super();
-        setSize(new Dimension(46*(26)+12,30*(28)-16));
+        setSize(new Dimension(44*(26),30*(28)-12));
         setBackground(Color.CYAN);
+        //TODO: THE FLOW OF THE INTERFACES AND THE MAIN MENU
     }
 
 }

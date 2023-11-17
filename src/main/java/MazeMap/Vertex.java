@@ -64,6 +64,12 @@ public class Vertex extends JPanel implements MouseListener {
         this.y = y;
         this.vertex_type = vertex_type;
         setPreferredSize(new Dimension(sizeOfSquare, sizeOfSquare));
+        colourByType();
+        addMouseListener(this);
+
+    }
+
+    public void colourByType(){
         if (vertex_type == 0) {
             setTheColor(CLEAR_VERTEX_COLOUR);
         } else if (vertex_type == 1) {
@@ -72,9 +78,7 @@ public class Vertex extends JPanel implements MouseListener {
             setTheColor(ENTRY_VERTEX_COLOUR);
         } else {
             setTheColor(EXIT_VERTEX_COLOUR);
-        }
-        addMouseListener(this);
-
+        };
     }
 
     //mutator
