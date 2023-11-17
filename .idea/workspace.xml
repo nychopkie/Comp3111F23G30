@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="pulled from C">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -135,10 +136,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Interface" />
-        <item itemvalue="Application.MazeGame" />
-        <item itemvalue="Application.MazeMap" />
         <item itemvalue="JUnit.DummyCreationTest" />
+        <item itemvalue="Application.MazeMap" />
+        <item itemvalue="Application.MazeGame" />
+        <item itemvalue="Application.Interface" />
         <item itemvalue="Application.DrawingPanel" />
       </list>
     </recent_temporary>
@@ -368,7 +369,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700234799823</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="modified the gitignore">
+      <option name="closed" value="true" />
+      <created>1700240315452</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1700240315452</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
