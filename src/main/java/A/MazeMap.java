@@ -48,8 +48,8 @@ public class MazeMap extends JPanel{
         // helper var for choosing vertex type
         int v_type = 0;
         // determine an entry and exit pos
-        int entry = ThreadLocalRandom.current().nextInt(1, 29);
-        int exit = ThreadLocalRandom.current().nextInt(1, 29);
+        int entry = ThreadLocalRandom.current().nextInt(1, ROWS-1);
+        int exit = ThreadLocalRandom.current().nextInt(1, ROWS-1);
         for (int i = 0; i < ROWS; i++){
             for (int j = 0; j < COLS; j++){
                 // determine the v_type first

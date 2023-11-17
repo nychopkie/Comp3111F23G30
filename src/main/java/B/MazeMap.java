@@ -53,9 +53,9 @@ public class MazeMap extends JPanel{
         // helper var for choosing vertex type
         int v_type = 0;
         // determine an entry and exit pos
-        this.entry = ThreadLocalRandom.current().nextInt(1, 29);
+        this.entry = ThreadLocalRandom.current().nextInt(1, ROWS-1);
 
-        this.exit = ThreadLocalRandom.current().nextInt(1, 29);
+        this.exit = ThreadLocalRandom.current().nextInt(1, ROWS-1);
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLS; j++) {
                 // determine the v_type first
@@ -85,6 +85,7 @@ public class MazeMap extends JPanel{
     public int getCOLS(){
         return COLS;
     }
+
     // TODO: loadmapdata
     // load the map data csv
     // change the mazedatya data lmao
