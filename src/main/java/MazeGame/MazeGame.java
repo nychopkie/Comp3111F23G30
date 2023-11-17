@@ -1,4 +1,4 @@
-package placeholder;
+package MazeGame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,7 +21,7 @@ public class MazeGame extends JFrame {
 
 
     public MazeGame() {
-        loadMaze("/Users/meng/IdeaProjects/Tom and Jerry/src/main/java/MazaMap_TnJ.csv");
+        loadMaze("Assets/map/MazeMap_SAMPLE.csv");
         tom = new Tom(29, 1); // Assuming the exit point is at (29, 2)
         jerry = new Jerry(0, 12); // Assuming the entry point is at (0, 13)
 

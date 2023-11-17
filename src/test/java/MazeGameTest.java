@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
+import MazeGame.*;
+
 class MazeGameTest {
 
     private MazeGame game;
@@ -13,7 +15,7 @@ class MazeGameTest {
         game = new MazeGame();
         // Call a method to load the maze
         // Note: You might need to adjust this part to fit your actual maze loading method
-        game.loadMaze("/Users/meng/IdeaProjects/Tom and Jerry/src/main/java/MazaMap_TnJ.csv");// need to change this
+        game.loadMaze("Assets/map/MazeMap_SAMPLE.csv");// need to change this
     }
 
     @Test

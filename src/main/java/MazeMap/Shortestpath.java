@@ -1,4 +1,4 @@
-package B;
+package MazeMap;
 import javax.swing.*;
 import java.util.*;
 
