@@ -33,7 +33,7 @@ public class MazeMap extends JPanel{
     /** the maze map containing all Vertices */
     Vertex[][] MazeMapData;
     /** the value for the map sizing*/
-    private static final int ROWS = 30, COLS = 30,  PIXEL_SIZE = 30, GAP = 1;
+    private static final int ROWS = 30, COLS = 30,  PIXEL_SIZE = 25, GAP = 1;
 
 
     /** default constructor of the map */
@@ -65,7 +65,7 @@ public class MazeMap extends JPanel{
         }
 
         // set size of the map
-        setPreferredSize(new Dimension(ROWS*(PIXEL_SIZE+GAP),COLS*(PIXEL_SIZE+GAP)));
+        setSize(new Dimension(ROWS*(PIXEL_SIZE+GAP),COLS*(PIXEL_SIZE+GAP)));
     }
     // TODO: loadmapdata
     // load the map data csv
@@ -82,14 +82,14 @@ public class MazeMap extends JPanel{
     // void edit_MazeMap
 
     // TESTING FOR NOW
-    public static void main(String[] args0) {
-
-        JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(new MazeMap());
-        frame.pack();
-        frame.setVisible(true);
-    }
+//    public static void main(String[] args0) {
+//
+//        JFrame frame = new JFrame();
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.add(new MazeMap());
+//        frame.pack();
+//        frame.setVisible(true);
+//    }
 }
 
 
