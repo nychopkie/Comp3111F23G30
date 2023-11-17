@@ -66,7 +66,8 @@ public class Interface{
         // increases components width by 10 pixels
         c.ipadx = 10*40;
         // increases components height by 50 pixels
-        c.ipady = 30*(26)-8;
+        // make the relative
+        c.ipady = 30*(26)-11;
         gameContainer.add(sideMenu,c);
 
         frame.add(gameContainer);
