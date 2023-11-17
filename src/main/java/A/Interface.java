@@ -25,12 +25,14 @@ public class Interface{
 
     /** constuctor */
     public Interface(){
+        // init the game frame
         frame = new JFrame();
         frame.setTitle("Maze game");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         frame.pack();
         frame.setSize(screenSize.width,screenSize.height);
-        //frame.setLayout(new GridLayout(1, 2));
+        frame.setLayout(new FlowLayout());
     }
 
     /** to show the menu screen */
@@ -45,15 +47,30 @@ public class Interface{
 
         sideMenu = new JPanel();
         sideMenu.setSize(new Dimension(10*(25+1),30*(25+1)));
-        sideMenu.setMaximumSize(new Dimension(10*(25+1),30*(25+1)));
+        sideMenu.setMinimumSize(new Dimension(10*(25+1),30*(25+1)));
         sideMenu.setBackground(Color.PINK);
 
         gameContainer = new JPanel();
-        gameContainer.setLayout(new FlowLayout());
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gameContainer.add(mazeGame);
-        gameContainer.add(sideMenu);
+        gameContainer.setLayout(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
+        // col 0
+        c.gridx = 0;
+        // row 0
+        c.gridy = 0;
+        gameContainer.add(mazeGame, c);
+
+        // col 1
+        c.gridx = 1;
+        // row 0
+        c.gridy = 0;
+        // increases components width by 10 pixels
+        c.ipadx = 10*40;
+        // increases components height by 50 pixels
+        c.ipady = 30*(26)-8;
+        gameContainer.add(sideMenu,c);
+
         frame.add(gameContainer);
+
         frame.setVisible(true);
     }
 
