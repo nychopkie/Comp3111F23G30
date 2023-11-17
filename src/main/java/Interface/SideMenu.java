@@ -5,10 +5,9 @@ import MazeMap.MazeMap;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
 import java.util.Scanner;
 import javax.swing.*;
-import java.io.File;
-import java.io.IOException;
 
 public class SideMenu extends JPanel {
 
@@ -67,6 +66,35 @@ public class SideMenu extends JPanel {
 
         JButton save = new JButton("SAVE");
         save.setFont(new Font("Arial", Font.PLAIN, 40));
+        save.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    File file = new File("Assets/map/MazeMap_Custom.csv");
+                    // write into it according to the format
+                    PrintWriter pw = new PrintWriter(file);
+                    pw.close();
+                    BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+                    for (int i = 0; i < 30; i++){
+                        for (int j = 0; j < 30; j++){
+                            if (j != 0){
+                                writer.write(",");
+                            }
+                            writer.write(Integer.toString(map.getMazedata()[i][j].getVertex_type()));
+                            if (j == 29){
+                                writer.newLine();
+                            }
+                        }
+                    }
+                    writer.flush();
+                    writer.close();
+
+                } catch (IOException f) {
+                    System.out.println("An error occurred.");
+                    f.printStackTrace();
+                }
+            }
+        });
 
         JButton load = new JButton("LOAD");
         load.setFont(new Font("Arial", Font.PLAIN, 40));

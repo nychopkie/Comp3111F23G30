@@ -33,8 +33,6 @@ public class MazeMap extends JPanel{
     // variables for the class
     /** the maze map containing all Vertices */
     Vertex[][] MazeMapData;
-    /** filepath of the csv */
-    File mapPath;
 
     /** the value for the map sizing*/
     //I change the ROWS,COLS to 3 for easier testing
@@ -116,13 +114,6 @@ public class MazeMap extends JPanel{
             e.printStackTrace();  // It's better to print the stack trace for debugging
         }
     }
-
-    // TODO: savemapdata
-    /** save the edited map to a csv */
-    // loop thru mazemapdata and like write type only
-//    public void save_MazeMap(){
-//
-//    }
 
     // TODO: editmapdata
     // edit the maze map
