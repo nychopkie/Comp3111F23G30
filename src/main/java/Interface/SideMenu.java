@@ -64,6 +64,7 @@ public class SideMenu extends JPanel {
         // set button
         buttons.setLayout(new GridLayout(3,1,0,15));
 
+        /** save button */
         JButton save = new JButton("SAVE");
         save.setFont(new Font("Arial", Font.PLAIN, 40));
         save.addActionListener(new ActionListener() {
@@ -96,6 +97,7 @@ public class SideMenu extends JPanel {
             }
         });
 
+        /** load button */
         JButton load = new JButton("LOAD");
         load.setFont(new Font("Arial", Font.PLAIN, 40));
         load.addActionListener(new ActionListener() {
@@ -110,7 +112,8 @@ public class SideMenu extends JPanel {
             }
         });
 
-        JButton back = new JButton("BACK");
+        /** exit button */
+        JButton back = new JButton("EXIT");
         back.setFont(new Font("Arial", Font.PLAIN, 40));
 
         buttons.add(save);

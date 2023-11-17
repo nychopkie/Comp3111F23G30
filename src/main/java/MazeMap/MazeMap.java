@@ -93,7 +93,6 @@ public class MazeMap extends JPanel{
         }
     }
 
-    // TODO: loadmapdata
     /** load the map data csv */
     // change the mazedata data lmao
     public void load_MazeMap(String filePath){

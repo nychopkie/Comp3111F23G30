@@ -12,6 +12,7 @@ public class MainMenu extends JPanel {
         super();
         setSize(new Dimension(44*(26),30*(28)-12));
         setBackground(Color.CYAN);
+        //TODO: THE FLOW OF THE INTERFACES AND THE MAIN MENU
     }
 
 }
