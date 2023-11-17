@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="what the fuck is gridbaglayout">
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="changed dimention">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/A/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/A/Interface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/A/Interface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/A/Interface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/A/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/Interface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/A/MazeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/A/DummyCreationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MazeMap/DummyCreationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/A/Interface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/A/MazeMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/A/Vertex.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +66,9 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Interface" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="A" />
     </key>
@@ -75,11 +82,11 @@
       </method>
     </configuration>
     <configuration name="Interface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="A.Interface" />
+      <option name="MAIN_CLASS_NAME" value="Interface.Interface" />
       <module name="Comp3111F23G30" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="A.*" />
+          <option name="PATTERN" value="Interface.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -88,11 +95,11 @@
       </method>
     </configuration>
     <configuration name="MazeMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="A.MazeMap" />
+      <option name="MAIN_CLASS_NAME" value="MazeMap.MazeMap" />
       <module name="Comp3111F23G30" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="A.*" />
+          <option name="PATTERN" value="Interface.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -105,7 +112,7 @@
       <module name="Comp3111F23G30" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="A.*" />
+          <option name="PATTERN" value="Interface.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -117,12 +124,12 @@
       <module name="Comp3111F23G30" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="A.*" />
+          <option name="PATTERN" value="Interface.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="A" />
-      <option name="MAIN_CLASS_NAME" value="A.DummyCreationTest" />
+      <option name="MAIN_CLASS_NAME" value="MazeMap.DummyCreationTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -347,7 +354,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700217968909</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="changed dimention">
+      <option name="closed" value="true" />
+      <created>1700218068826</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1700218068826</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -392,7 +407,8 @@
     <MESSAGE value="added the interface now the interface is the in charge of the display" />
     <MESSAGE value="added draft and file paths for the assets" />
     <MESSAGE value="what the fuck is gridbaglayout" />
-    <option name="LAST_COMMIT_MESSAGE" value="what the fuck is gridbaglayout" />
+    <MESSAGE value="changed dimention" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed dimention" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

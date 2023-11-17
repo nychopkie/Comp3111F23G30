@@ -1,6 +1,7 @@
-package A;
+package Interface;
 
-import java.awt.Color;
+import MazeMap.*;
+
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -17,11 +18,11 @@ public class Interface{
     /** The map part of the interface */
     private MazeMap mazeGame;
     /** The side control navigation menu */
-    private JPanel sideMenu;
+    private SideMenu sideMenu;
     /** the container for the game part */
     private JPanel gameContainer;
     /** start menu */
-    private JPanel menuContainer;
+    private MainMenu menuContainer;
 
     /** constuctor */
     public Interface(){
@@ -31,24 +32,20 @@ public class Interface{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         frame.pack();
-        frame.setSize(screenSize.width,screenSize.height);
-        frame.setLayout(new FlowLayout());
+        frame.setSize(new Dimension(46*(26)+12,30*(28)-16));
     }
 
     /** to show the menu screen */
     void showMainMenu(){
-        menuContainer = new JPanel();
+        menuContainer = new MainMenu();
         frame.add(menuContainer);
+        frame.setVisible(true);
     }
 
     /** to show the game screen */
     void showGameWindow(){
         mazeGame = new MazeMap();
-
-        sideMenu = new JPanel();
-        sideMenu.setSize(new Dimension(10*(25+1),30*(25+1)));
-        sideMenu.setMinimumSize(new Dimension(10*(25+1),30*(25+1)));
-        sideMenu.setBackground(Color.PINK);
+        sideMenu = new SideMenu();
 
         gameContainer = new JPanel();
         gameContainer.setLayout(new GridBagLayout());
@@ -71,7 +68,6 @@ public class Interface{
         gameContainer.add(sideMenu,c);
 
         frame.add(gameContainer);
-
         frame.setVisible(true);
     }
 
@@ -79,5 +75,6 @@ public class Interface{
     public static void main(String[] args0) {
         Interface screen = new Interface();
         screen.showGameWindow();
+        //screen.showMainMenu();
     }
 }
