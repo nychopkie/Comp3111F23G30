@@ -4,7 +4,11 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import javax.swing.JPanel;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.concurrent.ThreadLocalRandom;
+import java.io.File;
 
 
 /**
@@ -29,6 +33,9 @@ public class MazeMap extends JPanel{
     // variables for the class
     /** the maze map containing all Vertices */
     Vertex[][] MazeMapData;
+    /** filepath of the csv */
+    File mapPath;
+
     /** the value for the map sizing*/
     //I change the ROWS,COLS to 3 for easier testing
     private static final int ROWS = 30, COLS = 30,  PIXEL_SIZE = 25, GAP = 1;
@@ -79,15 +86,43 @@ public class MazeMap extends JPanel{
         return COLS;
     }
 
+    /** helper function to refresh map colour */
+    void refreshColour(){
+        for (int i = 0; i < ROWS; ++i){
+            for (int j = 0; j < COLS; ++j){
+                MazeMapData[i][j].colourByType();
+            }
+        }
+    }
+
     // TODO: loadmapdata
-    // load the map data csv
-    // change the mazedatya data lmao
-    //void load_MazeMap(//the csv )
+    /** load the map data csv */
+    // change the mazedata data lmao
+    public void load_MazeMap(String filePath){
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            int row = 0;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                for (int col = 0; col < COLS; col++) {
+                    // Trim whitespace and then parse the integer
+                    MazeMapData[row][col].vertex_type = Integer.parseInt(values[col].trim());
+                    refreshColour();
+                    //System.out.println("Maze[" + row + "][" + col + "] = " + maze[row][col]); // Debugging statement
+                }
+                row++;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();  // It's better to print the stack trace for debugging
+        }
+    }
 
     // TODO: savemapdata
-    // save the edited map to a csv
+    /** save the edited map to a csv */
     // loop thru mazemapdata and like write type only
-    // void save_MazeMap()
+//    public void save_MazeMap(){
+//
+//    }
 
     // TODO: editmapdata
     // edit the maze map

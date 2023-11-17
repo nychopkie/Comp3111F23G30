@@ -32,7 +32,7 @@ public class Interface{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         frame.pack();
-        frame.setSize(new Dimension(46*(26)+12,30*(28)-16));
+        frame.setSize(new Dimension(44*(26),30*(28)-12));
     }
 
     /** to show the menu screen */
@@ -45,10 +45,11 @@ public class Interface{
     /** to show the game screen */
     void showGameWindow(){
         mazeGame = new MazeMap();
-        sideMenu = new SideMenu();
+        sideMenu = new SideMenu(this.mazeGame);
 
         gameContainer = new JPanel();
-        gameContainer.setLayout(new GridBagLayout());
+        GridBagLayout gameLayout = new GridBagLayout();
+        gameContainer.setLayout(gameLayout);
         GridBagConstraints c = new GridBagConstraints();
         // col 0
         c.gridx = 0;
@@ -60,11 +61,6 @@ public class Interface{
         c.gridx = 1;
         // row 0
         c.gridy = 0;
-        // increases components width by 10 pixels
-        c.ipadx = 10*40;
-        // increases components height by 50 pixels
-        // make the relative
-        c.ipady = 30*(26)-11;
         gameContainer.add(sideMenu,c);
 
         frame.add(gameContainer);
