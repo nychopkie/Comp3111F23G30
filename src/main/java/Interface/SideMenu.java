@@ -70,30 +70,7 @@ public class SideMenu extends JPanel {
         save.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    File file = new File("Assets/map/MazeMap_Custom.csv");
-                    // write into it according to the format
-                    PrintWriter pw = new PrintWriter(file);
-                    pw.close();
-                    BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-                    for (int i = 0; i < 30; i++){
-                        for (int j = 0; j < 30; j++){
-                            if (j != 0){
-                                writer.write(",");
-                            }
-                            writer.write(Integer.toString(map.getMazedata()[i][j].getVertex_type()));
-                            if (j == 29){
-                                writer.newLine();
-                            }
-                        }
-                    }
-                    writer.flush();
-                    writer.close();
-
-                } catch (IOException f) {
-                    System.out.println("An error occurred.");
-                    f.printStackTrace();
-                }
+                map.save_MazeMap();
             }
         });
 

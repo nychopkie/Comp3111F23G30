@@ -4,11 +4,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import javax.swing.JPanel;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.concurrent.ThreadLocalRandom;
-import java.io.File;
 
 
 /**
@@ -111,6 +108,34 @@ public class MazeMap extends JPanel{
             }
         } catch (IOException e) {
             e.printStackTrace();  // It's better to print the stack trace for debugging
+        }
+    }
+
+    /** save map data */
+    public void save_MazeMap(){
+        try {
+            File file = new File("Assets/map/MazeMap_Custom.csv");
+            // write into it according to the format
+            PrintWriter pw = new PrintWriter(file);
+            pw.close();
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+            for (int i = 0; i < 30; i++){
+                for (int j = 0; j < 30; j++){
+                    if (j != 0){
+                        writer.write(",");
+                    }
+                    writer.write(Integer.toString(MazeMapData[i][j].getVertex_type()));
+                    if (j == 29){
+                        writer.newLine();
+                    }
+                }
+            }
+            writer.flush();
+            writer.close();
+
+        } catch (IOException f) {
+            System.out.println("An error occurred.");
+            f.printStackTrace();
         }
     }
 
