@@ -148,7 +148,7 @@ public class Interface extends JFrame {
     /** 5: show test B */
     void showTestB(){
         container = new Container(this);
-        container.setEditMap();
+        container.setShortestPathExample();
 
         add(container);
         setVisible(true);

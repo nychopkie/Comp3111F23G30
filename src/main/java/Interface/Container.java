@@ -1,5 +1,7 @@
 package Interface;
 
+import MazeMap.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -165,6 +167,7 @@ public class Container extends JPanel {
         d.gridx = 0;
         // row 0
         d.gridy = 0;
+        screen.mazeGame.changeState(true);
         add(screen.mazeGame, d);
 
         // side menu
@@ -241,6 +244,136 @@ public class Container extends JPanel {
         });
 
         buttons.add(save);
+        buttons.add(load);
+        buttons.add(back);
+        // col 0
+        c.gridx = 0;
+        // row 1
+        c.gridy = 2;
+        c.ipadx = 150;
+        c.ipady = 50;
+        c.weighty = 1.5;
+        sideMenu.add(buttons,c);
+
+        // col 1
+        d.gridx = 1;
+        // row 0
+        d.gridy = 0;
+        d.insets = new Insets(-40,0,0,0);  //top padding
+        add(sideMenu,d);
+    }
+
+    /** function to test for B */
+    public void setShortestPathExample(){
+        setBackground(Color.GRAY);
+        setOpaque(true);
+        GridBagConstraints d = new GridBagConstraints();
+
+        int[][] b = {
+                {1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+                {0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1},
+                {1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1},
+                {0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1},
+                {0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1},
+                {1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1},
+                {1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1},
+                {1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0},
+                {1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0},
+                {1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1},
+                {1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1},
+                {2, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+                {1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0},
+                {0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1},
+                {0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1},
+                {1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 3},
+                {1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1},
+                {1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0},
+                {1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1},
+                {1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1},
+                {1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1},
+                {1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0},
+                {1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1},
+                {1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1},
+                {0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0},
+                {1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1},
+                {1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1},
+                {1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1},
+                {1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0 }};
+        screen.mazeGame = new MazeMap(b);
+        screen.mazeGame.changeState(false);
+        if(Shortestpath.shortestPath(screen.mazeGame,screen.mazeGame.getEntry(),screen.mazeGame.getExit(),1)==null) System.out.print("No Path");
+
+        d.insets = new Insets(-35,-20,0,0);  //top padding
+        // col 0
+        d.gridx = 0;
+        // row 0
+        d.gridy = 0;
+        add(screen.mazeGame, d);
+
+        // side menu
+        JPanel sideMenu = initSideMenu();
+        JLabel title = new JLabel();
+        JLabel description = new JLabel();
+        JPanel buttons = new JPanel();
+        buttons.setOpaque(false);
+
+        // set title
+        title.setText("<html>Shortest<br>Path</html>");
+        title.setHorizontalAlignment(JLabel.CENTER);
+        title.setFont(new Font("Arial", Font.PLAIN, 65));
+        GridBagConstraints c = new GridBagConstraints();
+        // col 0
+        c.gridx = 0;
+        // row 0
+        c.gridy = 0;
+        c.weighty = 0.5;
+        sideMenu.add(title,c);
+
+        // set description
+        String descText = "here is the shortest<br>" +
+                "path function. idk <br>" +
+                "would new line works <br>" +
+                "here but oh well worth <br>" +
+                "to try";
+        description.setText("<html><p>" + descText + "</p></html>");
+        description.setHorizontalAlignment(JLabel.CENTER);
+        description.setFont(new Font("Arial", Font.PLAIN, 23));
+        // col 0
+        c.gridx = 0;
+        // row 1
+        c.gridy = 1;
+        sideMenu.add(description,c);
+
+        // set button
+        buttons.setLayout(new GridLayout(2,1,0,15));
+
+        /** load button */
+        JButton load = new JButton("LOAD");
+        load.setFont(new Font("Arial", Font.PLAIN, 40));
+        load.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser chooser = new JFileChooser();
+
+                if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
+                    File selectedFile = chooser.getSelectedFile();
+                    screen.mazeGame.load_MazeMap(selectedFile.getPath());
+                }
+            }
+        });
+
+        /** exit button */
+        JButton back = new JButton("EXIT");
+        back.setFont(new Font("Arial", Font.PLAIN, 40));
+        back.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                screen.setState(0);
+                screen.display();
+            }
+        });
+
         buttons.add(load);
         buttons.add(back);
         // col 0
