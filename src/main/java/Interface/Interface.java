@@ -3,8 +3,7 @@ package Interface;
 import MazeMap.*;
 
 import java.awt.Dimension;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.*;
 
 
@@ -37,6 +36,14 @@ public class Interface{
 
     /** to show the menu screen */
     void showMainMenu(){
+        ImageIcon img = new ImageIcon("Assets/Images/Start_BG.jpg");
+        JLabel background = new JLabel();
+        Image image = img.getImage(); // transform it
+        Image bg = image.getScaledInstance(44*(26), 30*(28)-12,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+        img = new ImageIcon(bg);  // transform it back
+        background.setIcon(img);
+        frame.setContentPane(background);
+
         menuContainer = new MainMenu();
         frame.add(menuContainer);
         frame.setVisible(true);
@@ -51,6 +58,7 @@ public class Interface{
         GridBagLayout gameLayout = new GridBagLayout();
         gameContainer.setLayout(gameLayout);
         GridBagConstraints c = new GridBagConstraints();
+
         // col 0
         c.gridx = 0;
         // row 0
@@ -70,7 +78,7 @@ public class Interface{
     // testing for now
     public static void main(String[] args0) {
         Interface screen = new Interface();
-        screen.showGameWindow();
-        //screen.showMainMenu();
+        //screen.showGameWindow();
+        screen.showMainMenu();
     }
 }

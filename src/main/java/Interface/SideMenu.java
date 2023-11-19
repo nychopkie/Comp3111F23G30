@@ -1,6 +1,6 @@
 package Interface;
 
-import MazeMap.MazeMap;
+import MazeMap.*;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
