@@ -42,7 +42,7 @@ public class Interface extends JFrame {
         pack();
 
         // init the default start screen as startmenu
-        setState(5);
+        setState(0);
 
         mazeGame = new MazeMap();
     }
