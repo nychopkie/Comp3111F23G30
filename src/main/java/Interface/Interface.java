@@ -109,7 +109,6 @@ public class Interface extends JFrame {
     /** to show the game screen */
     void showGameWindow(){
         mazeGame = new MazeMap();
-
         gameContainer = new GameScreen(this,mazeGame);
 
         add(gameContainer);
