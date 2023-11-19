@@ -83,7 +83,7 @@ public class MazeMap extends JPanel{
     }
 
     /** helper function to refresh map colour */
-    void refreshColour(){
+    public void refreshColour(){
         for (int i = 0; i < ROWS; ++i){
             for (int j = 0; j < COLS; ++j){
                 MazeMapData[i][j].colourByType();
@@ -115,6 +115,15 @@ public class MazeMap extends JPanel{
                     //System.out.println("Maze[" + row + "][" + col + "] = " + maze[row][col]); // Debugging statement
                 }
                 row++;
+            }
+            // change the entry and exit too
+            for (int i = 0; i < ROWS; ++i){
+                if (MazeMapData[i][0].vertex_type == 2){
+                    entry = i;
+                }
+                if (MazeMapData[i][ROWS-1].vertex_type == 3){
+                    exit = i;
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();  // It's better to print the stack trace for debugging
