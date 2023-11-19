@@ -157,6 +157,7 @@ public class Container extends JPanel {
         return sideMenu;
     }
 
+    // TODO: make the checking to see if the map exist a path from start to finish
     public void setEditMap(){
         setBackground(Color.GRAY);
         setOpaque(true);
