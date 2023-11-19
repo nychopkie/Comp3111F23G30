@@ -35,7 +35,7 @@ public class Interface extends JFrame {
         setTitle("Maze game");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setLocationRelativeTo(null);
+        //setLocationRelativeTo(null);
         setVisible(true);
 
         setPreferredSize(new Dimension(44*(26),30*(28)-12));
