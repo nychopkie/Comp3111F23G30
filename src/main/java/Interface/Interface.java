@@ -42,7 +42,7 @@ public class Interface extends JFrame {
         pack();
 
         // init the default start screen as startmenu
-        setState(0);
+        setState(5);
 
         mazeGame = new MazeMap();
     }
@@ -148,7 +148,7 @@ public class Interface extends JFrame {
     /** 5: show test B */
     void showTestB(){
         container = new Container(this);
-        container.setEditMap();
+        container.setShortestPathExample();
 
         add(container);
         setVisible(true);

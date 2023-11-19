@@ -61,6 +61,7 @@ public class MazeMap extends JPanel{
 
                 // each of the cell in the MazeMap
                 this.MazeMapData[i][j] = new Vertex(PIXEL_SIZE, i, j, v_type);
+                this.MazeMapData[i][j].changeEditState(false);
                 add(this.MazeMapData[i][j]);
             }
         }
@@ -86,6 +87,15 @@ public class MazeMap extends JPanel{
         for (int i = 0; i < ROWS; ++i){
             for (int j = 0; j < COLS; ++j){
                 MazeMapData[i][j].colourByType();
+            }
+        }
+    }
+
+    /** to change the map state of edit */
+    public void changeState(boolean state){
+        for (int i = 0; i < ROWS; ++i){
+            for (int j = 0; j < COLS; ++j){
+                MazeMapData[i][j].changeEditState(state);
             }
         }
     }

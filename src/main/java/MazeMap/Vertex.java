@@ -29,6 +29,9 @@ public class Vertex extends JPanel implements MouseListener {
      */
     int vertex_type;
 
+    /** checks if the vertex can change value */
+    private boolean canEdit;
+
     /**
      * the pixel size of each vertex
      */
@@ -66,7 +69,6 @@ public class Vertex extends JPanel implements MouseListener {
         setPreferredSize(new Dimension(sizeOfSquare, sizeOfSquare));
         colourByType();
         addMouseListener(this);
-
     }
 
     public void colourByType(){
@@ -79,6 +81,11 @@ public class Vertex extends JPanel implements MouseListener {
         } else {
             setTheColor(EXIT_VERTEX_COLOUR);
         };
+    }
+
+    /** mutator to set the state on whether if the map is changable*/
+    public void changeEditState(boolean flag){
+        canEdit = flag;
     }
 
     //mutator
@@ -104,20 +111,22 @@ public class Vertex extends JPanel implements MouseListener {
      */
     @Override
     public void mouseClicked(MouseEvent e) {
-        // if the point is the entry or exit or outermost barrier then no change
-        if (this.vertex_type == 2 || this.vertex_type == 3 || this.x * this.y == 0 || this.x == 29 || this.y == 29) {
-            return;
-        }
-        // if the vertex is a PATH >>> change to BARRIER
-        if (this.vertex_type == 0) {
-            setTheColor(BARRIER_COLOUR);
-            this.vertex_type = 1;
+        if (canEdit){
+            // if the point is the entry or exit or outermost barrier then no change
+            if (this.vertex_type == 2 || this.vertex_type == 3 || this.x * this.y == 0 || this.x == 29 || this.y == 29) {
+                return;
+            }
+            // if the vertex is a PATH >>> change to BARRIER
+            if (this.vertex_type == 0) {
+                setTheColor(BARRIER_COLOUR);
+                this.vertex_type = 1;
 
-        }
-        // if the vertex is a BARRIER >>> change to PATH
-        else {
-            setTheColor(CLEAR_VERTEX_COLOUR);
-            this.vertex_type = 0;
+            }
+            // if the vertex is a BARRIER >>> change to PATH
+            else {
+                setTheColor(CLEAR_VERTEX_COLOUR);
+                this.vertex_type = 0;
+            }
         }
     }
 
