@@ -64,8 +64,8 @@ public class Interface extends JFrame {
 
         if (state == 0){
             showMainMenu();
-            //showGameWindow();
         }
+        // TODO: this should be same as func C, random a map or specify map?
         else if (state == 1){
             showGameWindow();
         }

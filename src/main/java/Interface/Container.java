@@ -394,5 +394,9 @@ public class Container extends JPanel {
         add(sideMenu,d);
     }
 
+    public void setGameScreen(){
+
+    }
+
 }
 
