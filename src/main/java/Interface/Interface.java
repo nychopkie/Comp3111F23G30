@@ -102,6 +102,7 @@ public class Interface extends JFrame {
         setVisible(true);
     }
 
+    // TODO: this.
     /** 1: to show the game screen */
     void showGameWindow(){
         container = new Container(this);
@@ -154,6 +155,7 @@ public class Interface extends JFrame {
         setVisible(true);
     }
 
+    // TODO: this.
     /** 6: show test C */
     void showTestC(){
         container = new Container(this);
