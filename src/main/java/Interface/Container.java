@@ -359,6 +359,7 @@ public class Container extends JPanel {
                 if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
                     File selectedFile = chooser.getSelectedFile();
                     screen.mazeGame.load_MazeMap(selectedFile.getPath());
+                    if(Shortestpath.shortestPath(screen.mazeGame,screen.mazeGame.getEntry(),screen.mazeGame.getExit(),1)==null) System.out.print("No Path");
                 }
             }
         });
