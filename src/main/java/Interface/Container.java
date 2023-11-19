@@ -4,20 +4,19 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
-public class MainMenu extends JPanel {
+public class Container extends JPanel {
 
     private JLabel title;
     private JPanel navigation;
     private Interface screen;
 
-    public MainMenu(Interface screen){
+    public Container(Interface screen){
         super();
         this.screen = screen;
         setSize(new Dimension(44*(26),30*(28)-12));
         setOpaque(false);
-        //setBackground("Assets/Images/Start_BG");
-        //TODO: THE FLOW OF THE INTERFACES AND THE MAIN MENU
         GridBagLayout startMenuLayout = new GridBagLayout();
         setLayout(startMenuLayout);
     }
@@ -67,16 +66,16 @@ public class MainMenu extends JPanel {
         });
         navigation.add(test);
 
-        JButton option = new JButton("Option");
-        option.setFont(new Font("Arial", Font.PLAIN, 50));
-        option.addActionListener(new ActionListener() {
+        JButton edit = new JButton("Edit Map");
+        edit.setFont(new Font("Arial", Font.PLAIN, 50));
+        edit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                screen.setState(7);
+                screen.setState(2);
                 screen.display();
             }
         });
-        navigation.add(option);
+        navigation.add(edit);
     }
 
     public void setTestMenu(){
@@ -145,6 +144,120 @@ public class MainMenu extends JPanel {
             }
         });
         navigation.add(back);
+    }
+
+    JPanel initSideMenu(){
+        JPanel sideMenu = new JPanel();
+        sideMenu.setPreferredSize(new Dimension(380,30*(25+1)));
+        sideMenu.setBackground(Color.GRAY);
+        GridBagLayout sideMenuLayout = new GridBagLayout();
+        sideMenu.setLayout(sideMenuLayout);
+        return sideMenu;
+    }
+
+    public void setEditMap(){
+        setBackground(Color.GRAY);
+        setOpaque(true);
+        GridBagConstraints d = new GridBagConstraints();
+        d.insets = new Insets(-35,-20,0,0);  //top padding
+
+        // col 0
+        d.gridx = 0;
+        // row 0
+        d.gridy = 0;
+        add(screen.mazeGame, d);
+
+        // side menu
+        JPanel sideMenu = initSideMenu();
+        JLabel title = new JLabel();
+        JLabel description = new JLabel();
+        JPanel buttons = new JPanel();
+        buttons.setOpaque(false);
+
+        // set title
+        title.setText("Edit Map");
+        title.setHorizontalAlignment(JLabel.CENTER);
+        title.setFont(new Font("Arial", Font.PLAIN, 65));
+        GridBagConstraints c = new GridBagConstraints();
+        // col 0
+        c.gridx = 0;
+        // row 0
+        c.gridy = 0;
+        c.weighty = 0.5;
+        sideMenu.add(title,c);
+
+        // set description
+        String descText = "here is the edit <br>" +
+                "map function. idk <br>" +
+                "would new line works <br>" +
+                "here but oh well worth <br>" +
+                "to try";
+        description.setText("<html><p>" + descText + "</p></html>");
+        description.setHorizontalAlignment(JLabel.CENTER);
+        description.setFont(new Font("Arial", Font.PLAIN, 23));
+        // col 0
+        c.gridx = 0;
+        // row 1
+        c.gridy = 1;
+        sideMenu.add(description,c);
+
+        // set button
+        buttons.setLayout(new GridLayout(3,1,0,15));
+
+        /** save button */
+        JButton save = new JButton("SAVE");
+        save.setFont(new Font("Arial", Font.PLAIN, 40));
+        save.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                screen.mazeGame.save_MazeMap();
+            }
+        });
+
+        /** load button */
+        JButton load = new JButton("LOAD");
+        load.setFont(new Font("Arial", Font.PLAIN, 40));
+        load.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser chooser = new JFileChooser();
+
+                if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
+                    File selectedFile = chooser.getSelectedFile();
+                    screen.mazeGame.load_MazeMap(selectedFile.getPath());
+                }
+            }
+        });
+
+        /** exit button */
+        JButton back = new JButton("EXIT");
+        back.setFont(new Font("Arial", Font.PLAIN, 40));
+        back.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                screen.setState(0);
+                screen.display();
+            }
+        });
+
+        buttons.add(save);
+        buttons.add(load);
+        buttons.add(back);
+        // col 0
+        c.gridx = 0;
+        // row 1
+        c.gridy = 2;
+        c.ipadx = 150;
+        c.ipady = 50;
+        c.weighty = 1.5;
+        sideMenu.add(buttons,c);
+
+        // col 1
+        d.gridx = 1;
+        // row 0
+        d.gridy = 0;
+        d.insets = new Insets(-40,0,0,0);  //top padding
+        add(sideMenu,d);
     }
 
 }

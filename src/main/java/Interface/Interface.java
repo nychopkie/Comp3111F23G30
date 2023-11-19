@@ -15,11 +15,9 @@ public class Interface extends JFrame {
     /** The container for all the components */
     //private JFrame frame;
     /** The map part of the interface */
-    private MazeMap mazeGame;
-    /** the container for the game part */
-    private GameScreen gameContainer;
+    MazeMap mazeGame;
     /** start menu */
-    private MainMenu menuContainer;
+    private Container container;
 
     /** state of the interface to control what page now to show
      * 0: starting menu
@@ -28,11 +26,10 @@ public class Interface extends JFrame {
      * 3: test starting
      * 4: test A
      * 5: test B
-     * 6: test C
-     * 7: option */
+     * 6: test C */
     private int state;
 
-    /** constuctor */
+    /** constructor */
     public Interface(){
         // init the game frame
         setTitle("Maze game");
@@ -46,6 +43,8 @@ public class Interface extends JFrame {
 
         // init the default start screen as startmenu
         setState(0);
+
+        mazeGame = new MazeMap();
     }
 
     /** set the state of the interface */
@@ -70,14 +69,26 @@ public class Interface extends JFrame {
         else if (state == 1){
             showGameWindow();
         }
+        else if (state == 2){
+            showMapEdit();
+        }
         else if (state == 3){
             showTestingMenu();
         }
+        else if (state == 4){
+            showTestA();
+        }
+        else if (state == 5){
+            showTestB();
+        }
+        else if (state == 6){
+            showTestC();
+        }
     }
 
-    /** to show the menu screen */
+    /** 0: to show the menu screen */
     void showMainMenu(){
-        menuContainer = new MainMenu(this);
+        container = new Container(this);
         ImageIcon img = new ImageIcon("Assets/Images/Start_BG.jpg");
         JLabel background = new JLabel();
         Image image = img.getImage(); // transform it
@@ -86,32 +97,69 @@ public class Interface extends JFrame {
         background.setIcon(img);
         setContentPane(background);
 
-        menuContainer.setStartMenu();
-        add(menuContainer);
+        container.setStartMenu();
+        add(container);
         setVisible(true);
     }
 
-    void showTestingMenu(){
-        menuContainer = new MainMenu(this);
-        ImageIcon img = new ImageIcon("Assets/Images/Start_BG.jpg");
-        JLabel background = new JLabel();
-        Image image = img.getImage(); // transform it
-        Image bg = image.getScaledInstance(44*(26), 30*(28)-12,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
-        img = new ImageIcon(bg);  // transform it back
-        background.setIcon(img);
-        setContentPane(background);
-
-        menuContainer.setTestMenu();
-        add(menuContainer);
-        setVisible(true);
-    }
-
-    /** to show the game screen */
+    /** 1: to show the game screen */
     void showGameWindow(){
-        mazeGame = new MazeMap();
-        gameContainer = new GameScreen(this,mazeGame);
+        container = new Container(this);
+        container.setEditMap();
 
-        add(gameContainer);
+        add(container);
+        setVisible(true);
+    }
+
+    /** 2: to show edit screen */
+    void showMapEdit(){
+        container = new Container(this);
+        container.setEditMap();
+
+        add(container);
+        setVisible(true);
+    }
+
+    /** 3: show choosing testing window */
+    void showTestingMenu(){
+        container = new Container(this);
+        ImageIcon img = new ImageIcon("Assets/Images/Start_BG.jpg");
+        JLabel background = new JLabel();
+        Image image = img.getImage(); // transform it
+        Image bg = image.getScaledInstance(44*(26), 30*(28)-12,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+        img = new ImageIcon(bg);  // transform it back
+        background.setIcon(img);
+        setContentPane(background);
+
+        container.setTestMenu();
+        add(container);
+        setVisible(true);
+    }
+
+    /** 4: show test A */
+    void showTestA(){
+        container = new Container(this);
+        container.setEditMap();
+
+        add(container);
+        setVisible(true);
+    }
+
+    /** 5: show test B */
+    void showTestB(){
+        container = new Container(this);
+        container.setEditMap();
+
+        add(container);
+        setVisible(true);
+    }
+
+    /** 6: show test C */
+    void showTestC(){
+        container = new Container(this);
+        container.setEditMap();
+
+        add(container);
         setVisible(true);
     }
 }
