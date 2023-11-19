@@ -168,6 +168,7 @@ public class Container extends JPanel {
         // row 0
         d.gridy = 0;
         screen.mazeGame.changeState(true);
+        screen.mazeGame.refreshColour();
         add(screen.mazeGame, d);
 
         // side menu
@@ -392,6 +393,11 @@ public class Container extends JPanel {
         d.gridy = 0;
         d.insets = new Insets(-40,0,0,0);  //top padding
         add(sideMenu,d);
+    }
+
+    // TODO: this.
+    public void setGameScreen(){
+
     }
 
 }
