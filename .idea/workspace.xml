@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="try try">
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="made the look of the start menu with background">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shortestpath.csv" beforeDir="false" afterPath="$PROJECT_DIR$/shortestpath.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interface/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/Interface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interface/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/MainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interface/SideMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/SideMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/MainMenu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +77,7 @@
       <recent name="A" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Interface">
+  <component name="RunManager" selected="Application.Launcher">
     <configuration name="Interface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Interface.Interface" />
       <module name="Comp3111F23G30" />
@@ -90,12 +91,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MazeGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MazeGame.MazeGame" />
+    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Interface.Launcher" />
       <module name="Comp3111F23G30" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="MazeGame.*" />
+          <option name="PATTERN" value="Interface.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -146,11 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Launcher" />
         <item itemvalue="Application.Interface" />
         <item itemvalue="Application.Shortestpath" />
         <item itemvalue="JUnit.DummyCreationTest" />
         <item itemvalue="Application.MazeMap" />
-        <item itemvalue="Application.MazeGame" />
       </list>
     </recent_temporary>
   </component>
@@ -435,7 +436,23 @@
       <option name="project" value="LOCAL" />
       <updated>1700317855927</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="made the look of the start menu with background">
+      <option name="closed" value="true" />
+      <created>1700394983229</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1700394983229</updated>
+    </task>
+    <task id="LOCAL-00036" summary="made the look of the start menu with background">
+      <option name="closed" value="true" />
+      <created>1700394987522</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1700394987522</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -462,7 +479,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added a placeholder in case something really wrong happens" />
     <MESSAGE value="changed smth" />
     <MESSAGE value="added the team formation form" />
     <MESSAGE value="style" />
@@ -487,7 +503,8 @@
     <MESSAGE value="deleted unwanted functions" />
     <MESSAGE value="moved the save function" />
     <MESSAGE value="try try" />
-    <option name="LAST_COMMIT_MESSAGE" value="try try" />
+    <MESSAGE value="made the look of the start menu with background" />
+    <option name="LAST_COMMIT_MESSAGE" value="made the look of the start menu with background" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

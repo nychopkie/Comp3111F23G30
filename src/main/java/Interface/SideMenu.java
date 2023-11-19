@@ -16,10 +16,12 @@ public class SideMenu extends JPanel {
     private JPanel buttons;
 
     private MazeMap map;
+    private Interface screen;
 
-    public SideMenu(MazeMap map){
+    public SideMenu(MazeMap map, Interface screen){
         super();
         this.map = map;
+        this.screen = screen;
         setPreferredSize(new Dimension(350,30*(25+1)));
         setBackground(Color.PINK);
         GridBagLayout sideMenuLayout = new GridBagLayout();
@@ -92,6 +94,13 @@ public class SideMenu extends JPanel {
         /** exit button */
         JButton back = new JButton("EXIT");
         back.setFont(new Font("Arial", Font.PLAIN, 40));
+        back.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                screen.setState(0);
+                screen.display();
+            }
+        });
 
         buttons.add(save);
         buttons.add(load);
