@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="deleted unwanted functions">
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="deleted side menu and put it tgt with game container">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/SideMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/SideMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/map/MazeMap_Custom.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/map/MazeMap_Custom.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/GameScreen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/Interface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/Container.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/MainMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/SideMenu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/SideMenu$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/SideMenu.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="lab7_UnitTest" />
+        <entry key="$PROJECT_DIR$" value="dev-build" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,22 +50,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "func-A",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "configurable.group.build"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;func-A&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.build&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\annie\Desktop\COMP3111\Comp3111F23G30\Project Requirments" />
@@ -75,14 +81,7 @@
       <recent name="A" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Interface">
-    <configuration name="DrawingPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DrawingPanel" />
-      <module name="Comp3111F23G30" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Launcher">
     <configuration name="Interface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Interface.Interface" />
       <module name="Comp3111F23G30" />
@@ -96,12 +95,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MazeGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MazeGame.MazeGame" />
+    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Interface.Launcher" />
       <module name="Comp3111F23G30" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="MazeGame.*" />
+          <option name="PATTERN" value="Interface.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -115,6 +114,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Interface.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Shortestpath" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MazeMap.Shortestpath" />
+      <module name="Comp3111F23G30" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="MazeMap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -139,11 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Launcher" />
         <item itemvalue="Application.Interface" />
+        <item itemvalue="Application.Shortestpath" />
         <item itemvalue="JUnit.DummyCreationTest" />
         <item itemvalue="Application.MazeMap" />
-        <item itemvalue="Application.MazeGame" />
-        <item itemvalue="Application.DrawingPanel" />
       </list>
     </recent_temporary>
   </component>
@@ -412,7 +424,55 @@
       <option name="project" value="LOCAL" />
       <updated>1700250822201</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="moved the save function">
+      <option name="closed" value="true" />
+      <created>1700296363866</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1700296363866</updated>
+    </task>
+    <task id="LOCAL-00034" summary="try try">
+      <option name="closed" value="true" />
+      <created>1700317855927</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1700317855927</updated>
+    </task>
+    <task id="LOCAL-00035" summary="made the look of the start menu with background">
+      <option name="closed" value="true" />
+      <created>1700394983229</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1700394983229</updated>
+    </task>
+    <task id="LOCAL-00036" summary="made the look of the start menu with background">
+      <option name="closed" value="true" />
+      <created>1700394987522</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1700394987522</updated>
+    </task>
+    <task id="LOCAL-00037" summary="interface">
+      <option name="closed" value="true" />
+      <created>1700400696893</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1700400696893</updated>
+    </task>
+    <task id="LOCAL-00038" summary="deleted side menu and put it tgt with game container">
+      <option name="closed" value="true" />
+      <created>1700401495166</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1700401495166</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -439,11 +499,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="initial" />
-    <MESSAGE value="finally got it" />
-    <MESSAGE value="added a placeholder in case something really wrong happens" />
-    <MESSAGE value="changed smth" />
-    <MESSAGE value="added the team formation form" />
     <MESSAGE value="style" />
     <MESSAGE value="updates README.md and the project requirements" />
     <MESSAGE value="added meeting#1 minutes to the repo for reference and for easier keeping track for submission" />
@@ -464,7 +519,12 @@
     <MESSAGE value="added the load map function" />
     <MESSAGE value="added the save map function" />
     <MESSAGE value="deleted unwanted functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted unwanted functions" />
+    <MESSAGE value="moved the save function" />
+    <MESSAGE value="try try" />
+    <MESSAGE value="made the look of the start menu with background" />
+    <MESSAGE value="interface" />
+    <MESSAGE value="deleted side menu and put it tgt with game container" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted side menu and put it tgt with game container" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
