@@ -269,11 +269,11 @@ public class MazeGame{
 
         if (jerry.x == tom.x && jerry.y == tom.y) {
             timer.stop();
-            JOptionPane.showMessageDialog(screen, "Tom caught Jerry! You lose.");
+            JOptionPane.showMessageDialog(panel, "Tom caught Jerry! You lose.");
 
         } else if (jerry.x == exitX&& jerry.y == exitY) {
             timer.stop();
-            JOptionPane.showMessageDialog(screen, "Jerry reached the Exit! You win!");
+            JOptionPane.showMessageDialog(panel, "Jerry reached the Exit! You win!");
 
         }
 

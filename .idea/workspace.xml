@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="put C with interface">
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="made the start game not shitty background">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/map/MazeMap_Custom.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/map/MazeMap_Custom.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interface/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/Interface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$13.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$14.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container.class" afterDir="false" />
@@ -124,38 +124,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695396481398</updated>
-    </task>
-    <task id="LOCAL-00006" summary="style">
-      <option name="closed" value="true" />
-      <created>1695447193417</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1695447193417</updated>
-    </task>
-    <task id="LOCAL-00007" summary="updates README.md and the project requirements">
-      <option name="closed" value="true" />
-      <created>1696904205016</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1696904205016</updated>
-    </task>
-    <task id="LOCAL-00008" summary="added meeting#1 minutes to the repo for reference and for easier keeping track for submission">
-      <option name="closed" value="true" />
-      <created>1696938743197</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1696938743197</updated>
-    </task>
-    <task id="LOCAL-00009" summary="lab_7 task,&#10;initial thoughts of the program,&#10;think about the jframe things">
-      <option name="closed" value="true" />
-      <created>1698467101837</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1698467101837</updated>
     </task>
     <task id="LOCAL-00010" summary="created the MazeMap class and the function to draw barriers (bare minimum)">
       <option name="closed" value="true" />
@@ -517,7 +485,39 @@
       <option name="project" value="LOCAL" />
       <updated>1700548949732</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="put C with interface">
+      <option name="closed" value="true" />
+      <created>1700549356425</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1700549356425</updated>
+    </task>
+    <task id="LOCAL-00056" summary="check if the map is csv format">
+      <option name="closed" value="true" />
+      <created>1700553655879</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1700553655879</updated>
+    </task>
+    <task id="LOCAL-00057" summary="changed testc">
+      <option name="closed" value="true" />
+      <created>1700553771257</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1700553771257</updated>
+    </task>
+    <task id="LOCAL-00058" summary="made the start game not shitty background">
+      <option name="closed" value="true" />
+      <created>1700554291703</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1700554291703</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -544,9 +544,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="made the default map generation makes more sense by adding entrance and exit and outermost barrier" />
-    <MESSAGE value="updated the colour choices" />
-    <MESSAGE value="added the interface now the interface is the in charge of the display" />
     <MESSAGE value="added draft and file paths for the assets" />
     <MESSAGE value="what the fuck is gridbaglayout" />
     <MESSAGE value="changed dimention" />
@@ -569,7 +566,10 @@
     <MESSAGE value="added comments" />
     <MESSAGE value="amended" />
     <MESSAGE value="put C with interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="put C with interface" />
+    <MESSAGE value="check if the map is csv format" />
+    <MESSAGE value="changed testc" />
+    <MESSAGE value="made the start game not shitty background" />
+    <option name="LAST_COMMIT_MESSAGE" value="made the start game not shitty background" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

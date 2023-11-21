@@ -107,6 +107,14 @@ public class Interface extends JFrame {
     // TODO: this.
     /** 1: to show the game screen */
     void showGameWindow(){
+        ImageIcon img = new ImageIcon("Assets/Images/transparent.png");
+        JLabel background = new JLabel();
+        Image image = img.getImage(); // transform it
+        Image bg = image.getScaledInstance(44*(26), 30*(28)-12,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+        img = new ImageIcon(bg);  // transform it back
+        background.setIcon(img);
+        setContentPane(background);
+
         container = new Container(this);
         container.setGameScreen();
 
@@ -116,6 +124,14 @@ public class Interface extends JFrame {
 
     /** 2: to show edit screen */
     void showMapEdit(){
+        ImageIcon img = new ImageIcon("Assets/Images/transparent.png");
+        JLabel background = new JLabel();
+        Image image = img.getImage(); // transform it
+        Image bg = image.getScaledInstance(44*(26), 30*(28)-12,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+        img = new ImageIcon(bg);  // transform it back
+        background.setIcon(img);
+        setContentPane(background);
+
         container = new Container(this);
         container.setEditMap();
 
@@ -141,6 +157,14 @@ public class Interface extends JFrame {
 
     /** 4: show test A */
     void showTestA(){
+        ImageIcon img = new ImageIcon("Assets/Images/transparent.png");
+        JLabel background = new JLabel();
+        Image image = img.getImage(); // transform it
+        Image bg = image.getScaledInstance(44*(26), 30*(28)-12,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+        img = new ImageIcon(bg);  // transform it back
+        background.setIcon(img);
+        setContentPane(background);
+
         container = new Container(this);
         container.setEditMap();
 
@@ -150,6 +174,14 @@ public class Interface extends JFrame {
 
     /** 5: show test B */
     void showTestB(){
+        ImageIcon img = new ImageIcon("Assets/Images/transparent.png");
+        JLabel background = new JLabel();
+        Image image = img.getImage(); // transform it
+        Image bg = image.getScaledInstance(44*(26), 30*(28)-12,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+        img = new ImageIcon(bg);  // transform it back
+        background.setIcon(img);
+        setContentPane(background);
+
         container = new Container(this);
         container.setShortestPathExample();
 
@@ -160,6 +192,14 @@ public class Interface extends JFrame {
     // TODO: this.
     /** 6: show test C */
     void showTestC(){
+        ImageIcon img = new ImageIcon("Assets/Images/transparent.png");
+        JLabel background = new JLabel();
+        Image image = img.getImage(); // transform it
+        Image bg = image.getScaledInstance(44*(26), 30*(28)-12,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+        img = new ImageIcon(bg);  // transform it back
+        background.setIcon(img);
+        setContentPane(background);
+
         container = new Container(this);
         container.setTestC("Assets/map/MazeMap_SAMPLE.csv");
 

@@ -158,7 +158,6 @@ public class Container extends JPanel {
         return sideMenu;
     }
 
-    // TODO: make the checking to see if the map exist a path from start to finish
     public void setEditMap(){
         setBackground(Color.GRAY);
         setOpaque(true);
@@ -397,27 +396,46 @@ public class Container extends JPanel {
         add(sideMenu,d);
     }
 
-    // TODO: this.
     public void setGameScreen(){
         JFileChooser chooser = new JFileChooser();
 
-        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
-            File selectedFile = chooser.getSelectedFile();
-            setTestC(selectedFile.getPath());
+        boolean flag = true;
+        while (flag){
+            if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
+                File selectedFile = chooser.getSelectedFile();
+                if (!selectedFile.getPath().endsWith(".csv")) {
+                    JOptionPane.showMessageDialog(this, "Chosen file is not a .csv file, please load a valid map.");
+                    continue;
+                };
+                screen.mazeGame.load_MazeMap(selectedFile.getPath());
+                if(Shortestpath.shortestPath(screen.mazeGame,screen.mazeGame.getEntry(),screen.mazeGame.getExit(),1)==null){
+                    System.out.print("No Path");
+                    JOptionPane.showMessageDialog(this, "Not a valid map, please choose another map");
+                    continue;
+                }
+
+                flag = false;
+
+                setOpaque(true);
+                setBackground(Color.GRAY);
+                setTestC(selectedFile.getPath());
+            }
+            else{
+                screen.setState(0);
+                screen.display();
+                return;
+            }
         }
-        else{
-            screen.setState(0);
-            screen.display();
-        }
+
     }
 
     public void setTestC(String path){
         MazeGame MazeGame =  new MazeGame(path,screen);
 
-        setBackground(Color.GRAY);
         setOpaque(true);
+        setBackground(Color.GRAY);
         GridBagConstraints d = new GridBagConstraints();
-        d.insets = new Insets(-35,-20,0,0);  //top padding
+        d.insets = new Insets(-35,-30,0,0);  //top padding
 
         // col 0
         d.gridx = 0;
@@ -500,7 +518,7 @@ public class Container extends JPanel {
         d.gridx = 1;
         // row 0
         d.gridy = 0;
-        d.insets = new Insets(-40,0,0,0);  //top padding
+        d.insets = new Insets(-40,0,0,-20);
         add(sideMenu,d);
 
     }

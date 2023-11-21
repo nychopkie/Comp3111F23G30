@@ -3,7 +3,7 @@ package MazeMap;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.io.*;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -103,6 +103,10 @@ public class MazeMap extends JPanel{
     /** load the map data csv */
     // change the mazedata data lmao
     public void load_MazeMap(String filePath){
+        if (!filePath.endsWith(".csv")) {
+            JOptionPane.showMessageDialog(this, "Chosen file is not a .csv file, please load a valid map.");
+            return;
+        };
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             int row = 0;
@@ -112,7 +116,6 @@ public class MazeMap extends JPanel{
                     // Trim whitespace and then parse the integer
                     MazeMapData[row][col].vertex_type = Integer.parseInt(values[col].trim());
                     refreshColour();
-                    //System.out.println("Maze[" + row + "][" + col + "] = " + maze[row][col]); // Debugging statement
                 }
                 row++;
             }
