@@ -61,7 +61,7 @@ public class Vertex extends JPanel implements MouseListener {
     /**
      * the constructor for Vertex
      */
-    Vertex(int sizeOfSquare, int x, int y, int vertex_type) {
+    public Vertex(int sizeOfSquare, int x, int y, int vertex_type) {
         this.sizeOfSquare = sizeOfSquare;
         this.x = x;
         this.y = y;
