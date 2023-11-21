@@ -17,19 +17,23 @@ public class MazeGame extends JFrame {
     private Jerry jerry;
     private GamePanel panel;
     private Timer timer;
-    private final int DELAY = 500; // Milliseconds, adjust for speed for Jerry
+    private final int DELAY = 400; // Milliseconds, adjust for speed for Jerry
     private Timer tomTimer;
-    private final int TOM_DELAY =400; // Shorter delay for Tom's movement
+    private final int TOM_DELAY =300; // Shorter delay for Tom's movement
     private final int sizeOfSquare = 10;
 
     private Vertex jerryPosition;
+    Vertex entryPoint;
+
+    Vertex exitPoint;
 
     public MazeGame() {
 
         mazeMap = new MazeMap();
         loadMaze("/Users/meng/IdeaProjects/Tom and Jerry/src/main/java/MazaMap_TnJ.csv"); // change this
-        Vertex entryPoint = mazeMap.getEntry();
-        jerryPosition = new Vertex(sizeOfSquare, entryPoint.getx(), entryPoint.gety(), 0); // Assuming 0 is the correct vertex type
+
+        jerryPosition = new Vertex(sizeOfSquare, entryPoint.getx(), entryPoint.gety(), 0);
+
 
         add(mazeMap);
 
@@ -44,15 +48,12 @@ public class MazeGame extends JFrame {
         addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                if (!jerry.isOnPath) {
-                    jerry.moveRightUntilPath(mazeMap);
-                } else {
-                    switch (e.getKeyCode()) {
-                        case KeyEvent.VK_UP:    jerry.setDirection(Direction.UP); break;
-                        case KeyEvent.VK_DOWN:  jerry.setDirection(Direction.DOWN); break;
-                        case KeyEvent.VK_LEFT:  jerry.setDirection(Direction.LEFT); break;
-                        case KeyEvent.VK_RIGHT: jerry.setDirection(Direction.RIGHT); break;
-                    }
+                switch (e.getKeyCode()) {
+                    case KeyEvent.VK_UP:    jerry.setDirection(Direction.UP); break;
+                    case KeyEvent.VK_DOWN:  jerry.setDirection(Direction.DOWN); break;
+                    case KeyEvent.VK_LEFT:  jerry.setDirection(Direction.LEFT); break;
+                    case KeyEvent.VK_RIGHT: jerry.setDirection(Direction.RIGHT); break;
+
                 }
                 panel.repaint();
             }
@@ -81,9 +82,9 @@ public class MazeGame extends JFrame {
     public void loadMaze(String filePath) {
         mazeMap.load_MazeMap(filePath);
 
-        Vertex entryPoint = mazeMap.getEntry();
+        entryPoint = mazeMap.getEntry();
 
-        Vertex exitPoint = mazeMap.getExit();
+        exitPoint = mazeMap.getExit();
 
 
         tom = new Tom(exitPoint.getx(), exitPoint.gety());
@@ -130,25 +131,11 @@ public class MazeGame extends JFrame {
                 return; // Don't move Tom until Jerry has moved
             }
 
-            if (!hasReachedPath) {
-                moveLeftUntilPath(mazeMap);
-            }
-
             // Recalculate the path to Jerry in every move call
             calculatePathToJerry(mazeMap, jerryPosition);
             followPathStepByStep();
         }
 
-        private void moveLeftUntilPath(MazeMap mazeMap) {
-            // Check if the left position is a path or Tom is still in the barrier
-            if (this.x > 0 && (mazeMap.getMazedata()[this.y][this.x - 1].getVertex_type() == 0 || mazeMap.getMazedata()[this.y][this.x].getVertex_type() != 0)) {
-                this.x--; // Move left
-
-                if (mazeMap.getMazedata()[this.y][this.x].getVertex_type() == 0) {
-                    hasReachedPath = true; // Tom has reached the path
-                }
-            }
-        }
 
         private void calculatePathToJerry(MazeMap mazeMap, Vertex jerryPosition) {
             pathToJerry = Shortestpath.shortestPath(mazeMap, this.getCurrentPosition(), jerryPosition, 0);
@@ -183,7 +170,6 @@ public class MazeGame extends JFrame {
 
     class Jerry extends GameEntity {
         private Direction direction;
-        private boolean isOnPath = false;
 
         public Jerry(int x, int y) {
             super(y, x, Color.ORANGE);// swaped
@@ -196,10 +182,7 @@ public class MazeGame extends JFrame {
         }
 
         public void move() {
-            if (!isOnPath) {
-                moveRightUntilPath(mazeMap);
-                return;
-            }
+
             int newX = x, newY = y;
             Vertex[][] mazeData = mazeMap.getMazedata(); // Get maze data from MazeMap
 
@@ -218,19 +201,10 @@ public class MazeGame extends JFrame {
                 jerryHasMoved = true;// Update with new coordinates
             }
         }
-        private void moveRightUntilPath(MazeMap mazeMap) {
-            if (this.x < mazeMap.getCOLS() - 1 && (mazeMap.getMazedata()[this.y][this.x + 1].getVertex_type() == 0 || mazeMap.getMazedata()[this.y][this.x].getVertex_type() != 0)) {
-                this.x++; // Move right
-
-                if (mazeMap.getMazedata()[this.y][this.x].getVertex_type() == 0) {
-                    isOnPath = true; // Jerry has reached the path
-                }
-            }
-        }
 
 
         private boolean isValidMove(int newX, int newY, Vertex[][] mazeData) {
-            return newX >= 0 && newX < size && newY >= 0 && newY < size && mazeData[newY][newX].getVertex_type() == 0;
+            return newX >= 0 && newX < size && newY >= 0 && newY < size && mazeData[newY][newX].getVertex_type() != 1;
         }
 
     }
@@ -256,27 +230,28 @@ public class MazeGame extends JFrame {
             return new Dimension(300, 300);
         }
     }
-    public int findClearVertexRowInLastColumn() {
-        Vertex[][] mazeData = mazeMap.getMazedata();
-        int lastColIndex = mazeData[0].length - 1; // Assuming all rows have the same number of columns
-
-        for (int row = 0; row < mazeData.length; row++) {
-            if (mazeData[row][lastColIndex].getVertex_type() == 0) {
-                return row; // Return the row index if the vertex is clear
-            }
-        }
-
-        return -1; // Return -1 if no clear vertex is found in the last column
-    }
+    //    public int findClearVertexRowInLastColumn() {
+//        Vertex[][] mazeData = mazeMap.getMazedata();
+//        int lastColIndex = mazeData[0].length - 1; // Assuming all rows have the same number of columns
+//
+//        for (int row = 0; row < mazeData.length; row++) {
+//            if (mazeData[row][lastColIndex].getVertex_type() == 0) {
+//                return row; // Return the row index if the vertex is clear
+//            }
+//        }
+//
+//        return -1; // Return -1 if no clear vertex is found in the last column
+//    }
     private void gameLoop() {
         jerry.move(); // Assuming move() uses mazeMap internally
 
         Vertex jerryPosition = getJerryPositionAsVertex();
         tom.move(mazeMap, jerryPosition);
 
+//        int exity=findClearVertexRowInLastColumn();
         Vertex exitPoint = mazeMap.getExit();
-//        int exitX = exitPoint.gety();
-//        int exitY = exitPoint.getx();
+        int exitX = exitPoint.gety();
+        int exitY = exitPoint.getx();
 //
 //        System.out.println("x"+(mazeMap.getMazedata()[0].length - 1));
 //        System.out.println("y"+findClearVertexRowInLastColumn());
@@ -285,9 +260,11 @@ public class MazeGame extends JFrame {
         if (jerry.x == tom.x && jerry.y == tom.y) {
             timer.stop();
             JOptionPane.showMessageDialog(this, "Tom caught Jerry! You lose.");
-        } else if (jerry.x == (mazeMap.getMazedata()[0].length - 1) && jerry.y == findClearVertexRowInLastColumn()) {
+
+        } else if (jerry.x == exitX&& jerry.y == exitY) {
             timer.stop();
             JOptionPane.showMessageDialog(this, "Jerry reached the Exit! You win!");
+
         }
 
         panel.repaint();
