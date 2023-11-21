@@ -403,102 +403,106 @@ public class Container extends JPanel {
 
         if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
             File selectedFile = chooser.getSelectedFile();
-            //MazeGame MazeGame =  new MazeGame(selectedFile.getPath(),screen);
-            MazeGame MazeGame =  new MazeGame("Assets/map/MazeMap_SAMPLE.csv",screen);
-
-            setBackground(Color.GRAY);
-            setOpaque(true);
-            GridBagConstraints d = new GridBagConstraints();
-            d.insets = new Insets(-35,-20,0,0);  //top padding
-
-            // col 0
-            d.gridx = 0;
-            // row 0
-            d.gridy = 0;
-            add(MazeGame.getPanel(),d);
-
-            // side menu
-            JPanel sideMenu = initSideMenu();
-            JLabel title = new JLabel();
-            JLabel description = new JLabel();
-            JPanel buttons = new JPanel();
-            buttons.setOpaque(false);
-
-            // set title
-            title.setText("Play Game");
-            title.setHorizontalAlignment(JLabel.CENTER);
-            title.setFont(new Font("Arial", Font.PLAIN, 65));
-            GridBagConstraints c = new GridBagConstraints();
-            // col 0
-            c.gridx = 0;
-            // row 0
-            c.gridy = 0;
-            c.weighty = 0.5;
-            sideMenu.add(title,c);
-
-            // set description
-            String descText = "here is the play <br>" +
-                    "game function. Put <br>" +
-                    "the instructin of game <br>" +
-                    "here on how to play";
-            description.setText("<html><p>" + descText + "</p></html>");
-            description.setHorizontalAlignment(JLabel.CENTER);
-            description.setFont(new Font("Arial", Font.PLAIN, 23));
-            // col 0
-            c.gridx = 0;
-            // row 1
-            c.gridy = 1;
-            sideMenu.add(description,c);
-
-            // set button
-            buttons.setLayout(new GridLayout(2,1,0,15));
-
-            /** save button */
-            JButton restart = new JButton("Restart");
-            restart.setFont(new Font("Arial", Font.PLAIN, 40));
-            restart.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    MazeGame.stopTimer();
-                    screen.setState(1);
-                    screen.display();
-                }
-            });
-
-            /** exit button */
-            JButton back = new JButton("EXIT");
-            back.setFont(new Font("Arial", Font.PLAIN, 40));
-            back.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    MazeGame.stopTimer();
-                    screen.setState(0);
-                    screen.display();
-                }
-            });
-
-            buttons.add(restart);
-            buttons.add(back);
-            // col 0
-            c.gridx = 0;
-            // row 1
-            c.gridy = 2;
-            c.ipadx = 150;
-            c.ipady = 50;
-            c.weighty = 1.5;
-            sideMenu.add(buttons,c);
-
-            // col 1
-            d.gridx = 1;
-            // row 0
-            d.gridy = 0;
-            d.insets = new Insets(-40,0,0,0);  //top padding
-            add(sideMenu,d);
+            setTestC(selectedFile.getPath());
         }
         else{
             screen.setState(0);
             screen.display();
         }
+    }
+
+    public void setTestC(String path){
+        MazeGame MazeGame =  new MazeGame(path,screen);
+
+        setBackground(Color.GRAY);
+        setOpaque(true);
+        GridBagConstraints d = new GridBagConstraints();
+        d.insets = new Insets(-35,-20,0,0);  //top padding
+
+        // col 0
+        d.gridx = 0;
+        // row 0
+        d.gridy = 0;
+        add(MazeGame.getPanel(),d);
+
+        // side menu
+        JPanel sideMenu = initSideMenu();
+        JLabel title = new JLabel();
+        JLabel description = new JLabel();
+        JPanel buttons = new JPanel();
+        buttons.setOpaque(false);
+
+        // set title
+        title.setText("Play Game");
+        title.setHorizontalAlignment(JLabel.CENTER);
+        title.setFont(new Font("Arial", Font.PLAIN, 65));
+        GridBagConstraints c = new GridBagConstraints();
+        // col 0
+        c.gridx = 0;
+        // row 0
+        c.gridy = 0;
+        c.weighty = 0.5;
+        sideMenu.add(title,c);
+
+        // set description
+        String descText = "here is the play <br>" +
+                "game function. Put <br>" +
+                "the instruction of game <br>" +
+                "here on how to play";
+        description.setText("<html><p>" + descText + "</p></html>");
+        description.setHorizontalAlignment(JLabel.CENTER);
+        description.setFont(new Font("Arial", Font.PLAIN, 23));
+        // col 0
+        c.gridx = 0;
+        // row 1
+        c.gridy = 1;
+        sideMenu.add(description,c);
+
+        // set button
+        buttons.setLayout(new GridLayout(2,1,0,15));
+
+        /** save button */
+        JButton restart = new JButton("Restart");
+        restart.setFont(new Font("Arial", Font.PLAIN, 40));
+        restart.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MazeGame.stopTimer();
+                screen.setState(1);
+                screen.display();
+            }
+        });
+
+        /** exit button */
+        JButton back = new JButton("EXIT");
+        back.setFont(new Font("Arial", Font.PLAIN, 40));
+        back.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MazeGame.stopTimer();
+                screen.setState(0);
+                screen.display();
+            }
+        });
+
+        buttons.add(restart);
+        buttons.add(back);
+        // col 0
+        c.gridx = 0;
+        // row 1
+        c.gridy = 2;
+        c.ipadx = 150;
+        c.ipady = 50;
+        c.weighty = 1.5;
+        sideMenu.add(buttons,c);
+
+        // col 1
+        d.gridx = 1;
+        // row 0
+        d.gridy = 0;
+        d.insets = new Insets(-40,0,0,0);  //top padding
+        add(sideMenu,d);
+
     }
 
 }

@@ -161,7 +161,7 @@ public class Interface extends JFrame {
     /** 6: show test C */
     void showTestC(){
         container = new Container(this);
-        container.setEditMap();
+        container.setTestC("Assets/map/MazeMap_SAMPLE.csv");
 
         add(container);
         setVisible(true);
