@@ -27,7 +27,7 @@ public class MazeGame extends JFrame {
     public MazeGame() {
 
         mazeMap = new MazeMap();
-        loadMaze("/Users/meng/IdeaProjects/Tom and Jerry/src/main/java/MazaMap_TnJ.csv"); // change this
+        loadMaze("Assets/map/MazeMap_SAMPLE.csv"); // change this
         Vertex entryPoint = mazeMap.getEntry();
         jerryPosition = new Vertex(sizeOfSquare, entryPoint.getx(), entryPoint.gety(), 0); // Assuming 0 is the correct vertex type
 
