@@ -418,8 +418,8 @@ public class Container extends JPanel {
     public void setTestC(String path){
         MazeGame MazeGame =  new MazeGame(path,screen);
 
-        setBackground(Color.GRAY);
         setOpaque(true);
+        setBackground(Color.GRAY);
         GridBagConstraints d = new GridBagConstraints();
         d.insets = new Insets(-35,-20,0,0);  //top padding
 
