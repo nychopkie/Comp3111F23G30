@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/placeholder/MazaMap_TnJ.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/placeholder/MazeGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/MazeGameTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +151,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700118480104</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update main function C and test cases">
+      <option name="closed" value="true" />
+      <created>1700118769587</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1700118769587</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -176,6 +181,7 @@
     <MESSAGE value="added the team formation form" />
     <MESSAGE value="style" />
     <MESSAGE value="updates README.md and the project requirements" />
-    <option name="LAST_COMMIT_MESSAGE" value="updates README.md and the project requirements" />
+    <MESSAGE value="update main function C and test cases" />
+    <option name="LAST_COMMIT_MESSAGE" value="update main function C and test cases" />
   </component>
 </project>
