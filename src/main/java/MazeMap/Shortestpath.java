@@ -64,7 +64,7 @@ public class Shortestpath extends JPanel {
 
     }
 
-    private static void addNeighbors(Vertex cell, List<Vertex> list,MazeMap map) {
+    public static void addNeighbors(Vertex cell, List<Vertex> list, MazeMap map) {
         int[][] ds = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
         Vertex[][] MazeMapData = map.getMazedata();
         int ROWS = map.getROWS();
@@ -78,7 +78,7 @@ public class Shortestpath extends JPanel {
     }
 
     // find the neighbor of a cell having a certain distance from the start
-    private static Vertex getNeighbor(Vertex cell, int distance, int[][] distances,MazeMap map) {
+    public static Vertex getNeighbor(Vertex cell, int distance, int[][] distances,MazeMap map) {
         Vertex[][] MazeMapData = map.getMazedata();
         int ROWS = map.getROWS();
         int COLS = map.getCOLS();
@@ -93,7 +93,7 @@ public class Shortestpath extends JPanel {
     }
 
     // check if coordinates are inside the maze
-    private static boolean isValid(int row, int col, int ROWS, int COLS) {
+    public static boolean isValid(int row, int col, int ROWS, int COLS) {
         return row >= 0 && row < ROWS && col >= 0 && col < COLS;
     }
 
