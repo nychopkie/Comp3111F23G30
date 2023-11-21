@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="made sure that the map loadeed for the game must be valid" />
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="merged the function for final build?">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shortestpath.csv" beforeDir="false" afterPath="$PROJECT_DIR$/shortestpath.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/Container.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$13.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$14.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,14 +128,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695396481398</updated>
-    </task>
-    <task id="LOCAL-00011" summary="created the MazeMap class and the function to draw barriers (bare minimum)">
-      <option name="closed" value="true" />
-      <created>1699977395890</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1699977395890</updated>
     </task>
     <task id="LOCAL-00012" summary="write the docstring, better documentation">
       <option name="closed" value="true" />
@@ -509,7 +513,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700554835391</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="merged the function for final build?">
+      <option name="closed" value="true" />
+      <created>1700569766398</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1700569766398</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -536,7 +548,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="what the fuck is gridbaglayout" />
     <MESSAGE value="changed dimention" />
     <MESSAGE value="interface changed" />
     <MESSAGE value="pulled from C" />
@@ -561,7 +572,8 @@
     <MESSAGE value="changed testc" />
     <MESSAGE value="made the start game not shitty background" />
     <MESSAGE value="made sure that the map loadeed for the game must be valid" />
-    <option name="LAST_COMMIT_MESSAGE" value="made sure that the map loadeed for the game must be valid" />
+    <MESSAGE value="merged the function for final build?" />
+    <option name="LAST_COMMIT_MESSAGE" value="merged the function for final build?" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

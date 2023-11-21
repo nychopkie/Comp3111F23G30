@@ -180,7 +180,7 @@ public class Container extends JPanel {
         buttons.setOpaque(false);
 
         // set title
-        title.setText("Edit Map");
+        title.setText("<html><b>Edit Map</b></html>");
         title.setHorizontalAlignment(JLabel.CENTER);
         title.setFont(new Font("Arial", Font.PLAIN, 65));
         GridBagConstraints c = new GridBagConstraints();
@@ -192,14 +192,16 @@ public class Container extends JPanel {
         sideMenu.add(title,c);
 
         // set description
-        String descText = "here is the edit <br>" +
-                "map function. idk <br>" +
-                "would new line works <br>" +
-                "here but oh well worth <br>" +
-                "to try";
+        String descText = "Here is the edit map function.<hr>" +
+                "gray cell = barrier <br>" +
+                "white cell = path <br>" +
+                "blue cell = entry <br>" +
+                "red cell = exit<hr>" +
+                "click the gray or white cells<br>" +
+                "to draw the map";
         description.setText("<html><p>" + descText + "</p></html>");
         description.setHorizontalAlignment(JLabel.CENTER);
-        description.setFont(new Font("Arial", Font.PLAIN, 23));
+        description.setFont(new Font("Arial", Font.PLAIN, 20));
         // col 0
         c.gridx = 0;
         // row 1
@@ -321,7 +323,7 @@ public class Container extends JPanel {
         buttons.setOpaque(false);
 
         // set title
-        title.setText("<html>Shortest<br>Path</html>");
+        title.setText("<html><b>Shortest<br>Path</b></html>");
         title.setHorizontalAlignment(JLabel.CENTER);
         title.setFont(new Font("Arial", Font.PLAIN, 65));
         GridBagConstraints c = new GridBagConstraints();
@@ -333,11 +335,8 @@ public class Container extends JPanel {
         sideMenu.add(title,c);
 
         // set description
-        String descText = "here is the shortest<br>" +
-                "path function. idk <br>" +
-                "would new line works <br>" +
-                "here but oh well worth <br>" +
-                "to try";
+        String descText = "Here is the shortest path function.<hr>" +
+                "Click load to load a map<hr>" ;
         description.setText("<html><p>" + descText + "</p></html>");
         description.setHorizontalAlignment(JLabel.CENTER);
         description.setFont(new Font("Arial", Font.PLAIN, 23));
