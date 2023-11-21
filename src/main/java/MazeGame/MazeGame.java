@@ -9,8 +9,10 @@ import javax.swing.*;
 import MazeMap.Vertex;
 import MazeMap.Shortestpath;
 import MazeMap.MazeMap;
+import Interface.*;
 
-public class MazeGame extends JFrame {
+public class MazeGame{
+    private Interface screen;
     private MazeMap mazeMap;
     private final int size = 30;
     private Tom tom;
@@ -27,25 +29,25 @@ public class MazeGame extends JFrame {
 
     Vertex exitPoint;
 
-    public MazeGame() {
-
+    public MazeGame(String path, Interface screen) {
+        this.screen = screen;
         mazeMap = new MazeMap();
-        loadMaze("/Users/meng/IdeaProjects/Tom and Jerry/src/main/java/MazaMap_TnJ.csv"); // change this
+        loadMaze(path); // change this
 
         jerryPosition = new Vertex(sizeOfSquare, entryPoint.getx(), entryPoint.gety(), 0);
 
 
-        add(mazeMap);
+        //add(mazeMap);
 
         panel = new GamePanel();
-        add(panel);
+        //add(panel);
 
 //        tom = new Tom(29, 1); // Assuming the exit point is at (29, 2) //x,y -> col,row
 //        jerry = new Jerry(0, 12); // Assuming the entry point is at (0, 13) //x,y ->col,row
 
-        pack();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        addKeyListener(new KeyAdapter() {
+        //pack();
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        screen.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
                 switch (e.getKeyCode()) {
@@ -58,8 +60,8 @@ public class MazeGame extends JFrame {
                 panel.repaint();
             }
         });
-        setFocusable(true);
-        setVisible(true);
+        //setFocusable(true);
+        //setVisible(true);
 
         tomTimer = new Timer(TOM_DELAY, e -> {
             tom.move(mazeMap, getJerryPositionAsVertex());
@@ -72,6 +74,14 @@ public class MazeGame extends JFrame {
         timer.start();
 
 
+    }
+
+    public GamePanel getPanel(){
+        return panel;
+    }
+
+    public void stopTimer(){
+        timer.stop();
     }
 
     public Vertex getJerryPositionAsVertex() {
@@ -107,7 +117,7 @@ public class MazeGame extends JFrame {
 
         public void draw(Graphics g) {
             g.setColor(color);
-            g.fillOval(x * 10, y * 10, 10, 10);
+            g.fillOval(x * 25, y * 25, 25, 25);
         }
     }
     private boolean jerryHasMoved=false;
@@ -217,7 +227,7 @@ public class MazeGame extends JFrame {
                 for (int col = 0; col < mazeData[row].length; col++) {
                     if (mazeData[row][col].getVertex_type() == 1) {
                         g.setColor(Color.DARK_GRAY);
-                        g.fillRect(col * 10, row * 10, 10, 10);
+                        g.fillRect(col * 25, row * 25, 25, 25);
                     }
                 }
             }
@@ -227,7 +237,7 @@ public class MazeGame extends JFrame {
 
         @Override
         public Dimension getPreferredSize() {
-            return new Dimension(300, 300);
+            return new Dimension(30*25, 30*25);
         }
     }
     //    public int findClearVertexRowInLastColumn() {
@@ -259,11 +269,11 @@ public class MazeGame extends JFrame {
 
         if (jerry.x == tom.x && jerry.y == tom.y) {
             timer.stop();
-            JOptionPane.showMessageDialog(this, "Tom caught Jerry! You lose.");
+            JOptionPane.showMessageDialog(screen, "Tom caught Jerry! You lose.");
 
         } else if (jerry.x == exitX&& jerry.y == exitY) {
             timer.stop();
-            JOptionPane.showMessageDialog(this, "Jerry reached the Exit! You win!");
+            JOptionPane.showMessageDialog(screen, "Jerry reached the Exit! You win!");
 
         }
 
@@ -284,7 +294,7 @@ public class MazeGame extends JFrame {
 //    }
 
 
-    public static void main(String[] args) {
-        new MazeGame();
-    }
+//    public static void main(String[] args) {
+//        new MazeGame();
+//    }
 }
