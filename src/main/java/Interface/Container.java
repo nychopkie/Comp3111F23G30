@@ -158,7 +158,6 @@ public class Container extends JPanel {
         return sideMenu;
     }
 
-    // TODO: make the checking to see if the map exist a path from start to finish
     public void setEditMap(){
         setBackground(Color.GRAY);
         setOpaque(true);
@@ -397,12 +396,17 @@ public class Container extends JPanel {
         add(sideMenu,d);
     }
 
-    // TODO: this.
     public void setGameScreen(){
         JFileChooser chooser = new JFileChooser();
 
         if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
             File selectedFile = chooser.getSelectedFile();
+            if (!selectedFile.getPath().endsWith(".csv")) {
+                JOptionPane.showMessageDialog(this, "Chosen file is not a .csv file, please load a valid map.");
+                screen.setState(0);
+                screen.display();
+                return;
+            };
             setTestC(selectedFile.getPath());
         }
         else{
