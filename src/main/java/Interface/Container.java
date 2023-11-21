@@ -407,6 +407,8 @@ public class Container extends JPanel {
                 screen.display();
                 return;
             };
+            setOpaque(true);
+            setBackground(Color.GRAY);
             setTestC(selectedFile.getPath());
         }
         else{
@@ -421,7 +423,7 @@ public class Container extends JPanel {
         setOpaque(true);
         setBackground(Color.GRAY);
         GridBagConstraints d = new GridBagConstraints();
-        d.insets = new Insets(-35,-20,0,0);  //top padding
+        d.insets = new Insets(-35,-30,0,0);  //top padding
 
         // col 0
         d.gridx = 0;
@@ -504,7 +506,7 @@ public class Container extends JPanel {
         d.gridx = 1;
         // row 0
         d.gridy = 0;
-        d.insets = new Insets(-40,0,0,0);  //top padding
+        d.insets = new Insets(-40,0,0,-20);
         add(sideMenu,d);
 
     }
