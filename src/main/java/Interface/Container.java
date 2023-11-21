@@ -399,22 +399,34 @@ public class Container extends JPanel {
     public void setGameScreen(){
         JFileChooser chooser = new JFileChooser();
 
-        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
-            File selectedFile = chooser.getSelectedFile();
-            if (!selectedFile.getPath().endsWith(".csv")) {
-                JOptionPane.showMessageDialog(this, "Chosen file is not a .csv file, please load a valid map.");
+        boolean flag = true;
+        while (flag){
+            if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
+                File selectedFile = chooser.getSelectedFile();
+                if (!selectedFile.getPath().endsWith(".csv")) {
+                    JOptionPane.showMessageDialog(this, "Chosen file is not a .csv file, please load a valid map.");
+                    continue;
+                };
+                screen.mazeGame.load_MazeMap(selectedFile.getPath());
+                if(Shortestpath.shortestPath(screen.mazeGame,screen.mazeGame.getEntry(),screen.mazeGame.getExit(),1)==null){
+                    System.out.print("No Path");
+                    JOptionPane.showMessageDialog(this, "Not a valid map, please choose another map");
+                    continue;
+                }
+
+                flag = false;
+
+                setOpaque(true);
+                setBackground(Color.GRAY);
+                setTestC(selectedFile.getPath());
+            }
+            else{
                 screen.setState(0);
                 screen.display();
                 return;
-            };
-            setOpaque(true);
-            setBackground(Color.GRAY);
-            setTestC(selectedFile.getPath());
+            }
         }
-        else{
-            screen.setState(0);
-            screen.display();
-        }
+
     }
 
     public void setTestC(String path){
