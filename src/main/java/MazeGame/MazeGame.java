@@ -84,6 +84,8 @@ public class MazeGame extends JFrame {
         Vertex entryPoint = mazeMap.getEntry();
 
         Vertex exitPoint = mazeMap.getExit();
+        System.out.println(entryPoint.getx());
+        System.out.println(exitPoint.getx());
 
 
         tom = new Tom(exitPoint.getx(), exitPoint.gety());
