@@ -6,8 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="amended">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/Container.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/Interface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MazeGame/MazeGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeGame/MazeGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/Vertex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/Vertex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +92,7 @@
       <recent name="A" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MazeGame">
+  <component name="RunManager" selected="Application.Launcher">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Interface.Launcher" />
       <module name="Comp3111F23G30" />
@@ -107,8 +121,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MazeGame" />
         <item itemvalue="Application.Launcher" />
+        <item itemvalue="Application.MazeGame" />
       </list>
     </recent_temporary>
   </component>
@@ -120,14 +134,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695396481398</updated>
-    </task>
-    <task id="LOCAL-00002" summary="finally got it">
-      <option name="closed" value="true" />
-      <created>1695397728784</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1695397728784</updated>
     </task>
     <task id="LOCAL-00003" summary="added a placeholder in case something really wrong happens">
       <option name="closed" value="true" />
@@ -513,7 +519,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700544809206</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="amended">
+      <option name="closed" value="true" />
+      <created>1700545190178</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1700545190178</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

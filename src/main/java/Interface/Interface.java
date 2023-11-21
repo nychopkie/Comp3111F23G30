@@ -1,6 +1,7 @@
 package Interface;
 
 import MazeMap.*;
+import MazeGame.*;
 
 import java.awt.Dimension;
 import javax.swing.*;
@@ -37,6 +38,7 @@ public class Interface extends JFrame {
         setResizable(false);
         //setLocationRelativeTo(null);
         setVisible(true);
+        setFocusable(true);
 
         setPreferredSize(new Dimension(44*(26),30*(28)-12));
         pack();
@@ -52,7 +54,7 @@ public class Interface extends JFrame {
         this.state = state;
     }
 
-    void clearFrame(){
+    public void clearFrame(){
         getContentPane().removeAll();
         revalidate();
         repaint();
@@ -106,7 +108,7 @@ public class Interface extends JFrame {
     /** 1: to show the game screen */
     void showGameWindow(){
         container = new Container(this);
-        container.setEditMap();
+        container.setGameScreen();
 
         add(container);
         setVisible(true);

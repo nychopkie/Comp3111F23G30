@@ -9,8 +9,10 @@ import javax.swing.*;
 import MazeMap.Vertex;
 import MazeMap.Shortestpath;
 import MazeMap.MazeMap;
+import Interface.*;
 
-public class MazeGame extends JFrame {
+public class MazeGame{
+    private Interface screen;
     private MazeMap mazeMap;
     private final int size = 30;
     private Tom tom;
@@ -24,24 +26,24 @@ public class MazeGame extends JFrame {
 
     private Vertex jerryPosition;
 
-    public MazeGame() {
-
+    public MazeGame(String map,Interface screen) {
+        this.screen = screen;
         mazeMap = new MazeMap();
-        loadMaze("Assets/map/MazeMap_SAMPLE.csv"); // change this
+        loadMaze(map); // change this
         Vertex entryPoint = mazeMap.getEntry();
         jerryPosition = new Vertex(sizeOfSquare, entryPoint.getx(), entryPoint.gety(), 0); // Assuming 0 is the correct vertex type
-
-        add(mazeMap);
+//
+//        add(mazeMap);
 
         panel = new GamePanel();
-        add(panel);
+//        add(panel);
 
 //        tom = new Tom(29, 1); // Assuming the exit point is at (29, 2) //x,y -> col,row
 //        jerry = new Jerry(0, 12); // Assuming the entry point is at (0, 13) //x,y ->col,row
 
-        pack();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        addKeyListener(new KeyAdapter() {
+//        pack();
+//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        screen.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
                 if (!jerry.isOnPath) {
@@ -57,8 +59,8 @@ public class MazeGame extends JFrame {
                 panel.repaint();
             }
         });
-        setFocusable(true);
-        setVisible(true);
+//        setFocusable(true);
+//        setVisible(true);
 
         tomTimer = new Timer(TOM_DELAY, e -> {
             tom.move(mazeMap, getJerryPositionAsVertex());
@@ -73,6 +75,14 @@ public class MazeGame extends JFrame {
 
     }
 
+    public GamePanel getPanel(){
+        return panel;
+    }
+
+    public void stopTimer(){
+        timer.stop();
+    }
+
     public Vertex getJerryPositionAsVertex() {
         return jerryPosition;
     }
@@ -84,8 +94,8 @@ public class MazeGame extends JFrame {
         Vertex entryPoint = mazeMap.getEntry();
 
         Vertex exitPoint = mazeMap.getExit();
-        System.out.println(entryPoint.getx());
-        System.out.println(exitPoint.getx());
+//        System.out.println(entryPoint.getx());
+//        System.out.println(exitPoint.getx());
 
 
         tom = new Tom(exitPoint.getx(), exitPoint.gety());
@@ -108,7 +118,7 @@ public class MazeGame extends JFrame {
 
         public void draw(Graphics g) {
             g.setColor(color);
-            g.fillOval(x * 10, y * 10, 10, 10);
+            g.fillOval(x * 25, y * 25, 25, 25);
         }
     }
     private boolean jerryHasMoved=false;
@@ -232,7 +242,7 @@ public class MazeGame extends JFrame {
 
 
         private boolean isValidMove(int newX, int newY, Vertex[][] mazeData) {
-            return newX >= 0 && newX < size && newY >= 0 && newY < size && mazeData[newY][newX].getVertex_type() == 0;
+            return newX >= 0 && newX < size && newY >= 0 && newY < size && mazeData[newY][newX].getVertex_type() == 0 || mazeData[newY][newX].getVertex_type() == 2 || mazeData[newY][newX].getVertex_type() == 3;
         }
 
     }
@@ -245,7 +255,7 @@ public class MazeGame extends JFrame {
                 for (int col = 0; col < mazeData[row].length; col++) {
                     if (mazeData[row][col].getVertex_type() == 1) {
                         g.setColor(Color.DARK_GRAY);
-                        g.fillRect(col * 10, row * 10, 10, 10);
+                        g.fillRect(col * 25, row * 25, 25, 25);
                     }
                 }
             }
@@ -255,7 +265,7 @@ public class MazeGame extends JFrame {
 
         @Override
         public Dimension getPreferredSize() {
-            return new Dimension(300, 300);
+            return new Dimension(26*30, 26*30);
         }
     }
     public int findClearVertexRowInLastColumn() {
@@ -282,14 +292,15 @@ public class MazeGame extends JFrame {
 //
 //        System.out.println("x"+(mazeMap.getMazedata()[0].length - 1));
 //        System.out.println("y"+findClearVertexRowInLastColumn());
-
+//        System.out.println(entryPoint.getx());
+//        System.out.println(exitPoint.getx());
 
         if (jerry.x == tom.x && jerry.y == tom.y) {
             timer.stop();
-            JOptionPane.showMessageDialog(this, "Tom caught Jerry! You lose.");
-        } else if (jerry.x == (mazeMap.getMazedata()[0].length - 1) && jerry.y == findClearVertexRowInLastColumn()) {
+            JOptionPane.showMessageDialog(panel, "Tom caught Jerry! You lose.");
+        } else if (jerry.x == exitPoint.getx() && jerry.y == size-1) {
             timer.stop();
-            JOptionPane.showMessageDialog(this, "Jerry reached the Exit! You win!");
+            JOptionPane.showMessageDialog(panel, "Jerry reached the Exit! You win!");
         }
 
         panel.repaint();
@@ -309,7 +320,7 @@ public class MazeGame extends JFrame {
 //    }
 
 
-    public static void main(String[] args) {
-        new MazeGame();
-    }
+//    public static void main(String[] args) {
+//        new MazeGame();
+//    }
 }
