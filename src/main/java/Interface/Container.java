@@ -450,7 +450,7 @@ public class Container extends JPanel {
         buttons.setOpaque(false);
 
         // set title
-        title.setText("Play Game");
+        title.setText("<html><b>Play Game</b></html>");
         title.setHorizontalAlignment(JLabel.CENTER);
         title.setFont(new Font("Arial", Font.PLAIN, 65));
         GridBagConstraints c = new GridBagConstraints();
@@ -462,10 +462,11 @@ public class Container extends JPanel {
         sideMenu.add(title,c);
 
         // set description
-        String descText = "here is the play <br>" +
-                "game function. Put <br>" +
-                "the instruction of game <br>" +
-                "here on how to play";
+        String descText = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instruction<hr>" +
+                          "Press arrow key to control<br>" +
+                          "Jerry (Yellow dot) to move to <br>" +
+                          "the exit. Don't get caught by <br> " +
+                          "Tom (Blue dot)";
         description.setText("<html><p>" + descText + "</p></html>");
         description.setHorizontalAlignment(JLabel.CENTER);
         description.setFont(new Font("Arial", Font.PLAIN, 23));
