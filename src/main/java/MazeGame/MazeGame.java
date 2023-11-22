@@ -215,10 +215,6 @@ public class MazeGame extends JFrame {
             this.x = newPosition.getx();
             this.y = newPosition.gety();
         }
-
-        public Vertex[] getPathToJerry() {
-            return this.pathToJerry;
-        }
     }
 
     /**
@@ -279,9 +275,6 @@ public class MazeGame extends JFrame {
         public void setPositionForTesting(Vertex newPosition) {
             this.x = newPosition.getx();
             this.y = newPosition.gety();
-        }
-        public Direction getDirection() {
-            return this.direction;
         }
         // Method to get the x-coordinate of Jerry
         public int getx() {
@@ -384,13 +377,11 @@ public class MazeGame extends JFrame {
     }
 
     public boolean isGameWon() {
-
         Vertex jerryPos = new Vertex(0,getJerry().getx(),getJerry().gety(),0);
         Vertex exitPoint = mazeMap.getExit();
         return (jerryPos.getx()==exitPoint.getx()) && (jerryPos.gety()==exitPoint.gety());
     }
     public boolean isGameLost() {
-
         Vertex jerryPos = new Vertex(0,getJerry().getx(),getJerry().gety(),0);
         Vertex tomPos = getTom().getCurrentPosition();
         return (jerryPos.getx()==tomPos.getx()) && (jerryPos.gety()==tomPos.gety());
