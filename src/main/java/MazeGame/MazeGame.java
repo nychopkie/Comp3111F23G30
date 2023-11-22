@@ -1,3 +1,5 @@
+package MazeGame;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -7,38 +9,44 @@ import MazeMap.MazeMap;
 
 /**
  * =========== MazeGame Class ===========
- * Represents the main game window for the Tom and Jerry maze game.
+ * Main class for the Tom and Jerry maze game.
+ * This class extends JFrame and represents the main window of the game.
  *
  * @attributes:
- * 1. mazeMap: MazeMap object representing the game's maze.
- * 2. size: Fixed size of the maze.
- * 3. tom: GameEntity representing Tom.
- * 4. jerry: GameEntity representing Jerry.
- * 5. panel: JPanel for rendering game components.
- * 6. timer: Timer for game loop and Jerry's movement.
- * 7. DELAY: Delay time for Jerry's movement.
- * 8. tomTimer: Timer for Tom's movement.
- * 9. TOM_DELAY: Delay time for Tom's movement.
- * 10. sizeOfSquare: Size of each square in the maze.
- * 11. jerryPosition: Current position of Jerry in the maze.
- * 12. entryPoint: Entry point vertex of the maze.
- * 13. exitPoint: Exit point vertex of the maze.
+ * - mazeMap: MazeMap object representing the game's maze layout.
+ * - size: Integer representing the fixed size of the maze.
+ * - tom: Tom instance representing the character Tom in the game.
+ * - jerry: Jerry instance representing the character Jerry in the game.
+ * - panel: JPanel for rendering game components.
+ * - timer: Timer for managing the game loop and Jerry's movement.
+ * - DELAY: Integer for delay time in milliseconds for Jerry's movement.
+ * - tomTimer: Timer for Tom's movement.
+ * - TOM_DELAY: Integer for delay time in milliseconds for Tom's movement.
+ * - sizeOfSquare: Integer for the size of each square in the maze.
+ * - jerryPosition: Vertex representing the current position of Jerry in the maze.
+ * - entryPoint: Vertex representing the entry point of the maze.
+ * - exitPoint: Vertex representing the exit point of the maze.
  *
  * @operations:
- * 1. MazeGame: Constructor to initialize the game.
- * 2. loadMaze: Loads the maze configuration from a file.
- * 3. getJerryPositionAsVertex: Returns Jerry's current position as a Vertex.
- * 4. gameLoop: Main game loop to handle game logic.
- * 5. moveJerry: Updates Jerry's position based on direction.
- * 6. isGameWon: Checks if the game is won.
- * 7. isGameLost: Checks if the game is lost.
- * 8. main: Entry point to start the game.
+ * - MazeGame(): Constructor to initialize the game window, load the maze, set up game entities, and start the game timers.
+ * - loadMaze(String filePath): Loads the maze configuration from a specified file path.
+ * - getJerryPositionAsVertex(): Returns Jerry's current position as a Vertex object.
+ * - gameLoop(): Main game loop that handles game logic, updates positions, checks win/lose conditions, and refreshes the display.
+ * - isGameWon(): Checks if Jerry has reached the exit point, indicating a win.
+ * - isGameLost(): Checks if Tom has caught Jerry, indicating a loss.
+ * - main(String[] args): Static entry point to start the game.
+ *
+ * Additional methods for testing:
+ * - getMazeMap(): Returns the MazeMap object.
+ * - getJerry(): Returns the Jerry instance.
+ * - getTom(): Returns the Tom instance.
  */
+
 public class MazeGame extends JFrame {
-    private MazeMap mazeMap;
+    private static MazeMap mazeMap;
     private final int size = 30;
-    private Tom tom;
-    private Jerry jerry;
+    private static Tom tom;
+    private static Jerry jerry;
     private GamePanel panel;
     private Timer timer;
     private final int DELAY = 400; // Milliseconds, adjust for speed for Jerry
@@ -51,13 +59,13 @@ public class MazeGame extends JFrame {
     Vertex exitPoint;
 
     /**
-     * MazeGame Constructor: Initializes the game window, loads the maze,
+     * MazeGame.MazeGame Constructor: Initializes the game window, loads the maze,
      * sets up game entities, and starts the game timers.
      */
     public MazeGame() {
 
         mazeMap = new MazeMap();
-        loadMaze("/Users/meng/IdeaProjects/Tom and Jerry/src/main/java/MazaMap_TnJ.csv"); // change this
+        loadMaze("src/main/java/MazaMap_TnJ.csv"); // change this
 
         jerryPosition = new Vertex(sizeOfSquare, entryPoint.getx(), entryPoint.gety(), 0);
 
@@ -120,16 +128,22 @@ public class MazeGame extends JFrame {
      * Represents a basic game entity in the maze, such as Tom or Jerry.
      *
      * @attributes:
-     * 1. x, y: Coordinates of the entity in the maze.
-     * 2. color: The color used to represent the entity on the game panel.
+     * - x, y: Integer coordinates of the entity in the maze.
+     * - color: Color used to represent the entity on the game panel.
+     * - direction: Direction of the entity's movement.
      *
      * @operations:
-     * 1. GameEntity: Constructor to initialize the entity.
-     * 2. draw: Draws the entity on the game panel.
+     * - GameEntity(int x, int y, Color color): Constructor to initialize the entity with coordinates and color.
+     * - draw(Graphics g): Method to draw the entity on the game panel.
+     * - getx(): Returns the x-coordinate of the entity.
+     * - gety(): Returns the y-coordinate of the entity.
+     * - getColor(): Returns the color of the entity.
      */
-    class GameEntity {
+
+    public static class GameEntity {
         int x, y;
         Color color;
+        Direction direction;
 
         public GameEntity(int x, int y, Color color) {
             this.x = x; //col
@@ -141,30 +155,39 @@ public class MazeGame extends JFrame {
             g.setColor(color);
             g.fillOval(x * 10, y * 10, 10, 10);
         }
+        public int getx() {
+            return this.x;
+        }
+        // Method to get the y-coordinate of Jerry
+        public int gety() {
+            return this.y;
+        }
+
+        public Color getColor() {
+            return this.color;
+        }
     }
     public boolean jerryHasMoved=false;
+
     /**
      * =========== Tom Class ===========
      * Represents the character Tom in the game, extending the GameEntity class.
      *
      * @attributes:
-     * Inherits x, y, color from GameEntity.
-     * Additional attributes:
-     * 1. hasReachedPath: Indicates if Tom has reached his path.
-     * 2. pathToJerry: Array storing the calculated path to Jerry.
-     * 3. pathIndex: Current index in the pathToJerry array.
+     * - Inherits x, y, color from GameEntity.
+     * - pathToJerry: Array of Vertex objects storing the calculated path to Jerry.
+     * - pathIndex: Integer index for the current position in the pathToJerry array.
+     * - flag: Integer flag used in movement logic.
      *
      * @operations:
-     * 1. Tom: Constructor to initialize Tom's position and color.
-     * 2. getCurrentPosition: Returns Tom's current position as a Vertex.
-     * 3. move: Moves Tom towards Jerry based on the calculated path.
-     * 4. calculatePathToJerry: Calculates the shortest path to Jerry.
-     * 5. followPathStepByStep: Follows the calculated path one step at a time.
-     * 6. setPositionForTesting: Sets Tom's position for testing purposes.
-     * 7. getPathToJerry: Returns the current path to Jerry.
+     * - Tom(int x, int y): Constructor to initialize Tom's position and color.
+     * - getCurrentPosition(): Returns Tom's current position as a Vertex.
+     * - move(MazeMap mazeMap, Vertex jerryPosition): Moves Tom towards Jerry based on the calculated path.
+     * - calculatePathToJerry(MazeMap mazeMap, Vertex jerryPosition): Calculates the shortest path to Jerry.
+     * - followPathStepByStep(): Method for Tom to follow the calculated path step by step.
+     * - setPathToJerry(Vertex[] mockPath): Sets a mock path for Tom, used for testing.
      */
-    class Tom extends GameEntity {
-        private boolean hasReachedPath = false;
+    public class Tom extends GameEntity {
         private Vertex[] pathToJerry;  // Store the calculated path to Jerry
         private int pathIndex = 0;
         private int flag=0;
@@ -178,20 +201,17 @@ public class MazeGame extends JFrame {
             return mazeMap.getMazedata()[this.y][this.x];
         }
         public void move(MazeMap mazeMap, Vertex jerryPosition) {
-
             if (!jerryHasMoved) {
-                return; // Don't move Tom until Jerry has moved
+                return;
             }
-
-            // Recalculate the path to Jerry in every move call
-            calculatePathToJerry(mazeMap, jerryPosition);
-            followPathStepByStep();
-        }
-
-
-        public void calculatePathToJerry(MazeMap mazeMap, Vertex jerryPosition) {
+            // Merging calculatePathToJerry logic
             pathToJerry = Shortestpath.shortestPath(mazeMap, this.getCurrentPosition(), jerryPosition, 0);
             pathIndex = 1; // Reset path index to start following the new path
+
+            followPathStepByStep();
+        }
+        public void setPathToJerry(Vertex[] mockPath) {
+            this.pathToJerry = mockPath;
         }
 
         public void followPathStepByStep() {
@@ -210,11 +230,6 @@ public class MazeGame extends JFrame {
 
             }
         }
-        //*** for test case
-        public void setPositionForTesting(Vertex newPosition) {
-            this.x = newPosition.getx();
-            this.y = newPosition.gety();
-        }
     }
 
     /**
@@ -222,25 +237,24 @@ public class MazeGame extends JFrame {
      * Represents the character Jerry in the game, extending the GameEntity class.
      *
      * @attributes:
-     * Inherits x, y, color from GameEntity.
-     * Additional attributes:
-     * 1. direction: The current movement direction of Jerry.
+     * - Inherits x, y, color from GameEntity.
+     * - direction: Direction representing the current movement direction of Jerry.
      *
      * @operations:
-     * 1. Jerry: Constructor to initialize Jerry's position, color, and initial direction.
-     * 2. setDirection: Sets the movement direction of Jerry.
-     * 3. move: Moves Jerry based on the current direction.
-     * 4. isValidMove: Checks if a move is valid within the maze.
-     * 5. setPositionForTesting: Sets Jerry's position for testing purposes.
-     * 6. getDirection: Returns Jerry's current movement direction.
+     * - Jerry(int x, int y): Constructor to initialize Jerry's position, color, and initial direction.
+     * - setDirection(Direction direction): Sets the movement direction of Jerry.
+     * - move(): Moves Jerry based on the current direction and validates the move.
+     * - isValidMove(int newX, int newY, Vertex[][] mazeData): Checks if a proposed move is valid within the maze.
+     * - getDirection(): Returns Jerry's current movement direction.
+     * - getColor(): Returns Jerry's current color.
      */
-    class Jerry extends GameEntity {
+
+    public class Jerry extends GameEntity {
         private Direction direction;
 
         public Jerry(int x, int y) {
             super(y, x, Color.ORANGE);// swaped
             this.direction = Direction.LEFT; // Initial direction
-//            System.out.println("Jerry initialized at: (" + x + ", " + y + ")");
         }
 
         public void setDirection(Direction direction) {
@@ -248,7 +262,6 @@ public class MazeGame extends JFrame {
         }
 
         public void move() {
-
             int newX = x, newY = y;
             Vertex[][] mazeData = mazeMap.getMazedata(); // Get maze data from MazeMap
 
@@ -267,39 +280,25 @@ public class MazeGame extends JFrame {
                 jerryHasMoved = true;// Update with new coordinates
             }
         }
-        private boolean isValidMove(int newX, int newY, Vertex[][] mazeData) {
+        public boolean isValidMove(int newX, int newY, Vertex[][] mazeData) {
             return newX >= 0 && newX < size && newY >= 0 && newY < size && mazeData[newY][newX].getVertex_type() != 1;
         }
-
-        //*** for test case
-        public void setPositionForTesting(Vertex newPosition) {
-            this.x = newPosition.getx();
-            this.y = newPosition.gety();
+        public Direction getDirection() {
+            return this.direction;
         }
-        // Method to get the x-coordinate of Jerry
-        public int getx() {
-            return this.x;
-        }
-        // Method to get the y-coordinate of Jerry
-        public int gety() {
-            return this.y;
-        }
-
     }
+
     /**
      * =========== GamePanel Class ===========
      * Represents the main panel where the game is drawn.
      *
-     * @attributes:
-     * No additional attributes.
-     *
      * @operations:
-     * 1. paintComponent: Custom painting method for the game panel.
-     * 2. getPreferredSize: Returns the preferred size of the game panel.
+     * - paintComponent(Graphics g): Custom painting method for the game panel.
+     * - getPreferredSize(): Returns the preferred size of the game panel.
      */
-    class GamePanel extends JPanel {
+    public static class GamePanel extends JPanel {
         @Override
-        protected void paintComponent(Graphics g) {
+        public void paintComponent(Graphics g) {
             super.paintComponent(g);
             Vertex[][] mazeData = mazeMap.getMazedata();
             for (int row = 0; row < mazeData.length; row++) {
@@ -319,17 +318,15 @@ public class MazeGame extends JFrame {
             return new Dimension(300, 300);
         }
     }
+
     /**
      * =========== Direction Enum ===========
-     * Represents the possible movement directions for Jerry in the game.
+     * Enum representing possible movement directions for Jerry in the game.
      *
      * @attributes:
-     * Enum values: UP, DOWN, LEFT, RIGHT.
-     *
-     * @operations:
-     * No operations, as this is an enum.
+     * - Enum values: UP, DOWN, LEFT, RIGHT.
      */
-    enum Direction {
+    public enum Direction {
         UP, DOWN, LEFT, RIGHT
     }
 
@@ -367,24 +364,6 @@ public class MazeGame extends JFrame {
 
     public Tom getTom() {
         return this.tom;
-    }
-    public void moveJerry(Direction direction) {
-        // Logic to move Jerry based on the direction
-        // This might involve setting Jerry's direction and then calling a method to update his position
-        this.jerry.setDirection(direction);
-        this.jerry.move();
-        jerryHasMoved = true;
-    }
-
-    public boolean isGameWon() {
-        Vertex jerryPos = new Vertex(0,getJerry().getx(),getJerry().gety(),0);
-        Vertex exitPoint = mazeMap.getExit();
-        return (jerryPos.getx()==exitPoint.getx()) && (jerryPos.gety()==exitPoint.gety());
-    }
-    public boolean isGameLost() {
-        Vertex jerryPos = new Vertex(0,getJerry().getx(),getJerry().gety(),0);
-        Vertex tomPos = getTom().getCurrentPosition();
-        return (jerryPos.getx()==tomPos.getx()) && (jerryPos.gety()==tomPos.gety());
     }
 
     public static void main(String[] args) {
