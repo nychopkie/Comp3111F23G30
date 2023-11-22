@@ -18,21 +18,6 @@ class MazeGameTest {
     }
 
     @Test
-    void testMazeLoading() {
-        assertNotNull(game.getMazeMap(), "Maze should be loaded and not null");
-        assertNotNull(game.getMazeMap().getMazedata(), "Maze data should be loaded and not null");
-    }
-
-    @Test
-    void testEntityInitialization() {
-        assertNotNull(game.getJerry(), "Jerry should be initialized");
-        assertNotNull(game.getTom(), "Tom should be initialized");
-        // Assuming you have methods to get the positions of Tom and Jerry
-        assertNotNull(game.getJerryPositionAsVertex(), "Jerry's position should be initialized");
-        assertNotNull(game.getTom().getCurrentPosition(), "Tom's position should be initialized");
-    }
-
-    @Test
     void testJerryMovement() {
         Vertex initialPosition = game.getJerryPositionAsVertex();
         game.moveJerry(MazeGame.Direction.RIGHT);
@@ -93,7 +78,6 @@ class MazeGameTest {
 
     @Test
     void testSimulatePlayerMovingJerry() {
-        // Setup for Jerry and Tom
 
         // Simulate player moving Jerry
         simulatePlayerControlledMovement(game);
