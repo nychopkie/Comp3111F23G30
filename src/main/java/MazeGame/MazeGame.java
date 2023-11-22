@@ -384,15 +384,13 @@ public class MazeGame extends JFrame {
     }
 
     public boolean isGameWon() {
-        // Implement the logic to determine if the game is won
-        // For example, checking if Jerry has reached the exit
+
         Vertex jerryPos = new Vertex(0,getJerry().getx(),getJerry().gety(),0);
         Vertex exitPoint = mazeMap.getExit();
         return (jerryPos.getx()==exitPoint.getx()) && (jerryPos.gety()==exitPoint.gety());
     }
     public boolean isGameLost() {
-        // Implement the logic to determine if the game is won
-        // For example, checking if Jerry has reached the exit
+
         Vertex jerryPos = new Vertex(0,getJerry().getx(),getJerry().gety(),0);
         Vertex tomPos = getTom().getCurrentPosition();
         return (jerryPos.getx()==tomPos.getx()) && (jerryPos.gety()==tomPos.gety());
