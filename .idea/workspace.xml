@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="ammended the description">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shortestpath.csv" beforeDir="false" afterPath="$PROJECT_DIR$/shortestpath.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$13.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$14.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container.class" afterDir="false" />
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="Unit testing doe and make the functions public to fullfil the requirement">
+      <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/Shortestpath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/Shortestpath.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,14 +120,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695396481398</updated>
-    </task>
-    <task id="LOCAL-00014" summary="created interface file, need implementation">
-      <option name="closed" value="true" />
-      <created>1699979440633</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1699979440633</updated>
     </task>
     <task id="LOCAL-00015" summary="added documentation">
       <option name="closed" value="true" />
@@ -520,7 +505,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700577205392</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Unit testing doe and make the functions public to fullfil the requirement">
+      <option name="closed" value="true" />
+      <created>1700589441057</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1700589441057</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -547,7 +540,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="pulled from C" />
     <MESSAGE value="modified the gitignore" />
     <MESSAGE value="added the load map function" />
     <MESSAGE value="added the save map function" />
@@ -572,7 +564,8 @@
     <MESSAGE value="merged the function for final build?" />
     <MESSAGE value="ammended the description" />
     <MESSAGE value="merged dev-build to master" />
-    <option name="LAST_COMMIT_MESSAGE" value="merged dev-build to master" />
+    <MESSAGE value="Unit testing doe and make the functions public to fullfil the requirement" />
+    <option name="LAST_COMMIT_MESSAGE" value="Unit testing doe and make the functions public to fullfil the requirement" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
