@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="supports drawing map by dragging motion now">
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="test vertex">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/Vertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/Vertex.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/VertexTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/VertexTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/Vertex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/Vertex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/VertexTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/VertexTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,14 +155,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695396481398</updated>
-    </task>
-    <task id="LOCAL-00030" summary="added the load map function">
-      <option name="closed" value="true" />
-      <created>1700248121157</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1700248121157</updated>
     </task>
     <task id="LOCAL-00031" summary="added the save map function">
       <option name="closed" value="true" />
@@ -551,7 +540,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700755198685</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="test vertex">
+      <option name="closed" value="true" />
+      <created>1700756477735</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1700756477735</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -578,7 +575,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="corrected the loadmap function to chang entry and exit" />
     <MESSAGE value="deleted smth" />
     <MESSAGE value="added comments" />
     <MESSAGE value="amended" />
@@ -603,7 +599,8 @@
     <MESSAGE value="vertex unit test finalized" />
     <MESSAGE value="fixed dumb mistakes" />
     <MESSAGE value="supports drawing map by dragging motion now" />
-    <option name="LAST_COMMIT_MESSAGE" value="supports drawing map by dragging motion now" />
+    <MESSAGE value="test vertex" />
+    <option name="LAST_COMMIT_MESSAGE" value="test vertex" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
