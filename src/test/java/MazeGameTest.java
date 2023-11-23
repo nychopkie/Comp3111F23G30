@@ -12,23 +12,26 @@ import MazeMap.MazeMap;
 import MazeGame.MazeGame.GameEntity;
 import MazeGame.MazeGame.Direction;
 import java.awt.*;
+import Interface.*;
 
 class MazeGameTest {
 
     private MazeGame game;
+    private Interface screen;
 
     @BeforeEach
     void setUp() {
-        game = new MazeGame();
+        screen = new Interface();
+        game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
         // Assuming there is a method to load the maze that doesn't rely on a hard-coded file path
-        game.loadMaze("src/main/java/MazaMap_TnJ.csv");
+        //game.loadMaze("src/main/java/MazaMap_TnJ.csv");
     }
 
 // MazeGame
 
     @Test
     void testMazeGameConstructor() {
-        MazeGame game = new MazeGame();
+        MazeGame game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
 
         assertNotNull(game.getMazeMap(), "Maze should be initialized.");
         assertNotNull(game.getTom(), "Tom should be initialized.");
@@ -37,8 +40,8 @@ class MazeGameTest {
     }
     @Test
     void testLoadMaze() {
-        MazeGame game = new MazeGame();
-        String testFilePath = "src/main/java/MazaMap_TnJ.csv";
+        MazeGame game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
+        String testFilePath = "Assets/map/MazeMap_SAMPLE2.csv";
 
         game.loadMaze(testFilePath);
 
@@ -48,7 +51,7 @@ class MazeGameTest {
     }
     @Test
     void testGetJerryPositionAsVertex() {
-        MazeGame mazeGame = new MazeGame();
+        MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
         MazeGame.Jerry jerry = mazeGame.new Jerry(0, 0);
         Vertex expectedPosition = new Vertex(0, 12, 5, 0); // Assuming initial position of Jerry
 
@@ -101,7 +104,7 @@ class MazeGameTest {
 
     @Test
     void testGetx() {
-        MazeGame mazeGame = new MazeGame();
+        MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
         MazeGame.Jerry jerry = mazeGame.new Jerry(3, 0);
 
         assertEquals(3, jerry.gety(), "Jerry's x-coordinate should be 3.");
@@ -109,7 +112,7 @@ class MazeGameTest {
 
     @Test
     void testGety() {
-        MazeGame mazeGame = new MazeGame();
+        MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
         MazeGame.Jerry jerry = mazeGame.new Jerry(0, 4);
 
         assertEquals(4, jerry.getx(), "Jerry's y-coordinate should be 4.");
@@ -119,7 +122,7 @@ class MazeGameTest {
     @Test
     void testGetColor() {
         // Assuming Jerry's constructor sets the color to orange
-        MazeGame mazeGame = new MazeGame();
+        MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
         MazeGame.Jerry jerry = mazeGame.new Jerry(0, 0); // Adjust if Jerry is an inner class
         Color expectedColor = Color.ORANGE;
 
@@ -132,7 +135,7 @@ class MazeGameTest {
     // Tom
     @Test
     void testFollowPathStepByStep() {
-        MazeGame mazeGame = new MazeGame();
+        MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
         MazeGame.Tom tom = mazeGame.new Tom(0, 0);
 
         // Mock the path for Tom
@@ -154,7 +157,7 @@ class MazeGameTest {
     }
     @Test
     void testGetCurrentPosition() {
-        MazeGame mazeGame = new MazeGame();
+        MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
         mazeGame.loadMaze("path/to/maze/file"); // Load the maze
         MazeMap mazeMap = mazeGame.getMazeMap();
 
@@ -172,12 +175,12 @@ class MazeGameTest {
 
     @Test
     void testTomMove() {
-        MazeGame mazeGame = new MazeGame();
+        MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
         mazeGame.loadMaze("src/main/java/MazaMap_TnJ.csv"); // Load the maze
         MazeMap mazeMap = mazeGame.getMazeMap();
 
         MazeGame.Tom tom = mazeGame.new Tom(0, 0);
-        Vertex jerryPosition = new Vertex(10,5, 5, 0); // Assuming Jerry's position is (5, 5)
+        Vertex jerryPosition = new Vertex(25,5, 5, 0); // Assuming Jerry's position is (5, 5)
 
         // Save Tom's initial position
         int initialTomX = tom.getx()+1;
@@ -194,7 +197,7 @@ class MazeGameTest {
 
     @Test
     void testJerryMove() {
-        MazeGame mazeGame = new MazeGame();
+        MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
 
         // Test movement UP
         MazeGame.Jerry jerryUp = mazeGame.new Jerry(5, 5);
@@ -223,7 +226,7 @@ class MazeGameTest {
 
     @Test
     void testJerryConstructor() {
-        MazeGame mazeGame = new MazeGame();
+        MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
         MazeGame.Jerry jerry = mazeGame.new Jerry(5, 10);
 
         assertEquals(5, jerry.gety(), "Jerry's initial x should be 5.");
@@ -236,7 +239,7 @@ class MazeGameTest {
 
     @Test
     void testIsValidMove() {
-        MazeGame mazeGame = new MazeGame();
+        MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
         MazeGame.Jerry jerry = mazeGame.new Jerry(0, 0);
 
         Vertex[][] mockMaze = new Vertex[10][10]; // Create a mock maze
@@ -254,7 +257,7 @@ class MazeGameTest {
 
     @Test
     void testSetDirection() {
-        MazeGame mazeGame = new MazeGame();
+        MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
         MazeGame.Jerry jerry = mazeGame.new Jerry(0, 0);
 
         jerry.setDirection(Direction.UP);
@@ -291,39 +294,39 @@ void testPaintComponentColors() {
     @Test
     void testGetPreferredSize() {
         MazeGame.GamePanel panel = new GamePanel();
-        Dimension expected = new Dimension(300, 300); // Replace with the expected dimension
+        Dimension expected = new Dimension(750, 750); // Replace with the expected dimension
         Dimension actual = panel.getPreferredSize();
         assertEquals(expected, actual, "The preferred size should match the expected dimension.");
     }
 
-    @Test
-    void testMainMethod() {
-        String[] args = {}; // Empty arguments for the main method
-
-        try {
-            MazeGame.main(args); // Attempt to run the main method
-        } catch (Exception e) {
-            fail("The main method should not throw an exception.");
-        }
-
-    }
+//    @Test
+//    void testMainMethod() {
+//        String[] args = {}; // Empty arguments for the main method
+//
+//        try {
+//            MazeGame.main(args); // Attempt to run the main method
+//        } catch (Exception e) {
+//            fail("The main method should not throw an exception.");
+//        }
+//
+//    }
 
     // helper functions
     @Test
     void testGetMazeMap() {
-        MazeGame game = new MazeGame();
+        MazeGame game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
         assertNotNull(game.getMazeMap(), "MazeMap should not be null.");
     }
 
     @Test
     void testGetJerry() {
-        MazeGame game = new MazeGame();
+        MazeGame game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
         assertNotNull(game.getJerry(), "Jerry instance should not be null.");
     }
 
     @Test
     void testGetTom() {
-        MazeGame game = new MazeGame();
+        MazeGame game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
         assertNotNull(game.getTom(), "Tom instance should not be null.");
     }
 }

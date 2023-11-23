@@ -420,13 +420,43 @@ public class Container extends JPanel {
             if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
                 File selectedFile = chooser.getSelectedFile();
                 if (!selectedFile.getPath().endsWith(".csv")) {
-                    JOptionPane.showMessageDialog(this, "Chosen file is not a .csv file, please load a valid map.");
+                    //JOptionPane.showMessageDialog(this, "Chosen file is not a .csv file, please load a valid map.");
+                    JOptionPane pane = new JOptionPane("Chosen file is not a .csv file, please load a valid map.",JOptionPane.WARNING_MESSAGE);
+                    JDialog dialog = pane.createDialog(null, "warning");
+                    dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try{
+                                Thread.sleep(5000);
+                            } catch (InterruptedException e){
+                                e.printStackTrace();
+                            }
+                        }
+                    }).start();
+                    dialog.setModal(false);
+                    dialog.setVisible(true);
                     continue;
                 };
                 screen.mazeGame.load_MazeMap(selectedFile.getPath());
                 if(Shortestpath.shortestPath(screen.mazeGame,screen.mazeGame.getEntry(),screen.mazeGame.getExit(),1)==null){
                     System.out.print("No Path");
-                    JOptionPane.showMessageDialog(this, "Not a valid map, please choose another map");
+                    //JOptionPane.showMessageDialog(this, "Not a valid map, please choose another map");
+                    JOptionPane pane = new JOptionPane("Not a valid map, please choose another map",JOptionPane.WARNING_MESSAGE);
+                    JDialog dialog = pane.createDialog(null, "warning");
+                    dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try{
+                                Thread.sleep(5000);
+                            } catch (InterruptedException e){
+                                e.printStackTrace();
+                            }
+                        }
+                    }).start();
+                    dialog.setModal(false);
+                    dialog.setVisible(true);
                     continue;
                 }
 

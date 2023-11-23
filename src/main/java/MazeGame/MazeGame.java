@@ -6,6 +6,7 @@ import javax.swing.*;
 import MazeMap.Vertex;
 import MazeMap.Shortestpath;
 import MazeMap.MazeMap;
+import Interface.*;
 
 /**
  * =========== MazeGame Class ===========
@@ -42,7 +43,8 @@ import MazeMap.MazeMap;
  * - getTom(): Returns the Tom instance.
  */
 
-public class MazeGame extends JFrame {
+public class MazeGame {
+
     private static MazeMap mazeMap;
     private final int size = 30;
     private static Tom tom;
@@ -52,7 +54,9 @@ public class MazeGame extends JFrame {
     private final int DELAY = 400; // Milliseconds, adjust for speed for Jerry
     private Timer tomTimer;
     private final int TOM_DELAY =300; // Shorter delay for Tom's movement
-    private final int sizeOfSquare = 10;
+    private final int sizeOfSquare = 25;
+
+    private final Interface screen;
 
     private Vertex jerryPosition;
     Vertex entryPoint;
@@ -62,22 +66,22 @@ public class MazeGame extends JFrame {
      * MazeGame.MazeGame Constructor: Initializes the game window, loads the maze,
      * sets up game entities, and starts the game timers.
      */
-    public MazeGame() {
-
+    public MazeGame(String path, Interface screen) {
+        this.screen = screen;
         mazeMap = new MazeMap();
-        loadMaze("src/main/java/MazaMap_TnJ.csv"); // change this
+        loadMaze(path); // change this
 
         jerryPosition = new Vertex(sizeOfSquare, entryPoint.getx(), entryPoint.gety(), 0);
 
 
-        add(mazeMap);
+        //add(mazeMap);
 
         panel = new GamePanel();
-        add(panel);
+        //add(panel);
 
-        pack();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        addKeyListener(new KeyAdapter() {
+        //pack();
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        screen.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
                 switch (e.getKeyCode()) {
@@ -90,8 +94,8 @@ public class MazeGame extends JFrame {
                 panel.repaint();
             }
         });
-        setFocusable(true);
-        setVisible(true);
+        //setFocusable(true);
+        //setVisible(true);
 
         tomTimer = new Timer(TOM_DELAY, e -> {
             tom.move(mazeMap, getJerryPositionAsVertex());
@@ -108,6 +112,14 @@ public class MazeGame extends JFrame {
 
     public Vertex getJerryPositionAsVertex() {
         return jerryPosition;
+    }
+
+    public GamePanel getPanel(){
+        return panel;
+    }
+
+    public void stopTimer(){
+        timer.stop();
     }
 
     //    ******* This is where you load the maze!!!!!
@@ -153,7 +165,7 @@ public class MazeGame extends JFrame {
 
         public void draw(Graphics g) {
             g.setColor(color);
-            g.fillOval(x * 10, y * 10, 10, 10);
+            g.fillOval(x * 25, y * 25, 25, 25);
         }
         public int getx() {
             return this.x;
@@ -305,7 +317,7 @@ public class MazeGame extends JFrame {
                 for (int col = 0; col < mazeData[row].length; col++) {
                     if (mazeData[row][col].getVertex_type() == 1) {
                         g.setColor(Color.DARK_GRAY);
-                        g.fillRect(col * 10, row * 10, 10, 10);
+                        g.fillRect(col * 25, row * 25, 25, 25);
                     }
                 }
             }
@@ -315,7 +327,7 @@ public class MazeGame extends JFrame {
 
         @Override
         public Dimension getPreferredSize() {
-            return new Dimension(300, 300);
+            return new Dimension(30 * 25, 30 * 25);
         }
     }
 
@@ -343,11 +355,11 @@ public class MazeGame extends JFrame {
 
         if (jerry.x == tom.x && jerry.y == tom.y) {
             timer.stop();
-            JOptionPane.showMessageDialog(this, "Tom caught Jerry! You lose.");
+            JOptionPane.showMessageDialog(panel, "Tom caught Jerry! You lose.");
 
         } else if (jerry.x == exitX&& jerry.y == exitY) {
             timer.stop();
-            JOptionPane.showMessageDialog(this, "Jerry reached the Exit! You win!");
+            JOptionPane.showMessageDialog(panel, "Jerry reached the Exit! You win!");
 
         }
 
@@ -366,7 +378,7 @@ public class MazeGame extends JFrame {
         return this.tom;
     }
 
-    public static void main(String[] args) {
-        new MazeGame();
-    }
+//    public static void main(String[] args) {
+//        new MazeGame();
+//    }
 }

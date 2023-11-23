@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="Unit testing doe and make the functions public to fullfil the requirement">
-      <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/Shortestpath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/Shortestpath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/Container.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MazeGame/MazeGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeGame/MazeGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MazeGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MazeGameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Direction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$GameEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$GameEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$GamePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Jerry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Jerry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Tom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Tom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/Shortestpath.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/Shortestpath.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +91,7 @@
       <recent name="A" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Launcher">
+  <component name="RunManager" selected="JUnit.MazeGameTest">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Interface.Launcher" />
       <module name="Comp3111F23G30" />
@@ -103,10 +118,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MazeGameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Comp3111F23G30" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MazeGameTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MazeGameTest.testGetTom" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Comp3111F23G30" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MazeGameTest" />
+      <option name="METHOD_NAME" value="testGetTom" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MazeGameTest.testMazeGameConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Comp3111F23G30" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MazeGameTest" />
+      <option name="METHOD_NAME" value="testMazeGameConstructor" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Launcher" />
-        <item itemvalue="Application.MazeGame" />
+        <item itemvalue="JUnit.MazeGameTest" />
+        <item itemvalue="JUnit.MazeGameTest.testMazeGameConstructor" />
+        <item itemvalue="JUnit.MazeGameTest.testGetTom" />
         <item itemvalue="Application.Launcher" />
         <item itemvalue="Application.MazeGame" />
       </list>
@@ -571,5 +616,6 @@
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>A.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeGameTest_testGetTom.ic" NAME="MazeGameTest.testGetTom Coverage Results" MODIFIED="1700719421357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
