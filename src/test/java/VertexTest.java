@@ -128,18 +128,22 @@ public class VertexTest {
     @Test
     void test_handleMouseClick() {
         Vertex path = new Vertex(PIXEL_SIZE,1,1,0);
+        path.changeEditState(true);
         path.handleMouseClick(); // target function
         assertEquals(BARRIER_COLOUR,path.getBackground());
 
         Vertex boundary = new Vertex(PIXEL_SIZE,1,1,1);
+        boundary.changeEditState(true);
         boundary.handleMouseClick(); // target function
         assertEquals(CLEAR_VERTEX_COLOUR,boundary.getBackground());
 
         Vertex entry = new Vertex(PIXEL_SIZE,0,1,2);
+        entry.changeEditState(true);
         entry.handleMouseClick(); // target function
         assertEquals(ENTRY_VERTEX_COLOUR,entry.getBackground());
 
         Vertex exit = new Vertex(PIXEL_SIZE,29,1,3);
+        exit.changeEditState(true);
         exit.handleMouseClick(); // target function
         assertEquals(EXIT_VERTEX_COLOUR,exit.getBackground());
     }
