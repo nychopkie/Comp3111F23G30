@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="chnages path to relative path">
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="added mazemap and vertex unit test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/Vertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/Vertex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MazeMap/MazeMapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MazeMap/MazeMapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MazeMap/VertexTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MazeMap/VertexTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/MazeMap/MazeMapTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MazeMap/MazeMapTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,14 +148,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695396481398</updated>
-    </task>
-    <task id="LOCAL-00018" summary="added documentation">
-      <option name="closed" value="true" />
-      <created>1699982246300</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1699982246300</updated>
     </task>
     <task id="LOCAL-00019" summary="added documentation">
       <option name="closed" value="true" />
@@ -537,7 +533,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700723126760</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="added mazemap and vertex unit test">
+      <option name="closed" value="true" />
+      <created>1700725165317</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1700725165317</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -564,7 +568,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added the save map function" />
     <MESSAGE value="deleted unwanted functions" />
     <MESSAGE value="moved the save function" />
     <MESSAGE value="try try" />
@@ -589,7 +592,8 @@
     <MESSAGE value="Unit testing doe and make the functions public to fullfil the requirement" />
     <MESSAGE value="modified the dialog boc to close automatically" />
     <MESSAGE value="chnages path to relative path" />
-    <option name="LAST_COMMIT_MESSAGE" value="chnages path to relative path" />
+    <MESSAGE value="added mazemap and vertex unit test" />
+    <option name="LAST_COMMIT_MESSAGE" value="added mazemap and vertex unit test" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

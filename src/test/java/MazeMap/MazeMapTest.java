@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import java.io.BufferedReader;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import java.awt.*;
 
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class MazeMapTest {
     //private MazeMap MazeMap;
     private final int SIZE = 30;
+    private final String valid_path = "Assets/map/MazeMap_SAMPLE2.csv";
     MazeMap map;
 
 
@@ -68,11 +70,55 @@ class MazeMapTest {
 
     @Test
     void refreshColour() {
-        
+        // initialize the test variables
+        boolean flag_actual = true;
+
+        // init the expected colours
+        MazeMap map_expected = new MazeMap();
+        map_expected.load_MazeMap(valid_path);
+
+        // init the actual colours with target function call
+        map.load_MazeMap(valid_path);
+        map.refreshColour(); // target function
+
+        // need to check if the colour for each individual vertex is equal
+        for (int i = 0; i < SIZE; ++i){
+            for (int j = 0; j < SIZE; ++j){
+                // must be all true to return true, else if one is false then test do not pass
+                flag_actual = flag_actual && (map_expected.MazeMapData[i][j].getBackground() == map.MazeMapData[i][j].getBackground());
+            }
+        }
+
+        assertTrue(flag_actual);
     }
 
     @Test
     void changeState() {
+        // case 1: change to editable
+        MazeMap edit_change_expected = new MazeMap(); // this is a test map that is editable to be compared with the actual function calls
+        for (int i = 0; i < SIZE; ++i){
+            for (int j = 0; j < SIZE; ++j){
+                edit_change_expected.MazeMapData[i][j].changeEditState(true);
+            }
+        }
+        // 1a: edit --> edit
+        map.changeState(true); // target function
+        boolean flag1a = true;
+        // check each vertex's status
+        for (int i = 0; i < SIZE; ++i){
+            for (int j = 0; j < SIZE; ++j){
+                // must be all true to return true, else if one is false then test do not pass
+                flag1a = flag1a && (edit_change_expected.MazeMapData[i][j].getEditStatus() == map.MazeMapData[i][j].getEditStatus());
+            }
+        }
+        assertTrue(flag1a);
+
+        // 1b: non-edit --> edit
+
+        // case 2: change to non-editable
+        // 2a: edit --> non-edit
+        // 2b: non-edit --> non_edit
+
     }
 
     @Test

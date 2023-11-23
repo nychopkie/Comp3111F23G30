@@ -6,7 +6,6 @@ import java.awt.GridLayout;
 import javax.swing.*;
 import java.io.*;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.Random;
 
 
 /**

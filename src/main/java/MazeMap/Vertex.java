@@ -98,6 +98,11 @@ public class Vertex extends JPanel implements MouseListener {
         return vertex_type;
     }
 
+    // accessor of the edit status of the vertex
+    public boolean getEditStatus() {
+        return canEdit;
+    }
+
     public int gety() {
         return this.y;
     }

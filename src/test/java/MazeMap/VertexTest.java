@@ -26,6 +26,11 @@ class VertexTest {
     }
 
     @Test
+    void getEditStatus() {
+
+    }
+
+    @Test
     void set_Shortest_Path() {
     }
 
