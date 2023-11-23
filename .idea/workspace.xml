@@ -91,7 +91,7 @@
       <recent name="A" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MazeGameTest">
+  <component name="RunManager" selected="JUnit.ShortestPathTest.test_trueorderpath">
     <configuration name="MazeGameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Comp3111F23G30" />
       <option name="PACKAGE_NAME" value="" />
@@ -136,22 +136,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MazeMapTest.test_load_MazeMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Comp3111F23G30" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="MazeMap.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="MazeMap" />
-      <option name="MAIN_CLASS_NAME" value="MazeMap.MazeMapTest" />
-      <option name="METHOD_NAME" value="test_load_MazeMap" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ShortestPathTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Comp3111F23G30" />
       <option name="PACKAGE_NAME" value="" />
@@ -161,13 +145,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ShortestPathTest.test_trueorderpath" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Comp3111F23G30" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ShortestPathTest" />
+      <option name="METHOD_NAME" value="test_trueorderpath" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MazeGameTest" />
+        <item itemvalue="JUnit.ShortestPathTest.test_trueorderpath" />
         <item itemvalue="JUnit.ShortestPathTest" />
+        <item itemvalue="JUnit.MazeGameTest" />
         <item itemvalue="JUnit.MazeMapTest" />
         <item itemvalue="JUnit.MazeMapTest.test_getEntry" />
-        <item itemvalue="JUnit.MazeMapTest.test_load_MazeMap" />
       </list>
     </recent_temporary>
   </component>

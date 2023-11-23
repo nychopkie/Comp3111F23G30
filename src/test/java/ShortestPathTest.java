@@ -191,8 +191,8 @@ public class ShortestPathTest {
         //empty Case: empty Stack
         Stack<Vertex> emptypath = new Stack<>();
         Vertex[] emptyans = {};
-        assertEquals(valid,ans);
-        assertEquals(Shortestpath.trueorderpath(emptypath),emptyans);//target function
+        assertEquals(Arrays.asList(valid),Arrays.asList(ans));
+        assertEquals(Arrays.asList(Shortestpath.trueorderpath(emptypath)),Arrays.asList(emptyans));//target function
     }
     //test void writecsv(Vertex[] path)
     @Test
