@@ -195,7 +195,6 @@ public class MazeMap extends JPanel{
             writer.close();
 
         } catch (IOException f) {
-            System.out.println("An error occurred.");
             f.printStackTrace();
         }
     }
