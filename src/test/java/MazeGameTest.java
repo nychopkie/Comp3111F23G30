@@ -103,19 +103,17 @@ class MazeGameTest {
 
 
     @Test
-    void testGetx() {
+    void testGety() {
         MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
         MazeGame.Jerry jerry = mazeGame.new Jerry(3, 0);
-
-        assertEquals(3, jerry.gety(), "Jerry's x-coordinate should be 3.");
+        assertEquals(3, jerry.gety(), "Jerry's x-coordinate should be 3.");//target function
     }
 
     @Test
-    void testGety() {
+    void testGetx() {
         MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
         MazeGame.Jerry jerry = mazeGame.new Jerry(0, 4);
-
-        assertEquals(4, jerry.getx(), "Jerry's y-coordinate should be 4.");
+        assertEquals(4, jerry.getx(), "Jerry's y-coordinate should be 4.");//target function
     }
 
 
@@ -126,7 +124,7 @@ class MazeGameTest {
         MazeGame.Jerry jerry = mazeGame.new Jerry(0, 0); // Adjust if Jerry is an inner class
         Color expectedColor = Color.ORANGE;
 
-        Color actualColor = jerry.getColor();
+        Color actualColor = jerry.getColor();//target function
 
         assertEquals(expectedColor, actualColor, "Jerry's color should be orange.");
     }
@@ -146,12 +144,12 @@ class MazeGameTest {
         tom.setPathToJerry(mockPath); // Assuming a method to set the path
 
         // First call - Tom should not move
-        tom.followPathStepByStep();
+        tom.followPathStepByStep();//target function
         assertEquals(0, tom.getx(), "Tom's x should remain unchanged.");
         assertEquals(0, tom.gety(), "Tom's y should remain unchanged.");
 
         // Second call - Tom should move to the next step
-        tom.followPathStepByStep();
+        tom.followPathStepByStep();//target function
         assertEquals(1, tom.getx(), "Tom should move to x of the next step.");
         assertEquals(1, tom.gety(), "Tom should move to y of the next step.");
     }
@@ -165,7 +163,7 @@ class MazeGameTest {
         int initialY = 3;
         MazeGame.Tom tom = mazeGame.new Tom(initialX, initialY);
 
-        Vertex currentPosition = tom.getCurrentPosition();
+        Vertex currentPosition = tom.getCurrentPosition();//target function
 
         // Verify that the position returned is the current position of Tom
         assertNotNull(currentPosition, "Current position should not be null.");
@@ -186,7 +184,7 @@ class MazeGameTest {
         int initialTomX = tom.getx()+1;
         int initialTomY = tom.gety()+1;
         // Move Tom towards Jerry
-        tom.move(mazeMap, jerryPosition);
+        tom.move(mazeMap, jerryPosition);//target function
 
         // Check if Tom's position has changed and is closer to Jerry
         assertTrue(tom.getx() != initialTomX || tom.gety() != initialTomY, "Tom should have moved.");
@@ -202,32 +200,32 @@ class MazeGameTest {
         // Test movement UP
         MazeGame.Jerry jerryUp = mazeGame.new Jerry(5, 5);
         jerryUp.setDirection(Direction.UP);
-        jerryUp.move();
+        jerryUp.move();//target function
         assertEquals(4, jerryUp.gety(), "Jerry should move up by one unit.");
 
         // Test movement DOWN
         MazeGame.Jerry jerryDown = mazeGame.new Jerry(5, 5);
         jerryDown.setDirection(Direction.DOWN);
-        jerryDown.move();
+        jerryDown.move();//target function
         assertEquals(6, jerryDown.gety(), "Jerry should move down by one unit.");
 
         // Test movement LEFT
         MazeGame.Jerry jerryLeft = mazeGame.new Jerry(6, 5);
         jerryLeft.setDirection(Direction.LEFT);
-        jerryLeft.move();
+        jerryLeft.move();//target function
         assertEquals(4, jerryLeft.getx(), "Jerry should move left by one unit.");
 
         // Test movement RIGHT
         MazeGame.Jerry jerryRight = mazeGame.new Jerry(5, 6);
         jerryRight.setDirection(Direction.RIGHT);
-        jerryRight.move();
+        jerryRight.move();//target function
         assertEquals(7, jerryRight.getx(), "Jerry should move right by one unit.");
     }
 
     @Test
     void testJerryConstructor() {
         MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
-        MazeGame.Jerry jerry = mazeGame.new Jerry(5, 10);
+        MazeGame.Jerry jerry = mazeGame.new Jerry(5, 10); //target function
 
         assertEquals(5, jerry.gety(), "Jerry's initial x should be 5.");
         assertEquals(10, jerry.getx(), "Jerry's initial y should be 10.");
@@ -251,7 +249,7 @@ class MazeGameTest {
             }
         }
 
-        assertTrue(jerry.isValidMove(1, 1, mockMaze), "Move should be valid in an open path.");
+        assertTrue(jerry.isValidMove(1, 1, mockMaze), "Move should be valid in an open path.");//target function
         // You can add more assertions for different scenarios, like moving into a wall or outside the maze.
     }
 
