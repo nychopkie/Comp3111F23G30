@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
+import java.io.File;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -23,12 +24,14 @@ class MazeMapTest {
     private final String valid_unplayable_path = "Assets/Test_map/MazeMap_InvalidExample.csv";
     private final String non_existing_path = "Assets/Test_map/hehehe.csv";
     private final String not_csv_path = "Assets/Test_map/notCsv.txt";
+    private final String save_path = "Assets/Test_map/save_map.csv";
     MazeMap map;
 
 
     @BeforeEach
     void setUp(){
         map = new MazeMap();
+        map.setSavePath(save_path);
     }
 
     @Test
@@ -192,9 +195,41 @@ class MazeMapTest {
 
     @Test
     void save_MazeMap() {
+        // revert to the basic state
+        File file = new File(save_path);
+        if (file.exists()){
+            file.delete();
+        }
+
+        // load a map in
+        map.load_MazeMap(valid_path);
+        map.save_MazeMap(); // target function
+
+        MazeMap map_expected1 = new MazeMap();
+        map_expected1.load_MazeMap(valid_path);
+
+        MazeMap map_expected2 = new MazeMap();
+        map_expected2.load_MazeMap(valid_unplayable_path);
+
+        boolean flag1 = true;
+        boolean flag2 = true;
+        for (int i = 0; i < SIZE; ++i){
+            for (int j = 0; j < SIZE; ++j){
+                flag1 = flag1 && (map.MazeMapData[i][j].getVertex_type() == map_expected1.MazeMapData[i][j].getVertex_type());
+                // as long as one does not match it is still false
+                flag2 = flag2 && (map.MazeMapData[i][j].getVertex_type() == map_expected2.MazeMapData[i][j].getVertex_type());
+            }
+        }
+
+        assertTrue(flag1); // test to see if it can save the correct map
+        assertFalse(flag2); // test to see if it can save the correct map
+
+        file.delete();
     }
 
     @Test
     void getMazedata() {
+        Vertex[][] map_actual = map.getMazedata(); // target function
+        assertEquals(map.MazeMapData,map_actual);
     }
 }

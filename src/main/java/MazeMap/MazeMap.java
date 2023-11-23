@@ -37,7 +37,8 @@ public class MazeMap extends JPanel{
     //need exit and entry as instance variables to call shortestpath between entry n exit
     private int entry;
     private int exit ;
-    private int seed = 0;
+    private String savePath = "Assets/map/MazeMap_Custom.csv";
+
     public MazeMap() {
         super();
         // the gap colour
@@ -83,6 +84,9 @@ public class MazeMap extends JPanel{
     public int getCOLS(){
         return COLS;
     }
+    public void setSavePath(String path){
+        savePath = path;
+    }
 
     /** helper function to refresh map colour */
     public void refreshColour(){
@@ -103,7 +107,6 @@ public class MazeMap extends JPanel{
     }
 
     /** load the map data csv */
-    // change the mazedata data lmao
     public boolean load_MazeMap(String filePath){
         if (!filePath.endsWith(".csv")) {
             JOptionPane pane = new JOptionPane("Chosen file is not a .csv file, please load a valid map.",JOptionPane.WARNING_MESSAGE);
@@ -172,7 +175,7 @@ public class MazeMap extends JPanel{
     /** save map data */
     public void save_MazeMap(){
         try {
-            File file = new File("Assets/map/MazeMap_Custom.csv");
+            File file = new File(savePath);
             // write into it according to the format
             PrintWriter pw = new PrintWriter(file);
             pw.close();
