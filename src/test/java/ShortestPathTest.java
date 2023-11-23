@@ -35,11 +35,11 @@ public class ShortestPathTest {
         //int[] validbcol = {0, 1, 28, 29};
         // invalid boundary case:
         boolean flag_bcase1 =!Shortestpath.isValid(-1, 30, ROWS, COLS) ;//target function
-        boolean flag_bcase2 =!Shortestpath.isValid(30,-1 , ROWS, COLS);
+        boolean flag_bcase2 =!Shortestpath.isValid(30,-1 , ROWS, COLS);//target function
 
         //valid boundary case:
-        boolean flag_bcase3 = Shortestpath.isValid(0, 0, ROWS, COLS);
-        boolean flag_bcase4 = Shortestpath.isValid(1,1 , ROWS, COLS);
+        boolean flag_bcase3 = Shortestpath.isValid(0, 0, ROWS, COLS);//target function
+        boolean flag_bcase4 = Shortestpath.isValid(1,1 , ROWS, COLS);//target function
 
         boolean boundary = flag_bcase1 && flag_bcase2 && flag_bcase3 && flag_bcase4;
         assertTrue(boundary);
@@ -50,7 +50,7 @@ public class ShortestPathTest {
         int COLS = map.getCOLS();
         //Valid: 0,0 to 29,29
         boolean valid = Shortestpath.isValid(5,21,ROWS,COLS) ;//target function
-        boolean invalid = !Shortestpath.isValid(-10,100,ROWS,COLS);
+        boolean invalid = !Shortestpath.isValid(-10,100,ROWS,COLS);//target function
         assertTrue(valid&&invalid);
     }
 
@@ -74,21 +74,21 @@ public class ShortestPathTest {
         List<Vertex> neighbors2 = new ArrayList<>();
         Vertex[] temp2 = {map.getMazedata()[1][5],map.getMazedata()[0][4],map.getMazedata()[0][6]};
         List<Vertex> ans2 = Arrays.asList(temp2);
-        Shortestpath.addNeighbors(target2,neighbors2,map);
+        Shortestpath.addNeighbors(target2,neighbors2,map);//target function
         assertEquals(ans2,neighbors2);
         //Case: Vertex in last row, only up,left,right
         Vertex target3 = map.getMazedata()[ROWS-1][5];
         List<Vertex> neighbors3 = new ArrayList<>();
         Vertex[] temp3 = {map.getMazedata()[ROWS-2][5],map.getMazedata()[ROWS-1][4],map.getMazedata()[ROWS-1][6]};
         List<Vertex> ans3 = Arrays.asList(temp3);
-        Shortestpath.addNeighbors(target3,neighbors3,map);
+        Shortestpath.addNeighbors(target3,neighbors3,map);//target function
         assertEquals(ans3,neighbors3);
         //Case: Vertex in last col,only up,down,left
         Vertex target4 = map.getMazedata()[5][COLS-1];
         List<Vertex> neighbors4 = new ArrayList<>();
         Vertex[] temp4 = {map.getMazedata()[4][COLS-1],map.getMazedata()[6][COLS-1],map.getMazedata()[5][COLS-2]};
         List<Vertex> ans4 = Arrays.asList(temp4);
-        Shortestpath.addNeighbors(target4,neighbors4,map);
+        Shortestpath.addNeighbors(target4,neighbors4,map);//target function
         assertEquals(ans4,neighbors4);
     }
     @Test
@@ -173,7 +173,7 @@ public class ShortestPathTest {
         assertEquals(output,map.getMazedata()[9][9]);
 
         //Case: don't have that distance nearby, return null
-        Vertex nulloutput = Shortestpath.getNeighbor(cell,6,distances,map);
+        Vertex nulloutput = Shortestpath.getNeighbor(cell,6,distances,map);//target function!
         assertEquals(nulloutput,null);
 
     }
@@ -193,7 +193,7 @@ public class ShortestPathTest {
         Stack<Vertex> emptypath = new Stack<>();
         Vertex[] emptyans = {};
         assertEquals(valid,ans);
-        assertEquals(Shortestpath.trueorderpath(emptypath),emptyans);
+        assertEquals(Shortestpath.trueorderpath(emptypath),emptyans);//target function
     }
     //test void writecsv(Vertex[] path)
     @Test
@@ -227,7 +227,7 @@ public class ShortestPathTest {
         //Case: empty Vertex Array
         boolean empty=false;
         Vertex[] emptypath = {};
-        Shortestpath.writecsv(emptypath);
+        Shortestpath.writecsv(emptypath);//target function
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))){
             br.readLine();
             if(br.readLine() == null) empty = true;
@@ -262,7 +262,7 @@ public class ShortestPathTest {
             e.printStackTrace();
         }
         //mode 2, clear vertex start and clear vertex end
-        Vertex[] output2 = Shortestpath.shortestPath(map,map.getMazedata()[18][12],map.getMazedata()[16][6],0);
+        Vertex[] output2 = Shortestpath.shortestPath(map,map.getMazedata()[18][12],map.getMazedata()[16][6],0);//target function
         fileName = "Assets/Test_path/Test_path2.csv";
         boolean flag2 = true;
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
@@ -282,7 +282,7 @@ public class ShortestPathTest {
             e.printStackTrace();
         }
         //case 3 , invalid , no possible path
-        Vertex[] output3 = Shortestpath.shortestPath(map,map.getMazedata()[0][0],map.getExit(),0);
+        Vertex[] output3 = Shortestpath.shortestPath(map,map.getMazedata()[0][0],map.getExit(),0);//target function
         boolean flag3 = output3 == null;
         assertTrue(flag&&flag2&&flag3);
     }
