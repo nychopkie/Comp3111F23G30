@@ -228,8 +228,19 @@ public class Container extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFileChooser chooser = new JFileChooser();
+                int returnVal;
+                // for unit test
+                if (Interface.testMode == 1){
+                    returnVal = JFileChooser.APPROVE_OPTION;
+                }
+                if (Interface.testMode == 2){
+                    returnVal = JFileChooser.CANCEL_OPTION;
+                }
+                else{
+                    returnVal = chooser.showOpenDialog(null);
+                }
 
-                if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
+                if (returnVal == JFileChooser.APPROVE_OPTION){
                     File selectedFile = chooser.getSelectedFile();
                     screen.mazeGame.load_MazeMap(selectedFile.getPath());
                 }
@@ -326,17 +337,19 @@ public class Container extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFileChooser chooser = new JFileChooser();
+                int returnVal;
 
                 boolean flag = true;
                 while (flag){
-                    int returnVal = chooser.showOpenDialog(null);
-
                     // for unit test
                     if (Interface.testMode == 1){
                         returnVal = JFileChooser.APPROVE_OPTION;
                     }
                     if (Interface.testMode == 2){
                         returnVal = JFileChooser.CANCEL_OPTION;
+                    }
+                    else{
+                        returnVal = chooser.showOpenDialog(null);
                     }
 
                     if (returnVal == JFileChooser.APPROVE_OPTION){
@@ -424,11 +437,10 @@ public class Container extends JPanel {
 
     public void setGameScreen(){
         JFileChooser chooser = new JFileChooser();
+        int returnVal;
 
         boolean flag = true;
         while (flag){
-            int returnVal;
-
             // for unit test
             if (Interface.testMode == 1){
                 returnVal = JFileChooser.APPROVE_OPTION;
