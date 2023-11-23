@@ -73,13 +73,13 @@ public class Vertex extends JPanel implements MouseListener {
 
     public void colourByType(){
         if (vertex_type == 0) {
-            setTheColor(CLEAR_VERTEX_COLOUR);
+            setBackground(CLEAR_VERTEX_COLOUR);
         } else if (vertex_type == 1) {
-            setTheColor(BARRIER_COLOUR);
+            setBackground(BARRIER_COLOUR);
         } else if (vertex_type == 2) {
-            setTheColor(ENTRY_VERTEX_COLOUR);
+            setBackground(ENTRY_VERTEX_COLOUR);
         } else {
-            setTheColor(EXIT_VERTEX_COLOUR);
+            setBackground(EXIT_VERTEX_COLOUR);
         };
     }
 
@@ -90,7 +90,7 @@ public class Vertex extends JPanel implements MouseListener {
 
     //mutator
     public void set_Shortest_Path() {
-        setTheColor(SP_VERTEX_COLOUR);
+        setBackground(SP_VERTEX_COLOUR);
     }
 
     //accessor
@@ -116,6 +116,10 @@ public class Vertex extends JPanel implements MouseListener {
      */
     @Override
     public void mouseClicked(MouseEvent e) {
+        handleMouseClick();
+    }
+
+    public void handleMouseClick(){
         if (canEdit){
             // if the point is the entry or exit or outermost barrier then no change
             if (this.vertex_type == 2 || this.vertex_type == 3 || this.x * this.y == 0 || this.x == 29 || this.y == 29) {
@@ -123,23 +127,15 @@ public class Vertex extends JPanel implements MouseListener {
             }
             // if the vertex is a PATH >>> change to BARRIER
             if (this.vertex_type == 0) {
-                setTheColor(BARRIER_COLOUR);
+                setBackground(BARRIER_COLOUR);
                 this.vertex_type = 1;
-
             }
             // if the vertex is a BARRIER >>> change to PATH
             else {
-                setTheColor(CLEAR_VERTEX_COLOUR);
+                setBackground(CLEAR_VERTEX_COLOUR);
                 this.vertex_type = 0;
             }
         }
-    }
-
-    /**
-     * modifier function to handle the colour of the vertex
-     */
-    void setTheColor(Color theColor) {
-        setBackground(theColor);
     }
 
     @Override
