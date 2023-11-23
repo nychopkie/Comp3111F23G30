@@ -167,21 +167,8 @@ public class Vertex extends JPanel implements MouseListener {
     }
 
     public void handleMouseEntered(){
-        if (canEdit && draw){
-            // if the point is the entry or exit or outermost barrier then no change
-            if (this.vertex_type == 2 || this.vertex_type == 3 || this.x * this.y == 0 || this.x == 29 || this.y == 29) {
-                return;
-            }
-            // if the vertex is a PATH >>> change to BARRIER
-            if (this.vertex_type == 0) {
-                setBackground(BARRIER_COLOUR);
-                this.vertex_type = 1;
-            }
-            // if the vertex is a BARRIER >>> change to PATH
-            else {
-                setBackground(CLEAR_VERTEX_COLOUR);
-                this.vertex_type = 0;
-            }
+        if (draw){
+            handleMouseClick();
         }
     }
 
@@ -189,4 +176,5 @@ public class Vertex extends JPanel implements MouseListener {
     public void mouseExited(MouseEvent e) {
         // pass
     }
+
 }

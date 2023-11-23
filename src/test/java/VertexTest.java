@@ -147,4 +147,34 @@ public class VertexTest {
         exit.handleMouseClick(); // target function
         assertEquals(EXIT_VERTEX_COLOUR,exit.getBackground());
     }
+
+    @Test
+    void test_handleMousePressed(){
+        Vertex vertex = new Vertex(PIXEL_SIZE,1,1,0);
+        vertex.handleMousePressed(); // target function
+        assertTrue(Vertex.draw);
+    }
+
+    @Test
+    void test_handleMouseReleased(){
+        Vertex vertex = new Vertex(PIXEL_SIZE,1,1,0);
+        vertex.handleMouseReleased(); // target function
+        assertFalse(Vertex.draw);
+    }
+
+    @Test
+    void test_handleMouseEntered() {
+        Vertex allow_draw = new Vertex(PIXEL_SIZE,1,1,0);
+        allow_draw.changeEditState(true);
+        Vertex.draw = true;
+        allow_draw.handleMouseEntered(); // target function
+        assertEquals(BARRIER_COLOUR,allow_draw.getBackground());
+
+        Vertex not_allow_draw = new Vertex(PIXEL_SIZE,1,1,1);
+        not_allow_draw.changeEditState(true);
+        Vertex.draw = false;
+        not_allow_draw.handleMouseEntered(); // target function
+        assertNotEquals(CLEAR_VERTEX_COLOUR,not_allow_draw.getBackground());
+    }
+
 }
