@@ -7,7 +7,7 @@ public class MazeMapTest {
     private final int SIZE = 30;
 
     @Test
-    void test_getEntry() {
+    protected void test_getEntry() {
         MazeMap map = new MazeMap();
         Vertex entry_actual = map.getEntry(); // target function
         Vertex entry_expected = null;
@@ -20,7 +20,7 @@ public class MazeMapTest {
     }
 
     @Test
-    void test_getExit() {
+    protected void test_getExit() {
         MazeMap map = new MazeMap();
         Vertex exit_actual = map.getExit(); // target function
         Vertex exit_expected = null;
@@ -33,7 +33,7 @@ public class MazeMapTest {
     }
 
     @Test
-    void test_getROWS() {
+    protected void test_getROWS() {
         MazeMap map = new MazeMap();
         int row_expected = 30;
         int row_actual = map.getROWS(); // Target function
@@ -42,7 +42,7 @@ public class MazeMapTest {
     }
 
     @Test
-    void test_getCOLS() {
+    protected void test_getCOLS() {
         MazeMap map = new MazeMap();
         int col_expected = 30;
         int col_actual = map.getCOLS(); // Target function
@@ -51,7 +51,7 @@ public class MazeMapTest {
     }
 
     @Test
-    void test_refreshColour() {
+    protected void test_refreshColour() {
         MazeMap map = new MazeMap();
         // initialize the test variables
         boolean flag_actual = true;
@@ -76,7 +76,7 @@ public class MazeMapTest {
     }
 
     @Test
-    void test_changeState() {
+    protected void test_changeState() {
         MazeMap map1 = new MazeMap();
         // case 1: change to editable
         MazeMap edit_change_expected = new MazeMap(); // this is a test map that is editable to be compared with the actual function calls
@@ -186,7 +186,7 @@ public class MazeMapTest {
     }
 
     @Test
-    void test_load_MazeMap() {
+    protected void test_load_MazeMap() {
         // load a valid map1 - playable (should be able to load)
         MazeMap map1 = new MazeMap();
         assertTrue(map1.load_MazeMap("Assets/Test_map/MazeMap_SAMPLE2.csv"),"This loads a valid csv file"); // target function: load_MazeMap
@@ -205,7 +205,7 @@ public class MazeMapTest {
     }
 
     @Test
-    void test_save_MazeMap() {
+    protected void test_save_MazeMap() {
         MazeMap map = new MazeMap();
         map.setSavePath("Assets/Test_map/save_map.csv");
         // revert to the basic state
@@ -241,14 +241,14 @@ public class MazeMapTest {
     }
 
     @Test
-    void test_getMazedata() {
+    protected void test_getMazedata() {
         MazeMap map = new MazeMap();
         Vertex[][] map_actual = map.getMazedata(); // target function
         assertEquals(map.getMazedata(),map_actual);
     }
 
     @Test
-    void test_constructor(){
+    protected void test_constructor(){
         MazeMap map = null;
         map = new MazeMap(); // target function
 
