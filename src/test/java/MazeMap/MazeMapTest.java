@@ -178,16 +178,16 @@ class MazeMapTest {
     @Test
     void load_MazeMap() {
         // load a valid map1 - playable (should be able to load)
-        assertTrue(map.load_MazeMap(valid_path)); // target function: load_MazeMap
+        assertTrue("This loads a valid csv file",map.load_MazeMap(valid_path)); // target function: load_MazeMap
 
         // load a file that does not exist
-        assertFalse(map.load_MazeMap(non_existing_path)); // target function: load_MazeMap
+        assertFalse(map.load_MazeMap(non_existing_path),"This loads a file that does not exist"); // target function: load_MazeMap
 
         // load a file that is not csv
-        assertFalse(map.load_MazeMap(not_csv_path)); // target function: load_MazeMap
+        assertFalse(map.load_MazeMap(not_csv_path),"This loads a file that is not a csv file"); // target function: load_MazeMap
 
         // load nothing aka pass null
-        assertFalse(map.load_MazeMap(""));// target function: load_MazeMap
+        assertFalse(map.load_MazeMap(""), "This loads empty string"); // target function: load_MazeMap
     }
 
     @Test
