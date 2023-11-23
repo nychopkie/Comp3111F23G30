@@ -149,7 +149,7 @@ public class Container extends JPanel {
         navigation.add(back);
     }
 
-    JPanel initSideMenu(){
+    public JPanel initSideMenu(){
         JPanel sideMenu = new JPanel();
         sideMenu.setPreferredSize(new Dimension(380,30*(25+1)));
         sideMenu.setBackground(Color.GRAY);

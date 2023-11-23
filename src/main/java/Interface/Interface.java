@@ -54,20 +54,15 @@ public class Interface extends JFrame {
         this.state = state;
     }
 
-    public void clearFrame(){
+    /** display the interface according to the state */
+    public void display(){
         getContentPane().removeAll();
         revalidate();
         repaint();
-    }
-
-    /** display the interface according to the state */
-    void display(){
-        clearFrame();
 
         if (state == 0){
             showMainMenu();
         }
-        // TODO: this should be same as func C, random a map or specify map?
         else if (state == 1){
             showGameWindow();
         }
@@ -78,13 +73,13 @@ public class Interface extends JFrame {
             showTestingMenu();
         }
         else if (state == 4){
-            showTestA();
+            showMapEdit();
         }
         else if (state == 5){
             showTestB();
         }
         else if (state == 6){
-            showTestC();
+            showGameWindow();
         }
     }
 
@@ -155,23 +150,6 @@ public class Interface extends JFrame {
         setVisible(true);
     }
 
-    /** 4: show test A */
-    void showTestA(){
-        ImageIcon img = new ImageIcon("Assets/Images/transparent.png");
-        JLabel background = new JLabel();
-        Image image = img.getImage(); // transform it
-        Image bg = image.getScaledInstance(44*(26), 30*(28)-12,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
-        img = new ImageIcon(bg);  // transform it back
-        background.setIcon(img);
-        setContentPane(background);
-
-        container = new Container(this);
-        container.setEditMap();
-
-        add(container);
-        setVisible(true);
-    }
-
     /** 5: show test B */
     void showTestB(){
         ImageIcon img = new ImageIcon("Assets/Images/transparent.png");
@@ -184,24 +162,6 @@ public class Interface extends JFrame {
 
         container = new Container(this);
         container.setShortestPathExample();
-
-        add(container);
-        setVisible(true);
-    }
-
-    // TODO: this.
-    /** 6: show test C */
-    void showTestC(){
-        ImageIcon img = new ImageIcon("Assets/Images/transparent.png");
-        JLabel background = new JLabel();
-        Image image = img.getImage(); // transform it
-        Image bg = image.getScaledInstance(44*(26), 30*(28)-12,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
-        img = new ImageIcon(bg);  // transform it back
-        background.setIcon(img);
-        setContentPane(background);
-
-        container = new Container(this);
-        container.setTestC("Assets/map/MazeMap_SAMPLE.csv");
 
         add(container);
         setVisible(true);
