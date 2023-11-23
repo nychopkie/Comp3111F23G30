@@ -4,15 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="added accessor for unit test">
-      <change afterPath="$PROJECT_DIR$/Assets/Test_map/MazeMap_InvalidExample.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Test_map/MazeMap_SAMPLE2.csv" afterDir="false" />
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="made stuff better to test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/MazeMap/MazeMapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MazeMap/MazeMapTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/Vertex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/Vertex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/MazeMap/MazeMapTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MazeMap/MazeMapTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/MazeMap/VertexTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MazeMap/VertexTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ShortestPathTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ShortestPathTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,14 +154,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695396481398</updated>
-    </task>
-    <task id="LOCAL-00021" summary="updated the colour choices">
-      <option name="closed" value="true" />
-      <created>1699984158307</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1699984158307</updated>
     </task>
     <task id="LOCAL-00022" summary="added the interface now the interface is the in charge of the display">
       <option name="closed" value="true" />
@@ -544,7 +539,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700728009713</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="made stuff better to test">
+      <option name="closed" value="true" />
+      <created>1700731022836</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1700731022836</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -571,7 +574,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="moved the save function" />
     <MESSAGE value="try try" />
     <MESSAGE value="made the look of the start menu with background" />
     <MESSAGE value="interface" />
@@ -596,7 +598,8 @@
     <MESSAGE value="chnages path to relative path" />
     <MESSAGE value="added mazemap and vertex unit test" />
     <MESSAGE value="added accessor for unit test" />
-    <option name="LAST_COMMIT_MESSAGE" value="added accessor for unit test" />
+    <MESSAGE value="made stuff better to test" />
+    <option name="LAST_COMMIT_MESSAGE" value="made stuff better to test" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

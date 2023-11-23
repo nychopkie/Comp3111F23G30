@@ -124,6 +124,24 @@ public class MazeMap extends JPanel{
             //JOptionPane.showMessageDialog(this, "Chosen file is not a .csv file, please load a valid map.");
             return false;
         };
+        if (!(new File(filePath).exists())){
+            JOptionPane pane = new JOptionPane("Cannot find choosen file, please try again.",JOptionPane.WARNING_MESSAGE);
+            JDialog dialog = pane.createDialog(null, "warning");
+            dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try{
+                        Thread.sleep(5000);
+                    } catch (InterruptedException e){
+                        e.printStackTrace();
+                    }
+                }
+            }).start();
+            dialog.setModal(false);
+            dialog.setVisible(true);
+            return false;
+        }
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             int row = 0;

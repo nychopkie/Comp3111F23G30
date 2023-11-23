@@ -22,6 +22,7 @@ class MazeMapTest {
     private final String valid_path = "Assets/Test_map/MazeMap_SAMPLE2.csv";
     private final String valid_unplayable_path = "Assets/Test_map/MazeMap_InvalidExample.csv";
     private final String non_existing_path = "Assets/Test_map/hehehe.csv";
+    private final String not_csv_path = "Assets/Test_map/notCsv.txt";
     MazeMap map;
 
 
@@ -176,14 +177,17 @@ class MazeMapTest {
 
     @Test
     void load_MazeMap() {
-        // load a valid map1 - playable
-        map.load_MazeMap(valid_path);
+        // load a valid map1 - playable (should be able to load)
+        assertTrue(map.load_MazeMap(valid_path)); // target function: load_MazeMap
 
-        // load valid map2 - unplayable
+        // load a file that does not exist
+        assertFalse(map.load_MazeMap(non_existing_path)); // target function: load_MazeMap
 
         // load a file that is not csv
+        assertFalse(map.load_MazeMap(not_csv_path)); // target function: load_MazeMap
 
         // load nothing aka pass null
+        assertFalse(map.load_MazeMap(""));// target function: load_MazeMap
     }
 
     @Test
