@@ -199,7 +199,7 @@ public class ShortestPathTest {
     @Test
     void test_writecsv(){
         //It is simply a helper function to convert a Vertex Array into a csv file
-        String fileName = "/Users/masumyi/IdeaProjects/Comp3111F23G30functionA/shortestpath.csv";
+        String fileName = "shortestpath.csv";
         String delimiter = ",";
         String line ;
         Vertex[] path = Shortestpath.shortestPath(map,map.getEntry(),map.getExit(),0);

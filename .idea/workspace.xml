@@ -4,23 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="Unit testing doe and make the functions public to fullfil the requirement">
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="modified the dialog boc to close automatically">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MazeGame/MazeGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeGame/MazeGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MazeGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MazeGameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shortestpath.csv" beforeDir="false" afterPath="$PROJECT_DIR$/shortestpath.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ShortestPathTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ShortestPathTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$13.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$14.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Direction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$GameEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$GameEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Jerry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Jerry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Tom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Tom.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/Shortestpath.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/Shortestpath.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,26 +81,13 @@
       <recent name="A" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MazeGameTest">
+  <component name="RunManager" selected="JUnit.ShortestPathTest">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Interface.Launcher" />
       <module name="Comp3111F23G30" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Interface.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MazeGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MazeGame.MazeGame" />
-      <module name="Comp3111F23G30" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="MazeGame.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -147,13 +124,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ShortestPathTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Comp3111F23G30" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ShortestPathTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ShortestPathTest" />
         <item itemvalue="JUnit.MazeGameTest" />
         <item itemvalue="JUnit.MazeGameTest.testMazeGameConstructor" />
         <item itemvalue="JUnit.MazeGameTest.testGetTom" />
         <item itemvalue="Application.Launcher" />
-        <item itemvalue="Application.MazeGame" />
       </list>
     </recent_temporary>
   </component>
@@ -165,22 +151,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695396481398</updated>
-    </task>
-    <task id="LOCAL-00015" summary="added documentation">
-      <option name="closed" value="true" />
-      <created>1699981625766</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1699981625766</updated>
-    </task>
-    <task id="LOCAL-00016" summary="added documentation">
-      <option name="closed" value="true" />
-      <created>1699981725442</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1699981725442</updated>
     </task>
     <task id="LOCAL-00017" summary="added documentation">
       <option name="closed" value="true" />
@@ -558,7 +528,23 @@
       <option name="project" value="LOCAL" />
       <updated>1700589441057</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="modified the dialog boc to close automatically">
+      <option name="closed" value="true" />
+      <created>1700723010202</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1700723010202</updated>
+    </task>
+    <task id="LOCAL-00065" summary="modified the dialog boc to close automatically">
+      <option name="closed" value="true" />
+      <created>1700723017944</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1700723017945</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -585,7 +571,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modified the gitignore" />
     <MESSAGE value="added the load map function" />
     <MESSAGE value="added the save map function" />
     <MESSAGE value="deleted unwanted functions" />
@@ -610,7 +595,8 @@
     <MESSAGE value="ammended the description" />
     <MESSAGE value="merged dev-build to master" />
     <MESSAGE value="Unit testing doe and make the functions public to fullfil the requirement" />
-    <option name="LAST_COMMIT_MESSAGE" value="Unit testing doe and make the functions public to fullfil the requirement" />
+    <MESSAGE value="modified the dialog boc to close automatically" />
+    <option name="LAST_COMMIT_MESSAGE" value="modified the dialog boc to close automatically" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
