@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 import javax.swing.*;
 import java.io.*;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
 
 
 /**
@@ -37,6 +38,7 @@ public class MazeMap extends JPanel{
     //need exit and entry as instance variables to call shortestpath between entry n exit
     private int entry;
     private int exit ;
+    private int seed = 0;
     public MazeMap() {
         super();
         // the gap colour
@@ -48,9 +50,10 @@ public class MazeMap extends JPanel{
         // helper var for choosing vertex type
         int v_type = 0;
         // determine an entry and exit pos
+        //Random random = new Random(0);
         this.entry = ThreadLocalRandom.current().nextInt(1, ROWS-1);
-
         this.exit = ThreadLocalRandom.current().nextInt(1, ROWS-1);
+
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLS; j++) {
                 // determine the v_type first
