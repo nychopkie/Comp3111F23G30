@@ -20,6 +20,8 @@ public class Vertex extends JPanel implements MouseListener {
      */
     int x, y;
 
+    public static boolean draw = false;
+
     /**
      * vertex-type:<br>
      * 0 clear vertex path<br>
@@ -116,7 +118,7 @@ public class Vertex extends JPanel implements MouseListener {
      */
     @Override
     public void mouseClicked(MouseEvent e) {
-        handleMouseClick();
+        // pass
     }
 
     public void handleMouseClick(){
@@ -140,17 +142,47 @@ public class Vertex extends JPanel implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        // pass
+        // for all the vertex passed, change
+        handleMouseClick();
+        handleMousePressed();
+    }
+
+    public void handleMousePressed(){
+        draw = true;
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        // pass
+        handleMouseReleased();
+    }
+
+    public void handleMouseReleased(){
+        draw = false;
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
         // pass
+        handleMouseEntered();
+    }
+
+    public void handleMouseEntered(){
+        if (canEdit && draw){
+            // if the point is the entry or exit or outermost barrier then no change
+            if (this.vertex_type == 2 || this.vertex_type == 3 || this.x * this.y == 0 || this.x == 29 || this.y == 29) {
+                return;
+            }
+            // if the vertex is a PATH >>> change to BARRIER
+            if (this.vertex_type == 0) {
+                setBackground(BARRIER_COLOUR);
+                this.vertex_type = 1;
+            }
+            // if the vertex is a BARRIER >>> change to PATH
+            else {
+                setBackground(CLEAR_VERTEX_COLOUR);
+                this.vertex_type = 0;
+            }
+        }
     }
 
     @Override
