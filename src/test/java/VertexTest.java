@@ -1,16 +1,6 @@
-package MazeMap;
+import MazeMap.*;
 
 import org.junit.jupiter.api.Test;
-import java.io.BufferedReader;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Stack;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class VertexTest {

@@ -203,22 +203,5 @@ public class MazeMap extends JPanel{
     public Vertex[][] getMazedata(){
         return MazeMapData;
     }
-    //Mazemap for testing
-    public MazeMap(int[][] array){
-        super();
-        // the gap colour
-        setBackground(Color.GRAY);
-        setLayout(new GridLayout(ROWS, COLS, GAP, GAP));
-        MazeMapData = new Vertex[ROWS][COLS];
-        for(int i=0;i<ROWS;i++){
-            for(int j =0;j<COLS;j++){
-                if (array[i][j]==2)  this.entry=i;
-                if( array[i][j]==3 ) this.exit=i;
-                MazeMapData[i][j] = new Vertex(PIXEL_SIZE,i,j,array[i][j]);
-                add(this.MazeMapData[i][j]);
-            }
-        }
-        setPreferredSize(new Dimension(ROWS*(PIXEL_SIZE+GAP),COLS*(PIXEL_SIZE+GAP)));
-    }
 
 }

@@ -1,12 +1,9 @@
-package MazeMap;
-
-import org.junit.jupiter.api.Test;
-
+import MazeMap.*;
 import java.io.File;
-
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class MazeMapTest {
+public class MazeMapTest {
     private final int SIZE = 30;
 
     @Test
@@ -15,8 +12,8 @@ class MazeMapTest {
         Vertex entry_actual = map.getEntry(); // target function
         Vertex entry_expected = null;
         for (int i = 0; i < SIZE; ++i){
-            if (map.MazeMapData[i][0].vertex_type == 2){
-                entry_expected = map.MazeMapData[i][0];
+            if (map.getMazedata()[i][0].getVertex_type() == 2){
+                entry_expected = map.getMazedata()[i][0];
             }
         }
         assertEquals(entry_expected,entry_actual);
@@ -28,8 +25,8 @@ class MazeMapTest {
         Vertex exit_actual = map.getExit(); // target function
         Vertex exit_expected = null;
         for (int i = 0; i < SIZE; ++i){
-            if (map.MazeMapData[i][SIZE-1].vertex_type == 3){
-                exit_expected = map.MazeMapData[i][SIZE-1];
+            if (map.getMazedata()[i][SIZE-1].getVertex_type() == 3){
+                exit_expected = map.getMazedata()[i][SIZE-1];
             }
         }
         assertEquals(exit_expected,exit_actual);
@@ -71,7 +68,7 @@ class MazeMapTest {
         for (int i = 0; i < SIZE; ++i){
             for (int j = 0; j < SIZE; ++j){
                 // must be all true to return true, else if one is false then test do not pass
-                flag_actual = flag_actual && (map_expected.MazeMapData[i][j].getBackground() == map.MazeMapData[i][j].getBackground());
+                flag_actual = flag_actual && (map_expected.getMazedata()[i][j].getBackground() == map.getMazedata()[i][j].getBackground());
             }
         }
 
@@ -85,13 +82,13 @@ class MazeMapTest {
         MazeMap edit_change_expected = new MazeMap(); // this is a test map that is editable to be compared with the actual function calls
         for (int i = 0; i < SIZE; ++i){
             for (int j = 0; j < SIZE; ++j){
-                edit_change_expected.MazeMapData[i][j].changeEditState(true);
+                edit_change_expected.getMazedata()[i][j].changeEditState(true);
             }
         }
         // init map to be editable
         for (int i = 0; i < SIZE; ++i){
             for (int j = 0; j < SIZE; ++j){
-                map1.MazeMapData[i][j].changeEditState(true);
+                map1.getMazedata()[i][j].changeEditState(true);
             }
         }
 
@@ -102,7 +99,7 @@ class MazeMapTest {
         for (int i = 0; i < SIZE; ++i){
             for (int j = 0; j < SIZE; ++j){
                 // must be all true to return true, else if one is false then test do not pass
-                flag1a = flag1a && (edit_change_expected.MazeMapData[i][j].getEditStatus() == map1.MazeMapData[i][j].getEditStatus());
+                flag1a = flag1a && (edit_change_expected.getMazedata()[i][j].getEditStatus() == map1.getMazedata()[i][j].getEditStatus());
             }
         }
         assertTrue(flag1a);
@@ -112,13 +109,13 @@ class MazeMapTest {
         MazeMap edit_change_expected2 = new MazeMap(); // this is a test map that is editable to be compared with the actual function calls
         for (int i = 0; i < SIZE; ++i){
             for (int j = 0; j < SIZE; ++j){
-                edit_change_expected2.MazeMapData[i][j].changeEditState(true);
+                edit_change_expected2.getMazedata()[i][j].changeEditState(true);
             }
         }
         // init map to be editable
         for (int i = 0; i < SIZE; ++i){
             for (int j = 0; j < SIZE; ++j){
-                map2.MazeMapData[i][j].changeEditState(true);
+                map2.getMazedata()[i][j].changeEditState(true);
             }
         }
         // 1b: edit --> non-edit
@@ -128,7 +125,7 @@ class MazeMapTest {
         for (int i = 0; i < SIZE; ++i){
             for (int j = 0; j < SIZE; ++j){
                 // must be all false to return false, else if one is true then test do not pass
-                flag1b = flag1b || (edit_change_expected.MazeMapData[i][j].getEditStatus() == map2.MazeMapData[i][j].getEditStatus());
+                flag1b = flag1b || (edit_change_expected.getMazedata()[i][j].getEditStatus() == map2.getMazedata()[i][j].getEditStatus());
             }
         }
         assertFalse(flag1b);
@@ -138,13 +135,13 @@ class MazeMapTest {
         MazeMap nonedit_change_expected = new MazeMap(); // this is a test map that is non-editable to be compared with the actual function calls
         for (int i = 0; i < SIZE; ++i){
             for (int j = 0; j < SIZE; ++j){
-                nonedit_change_expected.MazeMapData[i][j].changeEditState(false);
+                nonedit_change_expected.getMazedata()[i][j].changeEditState(false);
             }
         }
         // init map to be non-editable
         for (int i = 0; i < SIZE; ++i){
             for (int j = 0; j < SIZE; ++j){
-                map3.MazeMapData[i][j].changeEditState(false);
+                map3.getMazedata()[i][j].changeEditState(false);
             }
         }
 
@@ -155,7 +152,7 @@ class MazeMapTest {
         for (int i = 0; i < SIZE; ++i){
             for (int j = 0; j < SIZE; ++j){
                 // must be all true to return true, else if one is false then test do not pass
-                flag2a = flag2a && (nonedit_change_expected.MazeMapData[i][j].getEditStatus() == map3.MazeMapData[i][j].getEditStatus());
+                flag2a = flag2a && (nonedit_change_expected.getMazedata()[i][j].getEditStatus() == map3.getMazedata()[i][j].getEditStatus());
             }
         }
         assertTrue(flag2a);
@@ -165,13 +162,13 @@ class MazeMapTest {
         MazeMap nonedit_change_expected2 = new MazeMap(); // this is a test map that is non-editable to be compared with the actual function calls
         for (int i = 0; i < SIZE; ++i){
             for (int j = 0; j < SIZE; ++j){
-                nonedit_change_expected2.MazeMapData[i][j].changeEditState(false);
+                nonedit_change_expected2.getMazedata()[i][j].changeEditState(false);
             }
         }
         // init map to be non-editable
         for (int i = 0; i < SIZE; ++i){
             for (int j = 0; j < SIZE; ++j){
-                map4.MazeMapData[i][j].changeEditState(false);
+                map4.getMazedata()[i][j].changeEditState(false);
             }
         }
         // 2b: non-edit --> edit
@@ -181,7 +178,7 @@ class MazeMapTest {
         for (int i = 0; i < SIZE; ++i){
             for (int j = 0; j < SIZE; ++j){
                 // must be all false to return false, else if one is true then test do not pass
-                flag2b = flag2b || (nonedit_change_expected.MazeMapData[i][j].getEditStatus() == map4.MazeMapData[i][j].getEditStatus());
+                flag2b = flag2b || (nonedit_change_expected.getMazedata()[i][j].getEditStatus() == map4.getMazedata()[i][j].getEditStatus());
             }
         }
         assertFalse(flag2b);
@@ -231,9 +228,9 @@ class MazeMapTest {
         boolean flag2 = true;
         for (int i = 0; i < SIZE; ++i){
             for (int j = 0; j < SIZE; ++j){
-                flag1 = flag1 && (map.MazeMapData[i][j].getVertex_type() == map_expected1.MazeMapData[i][j].getVertex_type());
+                flag1 = flag1 && (map.getMazedata()[i][j].getVertex_type() == map_expected1.getMazedata()[i][j].getVertex_type());
                 // as long as one does not match it is still false
-                flag2 = flag2 && (map.MazeMapData[i][j].getVertex_type() == map_expected2.MazeMapData[i][j].getVertex_type());
+                flag2 = flag2 && (map.getMazedata()[i][j].getVertex_type() == map_expected2.getMazedata()[i][j].getVertex_type());
             }
         }
 
@@ -247,6 +244,14 @@ class MazeMapTest {
     void test_getMazedata() {
         MazeMap map = new MazeMap();
         Vertex[][] map_actual = map.getMazedata(); // target function
-        assertEquals(map.MazeMapData,map_actual);
+        assertEquals(map.getMazedata(),map_actual);
+    }
+
+    @Test
+    void test_constructor(){
+        MazeMap map = null;
+        map = new MazeMap(); // target function
+
+        assertNotEquals(null,map);
     }
 }
