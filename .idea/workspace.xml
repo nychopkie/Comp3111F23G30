@@ -4,20 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="unit testing">
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="finished MazeMap unit testing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/map/MazeMap_Custom.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/map/MazeMap_Custom.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/MazeMap/MazeMapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MazeMap/MazeMapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MazeMap/VertexTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MazeMap/VertexTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ShortestPathTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ShortestPathTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/MazeMap/MazeMapTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MazeMap/MazeMapTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/MazeMap/VertexTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MazeMap/VertexTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ShortestPathTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ShortestPathTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\annie\Desktop\COMP3111\Comp3111F23G30\htmlReport" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -48,23 +52,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "dev-build",
-    "last_opened_file_path": "C:/Users/annie/Desktop/COMP3111/Comp3111F23G30/Assets/Test_map",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "configurable.group.build"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev-build&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/annie/Desktop/COMP3111/Comp3111F23G30/Assets/Test_map&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.build&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\annie\Desktop\COMP3111\Comp3111F23G30\Assets\Test_map" />
@@ -87,20 +91,7 @@
       <recent name="A" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Launcher">
-    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Interface.Launcher" />
-      <module name="Comp3111F23G30" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Interface.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.MazeGameTest">
     <configuration name="MazeGameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Comp3111F23G30" />
       <option name="PACKAGE_NAME" value="" />
@@ -120,12 +111,16 @@
       </extension>
       <option name="PACKAGE_NAME" value="MazeMap" />
       <option name="MAIN_CLASS_NAME" value="MazeMap.MazeMapTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MazeMapTest.getEntry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MazeMapTest.test_getEntry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Comp3111F23G30" />
       <extension name="coverage">
         <pattern>
@@ -135,7 +130,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="MazeMap" />
       <option name="MAIN_CLASS_NAME" value="MazeMap.MazeMapTest" />
-      <option name="METHOD_NAME" value="getEntry" />
+      <option name="METHOD_NAME" value="test_getEntry" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MazeMapTest.test_load_MazeMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Comp3111F23G30" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="MazeMap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="MazeMap" />
+      <option name="MAIN_CLASS_NAME" value="MazeMap.MazeMapTest" />
+      <option name="METHOD_NAME" value="test_load_MazeMap" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,11 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MazeGameTest" />
         <item itemvalue="JUnit.ShortestPathTest" />
         <item itemvalue="JUnit.MazeMapTest" />
-        <item itemvalue="JUnit.MazeMapTest.getEntry" />
-        <item itemvalue="Application.Launcher" />
-        <item itemvalue="JUnit.MazeGameTest" />
+        <item itemvalue="JUnit.MazeMapTest.test_getEntry" />
+        <item itemvalue="JUnit.MazeMapTest.test_load_MazeMap" />
       </list>
     </recent_temporary>
   </component>
@@ -168,14 +179,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695396481398</updated>
-    </task>
-    <task id="LOCAL-00024" summary="added draft and file paths for the assets">
-      <option name="closed" value="true" />
-      <created>1700216921342</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1700216921342</updated>
     </task>
     <task id="LOCAL-00025" summary="what the fuck is gridbaglayout">
       <option name="closed" value="true" />
@@ -561,7 +564,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700732211626</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="finished MazeMap unit testing">
+      <option name="closed" value="true" />
+      <created>1700734647578</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1700734647578</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -588,7 +599,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="interface" />
     <MESSAGE value="deleted side menu and put it tgt with game container" />
     <MESSAGE value="added test B to the screen" />
     <MESSAGE value="made new sample map now there is 2 to test!" />
@@ -613,7 +623,8 @@
     <MESSAGE value="made stuff better to test" />
     <MESSAGE value="checked non-existing files" />
     <MESSAGE value="unit testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="unit testing" />
+    <MESSAGE value="finished MazeMap unit testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished MazeMap unit testing" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -622,10 +633,17 @@
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest_getEntry.ic" NAME="MazeMapTest.getEntry Coverage Results" MODIFIED="1700734481548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>MazeMap.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest.ic" NAME="MazeMapTest Coverage Results" MODIFIED="1700734491998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest.ic" NAME="MazeMapTest Coverage Results" MODIFIED="1700737959984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$ShortestPathTest.ic" NAME="ShortestPathTest Coverage Results" MODIFIED="1700734539237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeGameTest.ic" NAME="MazeGameTest Coverage Results" MODIFIED="1700736252805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$ShortestPathTest.ic" NAME="ShortestPathTest Coverage Results" MODIFIED="1700736234965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest_test_load_MazeMap.ic" NAME="MazeMapTest.test_load_MazeMap Coverage Results" MODIFIED="1700735680845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>MazeMap.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeGameTest_testGetTom.ic" NAME="MazeGameTest.testGetTom Coverage Results" MODIFIED="1700719421357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest_test_getEntry.ic" NAME="MazeMapTest.test_getEntry Coverage Results" MODIFIED="1700737102636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>MazeMap.*</FILTER>
+    </SUITE>
   </component>
 </project>
