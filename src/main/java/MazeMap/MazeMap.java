@@ -104,7 +104,7 @@ public class MazeMap extends JPanel{
 
     /** load the map data csv */
     // change the mazedata data lmao
-    public void load_MazeMap(String filePath){
+    public boolean load_MazeMap(String filePath){
         if (!filePath.endsWith(".csv")) {
             JOptionPane pane = new JOptionPane("Chosen file is not a .csv file, please load a valid map.",JOptionPane.WARNING_MESSAGE);
                     JDialog dialog = pane.createDialog(null, "warning");
@@ -122,7 +122,7 @@ public class MazeMap extends JPanel{
             dialog.setModal(false);
             dialog.setVisible(true);
             //JOptionPane.showMessageDialog(this, "Chosen file is not a .csv file, please load a valid map.");
-            return;
+            return false;
         };
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
@@ -148,6 +148,7 @@ public class MazeMap extends JPanel{
         } catch (IOException e) {
             e.printStackTrace();  // It's better to print the stack trace for debugging
         }
+        return true;
     }
 
     /** save map data */

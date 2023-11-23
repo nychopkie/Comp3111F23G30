@@ -19,7 +19,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class MazeMapTest {
     //private MazeMap MazeMap;
     private final int SIZE = 30;
-    private final String valid_path = "Assets/map/MazeMap_SAMPLE2.csv";
+    private final String valid_path = "Assets/Test_map/MazeMap_SAMPLE2.csv";
+    private final String valid_unplayable_path = "Assets/Test_map/MazeMap_InvalidExample.csv";
+    private final String non_existing_path = "Assets/Test_map/hehehe.csv";
     MazeMap map;
 
 
@@ -101,6 +103,13 @@ class MazeMapTest {
                 edit_change_expected.MazeMapData[i][j].changeEditState(true);
             }
         }
+        // init map to be editable
+        for (int i = 0; i < SIZE; ++i){
+            for (int j = 0; j < SIZE; ++j){
+                map.MazeMapData[i][j].changeEditState(true);
+            }
+        }
+
         // 1a: edit --> edit
         map.changeState(true); // target function
         boolean flag1a = true;
@@ -113,16 +122,68 @@ class MazeMapTest {
         }
         assertTrue(flag1a);
 
-        // 1b: non-edit --> edit
+        // 1b: edit --> non-edit
+        map.changeState(false); // target function
+        boolean flag1b = false;
+        // check each vertex's status
+        for (int i = 0; i < SIZE; ++i){
+            for (int j = 0; j < SIZE; ++j){
+                // must be all false to return false, else if one is true then test do not pass
+                flag1b = flag1b || (edit_change_expected.MazeMapData[i][j].getEditStatus() == map.MazeMapData[i][j].getEditStatus());
+            }
+        }
+        assertFalse(flag1b);
 
         // case 2: change to non-editable
-        // 2a: edit --> non-edit
-        // 2b: non-edit --> non_edit
+        MazeMap nonedit_change_expected = new MazeMap(); // this is a test map that is non-editable to be compared with the actual function calls
+        for (int i = 0; i < SIZE; ++i){
+            for (int j = 0; j < SIZE; ++j){
+                nonedit_change_expected.MazeMapData[i][j].changeEditState(false);
+            }
+        }
+        // init map to be non-editable
+        for (int i = 0; i < SIZE; ++i){
+            for (int j = 0; j < SIZE; ++j){
+                map.MazeMapData[i][j].changeEditState(false);
+            }
+        }
+
+        // 2a: non-edit --> non-edit
+        map.changeState(false); // target function
+        boolean flag2a = true;
+        // check each vertex's status
+        for (int i = 0; i < SIZE; ++i){
+            for (int j = 0; j < SIZE; ++j){
+                // must be all true to return true, else if one is false then test do not pass
+                flag2a = flag2a && (nonedit_change_expected.MazeMapData[i][j].getEditStatus() == map.MazeMapData[i][j].getEditStatus());
+            }
+        }
+        assertTrue(flag2a);
+
+        // 2b: non-edit --> edit
+        map.changeState(true); // target function
+        boolean flag2b = false;
+        // check each vertex's status
+        for (int i = 0; i < SIZE; ++i){
+            for (int j = 0; j < SIZE; ++j){
+                // must be all false to return false, else if one is true then test do not pass
+                flag2b = flag2b || (nonedit_change_expected.MazeMapData[i][j].getEditStatus() == map.MazeMapData[i][j].getEditStatus());
+            }
+        }
+        assertFalse(flag2b);
 
     }
 
     @Test
     void load_MazeMap() {
+        // load a valid map1 - playable
+        map.load_MazeMap(valid_path);
+
+        // load valid map2 - unplayable
+
+        // load a file that is not csv
+
+        // load nothing aka pass null
     }
 
     @Test
