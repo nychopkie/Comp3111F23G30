@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="vertex unit test">
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="vertex unit test finalized">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/VertexTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/VertexTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/Vertex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/Vertex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/VertexTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/VertexTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/map/MazeMap_Custom.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/map/MazeMap_Custom.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shortestpath.csv" beforeDir="false" afterPath="$PROJECT_DIR$/shortestpath.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/Container.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,41 +76,36 @@
       <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="MazeMap" />
       <recent name="" />
+      <recent name="MazeMap" />
       <recent name="B" />
       <recent name="Interface" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="Interface" />
       <recent name="MazeMap" />
       <recent name="A" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.VertexTest">
+  <component name="RunManager" selected="Application.Launcher">
+    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Interface.Launcher" />
+      <module name="Comp3111F23G30" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Interface.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MazeGameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Comp3111F23G30" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MazeGameTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MazeMapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Comp3111F23G30" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="MazeMap" />
-      <option name="MAIN_CLASS_NAME" value="MazeMap.MazeMapTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -145,11 +140,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Launcher" />
         <item itemvalue="JUnit.VertexTest" />
         <item itemvalue="JUnit.ShortestPathTest" />
         <item itemvalue="JUnit.ShortestPathTest.test_trueorderpath" />
         <item itemvalue="JUnit.MazeGameTest" />
-        <item itemvalue="JUnit.MazeMapTest" />
       </list>
     </recent_temporary>
   </component>
@@ -161,14 +156,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695396481398</updated>
-    </task>
-    <task id="LOCAL-00026" summary="changed dimention">
-      <option name="closed" value="true" />
-      <created>1700218068826</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1700218068826</updated>
     </task>
     <task id="LOCAL-00027" summary="interface changed">
       <option name="closed" value="true" />
@@ -554,7 +541,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700741862096</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="vertex unit test finalized">
+      <option name="closed" value="true" />
+      <created>1700742184896</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1700742184896</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -581,7 +576,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added test B to the screen" />
     <MESSAGE value="made new sample map now there is 2 to test!" />
     <MESSAGE value="added todo" />
     <MESSAGE value="corrected the loadmap function to chang entry and exit" />
@@ -606,7 +600,8 @@
     <MESSAGE value="unit testing" />
     <MESSAGE value="finished MazeMap unit testing" />
     <MESSAGE value="vertex unit test" />
-    <option name="LAST_COMMIT_MESSAGE" value="vertex unit test" />
+    <MESSAGE value="vertex unit test finalized" />
+    <option name="LAST_COMMIT_MESSAGE" value="vertex unit test finalized" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -615,6 +610,7 @@
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest_getEntry.ic" NAME="MazeMapTest.getEntry Coverage Results" MODIFIED="1700734481548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>MazeMap.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$VertexTest.ic" NAME="VertexTest Coverage Results" MODIFIED="1700742209400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest.ic" NAME="MazeMapTest Coverage Results" MODIFIED="1700739373585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeGameTest.ic" NAME="MazeGameTest Coverage Results" MODIFIED="1700736252805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$ShortestPathTest.ic" NAME="ShortestPathTest Coverage Results" MODIFIED="1700739553311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

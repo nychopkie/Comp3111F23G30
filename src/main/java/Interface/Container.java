@@ -274,7 +274,7 @@ public class Container extends JPanel {
         GridBagConstraints d = new GridBagConstraints();
 
         screen.mazeGame = new MazeMap();
-        screen.mazeGame.load_MazeMap("Assets/map/MazeMap_shortestPathExample.csv.csv");
+        screen.mazeGame.load_MazeMap("Assets/map/MazeMap_shortestPathExample.csv");
         screen.mazeGame.changeState(false);
         if(Shortestpath.shortestPath(screen.mazeGame,screen.mazeGame.getEntry(),screen.mazeGame.getExit(),1)==null) System.out.print("No Path");
 
