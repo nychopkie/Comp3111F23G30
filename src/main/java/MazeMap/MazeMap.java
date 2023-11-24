@@ -97,12 +97,17 @@ public class MazeMap extends JPanel{
     }
 
     /**
-     * Returns the entry Vertex of the map
-     * @return Vertex() entry
+     * Returns the size of the map
+     * @return int size of map
      * */
     public int getSIZE(){
         return ROWS;
     }
+
+    /**
+     * Modifier that changes the save path of the function, this is only invoked in unit test
+     * @param  path the path of the saved file
+     * */
     public void setSavePath(String path){
         savePath = path;
     }
@@ -116,7 +121,7 @@ public class MazeMap extends JPanel{
         }
     }
 
-    /** to change the map state of edit */
+    /** to change the state of edit of the map */
     public void changeState(boolean state){
         for (int i = 0; i < ROWS; ++i){
             for (int j = 0; j < COLS; ++j){
@@ -125,7 +130,12 @@ public class MazeMap extends JPanel{
         }
     }
 
-    /** load the map data csv */
+    /** Load the map data csv into MazeMap.
+     * <p>This function will only write back if the passed file is a .csv file, or the path could be found.</p>
+     *
+     * @param filePath the file path of the csv file
+     * @return true if the file is found, false if the file is not found or wrong
+     * */
     public boolean load_MazeMap(String filePath){
         if (!filePath.endsWith(".csv")) {
             JOptionPane pane = new JOptionPane("Chosen file is not a .csv file, please load a valid map.",JOptionPane.WARNING_MESSAGE);
@@ -147,7 +157,7 @@ public class MazeMap extends JPanel{
             return false;
         };
         if (!(new File(filePath).exists())){
-            JOptionPane pane = new JOptionPane("Cannot find choosen file, please try again.",JOptionPane.WARNING_MESSAGE);
+            JOptionPane pane = new JOptionPane("Cannot find chosen file, please try again.",JOptionPane.WARNING_MESSAGE);
             JDialog dialog = pane.createDialog(null, "warning");
             dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
             new Thread(new Runnable() {
@@ -191,7 +201,11 @@ public class MazeMap extends JPanel{
         return true;
     }
 
-    /** save map data */
+    /** Save the MazeMap into a csv file.
+     * <p>
+     *     This function will save the file under Assets/map/MazeMap_Custom[i].csv where the i is the number of files that's custom
+     * </p>
+     * */
     public void save_MazeMap(){
         int n = 100;
         try {
@@ -224,6 +238,10 @@ public class MazeMap extends JPanel{
         }
     }
 
+    /**
+     * Returns the map data as a 2D array of Vertex objects
+     * @return Vertex[SIZE][SIZE] the map data and the individual vertices
+     **/
     public Vertex[][] getMazedata(){
         return MazeMapData;
     }
