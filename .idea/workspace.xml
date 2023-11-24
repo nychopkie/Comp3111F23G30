@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="added javadoc">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Direction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$GameEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$GameEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Jerry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Jerry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Tom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Tom.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shortestpath.csv" beforeDir="false" afterPath="$PROJECT_DIR$/shortestpath.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +36,20 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "nychopkie"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="9d1bf34e-412f-41ea-88ec-d1a5345f4a13" />
+        <option name="url" value="https://github.com/nychopkie/Comp3111F23G30.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -65,9 +73,9 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/annie/Desktop/COMP3111/Comp3111F23G30/Assets/Test_map",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "configurable.group.build"
   }
@@ -97,7 +105,7 @@
       <recent name="A" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Launcher">
+  <component name="RunManager" selected="JAR Application.Comp3111F23G30.jar (1)">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Interface.Launcher" />
       <module name="Comp3111F23G30" />
@@ -120,24 +128,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShortestPathTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Comp3111F23G30" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ShortestPathTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VertexTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Comp3111F23G30" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="VertexTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="java in Comp3111F23G30" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Comp3111F23G30" />
       <option name="TEST_OBJECT" value="directory" />
@@ -146,13 +136,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Comp3111F23G30.jar (1)" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/Comp3111F23G30.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Comp3111F23G30.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Comp3111F23G30_jar/Comp3111F23G30.jar" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JAR Application.Comp3111F23G30.jar (1)" />
+        <item itemvalue="JAR Application.Comp3111F23G30.jar" />
         <item itemvalue="Application.Launcher" />
         <item itemvalue="JUnit.java in Comp3111F23G30" />
         <item itemvalue="JUnit.MazeGameTest" />
-        <item itemvalue="JUnit.ShortestPathTest" />
-        <item itemvalue="JUnit.VertexTest" />
       </list>
     </recent_temporary>
   </component>
@@ -164,14 +162,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695396481398</updated>
-    </task>
-    <task id="LOCAL-00047" summary="added comments">
-      <option name="closed" value="true" />
-      <created>1700437805168</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1700437805168</updated>
     </task>
     <task id="LOCAL-00048" summary="added comments">
       <option name="closed" value="true" />
@@ -557,7 +547,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700847778879</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="added javadoc">
+      <option name="closed" value="true" />
+      <created>1700852139640</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1700852139640</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
