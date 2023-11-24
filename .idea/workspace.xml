@@ -4,24 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="ammended the description" />
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="finalized game screen" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\annie\Desktop\COMP3111\Comp3111F23G30\htmlReport" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="func-A" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,8 +50,8 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/annie/Desktop/COMP3111/Comp3111F23G30/Assets/map&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev-build&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/annie/Desktop/COMP3111/Comp3111F23G30/Assets/Test_map&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -58,6 +61,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\annie\Desktop\COMP3111\Comp3111F23G30\Assets\Test_map" />
       <recent name="C:\Users\annie\Desktop\COMP3111\Comp3111F23G30\Assets\map" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -67,14 +71,19 @@
       <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="MazeMap" />
       <recent name="B" />
       <recent name="Interface" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="Interface" />
+      <recent name="" />
+      <recent name="MazeMap" />
       <recent name="A" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Launcher">
+  <component name="RunManager" selected="JUnit.java in Comp3111F23G30">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Interface.Launcher" />
       <module name="Comp3111F23G30" />
@@ -88,23 +97,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MazeGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MazeGame.MazeGame" />
+    <configuration name="ContainerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Comp3111F23G30" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="MazeGame.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ContainerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InterfaceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Comp3111F23G30" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="InterfaceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MazeMapTest.test_save_MazeMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Comp3111F23G30" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MazeMapTest" />
+      <option name="METHOD_NAME" value="test_save_MazeMap" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="java in Comp3111F23G30" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Comp3111F23G30" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.java in Comp3111F23G30" />
         <item itemvalue="Application.Launcher" />
-        <item itemvalue="Application.MazeGame" />
+        <item itemvalue="JUnit.InterfaceTest" />
+        <item itemvalue="JUnit.ContainerTest" />
+        <item itemvalue="JUnit.MazeMapTest.test_save_MazeMap" />
       </list>
     </recent_temporary>
   </component>
@@ -116,230 +151,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695396481398</updated>
-    </task>
-    <task id="LOCAL-00013" summary="write the docstring, better documentation">
-      <option name="closed" value="true" />
-      <created>1699978554442</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1699978554442</updated>
-    </task>
-    <task id="LOCAL-00014" summary="created interface file, need implementation">
-      <option name="closed" value="true" />
-      <created>1699979440633</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1699979440633</updated>
-    </task>
-    <task id="LOCAL-00015" summary="added documentation">
-      <option name="closed" value="true" />
-      <created>1699981625766</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1699981625766</updated>
-    </task>
-    <task id="LOCAL-00016" summary="added documentation">
-      <option name="closed" value="true" />
-      <created>1699981725442</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1699981725442</updated>
-    </task>
-    <task id="LOCAL-00017" summary="added documentation">
-      <option name="closed" value="true" />
-      <created>1699981902117</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1699981902117</updated>
-    </task>
-    <task id="LOCAL-00018" summary="added documentation">
-      <option name="closed" value="true" />
-      <created>1699982246300</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1699982246300</updated>
-    </task>
-    <task id="LOCAL-00019" summary="added documentation">
-      <option name="closed" value="true" />
-      <created>1699982320583</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1699982320583</updated>
-    </task>
-    <task id="LOCAL-00020" summary="made the default map generation makes more sense by adding entrance and exit and outermost barrier">
-      <option name="closed" value="true" />
-      <created>1699983767516</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1699983767516</updated>
-    </task>
-    <task id="LOCAL-00021" summary="updated the colour choices">
-      <option name="closed" value="true" />
-      <created>1699984158307</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1699984158307</updated>
-    </task>
-    <task id="LOCAL-00022" summary="added the interface now the interface is the in charge of the display">
-      <option name="closed" value="true" />
-      <created>1700216447214</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1700216447214</updated>
-    </task>
-    <task id="LOCAL-00023" summary="added the interface now the interface is the in charge of the display">
-      <option name="closed" value="true" />
-      <created>1700216451819</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1700216451819</updated>
-    </task>
-    <task id="LOCAL-00024" summary="added draft and file paths for the assets">
-      <option name="closed" value="true" />
-      <created>1700216921342</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1700216921342</updated>
-    </task>
-    <task id="LOCAL-00025" summary="what the fuck is gridbaglayout">
-      <option name="closed" value="true" />
-      <created>1700217968909</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1700217968909</updated>
-    </task>
-    <task id="LOCAL-00026" summary="changed dimention">
-      <option name="closed" value="true" />
-      <created>1700218068826</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1700218068826</updated>
-    </task>
-    <task id="LOCAL-00027" summary="interface changed">
-      <option name="closed" value="true" />
-      <created>1700234799823</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1700234799823</updated>
-    </task>
-    <task id="LOCAL-00028" summary="modified the gitignore">
-      <option name="closed" value="true" />
-      <created>1700240315452</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1700240315452</updated>
-    </task>
-    <task id="LOCAL-00029" summary="modified the gitignore">
-      <option name="closed" value="true" />
-      <created>1700240359734</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1700240359734</updated>
-    </task>
-    <task id="LOCAL-00030" summary="added the load map function">
-      <option name="closed" value="true" />
-      <created>1700248121157</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1700248121157</updated>
-    </task>
-    <task id="LOCAL-00031" summary="added the save map function">
-      <option name="closed" value="true" />
-      <created>1700250781804</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1700250781804</updated>
-    </task>
-    <task id="LOCAL-00032" summary="deleted unwanted functions">
-      <option name="closed" value="true" />
-      <created>1700250822201</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1700250822201</updated>
-    </task>
-    <task id="LOCAL-00033" summary="moved the save function">
-      <option name="closed" value="true" />
-      <created>1700296363866</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1700296363866</updated>
-    </task>
-    <task id="LOCAL-00034" summary="try try">
-      <option name="closed" value="true" />
-      <created>1700317855927</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1700317855927</updated>
-    </task>
-    <task id="LOCAL-00035" summary="made the look of the start menu with background">
-      <option name="closed" value="true" />
-      <created>1700394983229</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1700394983229</updated>
-    </task>
-    <task id="LOCAL-00036" summary="made the look of the start menu with background">
-      <option name="closed" value="true" />
-      <created>1700394987522</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1700394987522</updated>
-    </task>
-    <task id="LOCAL-00037" summary="interface">
-      <option name="closed" value="true" />
-      <created>1700400696893</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1700400696893</updated>
-    </task>
-    <task id="LOCAL-00038" summary="deleted side menu and put it tgt with game container">
-      <option name="closed" value="true" />
-      <created>1700401495166</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1700401495166</updated>
-    </task>
-    <task id="LOCAL-00039" summary="added test B to the screen">
-      <option name="closed" value="true" />
-      <created>1700407344517</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1700407344517</updated>
-    </task>
-    <task id="LOCAL-00040" summary="made new sample map now there is 2 to test!">
-      <option name="closed" value="true" />
-      <created>1700408726450</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1700408726450</updated>
     </task>
     <task id="LOCAL-00041" summary="made new sample map now there is 2 to test!">
       <option name="closed" value="true" />
@@ -509,7 +320,231 @@
       <option name="project" value="LOCAL" />
       <updated>1700572896036</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="merged dev-build to master">
+      <option name="closed" value="true" />
+      <created>1700577205392</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1700577205392</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Unit testing doe and make the functions public to fullfil the requirement">
+      <option name="closed" value="true" />
+      <created>1700589441057</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1700589441057</updated>
+    </task>
+    <task id="LOCAL-00064" summary="modified the dialog boc to close automatically">
+      <option name="closed" value="true" />
+      <created>1700723010202</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1700723010202</updated>
+    </task>
+    <task id="LOCAL-00065" summary="modified the dialog boc to close automatically">
+      <option name="closed" value="true" />
+      <created>1700723017944</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1700723017945</updated>
+    </task>
+    <task id="LOCAL-00066" summary="chnages path to relative path">
+      <option name="closed" value="true" />
+      <created>1700723126760</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1700723126760</updated>
+    </task>
+    <task id="LOCAL-00067" summary="added mazemap and vertex unit test">
+      <option name="closed" value="true" />
+      <created>1700725165317</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1700725165317</updated>
+    </task>
+    <task id="LOCAL-00068" summary="added accessor for unit test">
+      <option name="closed" value="true" />
+      <created>1700728003758</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1700728003758</updated>
+    </task>
+    <task id="LOCAL-00069" summary="added accessor for unit test">
+      <option name="closed" value="true" />
+      <created>1700728009713</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1700728009713</updated>
+    </task>
+    <task id="LOCAL-00070" summary="made stuff better to test">
+      <option name="closed" value="true" />
+      <created>1700731022836</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1700731022836</updated>
+    </task>
+    <task id="LOCAL-00071" summary="checked non-existing files">
+      <option name="closed" value="true" />
+      <created>1700731937377</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1700731937377</updated>
+    </task>
+    <task id="LOCAL-00072" summary="unit testing">
+      <option name="closed" value="true" />
+      <created>1700732211626</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1700732211626</updated>
+    </task>
+    <task id="LOCAL-00073" summary="finished MazeMap unit testing">
+      <option name="closed" value="true" />
+      <created>1700734647578</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1700734647578</updated>
+    </task>
+    <task id="LOCAL-00074" summary="vertex unit test">
+      <option name="closed" value="true" />
+      <created>1700741862096</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1700741862096</updated>
+    </task>
+    <task id="LOCAL-00075" summary="vertex unit test finalized">
+      <option name="closed" value="true" />
+      <created>1700742184896</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1700742184896</updated>
+    </task>
+    <task id="LOCAL-00076" summary="fixed dumb mistakes">
+      <option name="closed" value="true" />
+      <created>1700744007239</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1700744007239</updated>
+    </task>
+    <task id="LOCAL-00077" summary="fixed dumb mistakes">
+      <option name="closed" value="true" />
+      <created>1700753077503</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1700753077503</updated>
+    </task>
+    <task id="LOCAL-00078" summary="supports drawing map by dragging motion now">
+      <option name="closed" value="true" />
+      <created>1700755198685</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1700755198685</updated>
+    </task>
+    <task id="LOCAL-00079" summary="test vertex">
+      <option name="closed" value="true" />
+      <created>1700756477735</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1700756477735</updated>
+    </task>
+    <task id="LOCAL-00080" summary="test vertex">
+      <option name="closed" value="true" />
+      <created>1700756526760</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1700756526760</updated>
+    </task>
+    <task id="LOCAL-00081" summary="reduced not useful functions">
+      <option name="closed" value="true" />
+      <created>1700760729380</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1700760729380</updated>
+    </task>
+    <task id="LOCAL-00082" summary="Interface unit test">
+      <option name="closed" value="true" />
+      <created>1700766870489</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1700766870489</updated>
+    </task>
+    <task id="LOCAL-00083" summary="Interface unit test">
+      <option name="closed" value="true" />
+      <created>1700766878206</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1700766878206</updated>
+    </task>
+    <task id="LOCAL-00084" summary="Interface unit test">
+      <option name="closed" value="true" />
+      <created>1700768888469</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1700768888469</updated>
+    </task>
+    <task id="LOCAL-00085" summary="Finished Interface unit test">
+      <option name="closed" value="true" />
+      <created>1700814739570</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1700814739570</updated>
+    </task>
+    <task id="LOCAL-00086" summary="all unit tests completed">
+      <option name="closed" value="true" />
+      <created>1700817160783</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1700817160783</updated>
+    </task>
+    <task id="LOCAL-00087" summary="can now save multiple copies">
+      <option name="closed" value="true" />
+      <created>1700817866232</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1700817866232</updated>
+    </task>
+    <task id="LOCAL-00088" summary="fixed loadmap">
+      <option name="closed" value="true" />
+      <created>1700818785686</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1700818785686</updated>
+    </task>
+    <task id="LOCAL-00089" summary="finalized game screen">
+      <option name="closed" value="true" />
+      <created>1700819497945</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1700819497945</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -536,32 +571,32 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="interface changed" />
-    <MESSAGE value="pulled from C" />
-    <MESSAGE value="modified the gitignore" />
-    <MESSAGE value="added the load map function" />
-    <MESSAGE value="added the save map function" />
-    <MESSAGE value="deleted unwanted functions" />
-    <MESSAGE value="moved the save function" />
-    <MESSAGE value="try try" />
-    <MESSAGE value="made the look of the start menu with background" />
-    <MESSAGE value="interface" />
-    <MESSAGE value="deleted side menu and put it tgt with game container" />
-    <MESSAGE value="added test B to the screen" />
-    <MESSAGE value="made new sample map now there is 2 to test!" />
-    <MESSAGE value="added todo" />
-    <MESSAGE value="corrected the loadmap function to chang entry and exit" />
-    <MESSAGE value="deleted smth" />
-    <MESSAGE value="added comments" />
-    <MESSAGE value="amended" />
-    <MESSAGE value="put C with interface" />
-    <MESSAGE value="check if the map is csv format" />
-    <MESSAGE value="changed testc" />
-    <MESSAGE value="made the start game not shitty background" />
     <MESSAGE value="made sure that the map loadeed for the game must be valid" />
     <MESSAGE value="merged the function for final build?" />
     <MESSAGE value="ammended the description" />
-    <option name="LAST_COMMIT_MESSAGE" value="ammended the description" />
+    <MESSAGE value="merged dev-build to master" />
+    <MESSAGE value="Unit testing doe and make the functions public to fullfil the requirement" />
+    <MESSAGE value="modified the dialog boc to close automatically" />
+    <MESSAGE value="chnages path to relative path" />
+    <MESSAGE value="added mazemap and vertex unit test" />
+    <MESSAGE value="added accessor for unit test" />
+    <MESSAGE value="made stuff better to test" />
+    <MESSAGE value="checked non-existing files" />
+    <MESSAGE value="unit testing" />
+    <MESSAGE value="finished MazeMap unit testing" />
+    <MESSAGE value="vertex unit test" />
+    <MESSAGE value="vertex unit test finalized" />
+    <MESSAGE value="fixed dumb mistakes" />
+    <MESSAGE value="supports drawing map by dragging motion now" />
+    <MESSAGE value="test vertex" />
+    <MESSAGE value="reduced not useful functions" />
+    <MESSAGE value="Interface unit test" />
+    <MESSAGE value="Finished Interface unit test" />
+    <MESSAGE value="all unit tests completed" />
+    <MESSAGE value="can now save multiple copies" />
+    <MESSAGE value="fixed loadmap" />
+    <MESSAGE value="finalized game screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalized game screen" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

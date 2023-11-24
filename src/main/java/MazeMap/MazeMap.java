@@ -37,6 +37,8 @@ public class MazeMap extends JPanel{
     //need exit and entry as instance variables to call shortestpath between entry n exit
     private int entry;
     private int exit ;
+    private String savePath = "Assets/map/MazeMap_Custom";
+
     public MazeMap() {
         super();
         // the gap colour
@@ -48,9 +50,10 @@ public class MazeMap extends JPanel{
         // helper var for choosing vertex type
         int v_type = 0;
         // determine an entry and exit pos
+        //Random random = new Random(0);
         this.entry = ThreadLocalRandom.current().nextInt(1, ROWS-1);
-
         this.exit = ThreadLocalRandom.current().nextInt(1, ROWS-1);
+
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLS; j++) {
                 // determine the v_type first
@@ -81,6 +84,9 @@ public class MazeMap extends JPanel{
     public int getCOLS(){
         return COLS;
     }
+    public void setSavePath(String path){
+        savePath = path;
+    }
 
     /** helper function to refresh map colour */
     public void refreshColour(){
@@ -101,12 +107,44 @@ public class MazeMap extends JPanel{
     }
 
     /** load the map data csv */
-    // change the mazedata data lmao
-    public void load_MazeMap(String filePath){
+    public boolean load_MazeMap(String filePath){
         if (!filePath.endsWith(".csv")) {
-            JOptionPane.showMessageDialog(this, "Chosen file is not a .csv file, please load a valid map.");
-            return;
+            JOptionPane pane = new JOptionPane("Chosen file is not a .csv file, please load a valid map.",JOptionPane.WARNING_MESSAGE);
+                    JDialog dialog = pane.createDialog(null, "warning");
+                    dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try{
+                                Thread.sleep(5000);
+                            } catch (InterruptedException e){
+                                e.printStackTrace();
+                            }
+                        }
+                    }).start();
+            dialog.setModal(false);
+            dialog.setVisible(true);
+            //JOptionPane.showMessageDialog(this, "Chosen file is not a .csv file, please load a valid map.");
+            return false;
         };
+        if (!(new File(filePath).exists())){
+            JOptionPane pane = new JOptionPane("Cannot find choosen file, please try again.",JOptionPane.WARNING_MESSAGE);
+            JDialog dialog = pane.createDialog(null, "warning");
+            dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try{
+                        Thread.sleep(5000);
+                    } catch (InterruptedException e){
+                        e.printStackTrace();
+                    }
+                }
+            }).start();
+            dialog.setModal(false);
+            dialog.setVisible(true);
+            return false;
+        }
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             int row = 0;
@@ -131,12 +169,21 @@ public class MazeMap extends JPanel{
         } catch (IOException e) {
             e.printStackTrace();  // It's better to print the stack trace for debugging
         }
+        return true;
     }
 
     /** save map data */
     public void save_MazeMap(){
+        int n = 100;
         try {
-            File file = new File("Assets/map/MazeMap_Custom.csv");
+            File file = new File(savePath + ".csv");
+            for (int i = 0; i < n; i++) {
+                if (file.exists()){
+                    continue;
+                }
+                file = new File(savePath + i + ".csv");
+                break;
+            }
             // write into it according to the format
             PrintWriter pw = new PrintWriter(file);
             pw.close();
@@ -156,30 +203,12 @@ public class MazeMap extends JPanel{
             writer.close();
 
         } catch (IOException f) {
-            System.out.println("An error occurred.");
             f.printStackTrace();
         }
     }
 
     public Vertex[][] getMazedata(){
         return MazeMapData;
-    }
-    //Mazemap for testing
-    public MazeMap(int[][] array){
-        super();
-        // the gap colour
-        setBackground(Color.GRAY);
-        setLayout(new GridLayout(ROWS, COLS, GAP, GAP));
-        MazeMapData = new Vertex[ROWS][COLS];
-        for(int i=0;i<ROWS;i++){
-            for(int j =0;j<COLS;j++){
-                if (array[i][j]==2)  this.entry=i;
-                if( array[i][j]==3 ) this.exit=i;
-                MazeMapData[i][j] = new Vertex(PIXEL_SIZE,i,j,array[i][j]);
-                add(this.MazeMapData[i][j]);
-            }
-        }
-        setPreferredSize(new Dimension(ROWS*(PIXEL_SIZE+GAP),COLS*(PIXEL_SIZE+GAP)));
     }
 
 }
