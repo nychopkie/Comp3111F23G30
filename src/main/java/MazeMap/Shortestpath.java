@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 /**
- * it contains a function to find the shortest path and other helper functions used by that function.<br>
+ * it contains a function to find the shortest path and other helper functions used by that function.<br><hr>
  * OPERATIONS<br>
  * 1. shortestPath(MazeMap map,Vertex start,Vertex end, int mode)<br>
  * 2. addNeighbors(Vertex cell, List<Vertex> list, MazeMap map) <br>
