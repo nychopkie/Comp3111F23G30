@@ -5,10 +5,34 @@ import java.io.PrintWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 
+/**
+ * ============ Shortestpath Class ============
+ * it contains a function to find the shortest path and other helper functions used by that function.<br>
+ * Details could be found above each function. <br>
+ * @operations:
+ * 1. shortestPath(MazeMap map,Vertex start,Vertex end, int mode)<br>
+ * 2. addNeighbors(Vertex cell, List<Vertex> list, MazeMap map) <br>
+ * 3. getNeighbor(Vertex cell, int distance, int[][] distances,MazeMap map)<br>
+ * 4. isValid(int row, int col, int ROWS, int COLS)<br>
+ * 5. trueorderpath(Stack<Vertex> path)<br>
+ * 6. writecsv(Vertex[] path)<br>
+ * */
 public class Shortestpath extends JPanel {
-
+    /**
+     *
+     *the function to find the shortest path from the starting vertex to the ending vertex
+     *@param map        the Maze map that the user decided to play. Only Maze map with at least 1 possible path should be passed in this parameter.
+     *@param start      the starting point of the shortest path
+     *@param mode       Either 0 or 1. Mode 0 represents the Tom and Jerry mode, where the system calls the shortestpath function
+     *                  and only want to receive the shortest path as return. Mode 1 represents the normal mode where the user directly calls
+     *                  the shortestpath function and want to receive a csv file containing the shortest path and seeing graphic representation
+     *                  of the shortest path.
+     *@return           a Vertex array containing the shortest path between the strating point and the ending point.
+     *                  Null if map do not have a possible path from the starting vertex to the ending vertex.
+     */
     public static Vertex[] shortestPath(MazeMap map,Vertex start,Vertex end, int mode){
-        int ROWS= map.getROWS(); int COLS= map.getCOLS();
+        int ROWS= map.getROWS();
+        int COLS= map.getCOLS();
         Vertex[][] MazeMapData =map.getMazedata();
         Stack<Vertex> path = new Stack<>();
         int[][] distances = new int[ROWS][COLS];
@@ -47,12 +71,14 @@ public class Shortestpath extends JPanel {
             }
         }
         Vertex[] truepath = trueorderpath(path);
-        if (distances[end.getx()][end.gety()] == Integer.MAX_VALUE) return null;
+        if (distances[end.getx()][end.gety()] == Integer.MAX_VALUE)
+            return null;
         else if (mode == 1){
             //Entry n Exit
             //print the path and highlight the path
             writecsv(truepath);
-            for(int i = 0 ; i < truepath.length; i++) truepath[i].set_Shortest_Path();
+            for(int i = 0 ; i < truepath.length; i++)
+                truepath[i].set_Shortest_Path();
             return truepath;
         }
 
@@ -64,7 +90,13 @@ public class Shortestpath extends JPanel {
 
     }
 
-    private static void addNeighbors(Vertex cell, List<Vertex> list,MazeMap map) {
+    /**
+     * the function to add all valid neighbors of a target vertex into a list.
+     * @param cell  the target vertex that we want to find its neighbors.
+     * @param list  the list that storing the neighbors of target vertex after the function.
+     * @param map   the Maze map that the user decided to play.
+     */
+    public static void addNeighbors(Vertex cell, List<Vertex> list, MazeMap map) {
         int[][] ds = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
         Vertex[][] MazeMapData = map.getMazedata();
         int ROWS = map.getROWS();
@@ -77,8 +109,16 @@ public class Shortestpath extends JPanel {
         }
     }
 
-    // find the neighbor of a cell having a certain distance from the start
-    private static Vertex getNeighbor(Vertex cell, int distance, int[][] distances,MazeMap map) {
+    /**
+     * the function to get the neighbor of the target cell, which is with a particular distance value.
+     * @param cell          the target vertex that we want to find its neighbor.
+     * @param distance      distance from the starting point to that neighbor cell.
+     * @param distances     a Vertex 2D array containing the distances from the starting point to all vertex.
+     * @param map           the Maze map that the user decided to play.
+     * @return              A vertex that is the neighbor of cell and has the specified distance.
+     *                      Null if such vertex does not exist.
+     */
+    public static Vertex getNeighbor(Vertex cell, int distance, int[][] distances,MazeMap map) {
         Vertex[][] MazeMapData = map.getMazedata();
         int ROWS = map.getROWS();
         int COLS = map.getCOLS();
@@ -86,17 +126,31 @@ public class Shortestpath extends JPanel {
         for (int[] d : ds) {
             int row = cell.getx() + d[0];
             int col = cell.gety() + d[1];
-            if (isValid(row, col, ROWS,COLS)&& distances[row][col] == distance)
+            if (isValid(row, col, ROWS,COLS)&&
+                    distances[row][col] == distance)
                 return MazeMapData[row][col];
         }
         return null;
     }
 
-    // check if coordinates are inside the maze
-    private static boolean isValid(int row, int col, int ROWS, int COLS) {
+    /**
+     * the function to check whether the row and column value of a vertex is valid.
+     * @param row   the row number of that vertex.
+     * @param col   the column number of that vertex.
+     * @param ROWS  the maximum number of rows of the maze map that user decided to play.
+     * @param COLS  the maximum number of columns of the maze map that user decided to play.
+     * @return      A boolean indicating whether the row and column value are valid.
+     */
+    public static boolean isValid(int row, int col, int ROWS, int COLS) {
         return row >= 0 && row < ROWS && col >= 0 && col < COLS;
     }
 
+    /**
+     * the function to convert a Stack storing the shortest path into a Vertex array.
+     * @param path  The stack that storing the shortest path calculated from the starting vertex to the
+     *              ending vertex.
+     * @return      A Vertex array that storing the shortest path same as the stack.
+     */
 
     public static Vertex[] trueorderpath(Stack<Vertex> path){
         //reverse the order of stack
@@ -109,14 +163,11 @@ public class Shortestpath extends JPanel {
 
         return truepath;
     }
-    /*public static void printpath(Vertex[] path){
-        System.out.print("The shortest path is { ");
-        for(int i = 0; i< path.length;i++){
-            System.out.print(path[i].getx()+","+path[i].gety()+"  ");
-        }
-        System.out.println(" } ");
-        System.out.println("its length is "+ path.length);
-    }*/
+
+    /**
+     * the function to write the shortest path into a csv file called "shortestpath.csv" in certain format.
+     * @param path      the vertex array that storing the shortest path.
+     */
     public static void writecsv(Vertex[] path){
         PrintWriter pw;
         try {
@@ -146,47 +197,5 @@ public class Shortestpath extends JPanel {
             return;
         }
     }
-    //for testing function B
-//    public static void main(String args[]){
-//        int[][] b = {
-//        {1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-//        {0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-//        {0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1},
-//        {1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1},
-//        {0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1},
-//        {0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1},
-//        {1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1},
-//        {1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1},
-//        {1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0},
-//        {1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0},
-//        {1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1},
-//        {1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1},
-//        {2, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0},
-//        {1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0},
-//        {0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1},
-//        {0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1},
-//        {1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 3},
-//        {1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1},
-//        {1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0},
-//        {1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1},
-//        {1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1},
-//        {1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1},
-//        {1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0},
-//        {1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1},
-//        {1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1},
-//        {0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0},
-//        {1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1},
-//        {1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1},
-//        {1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1},
-//        {1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0 }};
-//        MazeMap a = new MazeMap(b);
-//        JFrame frame = new JFrame();
-//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        frame.add(a);
-//        frame.pack();
-//        frame.setVisible(true);
-//        if(shortestPath(a,a.getEntry(),a.getExit(),1)==null) System.out.print("No Path");
-//    }
-
 
 }

@@ -20,6 +20,8 @@ public class Vertex extends JPanel implements MouseListener {
      */
     int x, y;
 
+    public static boolean draw = false;
+
     /**
      * vertex-type:<br>
      * 0 clear vertex path<br>
@@ -73,13 +75,13 @@ public class Vertex extends JPanel implements MouseListener {
 
     public void colourByType(){
         if (vertex_type == 0) {
-            setTheColor(CLEAR_VERTEX_COLOUR);
+            setBackground(CLEAR_VERTEX_COLOUR);
         } else if (vertex_type == 1) {
-            setTheColor(BARRIER_COLOUR);
+            setBackground(BARRIER_COLOUR);
         } else if (vertex_type == 2) {
-            setTheColor(ENTRY_VERTEX_COLOUR);
+            setBackground(ENTRY_VERTEX_COLOUR);
         } else {
-            setTheColor(EXIT_VERTEX_COLOUR);
+            setBackground(EXIT_VERTEX_COLOUR);
         };
     }
 
@@ -90,12 +92,17 @@ public class Vertex extends JPanel implements MouseListener {
 
     //mutator
     public void set_Shortest_Path() {
-        setTheColor(SP_VERTEX_COLOUR);
+        setBackground(SP_VERTEX_COLOUR);
     }
 
     //accessor
     public int getVertex_type() {
         return vertex_type;
+    }
+
+    // accessor of the edit status of the vertex
+    public boolean getEditStatus() {
+        return canEdit;
     }
 
     public int gety() {
@@ -111,49 +118,63 @@ public class Vertex extends JPanel implements MouseListener {
      */
     @Override
     public void mouseClicked(MouseEvent e) {
+        // pass
+    }
+
+    public void handleMouseClick(){
         if (canEdit){
             // if the point is the entry or exit or outermost barrier then no change
-            if (this.vertex_type == 2 || this.vertex_type == 3 || this.x * this.y == 0 || this.x == 29 || this.y == 29) {
+            if (this.vertex_type == 2 || this.vertex_type == 3) {
                 return;
             }
             // if the vertex is a PATH >>> change to BARRIER
             if (this.vertex_type == 0) {
-                setTheColor(BARRIER_COLOUR);
+                setBackground(BARRIER_COLOUR);
                 this.vertex_type = 1;
-
             }
             // if the vertex is a BARRIER >>> change to PATH
             else {
-                setTheColor(CLEAR_VERTEX_COLOUR);
+                setBackground(CLEAR_VERTEX_COLOUR);
                 this.vertex_type = 0;
             }
         }
     }
 
-    /**
-     * modifier function to handle the colour of the vertex
-     */
-    void setTheColor(Color theColor) {
-        setBackground(theColor);
-    }
-
     @Override
     public void mousePressed(MouseEvent e) {
-        // pass
+        // for all the vertex passed, change
+        handleMouseClick();
+        handleMousePressed();
+    }
+
+    public void handleMousePressed(){
+        draw = true;
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        // pass
+        handleMouseReleased();
+    }
+
+    public void handleMouseReleased(){
+        draw = false;
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
         // pass
+        handleMouseEntered();
+    }
+
+    public void handleMouseEntered(){
+        if (draw){
+            handleMouseClick();
+        }
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
         // pass
     }
+
 }

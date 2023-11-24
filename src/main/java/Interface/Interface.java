@@ -1,7 +1,6 @@
 package Interface;
 
 import MazeMap.*;
-import MazeGame.*;
 
 import java.awt.Dimension;
 import javax.swing.*;
@@ -21,14 +20,22 @@ public class Interface extends JFrame {
     private Container container;
 
     /** state of the interface to control what page now to show
-     * 0: starting menu
-     * 1: edit map
-     * 2: play game
-     * 3: test starting
-     * 4: test A
-     * 5: test B
+     * 0: starting menu<br>
+     * 1: edit map<br>
+     * 2: play game<br>
+     * 3: test starting<br>
+     * 4: test A<br>
+     * 5: test B<br>
      * 6: test C */
     private int state;
+
+    // for testing:
+    // 1 = have choice,
+    // 2 = no choice,
+    // 3 = invalid inputs (not csv),
+    // 4 = invalid input (unplayable),
+    // 0 = not test
+    public static int testMode = 0;
 
     /** constructor */
     public Interface(){
@@ -44,52 +51,42 @@ public class Interface extends JFrame {
         pack();
 
         // init the default start screen as startmenu
-        setState(0);
+        setDisplayState(0);
 
         mazeGame = new MazeMap();
     }
 
     /** set the state of the interface */
-    public void setState(int state){
+    public boolean setDisplayState(int state){
+        if (state < 0 || state > 6){
+            return false;
+        }
         this.state = state;
-    }
-
-    public void clearFrame(){
-        getContentPane().removeAll();
-        revalidate();
-        repaint();
+        return true;
     }
 
     /** display the interface according to the state */
-    void display(){
-        clearFrame();
+    public void display(){
+        getContentPane().removeAll();
+        revalidate();
+        repaint();
 
         if (state == 0){
             showMainMenu();
         }
-        // TODO: this should be same as func C, random a map or specify map?
         else if (state == 1){
             showGameWindow();
         }
         else if (state == 2){
             showMapEdit();
         }
-        else if (state == 3){
-            showTestingMenu();
-        }
-        else if (state == 4){
-            showTestA();
-        }
         else if (state == 5){
             showTestB();
-        }
-        else if (state == 6){
-            showTestC();
         }
     }
 
     /** 0: to show the menu screen */
-    void showMainMenu(){
+    public void showMainMenu(){
         container = new Container(this);
         ImageIcon img = new ImageIcon("Assets/Images/Start_BG.jpg");
         JLabel background = new JLabel();
@@ -104,9 +101,8 @@ public class Interface extends JFrame {
         setVisible(true);
     }
 
-    // TODO: this.
     /** 1: to show the game screen */
-    void showGameWindow(){
+    public void showGameWindow(){
         ImageIcon img = new ImageIcon("Assets/Images/transparent.png");
         JLabel background = new JLabel();
         Image image = img.getImage(); // transform it
@@ -123,40 +119,7 @@ public class Interface extends JFrame {
     }
 
     /** 2: to show edit screen */
-    void showMapEdit(){
-        ImageIcon img = new ImageIcon("Assets/Images/transparent.png");
-        JLabel background = new JLabel();
-        Image image = img.getImage(); // transform it
-        Image bg = image.getScaledInstance(44*(26), 30*(28)-12,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
-        img = new ImageIcon(bg);  // transform it back
-        background.setIcon(img);
-        setContentPane(background);
-
-        container = new Container(this);
-        container.setEditMap();
-
-        add(container);
-        setVisible(true);
-    }
-
-    /** 3: show choosing testing window */
-    void showTestingMenu(){
-        container = new Container(this);
-        ImageIcon img = new ImageIcon("Assets/Images/Start_BG.jpg");
-        JLabel background = new JLabel();
-        Image image = img.getImage(); // transform it
-        Image bg = image.getScaledInstance(44*(26), 30*(28)-12,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
-        img = new ImageIcon(bg);  // transform it back
-        background.setIcon(img);
-        setContentPane(background);
-
-        container.setTestMenu();
-        add(container);
-        setVisible(true);
-    }
-
-    /** 4: show test A */
-    void showTestA(){
+    public void showMapEdit(){
         ImageIcon img = new ImageIcon("Assets/Images/transparent.png");
         JLabel background = new JLabel();
         Image image = img.getImage(); // transform it
@@ -173,7 +136,7 @@ public class Interface extends JFrame {
     }
 
     /** 5: show test B */
-    void showTestB(){
+    public void showTestB(){
         ImageIcon img = new ImageIcon("Assets/Images/transparent.png");
         JLabel background = new JLabel();
         Image image = img.getImage(); // transform it
@@ -184,24 +147,6 @@ public class Interface extends JFrame {
 
         container = new Container(this);
         container.setShortestPathExample();
-
-        add(container);
-        setVisible(true);
-    }
-
-    // TODO: this.
-    /** 6: show test C */
-    void showTestC(){
-        ImageIcon img = new ImageIcon("Assets/Images/transparent.png");
-        JLabel background = new JLabel();
-        Image image = img.getImage(); // transform it
-        Image bg = image.getScaledInstance(44*(26), 30*(28)-12,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
-        img = new ImageIcon(bg);  // transform it back
-        background.setIcon(img);
-        setContentPane(background);
-
-        container = new Container(this);
-        container.setTestC("Assets/map/MazeMap_SAMPLE.csv");
 
         add(container);
         setVisible(true);
