@@ -80,17 +80,8 @@ public class Interface extends JFrame {
         else if (state == 2){
             showMapEdit();
         }
-        else if (state == 3){
-            showTestingMenu();
-        }
-        else if (state == 4){
-            showMapEdit();
-        }
         else if (state == 5){
             showTestB();
-        }
-        else if (state == 6){
-            showGameWindow();
         }
     }
 
@@ -140,22 +131,6 @@ public class Interface extends JFrame {
         container = new Container(this);
         container.setEditMap();
 
-        add(container);
-        setVisible(true);
-    }
-
-    /** 3: show choosing testing window */
-    public void showTestingMenu(){
-        container = new Container(this);
-        ImageIcon img = new ImageIcon("Assets/Images/Start_BG.jpg");
-        JLabel background = new JLabel();
-        Image image = img.getImage(); // transform it
-        Image bg = image.getScaledInstance(44*(26), 30*(28)-12,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
-        img = new ImageIcon(bg);  // transform it back
-        background.setIcon(img);
-        setContentPane(background);
-
-        container.setTestMenu();
         add(container);
         setVisible(true);
     }

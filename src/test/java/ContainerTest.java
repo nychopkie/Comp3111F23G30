@@ -46,27 +46,8 @@ class ContainerTest {
         container.handleNavButton(2); // target function
         assertEquals(1,screen.getContentPane().getComponentCount());
 
-        container.handleNavButton(3); // target function
-        assertEquals(1,screen.getContentPane().getComponentCount());
-    }
-
-    @Test
-    void test_handleNavButton2() {
-        Interface.testMode = 2;
-        container.handleNavButton(4); // target function
-        assertEquals(1,screen.getContentPane().getComponentCount());
-
         container.handleNavButton(5); // target function
         assertEquals(1,screen.getContentPane().getComponentCount());
-
-        container.handleNavButton(6); // target function
-        assertEquals(1,screen.getContentPane().getComponentCount());
-    }
-
-    @Test
-    void test_setTestMenu() {
-        container.setTestMenu(); // target function
-        assertEquals(new Dimension(1013,241),container.getPreferredSize());
     }
 
     @Test
@@ -115,11 +96,5 @@ class ContainerTest {
 
         Interface.testMode = 4;
         assertTrue(container.setGameScreen()); // target function
-    }
-
-    @Test
-    void test_setTestC() {
-        container.setTestC("Assets/Test_map/MazeMap_SAMPLE2.csv"); // target function
-        assertEquals(new Dimension(1080,740),container.getPreferredSize());
     }
 }

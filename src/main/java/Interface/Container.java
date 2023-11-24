@@ -63,12 +63,12 @@ public class Container extends JPanel {
         });
         navigation.add(play);
 
-        JButton test = new JButton("Test game");
+        JButton test = new JButton("Shortest Path");
         test.setFont(new Font("Arial", Font.PLAIN, 50));
         test.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                handleNavButton(3);
+                handleNavButton(5);
             }
         });
         navigation.add(test);
@@ -82,70 +82,6 @@ public class Container extends JPanel {
             }
         });
         navigation.add(edit);
-    }
-
-    public void setTestMenu(){
-        GridBagConstraints c = new GridBagConstraints();
-
-        title = new JLabel("<html>" + "Game Testing" + "</html>");
-        c.gridx = 0;
-        c.gridy = 0;
-        c.insets = new Insets(-350,0,0,40*14);  //top padding
-        //c.fill = GridBagConstraints.HORIZONTAL;
-        title.setHorizontalAlignment(JLabel.CENTER);
-        title.setFont(new Font("Verdana", Font.PLAIN, 65));
-        //c.weighty = 0.5;
-        add(title, c);
-
-        navigation = new JPanel();
-        c.gridx = 0;
-        c.gridy = 1;
-        //c.ipady = 40;
-        //c.fill = GridBagConstraints.HORIZONTAL;
-        c.insets = new Insets(-80,0,0,40*14);  //top padding
-        add(navigation, c);
-        navigation.setLayout(new GridLayout(4,1,0,15));
-        navigation.setOpaque(false);
-
-        JButton testA = new JButton("Test A");
-        testA.setFont(new Font("Arial", Font.PLAIN, 50));
-        testA.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                handleNavButton(4);
-            }
-        });
-        navigation.add(testA);
-
-        JButton testB = new JButton("Test B");
-        testB.setFont(new Font("Arial", Font.PLAIN, 50));
-        testB.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                handleNavButton(5);
-            }
-        });
-        navigation.add(testB);
-
-        JButton testC = new JButton("Test C");
-        testC.setFont(new Font("Arial", Font.PLAIN, 50));
-        testC.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                handleNavButton(6);
-            }
-        });
-        navigation.add(testC);
-
-        JButton back = new JButton("Back");
-        back.setFont(new Font("Arial", Font.PLAIN, 50));
-        back.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                handleNavButton(0);
-            }
-        });
-        navigation.add(back);
     }
 
     public JPanel initSideMenu(){
@@ -532,7 +468,95 @@ public class Container extends JPanel {
 
                 setOpaque(true);
                 setBackground(Color.GRAY);
-                setTestC(selectedFile.getPath());
+                MazeGame MazeGame =  new MazeGame(selectedFile.getPath(),screen);
+
+                setOpaque(true);
+                setBackground(Color.GRAY);
+                GridBagConstraints d = new GridBagConstraints();
+                d.insets = new Insets(-35,-30,0,0);  //top padding
+
+                // col 0
+                d.gridx = 0;
+                // row 0
+                d.gridy = 0;
+                add(MazeGame.getPanel(),d);
+
+                // side menu
+                JPanel sideMenu = initSideMenu();
+                JLabel title = new JLabel();
+                JLabel description = new JLabel();
+                JPanel buttons = new JPanel();
+                buttons.setOpaque(false);
+
+                // set title
+                title.setText("<html><b>Play Game</b></html>");
+                title.setHorizontalAlignment(JLabel.CENTER);
+                title.setFont(new Font("Arial", Font.PLAIN, 65));
+                GridBagConstraints c = new GridBagConstraints();
+                // col 0
+                c.gridx = 0;
+                // row 0
+                c.gridy = 0;
+                c.weighty = 0.5;
+                sideMenu.add(title,c);
+
+                // set description
+                String descText = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instruction<hr>" +
+                        "Press arrow key to control<br>" +
+                        "Jerry (Yellow dot) to move to <br>" +
+                        "the exit. Don't get caught by <br> " +
+                        "Tom (Blue dot)";
+                description.setText("<html><p>" + descText + "</p></html>");
+                description.setHorizontalAlignment(JLabel.CENTER);
+                description.setFont(new Font("Arial", Font.PLAIN, 23));
+                // col 0
+                c.gridx = 0;
+                // row 1
+                c.gridy = 1;
+                sideMenu.add(description,c);
+
+                // set button
+                buttons.setLayout(new GridLayout(2,1,0,15));
+
+                /** save button */
+                JButton restart = new JButton("Restart");
+                restart.setFont(new Font("Arial", Font.PLAIN, 40));
+                restart.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        MazeGame.stopTimer();
+                        handleNavButton(1);
+                    }
+                });
+
+                /** exit button */
+                JButton back = new JButton("EXIT");
+                back.setFont(new Font("Arial", Font.PLAIN, 40));
+                back.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        MazeGame.stopTimer();
+                        handleNavButton(0);
+                    }
+                });
+
+                buttons.add(restart);
+                buttons.add(back);
+                // col 0
+                c.gridx = 0;
+                // row 1
+                c.gridy = 2;
+                c.ipadx = 150;
+                c.ipady = 50;
+                c.weighty = 1.5;
+                sideMenu.add(buttons,c);
+
+                // col 1
+                d.gridx = 1;
+                // row 0
+                d.gridy = 0;
+                d.insets = new Insets(-40,0,0,-20);
+                add(sideMenu,d);
             }
             else{
                 screen.setDisplayState(0);
@@ -541,99 +565,6 @@ public class Container extends JPanel {
             }
         }
     return flag;
-    }
-
-    public void setTestC(String path){
-        MazeGame MazeGame =  new MazeGame(path,screen);
-
-        setOpaque(true);
-        setBackground(Color.GRAY);
-        GridBagConstraints d = new GridBagConstraints();
-        d.insets = new Insets(-35,-30,0,0);  //top padding
-
-        // col 0
-        d.gridx = 0;
-        // row 0
-        d.gridy = 0;
-        add(MazeGame.getPanel(),d);
-
-        // side menu
-        JPanel sideMenu = initSideMenu();
-        JLabel title = new JLabel();
-        JLabel description = new JLabel();
-        JPanel buttons = new JPanel();
-        buttons.setOpaque(false);
-
-        // set title
-        title.setText("<html><b>Play Game</b></html>");
-        title.setHorizontalAlignment(JLabel.CENTER);
-        title.setFont(new Font("Arial", Font.PLAIN, 65));
-        GridBagConstraints c = new GridBagConstraints();
-        // col 0
-        c.gridx = 0;
-        // row 0
-        c.gridy = 0;
-        c.weighty = 0.5;
-        sideMenu.add(title,c);
-
-        // set description
-        String descText = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instruction<hr>" +
-                          "Press arrow key to control<br>" +
-                          "Jerry (Yellow dot) to move to <br>" +
-                          "the exit. Don't get caught by <br> " +
-                          "Tom (Blue dot)";
-        description.setText("<html><p>" + descText + "</p></html>");
-        description.setHorizontalAlignment(JLabel.CENTER);
-        description.setFont(new Font("Arial", Font.PLAIN, 23));
-        // col 0
-        c.gridx = 0;
-        // row 1
-        c.gridy = 1;
-        sideMenu.add(description,c);
-
-        // set button
-        buttons.setLayout(new GridLayout(2,1,0,15));
-
-        /** save button */
-        JButton restart = new JButton("Restart");
-        restart.setFont(new Font("Arial", Font.PLAIN, 40));
-        restart.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                MazeGame.stopTimer();
-                handleNavButton(1);
-            }
-        });
-
-        /** exit button */
-        JButton back = new JButton("EXIT");
-        back.setFont(new Font("Arial", Font.PLAIN, 40));
-        back.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                MazeGame.stopTimer();
-                handleNavButton(0);
-            }
-        });
-
-        buttons.add(restart);
-        buttons.add(back);
-        // col 0
-        c.gridx = 0;
-        // row 1
-        c.gridy = 2;
-        c.ipadx = 150;
-        c.ipady = 50;
-        c.weighty = 1.5;
-        sideMenu.add(buttons,c);
-
-        // col 1
-        d.gridx = 1;
-        // row 0
-        d.gridy = 0;
-        d.insets = new Insets(-40,0,0,-20);
-        add(sideMenu,d);
-
     }
 
 }

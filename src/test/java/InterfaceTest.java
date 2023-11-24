@@ -40,7 +40,7 @@ class InterfaceTest {
     }
 
     @Test
-    protected void test_display_0to3() {
+    protected void test_display() {
         // 0
         screen.setDisplayState(0);
         screen.display(); // target function
@@ -57,25 +57,7 @@ class InterfaceTest {
         assertEquals(1,screen.getContentPane().getComponentCount());
 
         // 3
-        screen.setDisplayState(3);
-        screen.display(); // target function
-        assertEquals(1,screen.getContentPane().getComponentCount());
-    }
-
-    @Test
-    protected void test_display_4to6() {
-        // 4
-        screen.setDisplayState(4);
-        screen.display(); // target function
-        assertEquals(1,screen.getContentPane().getComponentCount());
-
-        // 5
         screen.setDisplayState(5);
-        screen.display(); // target function
-        assertEquals(1,screen.getContentPane().getComponentCount());
-
-        // 6
-        screen.setDisplayState(6);
         screen.display(); // target function
         assertEquals(1,screen.getContentPane().getComponentCount());
     }
@@ -95,12 +77,6 @@ class InterfaceTest {
     @Test
     protected void test_showMapEdit(){
         screen.showMapEdit(); // target function
-        assertEquals(1,screen.getContentPane().getComponentCount());
-    }
-
-    @Test
-    protected void test_showTestingMenu(){
-        screen.showTestingMenu(); // target function
         assertEquals(1,screen.getContentPane().getComponentCount());
     }
 
