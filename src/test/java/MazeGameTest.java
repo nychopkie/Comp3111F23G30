@@ -197,25 +197,25 @@ class MazeGameTest {
 
         // Test movement UP
         MazeGame.Jerry jerryUp = mazeGame.new Jerry(5, 5);
-        jerryUp.setDirection(Direction.UP);
+        MazeGame.Jerry.direction = Direction.UP;
         jerryUp.move();//target function
         assertEquals(4, jerryUp.gety(), "Jerry should move up by one unit.");
 
         // Test movement DOWN
         MazeGame.Jerry jerryDown = mazeGame.new Jerry(5, 5);
-        jerryDown.setDirection(Direction.DOWN);
+        MazeGame.Jerry.direction = Direction.DOWN;
         jerryDown.move();//target function
         assertEquals(6, jerryDown.gety(), "Jerry should move down by one unit.");
 
         // Test movement LEFT
         MazeGame.Jerry jerryLeft = mazeGame.new Jerry(6, 5);
-        jerryLeft.setDirection(Direction.LEFT);
+        MazeGame.Jerry.direction = Direction.LEFT;
         jerryLeft.move();//target function
         assertEquals(4, jerryLeft.getx(), "Jerry should move left by one unit.");
 
         // Test movement RIGHT
         MazeGame.Jerry jerryRight = mazeGame.new Jerry(5, 6);
-        jerryRight.setDirection(Direction.RIGHT);
+        MazeGame.Jerry.direction = Direction.RIGHT;
         jerryRight.move();//target function
         assertEquals(7, jerryRight.getx(), "Jerry should move right by one unit.");
     }
@@ -228,19 +228,8 @@ class MazeGameTest {
         assertEquals(5, jerry.gety(), "Jerry's initial x should be 5.");
         assertEquals(10, jerry.getx(), "Jerry's initial y should be 10.");
         assertEquals(Color.ORANGE, jerry.getColor(), "Jerry's color should be orange.");
-        assertEquals(Direction.LEFT, jerry.getDirection(), "Jerry's initial direction should be left.");
+        assertEquals(Direction.LEFT, MazeGame.Jerry.direction, "Jerry's initial direction should be left.");
     }
-
-    @Test
-    void testSetDirection() {
-        MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
-        MazeGame.Jerry jerry = mazeGame.new Jerry(0, 0);
-
-        jerry.setDirection(Direction.UP); // target function
-
-        assertEquals(Direction.UP, jerry.getDirection(), "Jerry's direction should be set to LEFT.");
-    }
-
 
 // test for GamePanel
 @Test
@@ -289,6 +278,5 @@ void testPaintComponentColors() {
         Dimension expected = new Dimension(750, 750); // Replace with the expected dimension
         Dimension actual = panel.getPreferredSize(); // target function
         assertEquals(expected, actual, "The preferred size should match the expected dimension.");
-
     }
 }

@@ -36,8 +36,6 @@ import Interface.*;
  *
  * Additional methods for testing:<br>
  * - getMazeMap(): Returns the MazeMap object.<br>
- * - getJerry(): Returns the Jerry instance.<br>
- * - getTom(): Returns the Tom instance.<br>
  */
 
 public class MazeGame {
@@ -79,10 +77,18 @@ public class MazeGame {
             @Override
             public void keyPressed(KeyEvent e) {
                 switch (e.getKeyCode()) {
-                    case KeyEvent.VK_UP:    jerry.setDirection(Direction.UP); break;
-                    case KeyEvent.VK_DOWN:  jerry.setDirection(Direction.DOWN); break;
-                    case KeyEvent.VK_LEFT:  jerry.setDirection(Direction.LEFT); break;
-                    case KeyEvent.VK_RIGHT: jerry.setDirection(Direction.RIGHT); break;
+                    case KeyEvent.VK_UP:
+                        Jerry.direction = Direction.UP;
+                        break;
+                    case KeyEvent.VK_DOWN:
+                        Jerry.direction = Direction.DOWN;
+                        break;
+                    case KeyEvent.VK_LEFT:
+                        Jerry.direction = Direction.LEFT;
+                        break;
+                    case KeyEvent.VK_RIGHT:
+                        Jerry.direction = Direction.RIGHT;
+                        break;
 
                 }
                 panel.repaint();
@@ -305,7 +311,7 @@ public class MazeGame {
      * - getColor(): Returns Jerry's current color.<br>
      */
     public class Jerry extends GameEntity {
-        private Direction direction;
+        public static Direction direction;
 
         /**
          * Constructor for Jerry
@@ -313,16 +319,8 @@ public class MazeGame {
          * @param y the y-coordinate
          */
         public Jerry(int x, int y) {
-            super(y, x, Color.ORANGE);// swaped
-            this.direction = Direction.LEFT; // Initial direction
-        }
-
-        /**
-         * set the direction of movement for Jerry
-         * @param direction the direction of Jerry's movement
-         */
-        public void setDirection(Direction direction) {
-            this.direction = direction;
+            super(y, x, Color.ORANGE);// swapped
+            Jerry.direction = Direction.LEFT; // Initial direction
         }
 
         /**
@@ -346,10 +344,6 @@ public class MazeGame {
                 jerryPosition = mazeMap.getMazedata()[y][x];
                 jerryHasMoved = true;// Update with new coordinates
             }
-        }
-
-        public Direction getDirection() {
-            return this.direction;
         }
     }
 
@@ -420,8 +414,6 @@ public class MazeGame {
 
         panel.repaint();
     }
-
-    // **** test cases
 
     /**
      * returns the mazemap
