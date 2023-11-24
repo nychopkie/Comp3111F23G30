@@ -37,7 +37,7 @@ public class MazeMap extends JPanel{
     //need exit and entry as instance variables to call shortestpath between entry n exit
     private int entry;
     private int exit ;
-    private String savePath = "Assets/map/MazeMap_Custom.csv";
+    private String savePath = "Assets/map/MazeMap_Custom";
 
     public MazeMap() {
         super();
@@ -174,8 +174,16 @@ public class MazeMap extends JPanel{
 
     /** save map data */
     public void save_MazeMap(){
+        int n = 100;
         try {
-            File file = new File(savePath);
+            File file = new File(savePath + ".csv");
+            for (int i = 0; i < n; i++) {
+                if (file.exists()){
+                    continue;
+                }
+                file = new File(savePath + i + ".csv");
+                break;
+            }
             // write into it according to the format
             PrintWriter pw = new PrintWriter(file);
             pw.close();

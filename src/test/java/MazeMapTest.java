@@ -207,7 +207,7 @@ public class MazeMapTest {
     @Test
     protected void test_save_MazeMap() {
         MazeMap map = new MazeMap();
-        map.setSavePath("Assets/Test_map/save_map.csv");
+        map.setSavePath("Assets/Test_map/save_map");
         // revert to the basic state
         File file = new File("Assets/Test_map/save_map.csv");
         if (file.exists()){
@@ -215,6 +215,10 @@ public class MazeMapTest {
         }
 
         // load a map in
+        map.load_MazeMap("Assets/Test_map/MazeMap_SAMPLE2.csv");
+        map.save_MazeMap(); // target function
+
+        // load a map in to save another copy
         map.load_MazeMap("Assets/Test_map/MazeMap_SAMPLE2.csv");
         map.save_MazeMap(); // target function
 
