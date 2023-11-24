@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="deleted duplicate class">
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="ammended javadoc of MazeMap class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/Shortestpath.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/Shortestpath.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/MazeMapTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MazeMapTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ShortestPathTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ShortestPathTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/Shortestpath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/Shortestpath.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,14 +154,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695396481398</updated>
-    </task>
-    <task id="LOCAL-00044" summary="corrected the loadmap function to chang entry and exit">
-      <option name="closed" value="true" />
-      <created>1700437169749</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1700437169749</updated>
     </task>
     <task id="LOCAL-00045" summary="deleted smth">
       <option name="closed" value="true" />
@@ -552,7 +539,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700822770886</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="ammended javadoc of MazeMap class">
+      <option name="closed" value="true" />
+      <created>1700823656731</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1700823656731</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -579,7 +574,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="merged dev-build to master" />
     <MESSAGE value="Unit testing doe and make the functions public to fullfil the requirement" />
     <MESSAGE value="modified the dialog boc to close automatically" />
     <MESSAGE value="chnages path to relative path" />
@@ -604,7 +598,8 @@
     <MESSAGE value="fixed save map" />
     <MESSAGE value="deleted extra files" />
     <MESSAGE value="deleted duplicate class" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted duplicate class" />
+    <MESSAGE value="ammended javadoc of MazeMap class" />
+    <option name="LAST_COMMIT_MESSAGE" value="ammended javadoc of MazeMap class" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

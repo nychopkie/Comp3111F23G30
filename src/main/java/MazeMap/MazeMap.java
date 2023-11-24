@@ -8,7 +8,27 @@ import java.io.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 
-/** class that shows the map of the game */
+/** class that shows the map of the game
+ *@attributes:
+ * 1. MazeMapData: the map data of all vertices<br>
+ * 2. SIZE: the size of the map<br>
+ * 3. PIXEL_SIZE: the pixel size of each vertex<br>
+ * 4. GAP: the gap size between each vertex<br>
+ * 5. entry: the entry's y-coordinate<br>
+ * 6. exit: the exit's y-coordinate<br>
+ * 7. savePath: the path where custom map would be saved<br>
+ * @operations:
+ * 1. Default Constructor MazeMap()<br>
+ * 2. getEntry()<br>
+ * 3. getExit()<br>
+ * 4. getSIZE()<br>
+ * 5. setSavePath(String path)<br>
+ * 6. refreshColour()<br>
+ * 7. changeState(boolean state)<br>
+ * 8. load_MazeMap(String filePath)<br>
+ * 9. save_MazeMap(String filePath)<br>
+ * 10. getMazeData()<br>
+ **/
 public class MazeMap extends JPanel{
 
     // variables for the class
@@ -16,7 +36,7 @@ public class MazeMap extends JPanel{
     Vertex[][] MazeMapData;
 
     /** the value for the map sizing*/
-    private static final int ROWS = 30, COLS = 30,  PIXEL_SIZE = 25, GAP = 1;
+    private static final int SIZE = 30, PIXEL_SIZE = 25, GAP = 1;
 
     /** the entry point of the maze*/
     private int entry;
@@ -36,31 +56,31 @@ public class MazeMap extends JPanel{
         super();
         // the gap colour
         setBackground(Color.GRAY);
-        setLayout(new GridLayout(ROWS, COLS, GAP, GAP));
+        setLayout(new GridLayout(SIZE, SIZE, GAP, GAP));
 
         // init the attribute in default mode
-        this.MazeMapData = new Vertex[ROWS][COLS];
+        this.MazeMapData = new Vertex[SIZE][SIZE];
 
         // helper var for choosing vertex type
         int v_type = 0;
 
         // determine an entry and exit pos
-        this.entry = ThreadLocalRandom.current().nextInt(1, ROWS-1);
-        this.exit = ThreadLocalRandom.current().nextInt(1, ROWS-1);
+        this.entry = ThreadLocalRandom.current().nextInt(1, SIZE-1);
+        this.exit = ThreadLocalRandom.current().nextInt(1, SIZE-1);
 
         // initializes each Vertex
-        for (int i = 0; i < ROWS; i++) {
-            for (int j = 0; j < COLS; j++) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
                 // determine the v_type first
                 if (i == this.entry && j == 0) {
                     // entry
                     v_type = 2;
                 }
-                else if (i == this.exit && j == ROWS-1) {
+                else if (i == this.exit && j == SIZE-1) {
                     // exit
                     v_type = 3;
                 }
-                else if (i == 0 || i == ROWS-1 || j == 0 || j == ROWS-1) {
+                else if (i == 0 || i == SIZE-1 || j == 0 || j == SIZE-1) {
                     // barrier
                     v_type = 1;
                 }
@@ -76,7 +96,7 @@ public class MazeMap extends JPanel{
             }
         }
         // set size of the map
-        setPreferredSize(new Dimension(ROWS*(PIXEL_SIZE+GAP),COLS*(PIXEL_SIZE+GAP)));
+        setPreferredSize(new Dimension(SIZE*(PIXEL_SIZE+GAP),SIZE*(PIXEL_SIZE+GAP)));
     }
 
     //accessor
@@ -93,7 +113,7 @@ public class MazeMap extends JPanel{
      * @return Vertex() exit
      * */
     public Vertex getExit(){
-        return MazeMapData[exit][COLS-1];
+        return MazeMapData[exit][SIZE-1];
     }
 
     /**
@@ -101,7 +121,7 @@ public class MazeMap extends JPanel{
      * @return int size of map
      * */
     public int getSIZE(){
-        return ROWS;
+        return SIZE;
     }
 
     /**
@@ -114,8 +134,8 @@ public class MazeMap extends JPanel{
 
     /** helper function to refresh map colour */
     public void refreshColour(){
-        for (int i = 0; i < ROWS; ++i){
-            for (int j = 0; j < COLS; ++j){
+        for (int i = 0; i < SIZE; ++i){
+            for (int j = 0; j < SIZE; ++j){
                 MazeMapData[i][j].colourByType();
             }
         }
@@ -123,8 +143,8 @@ public class MazeMap extends JPanel{
 
     /** to change the state of edit of the map */
     public void changeState(boolean state){
-        for (int i = 0; i < ROWS; ++i){
-            for (int j = 0; j < COLS; ++j){
+        for (int i = 0; i < SIZE; ++i){
+            for (int j = 0; j < SIZE; ++j){
                 MazeMapData[i][j].changeEditState(state);
             }
         }
@@ -179,7 +199,7 @@ public class MazeMap extends JPanel{
             int row = 0;
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(",");
-                for (int col = 0; col < COLS; col++) {
+                for (int col = 0; col < SIZE; col++) {
                     // Trim whitespace and then parse the integer
                     MazeMapData[row][col].vertex_type = Integer.parseInt(values[col].trim());
                     refreshColour();
@@ -187,11 +207,11 @@ public class MazeMap extends JPanel{
                 row++;
             }
             // change the entry and exit too
-            for (int i = 0; i < ROWS; ++i){
+            for (int i = 0; i < SIZE; ++i){
                 if (MazeMapData[i][0].vertex_type == 2){
                     entry = i;
                 }
-                if (MazeMapData[i][ROWS-1].vertex_type == 3){
+                if (MazeMapData[i][SIZE-1].vertex_type == 3){
                     exit = i;
                 }
             }
@@ -219,8 +239,8 @@ public class MazeMap extends JPanel{
             PrintWriter pw = new PrintWriter(file);
             pw.close();
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-            for (int i = 0; i < 30; i++){
-                for (int j = 0; j < 30; j++){
+            for (int i = 0; i < SIZE; i++){
+                for (int j = 0; j < SIZE; j++){
                     if (j != 0){
                         writer.write(",");
                     }
