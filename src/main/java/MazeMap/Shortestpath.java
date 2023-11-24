@@ -6,10 +6,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 /**
- * ============ Shortestpath Class ============
- * it contains a function to find the shortest path and other helper functions used by that function.<br>
- * Details could be found above each function. <br>
- * @operations:
+ * it contains a function to find the shortest path and other helper functions used by that function.<br><hr>
+ * Details could be found above each function. <br><hr>
+ * OPERATIONS<br>
  * 1. shortestPath(MazeMap map,Vertex start,Vertex end, int mode)<br>
  * 2. addNeighbors(Vertex cell, List<Vertex> list, MazeMap map) <br>
  * 3. getNeighbor(Vertex cell, int distance, int[][] distances,MazeMap map)<br>

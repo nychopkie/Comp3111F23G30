@@ -30,8 +30,8 @@ public class ShortestPathTest {
     //Noted that addNeighbors don't have the responsibility of detecting barrier
     // It only is used in shortestpath function and shortestpath function won't use it to add the neighbors of a barrier!
     // We only need to test all the neighbours of target Vertex
-        int ROWS = map.getROWS();
-        int COLS = map.getCOLS();
+        int ROWS = map.getSIZE();
+        int COLS = map.getSIZE();
         //Case: Vertex in first col, have only up,down,right
         Vertex target1 = map.getMazedata()[5][0];
         List<Vertex> neighbors1 = new ArrayList<>();
@@ -64,8 +64,8 @@ public class ShortestPathTest {
     @Test
     void test_addNeighbors_corner(){
 
-        int ROWS = map.getROWS();
-        int COLS = map.getCOLS();
+        int ROWS = map.getSIZE();
+        int COLS = map.getSIZE();
         //Case:[0,0]    down right neighbor
         Vertex target1 = map.getMazedata()[0][0];
         List<Vertex> neighbors1 = new ArrayList<>();
@@ -98,8 +98,8 @@ public class ShortestPathTest {
     @Test
     void test_addNeighbors_normal(){
         //Case:Vertex in the middle, having up,down,left,right 4 neighbours
-        int rows = map.getROWS()-4;
-        int cols = map.getCOLS()-4;
+        int rows = map.getSIZE()-4;
+        int cols = map.getSIZE()-4;
         Vertex target = map.getMazedata()[rows][cols];
         List<Vertex> neighbors = new ArrayList<>();
         Vertex[] temp = {map.getMazedata()[rows-1][cols],map.getMazedata()[rows+1][cols],map.getMazedata()[rows][cols-1],map.getMazedata()[rows][cols+1]};
@@ -111,8 +111,8 @@ public class ShortestPathTest {
     @Test
     void test_getNeighbor(){
     // Test can it return the neighbour of the target vertex having same distance as the parameter
-        int ROWS = map.getROWS();
-        int COLS = map.getCOLS();
+        int ROWS = map.getSIZE();
+        int COLS = map.getSIZE();
         int[][] distances = new int[ROWS][COLS];
         for(int i = 0;i<ROWS;i++){
             for(int j=0;j<COLS;j++){
