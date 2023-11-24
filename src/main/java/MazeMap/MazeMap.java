@@ -8,37 +8,30 @@ import java.io.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 
-/**
-* ============ MazeMap Class ============
-* @attributes:
- * 1. Vertex [30][30] MazeMapData: the map of the maze in a 2D array<br>
- *    &nbsp;&nbsp;&nbsp;&nbsp;- have 4 different values to
- *    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represent different things in the
- *    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map<br>
- * 2. ROWS: the number of rows in the map<br>
- * 3. COLS: the number of cols in the map<br>
- * 4. PIXEL_SIZE: the size of each vertex<br>
- * 5. GAP: the size of each gap
- *
- * @operations:
- * 1. load_MazeMap(csv path)<br>
- * &nbsp;&nbsp;&nbsp;&nbsp;- the function to load a pre-existing
- * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map to the screen
- *
- * */
+/** class that shows the map of the game */
 public class MazeMap extends JPanel{
+
     // variables for the class
     /** the maze map containing all Vertices */
     Vertex[][] MazeMapData;
 
     /** the value for the map sizing*/
-    //I change the ROWS,COLS to 3 for easier testing
     private static final int ROWS = 30, COLS = 30,  PIXEL_SIZE = 25, GAP = 1;
-    //need exit and entry as instance variables to call shortestpath between entry n exit
+
+    /** the entry point of the maze*/
     private int entry;
+
+    /** the exit point of the maze*/
     private int exit ;
+
+    /** the path that the user customized map stores to*/
     private String savePath = "Assets/map/MazeMap_Custom";
 
+
+    /**
+     * MazeMap Constructor<br>
+     * This constructor initializes an empty MazeMap
+     */
     public MazeMap() {
         super();
         // the gap colour
@@ -47,22 +40,36 @@ public class MazeMap extends JPanel{
 
         // init the attribute in default mode
         this.MazeMapData = new Vertex[ROWS][COLS];
+
         // helper var for choosing vertex type
         int v_type = 0;
+
         // determine an entry and exit pos
-        //Random random = new Random(0);
         this.entry = ThreadLocalRandom.current().nextInt(1, ROWS-1);
         this.exit = ThreadLocalRandom.current().nextInt(1, ROWS-1);
 
+        // initializes each Vertex
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLS; j++) {
                 // determine the v_type first
-                if (i == this.entry && j == 0) v_type = 2;                        // entry
-                else if (i == this.exit && j == ROWS-1) v_type = 3;                    // exit
-                else if (i == 0 || i == ROWS-1 || j == 0 || j == ROWS-1) v_type = 1; // barrier
-                else v_type = 0;                                             // clear vertex path
+                if (i == this.entry && j == 0) {
+                    // entry
+                    v_type = 2;
+                }
+                else if (i == this.exit && j == ROWS-1) {
+                    // exit
+                    v_type = 3;
+                }
+                else if (i == 0 || i == ROWS-1 || j == 0 || j == ROWS-1) {
+                    // barrier
+                    v_type = 1;
+                }
+                else {
+                    // clear vertex path
+                    v_type = 0;
+                }
 
-                // each of the cell in the MazeMap
+                // set each of the vertex according to the type
                 this.MazeMapData[i][j] = new Vertex(PIXEL_SIZE, i, j, v_type);
                 this.MazeMapData[i][j].changeEditState(false);
                 add(this.MazeMapData[i][j]);
@@ -71,18 +78,30 @@ public class MazeMap extends JPanel{
         // set size of the map
         setPreferredSize(new Dimension(ROWS*(PIXEL_SIZE+GAP),COLS*(PIXEL_SIZE+GAP)));
     }
+
     //accessor
+    /**
+     * Returns the entry Vertex of the map
+     * @return Vertex() entry
+     * */
     public Vertex getEntry(){
         return  MazeMapData[entry][0];
     }
+
+    /**
+     * Returns the exit Vertex of the map
+     * @return Vertex() exit
+     * */
     public Vertex getExit(){
         return MazeMapData[exit][COLS-1];
     }
-    public int getROWS(){
+
+    /**
+     * Returns the entry Vertex of the map
+     * @return Vertex() entry
+     * */
+    public int getSIZE(){
         return ROWS;
-    }
-    public int getCOLS(){
-        return COLS;
     }
     public void setSavePath(String path){
         savePath = path;

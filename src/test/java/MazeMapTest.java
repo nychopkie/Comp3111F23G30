@@ -33,21 +33,12 @@ public class MazeMapTest {
     }
 
     @Test
-    protected void test_getROWS() {
+    protected void test_getSIZE() {
         MazeMap map = new MazeMap();
-        int row_expected = 30;
-        int row_actual = map.getROWS(); // Target function
+        int size_expected = 30;
+        int size_actual = map.getSIZE(); // Target function
 
-        assertEquals(row_expected,row_actual);
-    }
-
-    @Test
-    protected void test_getCOLS() {
-        MazeMap map = new MazeMap();
-        int col_expected = 30;
-        int col_actual = map.getCOLS(); // Target function
-
-        assertEquals(col_expected,col_actual);
+        assertEquals(size_expected,size_actual);
     }
 
     @Test
