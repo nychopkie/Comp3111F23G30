@@ -17,4 +17,7 @@ Tom and Jerry in maze game
 ### Project ID:
 TnJ1
 
-You are Jerry, the mouse, try reach the exit before Tom the cat catches you
+## How to Play Insructions:
+To run the program - you can either directly run "Comp3111F23G30.jar", or pull to your local machine, and run main in Launcher
+use your mouse to control Jerry to try and reach the exit before Tom catches you!
+
