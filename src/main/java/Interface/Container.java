@@ -158,6 +158,7 @@ public class Container extends JPanel {
     }
 
     public void setEditMap(){
+        screen.mazeGame = new MazeMap();
         setBackground(Color.GRAY);
         setOpaque(true);
         GridBagConstraints d = new GridBagConstraints();

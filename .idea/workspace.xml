@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="all unit tests completed">
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="can now save multiple copies">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MazeMapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MazeMapTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Direction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$GameEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$GameEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Jerry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Jerry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Tom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Tom.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/MazeMapTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MazeMapTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/Container.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/Vertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/Vertex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/Vertex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/Vertex.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,22 +88,25 @@
       <recent name="A" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MazeMapTest.test_save_MazeMap">
+  <component name="RunManager" selected="Application.Launcher">
+    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Interface.Launcher" />
+      <module name="Comp3111F23G30" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Interface.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MazeGameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Comp3111F23G30" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MazeGameTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MazeGameTest.testGetPanel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Comp3111F23G30" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MazeGameTest" />
-      <option name="METHOD_NAME" value="testGetPanel" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -146,11 +141,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Launcher" />
+        <item itemvalue="JUnit.java in Comp3111F23G30" />
         <item itemvalue="JUnit.MazeMapTest.test_save_MazeMap" />
         <item itemvalue="JUnit.MazeGameTest" />
         <item itemvalue="JUnit.MazeGameTest.testStopTimer" />
-        <item itemvalue="JUnit.MazeGameTest.testGetPanel" />
-        <item itemvalue="JUnit.java in Comp3111F23G30" />
       </list>
     </recent_temporary>
   </component>
@@ -162,14 +157,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695396481398</updated>
-    </task>
-    <task id="LOCAL-00038" summary="deleted side menu and put it tgt with game container">
-      <option name="closed" value="true" />
-      <created>1700401495166</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1700401495166</updated>
     </task>
     <task id="LOCAL-00039" summary="added test B to the screen">
       <option name="closed" value="true" />
@@ -555,7 +542,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700817160783</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="can now save multiple copies">
+      <option name="closed" value="true" />
+      <created>1700817866232</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1700817866232</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -582,7 +577,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="check if the map is csv format" />
     <MESSAGE value="changed testc" />
     <MESSAGE value="made the start game not shitty background" />
     <MESSAGE value="made sure that the map loadeed for the game must be valid" />
@@ -607,13 +601,14 @@
     <MESSAGE value="Interface unit test" />
     <MESSAGE value="Finished Interface unit test" />
     <MESSAGE value="all unit tests completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="all unit tests completed" />
+    <MESSAGE value="can now save multiple copies" />
+    <option name="LAST_COMMIT_MESSAGE" value="can now save multiple copies" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>A.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$java_in_Comp3111F23G30.ic" NAME="java in Comp3111F23G30 Coverage Results" MODIFIED="1700815647006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$java_in_Comp3111F23G30.ic" NAME="java in Comp3111F23G30 Coverage Results" MODIFIED="1700818055581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$ContainerTest.ic" NAME="ContainerTest Coverage Results" MODIFIED="1700814651127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeGameTest.ic" NAME="MazeGameTest Coverage Results" MODIFIED="1700816743487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$ShortestPathTest.ic" NAME="ShortestPathTest Coverage Results" MODIFIED="1700739553311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

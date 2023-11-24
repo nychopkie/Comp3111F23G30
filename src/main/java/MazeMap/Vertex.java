@@ -124,7 +124,7 @@ public class Vertex extends JPanel implements MouseListener {
     public void handleMouseClick(){
         if (canEdit){
             // if the point is the entry or exit or outermost barrier then no change
-            if (this.vertex_type == 2 || this.vertex_type == 3 || this.x * this.y == 0 || this.x == 29 || this.y == 29) {
+            if (this.vertex_type == 2 || this.vertex_type == 3) {
                 return;
             }
             // if the vertex is a PATH >>> change to BARRIER
