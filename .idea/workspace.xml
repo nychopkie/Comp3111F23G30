@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="finalized game screen" />
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="finalized game screen">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/map/MazeMap_Custom.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/map/MazeMap_Custom.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shortestpath.csv" beforeDir="false" afterPath="$PROJECT_DIR$/shortestpath.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,7 +90,7 @@
       <recent name="A" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in Comp3111F23G30">
+  <component name="RunManager" selected="Application.Launcher">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Interface.Launcher" />
       <module name="Comp3111F23G30" />
@@ -135,8 +142,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.java in Comp3111F23G30" />
         <item itemvalue="Application.Launcher" />
+        <item itemvalue="JUnit.java in Comp3111F23G30" />
         <item itemvalue="JUnit.InterfaceTest" />
         <item itemvalue="JUnit.ContainerTest" />
         <item itemvalue="JUnit.MazeMapTest.test_save_MazeMap" />
@@ -599,26 +606,26 @@
     <option name="LAST_COMMIT_MESSAGE" value="finalized game screen" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$LauncherTest.ic" NAME="LauncherTest Coverage Results" MODIFIED="1700815366606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest.ic" NAME="MazeMapTest Coverage Results" MODIFIED="1700758425293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>A.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$java_in_Comp3111F23G30.ic" NAME="java in Comp3111F23G30 Coverage Results" MODIFIED="1700819274088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$ContainerTest.ic" NAME="ContainerTest Coverage Results" MODIFIED="1700819171952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeGameTest.ic" NAME="MazeGameTest Coverage Results" MODIFIED="1700816743487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$ShortestPathTest.ic" NAME="ShortestPathTest Coverage Results" MODIFIED="1700739553311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest__1_.ic" NAME="MazeMapTest (1) Coverage Results" MODIFIED="1700738620263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeGameTest_testGetTom.ic" NAME="MazeGameTest.testGetTom Coverage Results" MODIFIED="1700719421357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$LauncherTest.ic" NAME="LauncherTest Coverage Results" MODIFIED="1700815366606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$InterfaceTest.ic" NAME="InterfaceTest Coverage Results" MODIFIED="1700819218267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest_getEntry.ic" NAME="MazeMapTest.getEntry Coverage Results" MODIFIED="1700734481548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>MazeMap.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/Comp3111F23G30$VertexTest.ic" NAME="VertexTest Coverage Results" MODIFIED="1700759296484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest.ic" NAME="MazeMapTest Coverage Results" MODIFIED="1700758425293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$InterfaceTest.ic" NAME="InterfaceTest Coverage Results" MODIFIED="1700819218267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest__1_.ic" NAME="MazeMapTest (1) Coverage Results" MODIFIED="1700738620263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest_test_load_MazeMap.ic" NAME="MazeMapTest.test_load_MazeMap Coverage Results" MODIFIED="1700735680845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>MazeMap.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest_test_getEntry.ic" NAME="MazeMapTest.test_getEntry Coverage Results" MODIFIED="1700737102636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>MazeMap.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeGameTest_testGetTom.ic" NAME="MazeGameTest.testGetTom Coverage Results" MODIFIED="1700719421357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$ContainerTest.ic" NAME="ContainerTest Coverage Results" MODIFIED="1700819171952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$ShortestPathTest.ic" NAME="ShortestPathTest Coverage Results" MODIFIED="1700739553311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$java_in_Comp3111F23G30.ic" NAME="java in Comp3111F23G30 Coverage Results" MODIFIED="1700819274088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeGameTest.ic" NAME="MazeGameTest Coverage Results" MODIFIED="1700816743487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest_getEntry.ic" NAME="MazeMapTest.getEntry Coverage Results" MODIFIED="1700734481548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>MazeMap.*</FILTER>
     </SUITE>
   </component>

@@ -179,11 +179,10 @@ public class MazeMap extends JPanel{
             File file = new File(savePath + ".csv");
             for (int i = 0; i < n; i++) {
                 if (file.exists()){
-                    continue;
+                    file = new File(savePath + i + ".csv");
                 }
-                file = new File(savePath + i + ".csv");
-                break;
             }
+            System.out.println(file);
             // write into it according to the format
             PrintWriter pw = new PrintWriter(file);
             pw.close();
