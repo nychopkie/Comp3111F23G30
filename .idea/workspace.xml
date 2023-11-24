@@ -4,18 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="finalized game screen">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="Fixed filename problem">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/map/MazeMap_Custom.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/map/MazeMap_Custom.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shortestpath.csv" beforeDir="false" afterPath="$PROJECT_DIR$/shortestpath.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/Shortestpath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/Shortestpath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ShortestPathTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ShortestPathTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/Shortestpath.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/Shortestpath.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ShortestPathTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ShortestPathTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="0" />
   </component>
   <component name="ExportToHTMLSettings">
     <option name="OUTPUT_DIRECTORY" value="C:\Users\annie\Desktop\COMP3111\Comp3111F23G30\htmlReport" />
@@ -104,15 +108,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContainerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Comp3111F23G30" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ContainerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="InterfaceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Comp3111F23G30" />
       <option name="PACKAGE_NAME" value="" />
@@ -122,11 +117,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MazeMapTest.test_save_MazeMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ShortestPathTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Comp3111F23G30" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MazeMapTest" />
-      <option name="METHOD_NAME" value="test_save_MazeMap" />
+      <option name="MAIN_CLASS_NAME" value="ShortestPathTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShortestPathTest.test_shortestPath" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Comp3111F23G30" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ShortestPathTest" />
+      <option name="METHOD_NAME" value="test_shortestPath" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -143,10 +147,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Launcher" />
+        <item itemvalue="JUnit.ShortestPathTest" />
+        <item itemvalue="JUnit.ShortestPathTest.test_shortestPath" />
         <item itemvalue="JUnit.java in Comp3111F23G30" />
         <item itemvalue="JUnit.InterfaceTest" />
-        <item itemvalue="JUnit.ContainerTest" />
-        <item itemvalue="JUnit.MazeMapTest.test_save_MazeMap" />
       </list>
     </recent_temporary>
   </component>
@@ -158,14 +162,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695396481398</updated>
-    </task>
-    <task id="LOCAL-00041" summary="made new sample map now there is 2 to test!">
-      <option name="closed" value="true" />
-      <created>1700408822552</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1700408822552</updated>
     </task>
     <task id="LOCAL-00042" summary="added todo">
       <option name="closed" value="true" />
@@ -551,7 +547,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700819497945</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="Fixed filename problem">
+      <option name="closed" value="true" />
+      <created>1700821043479</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1700821043480</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -578,7 +582,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="made sure that the map loadeed for the game must be valid" />
     <MESSAGE value="merged the function for final build?" />
     <MESSAGE value="ammended the description" />
     <MESSAGE value="merged dev-build to master" />
@@ -603,11 +606,13 @@
     <MESSAGE value="can now save multiple copies" />
     <MESSAGE value="fixed loadmap" />
     <MESSAGE value="finalized game screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="finalized game screen" />
+    <MESSAGE value="Fixed filename problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed filename problem" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G30$LauncherTest.ic" NAME="LauncherTest Coverage Results" MODIFIED="1700815366606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest.ic" NAME="MazeMapTest Coverage Results" MODIFIED="1700758425293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30Ihateu$ShortestPathTest_test_shortestPath.ic" NAME="ShortestPathTest.test_shortestPath Coverage Results" MODIFIED="1700842522861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>A.*</FILTER>
     </SUITE>
@@ -621,6 +626,7 @@
       <FILTER>MazeMap.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeGameTest_testGetTom.ic" NAME="MazeGameTest.testGetTom Coverage Results" MODIFIED="1700719421357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30Ihateu$ShortestPathTest.ic" NAME="ShortestPathTest Coverage Results" MODIFIED="1700842647249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$ContainerTest.ic" NAME="ContainerTest Coverage Results" MODIFIED="1700819171952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$ShortestPathTest.ic" NAME="ShortestPathTest Coverage Results" MODIFIED="1700739553311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$java_in_Comp3111F23G30.ic" NAME="java in Comp3111F23G30 Coverage Results" MODIFIED="1700819274088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
