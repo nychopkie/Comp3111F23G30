@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 
 /** class that shows the map of the game
- *@attributes:
+ *ATTRIBURTES<br>
  * 1. MazeMapData: the map data of all vertices<br>
  * 2. SIZE: the size of the map<br>
  * 3. PIXEL_SIZE: the pixel size of each vertex<br>
@@ -17,7 +17,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * 5. entry: the entry's y-coordinate<br>
  * 6. exit: the exit's y-coordinate<br>
  * 7. savePath: the path where custom map would be saved<br>
- * @operations:
+ * OPERATIONS<br>
  * 1. Default Constructor MazeMap()<br>
  * 2. getEntry()<br>
  * 3. getExit()<br>

@@ -6,10 +6,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 /**
- * ============ Shortestpath Class ============<br>
  * it contains a function to find the shortest path and other helper functions used by that function.<br>
- * Details could be found above each function. <br>
- * @operations:
+ * OPERATIONS<br>
  * 1. shortestPath(MazeMap map,Vertex start,Vertex end, int mode)<br>
  * 2. addNeighbors(Vertex cell, List<Vertex> list, MazeMap map) <br>
  * 3. getNeighbor(Vertex cell, int distance, int[][] distances,MazeMap map)<br>
@@ -151,7 +149,6 @@ public class Shortestpath extends JPanel {
      *              ending vertex.
      * @return      A Vertex array that storing the shortest path same as the stack.
      */
-
     public static Vertex[] trueorderpath(Stack<Vertex> path){
         //reverse the order of stack
         int capacity = path.size();
