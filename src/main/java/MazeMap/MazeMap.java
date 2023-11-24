@@ -123,6 +123,7 @@ public class MazeMap extends JPanel{
                         }
                     }).start();
             dialog.setModal(false);
+            dialog.setFocusable(true);
             dialog.setVisible(true);
             //JOptionPane.showMessageDialog(this, "Chosen file is not a .csv file, please load a valid map.");
             return false;
@@ -142,6 +143,7 @@ public class MazeMap extends JPanel{
                 }
             }).start();
             dialog.setModal(false);
+            dialog.setFocusable(true);
             dialog.setVisible(true);
             return false;
         }
@@ -179,9 +181,9 @@ public class MazeMap extends JPanel{
             File file = new File(savePath + ".csv");
             for (int i = 0; i < n; i++) {
                 if (file.exists()){
+                    file = new File(savePath + i + ".csv");
                     continue;
                 }
-                file = new File(savePath + i + ".csv");
                 break;
             }
             // write into it according to the format

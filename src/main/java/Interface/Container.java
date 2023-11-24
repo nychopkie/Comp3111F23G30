@@ -248,6 +248,7 @@ public class Container extends JPanel {
                         }
                     }).start();
                     dialog.setModal(false);
+                    dialog.setFocusable(true);
                     dialog.setVisible(true);
                     //JOptionPane.showMessageDialog(screen.mazeGame, "Chosen file is not a .csv file, please load a valid map.");
                     if (Interface.testMode == 0){
@@ -272,6 +273,7 @@ public class Container extends JPanel {
                         }
                     }).start();
                     dialog.setModal(false);
+                    dialog.setFocusable(true);
                     dialog.setVisible(true);
                     //JOptionPane.showMessageDialog(screen.mazeGame, "Not a valid map, please choose another map");
                     if (Interface.testMode == 0){
@@ -431,6 +433,7 @@ public class Container extends JPanel {
                         }
                     }).start();
                     dialog.setModal(false);
+                    dialog.setFocusable(true);
                     dialog.setVisible(true);
                     if (Interface.testMode == 0){
                         continue;
@@ -456,6 +459,7 @@ public class Container extends JPanel {
                         }
                     }).start();
                     dialog.setModal(false);
+                    dialog.setFocusable(true);
                     dialog.setVisible(true);
                     if (Interface.testMode == 0){
                         continue;
