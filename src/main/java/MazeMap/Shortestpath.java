@@ -30,8 +30,8 @@ public class Shortestpath extends JPanel {
      *                  Null if map do not have a possible path from the starting vertex to the ending vertex.
      */
     public static Vertex[] shortestPath(MazeMap map,Vertex start,Vertex end, int mode){
-        int ROWS= map.getROWS();
-        int COLS= map.getCOLS();
+        int ROWS= map.getSIZE();
+        int COLS= map.getSIZE();
         Vertex[][] MazeMapData =map.getMazedata();
         Stack<Vertex> path = new Stack<>();
         int[][] distances = new int[ROWS][COLS];
@@ -127,8 +127,8 @@ public class Shortestpath extends JPanel {
     public static void addNeighbors(Vertex cell, List<Vertex> list, MazeMap map) {
         int[][] ds = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
         Vertex[][] MazeMapData = map.getMazedata();
-        int ROWS = map.getROWS();
-        int COLS = map.getCOLS();
+        int ROWS = map.getSIZE();
+        int COLS = map.getSIZE();
         for (int[] d : ds) {
             int row = cell.getx() + d[0];
             int col = cell.gety() + d[1];
@@ -148,8 +148,8 @@ public class Shortestpath extends JPanel {
      */
     public static Vertex getNeighbor(Vertex cell, int distance, int[][] distances,MazeMap map) {
         Vertex[][] MazeMapData = map.getMazedata();
-        int ROWS = map.getROWS();
-        int COLS = map.getCOLS();
+        int ROWS = map.getSIZE();
+        int COLS = map.getSIZE();
         int[][] ds = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
         for (int[] d : ds) {
             int row = cell.getx() + d[0];
