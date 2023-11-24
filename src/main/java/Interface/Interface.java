@@ -421,7 +421,7 @@ public class Interface extends JFrame {
         d.gridx = 0;
         // row 0
         d.gridy = 0;
-        mazeGame.changeState(true);
+        Vertex.canEdit = true;
         mazeGame.refreshColour();
         container.add(mazeGame, d);
 
@@ -647,7 +647,7 @@ public class Interface extends JFrame {
 
         mazeGame = new MazeMap();
         mazeGame.load_MazeMap("Assets/map/MazeMap_shortestPathExample.csv");
-        mazeGame.changeState(false);
+        Vertex.canEdit = false;
         Shortestpath.shortestPath(mazeGame,mazeGame.getEntry(),mazeGame.getExit(),1);
 
         d.insets = new Insets(-35,-20,0,0);  //top padding

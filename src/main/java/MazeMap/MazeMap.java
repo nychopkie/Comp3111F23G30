@@ -24,10 +24,9 @@ import java.util.concurrent.ThreadLocalRandom;
  * 4. getSIZE()<br>
  * 5. setSavePath(String path)<br>
  * 6. refreshColour()<br>
- * 7. changeState(boolean state)<br>
- * 8. load_MazeMap(String filePath)<br>
- * 9. save_MazeMap(String filePath)<br>
- * 10. getMazeData()<br>
+ * 7. load_MazeMap(String filePath)<br>
+ * 8. save_MazeMap(String filePath)<br>
+ * 9. getMazeData()<br>
  **/
 public class MazeMap extends JPanel{
 
@@ -91,10 +90,10 @@ public class MazeMap extends JPanel{
 
                 // set each of the vertex according to the type
                 this.MazeMapData[i][j] = new Vertex(PIXEL_SIZE, i, j, v_type);
-                this.MazeMapData[i][j].changeEditState(false);
                 add(this.MazeMapData[i][j]);
             }
         }
+        Vertex.canEdit = false;
         // set size of the map
         setPreferredSize(new Dimension(SIZE*(PIXEL_SIZE+GAP),SIZE*(PIXEL_SIZE+GAP)));
     }
@@ -137,15 +136,6 @@ public class MazeMap extends JPanel{
         for (int i = 0; i < SIZE; ++i){
             for (int j = 0; j < SIZE; ++j){
                 MazeMapData[i][j].colourByType();
-            }
-        }
-    }
-
-    /** to change the state of edit of the map */
-    public void changeState(boolean state){
-        for (int i = 0; i < SIZE; ++i){
-            for (int j = 0; j < SIZE; ++j){
-                MazeMapData[i][j].changeEditState(state);
             }
         }
     }

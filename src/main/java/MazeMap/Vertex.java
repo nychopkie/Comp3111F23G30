@@ -11,7 +11,7 @@ import java.awt.event.MouseListener;
  * 2. y: the y-coordinate of the vertex<br>
  * 3. draw: control to invoke drag drawing<br>
  * 4. vertex_type: the type of vertex it is<br>
- * 5. canEdit: control whether the vertex can be edited<br>
+ * 5. static canEdit: control whether the vertex can be edited<br>
  * 6. sizeOfSquare: the size of each square<br>
  * 7. CLEAR_VERTEX_COLOUR: white<br>
  * 8. BARRIER_COLOUR: dark gray<br>
@@ -21,16 +21,14 @@ import java.awt.event.MouseListener;
  * OPERATIONS<br>
  * 1. Vertex(int sizeOfSquare, int x, int y, int vertex_type)<br>
  * 2. colourByType()<br>
- * 3. changeEditStatus(boolean flag)<br>
- * 4. set_Shortest_Path()<br>
- * 5. getVertex_type()<br>
- * 6. getEditStatus()<br>
- * 7. gety()<br>
- * 8. getx()<br>
- * 9. handleMouseClick()<br>
- * 10. handleMousePressed()<br>
- * 11. handleMouseReleased()<br>
- * 12. handleMouseEntered()<br>
+ * 3. set_Shortest_Path()<br>
+ * 4. getVertex_type()<br>
+ * 5. gety()<br>
+ * 6. getx()<br>
+ * 7. handleMouseClick()<br>
+ * 8. handleMousePressed()<br>
+ * 9. handleMouseReleased()<br>
+ * 10. handleMouseEntered()<br>
  **/
 public class Vertex extends JPanel implements MouseListener {
 
@@ -54,7 +52,7 @@ public class Vertex extends JPanel implements MouseListener {
     int vertex_type;
 
     /** checks if the vertex can change value */
-    private boolean canEdit;
+    public static boolean canEdit = false;
 
     /**
      * the pixel size of each vertex
@@ -115,11 +113,6 @@ public class Vertex extends JPanel implements MouseListener {
         };
     }
 
-    /** mutator to set the state on whether if the map is changable*/
-    public void changeEditState(boolean flag){
-        canEdit = flag;
-    }
-
     /**
      * mutator to set the shortest path's colour
      */
@@ -133,14 +126,6 @@ public class Vertex extends JPanel implements MouseListener {
      */
     public int getVertex_type() {
         return vertex_type;
-    }
-
-    /**
-     * returns the edit status of the particular Vertex
-     * @return boolean canEdit
-     */
-    public boolean getEditStatus() {
-        return canEdit;
     }
 
     /**
