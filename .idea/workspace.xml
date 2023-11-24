@@ -6,19 +6,31 @@
   <component name="ChangeListManager">
     <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="Interface unit test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shortestpath.csv" beforeDir="false" afterPath="$PROJECT_DIR$/shortestpath.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interface/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/Container.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/Interface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ContainerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ContainerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$11$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$11$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$11$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$11$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$11$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$11$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$11.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$12.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$13.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$14.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$15.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$15.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$16.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$16.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ContainerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ContainerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +110,7 @@
       <recent name="A" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.InterfaceTest">
+  <component name="RunManager" selected="JUnit.java in Comp3111F23G30">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Interface.Launcher" />
       <module name="Comp3111F23G30" />
@@ -121,20 +133,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InterfaceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ContainerTest.test_setGameScreen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Comp3111F23G30" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InterfaceTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="ContainerTest" />
+      <option name="METHOD_NAME" value="test_setGameScreen" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VertexTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ContainerTest.test_setStartMenu" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Comp3111F23G30" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="VertexTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="ContainerTest" />
+      <option name="METHOD_NAME" value="test_setStartMenu" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -149,11 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.InterfaceTest" />
-        <item itemvalue="JUnit.ContainerTest" />
         <item itemvalue="JUnit.java in Comp3111F23G30" />
+        <item itemvalue="JUnit.ContainerTest" />
+        <item itemvalue="JUnit.ContainerTest.test_setGameScreen" />
         <item itemvalue="Application.Launcher" />
-        <item itemvalue="JUnit.VertexTest" />
+        <item itemvalue="JUnit.ContainerTest.test_setStartMenu" />
       </list>
     </recent_temporary>
   </component>
@@ -165,14 +179,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695396481398</updated>
-    </task>
-    <task id="LOCAL-00035" summary="made the look of the start menu with background">
-      <option name="closed" value="true" />
-      <created>1700394983229</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1700394983229</updated>
     </task>
     <task id="LOCAL-00036" summary="made the look of the start menu with background">
       <option name="closed" value="true" />
@@ -558,7 +564,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700766878206</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Interface unit test">
+      <option name="closed" value="true" />
+      <created>1700768888469</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1700768888469</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -621,6 +635,7 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/Comp3111F23G30$VertexTest.ic" NAME="VertexTest Coverage Results" MODIFIED="1700759296484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest.ic" NAME="MazeMapTest Coverage Results" MODIFIED="1700758425293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$ContainerTest.ic" NAME="ContainerTest Coverage Results" MODIFIED="1700814588184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeGameTest.ic" NAME="MazeGameTest Coverage Results" MODIFIED="1700736252805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$ShortestPathTest.ic" NAME="ShortestPathTest Coverage Results" MODIFIED="1700739553311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest__1_.ic" NAME="MazeMapTest (1) Coverage Results" MODIFIED="1700738620263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

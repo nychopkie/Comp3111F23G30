@@ -29,7 +29,12 @@ public class Interface extends JFrame {
      * 6: test C */
     private int state;
 
-    // for testing: 1 = have choice, 2 = no choice, 3 = invalid inputs
+    // for testing:
+    // 1 = have choice,
+    // 2 = no choice,
+    // 3 = invalid inputs (not csv),
+    // 4 = invalid input (unplayable),
+    // 0 = not test
     public static int testMode = 0;
 
     /** constructor */

@@ -24,6 +24,12 @@ public class Container extends JPanel {
         setLayout(startMenuLayout);
     }
 
+    // handler for mouse button to test
+    public void handleNavButton(int state){
+        screen.setDisplayState(state);
+        screen.display();
+    }
+
     public void setStartMenu(){
         GridBagConstraints c = new GridBagConstraints();
 
@@ -52,8 +58,7 @@ public class Container extends JPanel {
         play.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                screen.setDisplayState(1);
-                screen.display();
+                handleNavButton(1);
             }
         });
         navigation.add(play);
@@ -63,8 +68,7 @@ public class Container extends JPanel {
         test.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                screen.setDisplayState(3);
-                screen.display();
+                handleNavButton(3);
             }
         });
         navigation.add(test);
@@ -74,8 +78,7 @@ public class Container extends JPanel {
         edit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                screen.setDisplayState(2);
-                screen.display();
+                handleNavButton(2);
             }
         });
         navigation.add(edit);
@@ -109,8 +112,7 @@ public class Container extends JPanel {
         testA.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                screen.setDisplayState(4);
-                screen.display();
+                handleNavButton(4);
             }
         });
         navigation.add(testA);
@@ -120,8 +122,7 @@ public class Container extends JPanel {
         testB.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                screen.setDisplayState(5);
-                screen.display();
+                handleNavButton(5);
             }
         });
         navigation.add(testB);
@@ -131,8 +132,7 @@ public class Container extends JPanel {
         testC.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                screen.setDisplayState(6);
-                screen.display();
+                handleNavButton(6);
             }
         });
         navigation.add(testC);
@@ -142,8 +142,7 @@ public class Container extends JPanel {
         back.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                screen.setDisplayState(0);
-                screen.display();
+                handleNavButton(0);
             }
         });
         navigation.add(back);
@@ -228,19 +227,7 @@ public class Container extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFileChooser chooser = new JFileChooser();
-                int returnVal;
-                // for unit test
-                if (Interface.testMode == 1){
-                    returnVal = JFileChooser.APPROVE_OPTION;
-                }
-                if (Interface.testMode == 2){
-                    returnVal = JFileChooser.CANCEL_OPTION;
-                }
-                else{
-                    returnVal = chooser.showOpenDialog(null);
-                }
-
-                if (returnVal == JFileChooser.APPROVE_OPTION){
+                if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
                     File selectedFile = chooser.getSelectedFile();
                     screen.mazeGame.load_MazeMap(selectedFile.getPath());
                 }
@@ -253,8 +240,7 @@ public class Container extends JPanel {
         back.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                screen.setDisplayState(0);
-                screen.display();
+                handleNavButton(0);
             }
         });
 
@@ -276,6 +262,97 @@ public class Container extends JPanel {
         d.gridy = 0;
         d.insets = new Insets(-40,0,0,0);  //top padding
         add(sideMenu,d);
+    }
+
+    public boolean handleSPLoad(){
+        JFileChooser chooser = new JFileChooser();
+        int returnVal;
+
+        boolean flag = true;
+        while (flag){
+            // for unit test
+            if (Interface.testMode == 1){
+                returnVal = JFileChooser.APPROVE_OPTION;
+                File file = new File("Assets/Test_map/MazeMap_SAMPLE2.csv");
+                chooser.setSelectedFile(file);
+            }
+            else if (Interface.testMode == 2){
+                returnVal = JFileChooser.CANCEL_OPTION;
+            }
+            else if (Interface.testMode == 3){
+                returnVal = JFileChooser.APPROVE_OPTION;
+                File file = new File("Assets/Test_map/notCsv.txt");
+                chooser.setSelectedFile(file);
+            }
+            else if (Interface.testMode == 4){
+                returnVal = JFileChooser.APPROVE_OPTION;
+                File file = new File("Assets/Test_map/MazeMap_InvalidExample.csv");
+                chooser.setSelectedFile(file);
+            }
+            else{
+                // human control
+                returnVal = chooser.showOpenDialog(null);
+            }
+
+            if (returnVal == JFileChooser.APPROVE_OPTION){
+                File selectedFile = chooser.getSelectedFile();
+                if (!selectedFile.getPath().endsWith(".csv")) {
+                    JOptionPane pane = new JOptionPane("Chosen file is not a .csv file, please load a valid map.",JOptionPane.WARNING_MESSAGE);
+                    JDialog dialog = pane.createDialog(null, "warning");
+                    dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try{
+                                Thread.sleep(5000);
+                            } catch (InterruptedException e){
+                                e.printStackTrace();
+                            }
+                        }
+                    }).start();
+                    dialog.setModal(false);
+                    dialog.setVisible(true);
+                    //JOptionPane.showMessageDialog(screen.mazeGame, "Chosen file is not a .csv file, please load a valid map.");
+                    if (Interface.testMode == 0){
+                        continue;
+                    }else{
+                        return flag;
+                    }
+                }
+                screen.mazeGame.load_MazeMap(selectedFile.getPath());
+                if(Shortestpath.shortestPath(screen.mazeGame,screen.mazeGame.getEntry(),screen.mazeGame.getExit(),1)==null){
+                    JOptionPane pane = new JOptionPane("Not a valid map, please choose another map",JOptionPane.WARNING_MESSAGE);
+                    JDialog dialog = pane.createDialog(null, "warning");
+                    dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try{
+                                Thread.sleep(5000);
+                            } catch (InterruptedException e){
+                                e.printStackTrace();
+                            }
+                        }
+                    }).start();
+                    dialog.setModal(false);
+                    dialog.setVisible(true);
+                    //JOptionPane.showMessageDialog(screen.mazeGame, "Not a valid map, please choose another map");
+                    if (Interface.testMode == 0){
+                        continue;
+                    }else{
+                        return flag;
+                    }
+                }
+
+                flag = false;
+                screen.mazeGame.load_MazeMap(selectedFile.getPath());
+                if(Shortestpath.shortestPath(screen.mazeGame,screen.mazeGame.getEntry(),screen.mazeGame.getExit(),1)==null) System.out.print("No Path");
+            }
+            else{
+                flag = false;
+            }
+        }
+        return flag;
     }
 
     /** function to test for B */
@@ -336,72 +413,7 @@ public class Container extends JPanel {
         load.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFileChooser chooser = new JFileChooser();
-                int returnVal;
-
-                boolean flag = true;
-                while (flag){
-                    // for unit test
-                    if (Interface.testMode == 1){
-                        returnVal = JFileChooser.APPROVE_OPTION;
-                    }
-                    if (Interface.testMode == 2){
-                        returnVal = JFileChooser.CANCEL_OPTION;
-                    }
-                    else{
-                        returnVal = chooser.showOpenDialog(null);
-                    }
-
-                    if (returnVal == JFileChooser.APPROVE_OPTION){
-                        File selectedFile = chooser.getSelectedFile();
-                        if (!selectedFile.getPath().endsWith(".csv")) {
-                            JOptionPane pane = new JOptionPane("Chosen file is not a .csv file, please load a valid map.",JOptionPane.WARNING_MESSAGE);
-                            JDialog dialog = pane.createDialog(null, "warning");
-                            dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
-                            new Thread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    try{
-                                        Thread.sleep(5000);
-                                    } catch (InterruptedException e){
-                                        e.printStackTrace();
-                                    }
-                                }
-                            }).start();
-                            dialog.setModal(false);
-                            dialog.setVisible(true);
-                            //JOptionPane.showMessageDialog(screen.mazeGame, "Chosen file is not a .csv file, please load a valid map.");
-                            continue;
-                        };
-                        screen.mazeGame.load_MazeMap(selectedFile.getPath());
-                        if(Shortestpath.shortestPath(screen.mazeGame,screen.mazeGame.getEntry(),screen.mazeGame.getExit(),1)==null){
-                            JOptionPane pane = new JOptionPane("Not a valid map, please choose another map",JOptionPane.WARNING_MESSAGE);
-                            JDialog dialog = pane.createDialog(null, "warning");
-                            dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
-                            new Thread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    try{
-                                        Thread.sleep(5000);
-                                    } catch (InterruptedException e){
-                                        e.printStackTrace();
-                                    }
-                                }
-                            }).start();
-                            dialog.setModal(false);
-                            dialog.setVisible(true);
-                            //JOptionPane.showMessageDialog(screen.mazeGame, "Not a valid map, please choose another map");
-                            continue;
-                        }
-
-                        flag = false;
-                        screen.mazeGame.load_MazeMap(selectedFile.getPath());
-                        if(Shortestpath.shortestPath(screen.mazeGame,screen.mazeGame.getEntry(),screen.mazeGame.getExit(),1)==null) System.out.print("No Path");
-                    }
-                    else{
-                        flag = false;
-                    }
-                }
+                handleSPLoad();
             }
         });
 
@@ -411,8 +423,7 @@ public class Container extends JPanel {
         back.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                screen.setDisplayState(0);
-                screen.display();
+                handleNavButton(0);
             }
         });
 
@@ -435,7 +446,7 @@ public class Container extends JPanel {
         add(sideMenu,d);
     }
 
-    public void setGameScreen(){
+    public boolean setGameScreen(){
         JFileChooser chooser = new JFileChooser();
         int returnVal;
 
@@ -444,11 +455,24 @@ public class Container extends JPanel {
             // for unit test
             if (Interface.testMode == 1){
                 returnVal = JFileChooser.APPROVE_OPTION;
+                File file = new File("Assets/Test_map/MazeMap_SAMPLE2.csv");
+                chooser.setSelectedFile(file);
             }
-            if (Interface.testMode == 2){
+            else if (Interface.testMode == 2){
                 returnVal = JFileChooser.CANCEL_OPTION;
             }
+            else if (Interface.testMode == 3){
+                returnVal = JFileChooser.APPROVE_OPTION;
+                File file = new File("Assets/Test_map/notCsv.txt");
+                chooser.setSelectedFile(file);
+            }
+            else if (Interface.testMode == 4){
+                returnVal = JFileChooser.APPROVE_OPTION;
+                File file = new File("Assets/Test_map/MazeMap_InvalidExample.csv");
+                chooser.setSelectedFile(file);
+            }
             else{
+                // human control
                 returnVal = chooser.showOpenDialog(null);
             }
 
@@ -471,7 +495,11 @@ public class Container extends JPanel {
                     }).start();
                     dialog.setModal(false);
                     dialog.setVisible(true);
-                    continue;
+                    if (Interface.testMode == 0){
+                        continue;
+                    }else{
+                        return flag;
+                    }
                 };
                 screen.mazeGame.load_MazeMap(selectedFile.getPath());
                 if(Shortestpath.shortestPath(screen.mazeGame,screen.mazeGame.getEntry(),screen.mazeGame.getExit(),1)==null){
@@ -492,7 +520,11 @@ public class Container extends JPanel {
                     }).start();
                     dialog.setModal(false);
                     dialog.setVisible(true);
-                    continue;
+                    if (Interface.testMode == 0){
+                        continue;
+                    }else{
+                        return flag;
+                    }
                 }
 
                 flag = false;
@@ -504,10 +536,10 @@ public class Container extends JPanel {
             else{
                 screen.setDisplayState(0);
                 screen.display();
-                return;
+                return flag;
             }
         }
-
+    return flag;
     }
 
     public void setTestC(String path){
@@ -568,8 +600,7 @@ public class Container extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 MazeGame.stopTimer();
-                screen.setDisplayState(1);
-                screen.display();
+                handleNavButton(1);
             }
         });
 
@@ -580,8 +611,7 @@ public class Container extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 MazeGame.stopTimer();
-                screen.setDisplayState(0);
-                screen.display();
+                handleNavButton(0);
             }
         });
 
