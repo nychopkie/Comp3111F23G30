@@ -156,7 +156,7 @@ class MazeGameTest {
     @Test
     void testGetCurrentPosition() {
         MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
-        mazeGame.loadMaze("path/to/maze/file"); // Load the maze
+        mazeGame.loadMaze("Assets/map/MazeMap_SAMPLE.csv"); // Load the maze
         MazeMap mazeMap = mazeGame.getMazeMap();
 
         int initialX = 3;
@@ -174,7 +174,7 @@ class MazeGameTest {
     @Test
     void testTomMove() {
         MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
-        mazeGame.loadMaze("src/main/java/MazaMap_TnJ.csv"); // Load the maze
+        mazeGame.loadMaze("Assets/map/MazeMap_SAMPLE.csv"); // Load the maze
         MazeMap mazeMap = mazeGame.getMazeMap();
 
         MazeGame.Tom tom = mazeGame.new Tom(0, 0);
@@ -258,7 +258,7 @@ class MazeGameTest {
         MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
         MazeGame.Jerry jerry = mazeGame.new Jerry(0, 0);
 
-        jerry.setDirection(Direction.UP);
+        jerry.setDirection(Direction.UP); // target function
 
         assertEquals(Direction.UP, jerry.getDirection(), "Jerry's direction should be set to LEFT.");
     }
@@ -274,7 +274,7 @@ void testPaintComponentColors() {
     Graphics g = image.getGraphics();
 
     try {
-        panel.paintComponent(g);
+        panel.paintComponent(g); // target function
 
         // Assuming you know the expected color and position
         // For example, checking if the pixel at Entry point
@@ -293,7 +293,7 @@ void testPaintComponentColors() {
     void testGetPreferredSize() {
         MazeGame.GamePanel panel = new GamePanel();
         Dimension expected = new Dimension(750, 750); // Replace with the expected dimension
-        Dimension actual = panel.getPreferredSize();
+        Dimension actual = panel.getPreferredSize(); // target function
         assertEquals(expected, actual, "The preferred size should match the expected dimension.");
     }
 
@@ -313,18 +313,36 @@ void testPaintComponentColors() {
     @Test
     void testGetMazeMap() {
         MazeGame game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
-        assertNotNull(game.getMazeMap(), "MazeMap should not be null.");
+        assertNotNull(game.getMazeMap(), "MazeMap should not be null."); // target function
     }
 
     @Test
     void testGetJerry() {
         MazeGame game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
-        assertNotNull(game.getJerry(), "Jerry instance should not be null.");
+        assertNotNull(game.getJerry(), "Jerry instance should not be null."); // target function
     }
 
     @Test
     void testGetTom() {
         MazeGame game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
-        assertNotNull(game.getTom(), "Tom instance should not be null.");
+        assertNotNull(game.getTom(), "Tom instance should not be null."); // target function
+    }
+
+    @Test
+    void testStopTimer() {
+        MazeGame game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
+        MazeGame.Jerry jerry = game.new Jerry(3, 0);
+        game.stopTimer(); // target function
+        assertEquals(3, jerry.gety());
+    }
+
+    @Test
+    void testGetPanel() {
+        MazeGame game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
+        GamePanel panel = game.getPanel(); // target function
+        Dimension expected = new Dimension(750, 750); // Replace with the expected dimension
+        Dimension actual = panel.getPreferredSize(); // target function
+        assertEquals(expected, actual, "The preferred size should match the expected dimension.");
+
     }
 }

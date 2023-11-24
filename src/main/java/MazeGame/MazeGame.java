@@ -120,6 +120,7 @@ public class MazeGame {
 
     public void stopTimer(){
         timer.stop();
+        tomTimer.stop();
     }
 
     //    ******* This is where you load the maze!!!!!

@@ -4,33 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="Interface unit test">
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="Finished Interface unit test">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shortestpath.csv" beforeDir="false" afterPath="$PROJECT_DIR$/shortestpath.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/Interface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ContainerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ContainerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$11$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$11$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$13.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$14.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$15.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$15.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$16.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$16.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Container.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Container.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ContainerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ContainerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MazeGame/MazeGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeGame/MazeGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MazeGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MazeGameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/MazeGameTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MazeGameTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -110,44 +89,40 @@
       <recent name="A" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in Comp3111F23G30">
-    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Interface.Launcher" />
-      <module name="Comp3111F23G30" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ContainerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MazeGameTest">
+    <configuration name="LauncherTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Comp3111F23G30" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ContainerTest" />
+      <option name="MAIN_CLASS_NAME" value="LauncherTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContainerTest.test_setGameScreen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MazeGameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Comp3111F23G30" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ContainerTest" />
-      <option name="METHOD_NAME" value="test_setGameScreen" />
+      <option name="MAIN_CLASS_NAME" value="MazeGameTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MazeGameTest.testGetPanel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Comp3111F23G30" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MazeGameTest" />
+      <option name="METHOD_NAME" value="testGetPanel" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContainerTest.test_setStartMenu" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MazeGameTest.testStopTimer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Comp3111F23G30" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ContainerTest" />
-      <option name="METHOD_NAME" value="test_setStartMenu" />
+      <option name="MAIN_CLASS_NAME" value="MazeGameTest" />
+      <option name="METHOD_NAME" value="testStopTimer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -163,11 +138,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MazeGameTest" />
+        <item itemvalue="JUnit.MazeGameTest.testStopTimer" />
+        <item itemvalue="JUnit.MazeGameTest.testGetPanel" />
         <item itemvalue="JUnit.java in Comp3111F23G30" />
-        <item itemvalue="JUnit.ContainerTest" />
-        <item itemvalue="JUnit.ContainerTest.test_setGameScreen" />
-        <item itemvalue="Application.Launcher" />
-        <item itemvalue="JUnit.ContainerTest.test_setStartMenu" />
+        <item itemvalue="JUnit.LauncherTest" />
       </list>
     </recent_temporary>
   </component>
@@ -179,14 +154,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695396481398</updated>
-    </task>
-    <task id="LOCAL-00036" summary="made the look of the start menu with background">
-      <option name="closed" value="true" />
-      <created>1700394987522</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1700394987522</updated>
     </task>
     <task id="LOCAL-00037" summary="interface">
       <option name="closed" value="true" />
@@ -572,7 +539,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700768888469</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Finished Interface unit test">
+      <option name="closed" value="true" />
+      <created>1700814739570</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1700814739570</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -599,7 +574,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="amended" />
     <MESSAGE value="put C with interface" />
     <MESSAGE value="check if the map is csv format" />
     <MESSAGE value="changed testc" />
@@ -624,28 +598,31 @@
     <MESSAGE value="test vertex" />
     <MESSAGE value="reduced not useful functions" />
     <MESSAGE value="Interface unit test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Interface unit test" />
+    <MESSAGE value="Finished Interface unit test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Interface unit test" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>A.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$java_in_Comp3111F23G30.ic" NAME="java in Comp3111F23G30 Coverage Results" MODIFIED="1700815647006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$ContainerTest.ic" NAME="ContainerTest Coverage Results" MODIFIED="1700814651127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeGameTest.ic" NAME="MazeGameTest Coverage Results" MODIFIED="1700816743487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$ShortestPathTest.ic" NAME="ShortestPathTest Coverage Results" MODIFIED="1700739553311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest__1_.ic" NAME="MazeMapTest (1) Coverage Results" MODIFIED="1700738620263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeGameTest_testGetTom.ic" NAME="MazeGameTest.testGetTom Coverage Results" MODIFIED="1700719421357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$LauncherTest.ic" NAME="LauncherTest Coverage Results" MODIFIED="1700815366606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$InterfaceTest.ic" NAME="InterfaceTest Coverage Results" MODIFIED="1700763555081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest_getEntry.ic" NAME="MazeMapTest.getEntry Coverage Results" MODIFIED="1700734481548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>MazeMap.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Comp3111F23G30$VertexTest.ic" NAME="VertexTest Coverage Results" MODIFIED="1700759296484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest.ic" NAME="MazeMapTest Coverage Results" MODIFIED="1700758425293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$ContainerTest.ic" NAME="ContainerTest Coverage Results" MODIFIED="1700814588184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeGameTest.ic" NAME="MazeGameTest Coverage Results" MODIFIED="1700736252805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$ShortestPathTest.ic" NAME="ShortestPathTest Coverage Results" MODIFIED="1700739553311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest__1_.ic" NAME="MazeMapTest (1) Coverage Results" MODIFIED="1700738620263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest_test_load_MazeMap.ic" NAME="MazeMapTest.test_load_MazeMap Coverage Results" MODIFIED="1700735680845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>MazeMap.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeGameTest_testGetTom.ic" NAME="MazeGameTest.testGetTom Coverage Results" MODIFIED="1700719421357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest_test_getEntry.ic" NAME="MazeMapTest.test_getEntry Coverage Results" MODIFIED="1700737102636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>MazeMap.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$InterfaceTest.ic" NAME="InterfaceTest Coverage Results" MODIFIED="1700763555081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
