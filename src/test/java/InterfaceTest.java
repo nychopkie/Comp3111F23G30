@@ -70,8 +70,17 @@ class InterfaceTest {
 
     @Test
     protected void test_showGameWindow(){
-        screen.showGameWindow(); //target function
-        assertEquals(1,screen.getContentPane().getComponentCount());
+        Interface.testMode = 1;
+        assertFalse(screen.showGameWindow()); //target function
+
+        Interface.testMode = 2;
+        assertTrue(screen.showGameWindow()); //target function
+
+        Interface.testMode = 3;
+        assertTrue(screen.showGameWindow()); //target function
+
+        Interface.testMode = 4;
+        assertTrue(screen.showGameWindow()); //target function
     }
 
     @Test
@@ -86,4 +95,34 @@ class InterfaceTest {
         assertEquals(1,screen.getContentPane().getComponentCount());
     }
 
+    @Test
+    void test_handleSPLoad() {
+        Interface.testMode = 1;
+        assertFalse(screen.handleSPLoad()); // target function
+
+        Interface.testMode = 2;
+        assertFalse(screen.handleSPLoad()); // target function
+
+        Interface.testMode = 3;
+        assertTrue(screen.handleSPLoad()); // target function
+
+        Interface.testMode = 4;
+        assertTrue(screen.handleSPLoad()); // target function
+    }
+
+    @Test
+    void test_handleNavButton() {
+        Interface.testMode = 2;
+        screen.handleNavButton(0); // target function
+        assertEquals(1,screen.getContentPane().getComponentCount());
+
+        screen.handleNavButton(1); // target function
+        assertEquals(1,screen.getContentPane().getComponentCount());
+
+        screen.handleNavButton(2); // target function
+        assertEquals(1,screen.getContentPane().getComponentCount());
+
+        screen.handleNavButton(5); // target function
+        assertEquals(1,screen.getContentPane().getComponentCount());
+    }
 }
