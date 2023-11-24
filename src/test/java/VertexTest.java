@@ -47,35 +47,6 @@ public class VertexTest {
     }
 
     @Test
-    void test_colourByType() {
-        Vertex path = new Vertex(PIXEL_SIZE,0,0,0);
-        path.colourByType(); // target function
-        assertEquals(CLEAR_VERTEX_COLOUR,path.getBackground());
-
-        Vertex boundary = new Vertex(PIXEL_SIZE,0,0,1);
-        boundary.colourByType(); // target function
-        assertEquals(BARRIER_COLOUR,boundary.getBackground());
-
-        Vertex entry = new Vertex(PIXEL_SIZE,0,0,2);
-        entry.colourByType(); // target function
-        assertEquals(ENTRY_VERTEX_COLOUR,entry.getBackground());
-
-        Vertex exit = new Vertex(PIXEL_SIZE,0,0,3);
-        exit.colourByType(); // target function
-        assertEquals(EXIT_VERTEX_COLOUR,exit.getBackground());
-    }
-
-    @Test
-    void test_set_Shortest_Path() {
-        Vertex path = new Vertex(PIXEL_SIZE,0,0,0);
-        path.set_Shortest_Path(); // target function
-        assertEquals(SP_VERTEX_COLOUR,path.getBackground());
-
-        Vertex not_path = new Vertex(PIXEL_SIZE,0,0,1);
-        assertNotEquals(SP_VERTEX_COLOUR,not_path.getBackground());
-    }
-
-    @Test
     void test_getVertex_type() {
         Vertex path = new Vertex(PIXEL_SIZE,0,0,0);
         assertEquals(0,path.getVertex_type()); // target function

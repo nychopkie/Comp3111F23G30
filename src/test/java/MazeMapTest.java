@@ -88,7 +88,7 @@ public class MazeMapTest {
     @Test
     protected void test_save_MazeMap() {
         MazeMap map = new MazeMap();
-        map.setSavePath("Assets/Test_map/save_map");
+        MazeMap.savePath = "Assets/Test_map/save_map";
         // revert to the basic state
         File file = new File("Assets/Test_map/save_map.csv");
         if (file.exists()){

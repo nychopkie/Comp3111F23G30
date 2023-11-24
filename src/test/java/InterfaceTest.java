@@ -1,7 +1,4 @@
-import MazeMap.*;
 import Interface.*;
-import MazeGame.*;
-import java.io.File;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,39 +22,24 @@ class InterfaceTest {
     }
 
     @Test
-    protected void test_setDisplayState() {
-        boolean flag1 = screen.setDisplayState(-1); // target function
-        assertFalse(flag1);
-
-        boolean flag2 = screen.setDisplayState(9); // target function
-        assertFalse(flag2);
-
-        boolean flag3 = screen.setDisplayState(0); // target function
-        assertTrue(flag3);
-
-        boolean flag4 = screen.setDisplayState(3); // target function
-        assertTrue(flag4);
-    }
-
-    @Test
     protected void test_display() {
         // 0
-        screen.setDisplayState(0);
+        Interface.state = 0;
         screen.display(); // target function
         assertEquals(1,screen.getContentPane().getComponentCount());
 
         // 1
-        screen.setDisplayState(1);
+        Interface.state = 1;
         screen.display(); // target function
         assertEquals(1,screen.getContentPane().getComponentCount());
 
         // 2
-        screen.setDisplayState(2);
+        Interface.state = 2;
         screen.display(); // target function
         assertEquals(1,screen.getContentPane().getComponentCount());
 
-        // 3
-        screen.setDisplayState(5);
+        // 5
+        Interface.state = 5;
         screen.display(); // target function
         assertEquals(1,screen.getContentPane().getComponentCount());
     }
@@ -111,18 +93,18 @@ class InterfaceTest {
     }
 
     @Test
-    void test_handleNavButton() {
+    void test_handleNav() {
         Interface.testMode = 2;
-        screen.handleNavButton(0); // target function
+        screen.handleNav(0); // target function
         assertEquals(1,screen.getContentPane().getComponentCount());
 
-        screen.handleNavButton(1); // target function
+        screen.handleNav(1); // target function
         assertEquals(1,screen.getContentPane().getComponentCount());
 
-        screen.handleNavButton(2); // target function
+        screen.handleNav(2); // target function
         assertEquals(1,screen.getContentPane().getComponentCount());
 
-        screen.handleNavButton(5); // target function
+        screen.handleNav(5); // target function
         assertEquals(1,screen.getContentPane().getComponentCount());
     }
 }

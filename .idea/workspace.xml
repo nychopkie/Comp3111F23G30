@@ -6,8 +6,38 @@
   <component name="ChangeListManager">
     <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="Finished javadoc for all functions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/Interface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MazeGame/MazeGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeGame/MazeGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/Shortestpath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/Shortestpath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ShortestPathTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ShortestPathTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/Vertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/Vertex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/InterfaceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InterfaceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MazeGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MazeGameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MazeMapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MazeMapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/VertexTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/VertexTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$13.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$14.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/Shortestpath.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/Shortestpath.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/Vertex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/Vertex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/InterfaceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/InterfaceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/MazeGameTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MazeGameTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/MazeMapTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MazeMapTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/VertexTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/VertexTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +120,7 @@
       <recent name="A" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in Comp3111F23G30">
+  <component name="RunManager" selected="Application.Launcher">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Interface.Launcher" />
       <module name="Comp3111F23G30" />
@@ -113,21 +143,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShortestPathTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MazeGameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Comp3111F23G30" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ShortestPathTest" />
+      <option name="MAIN_CLASS_NAME" value="MazeGameTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShortestPathTest.test_shortestPath" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VertexTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Comp3111F23G30" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ShortestPathTest" />
-      <option name="METHOD_NAME" value="test_shortestPath" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="VertexTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -142,10 +171,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.java in Comp3111F23G30" />
         <item itemvalue="Application.Launcher" />
-        <item itemvalue="JUnit.ShortestPathTest" />
-        <item itemvalue="JUnit.ShortestPathTest.test_shortestPath" />
+        <item itemvalue="JUnit.MazeGameTest" />
+        <item itemvalue="JUnit.java in Comp3111F23G30" />
+        <item itemvalue="JUnit.VertexTest" />
         <item itemvalue="JUnit.InterfaceTest" />
       </list>
     </recent_temporary>
@@ -158,14 +187,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695396481398</updated>
-    </task>
-    <task id="LOCAL-00043" summary="added todo">
-      <option name="closed" value="true" />
-      <created>1700409522428</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1700409522428</updated>
     </task>
     <task id="LOCAL-00044" summary="corrected the loadmap function to chang entry and exit">
       <option name="closed" value="true" />
@@ -551,7 +572,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700843491433</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="Finished javadoc for all functions">
+      <option name="closed" value="true" />
+      <created>1700843656945</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1700843656945</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -609,19 +638,19 @@
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>A.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$java_in_Comp3111F23G30.ic" NAME="java in Comp3111F23G30 Coverage Results" MODIFIED="1700819274088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$java_in_Comp3111F23G30.ic" NAME="java in Comp3111F23G30 Coverage Results" MODIFIED="1700845288942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$ContainerTest.ic" NAME="ContainerTest Coverage Results" MODIFIED="1700819171952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeGameTest.ic" NAME="MazeGameTest Coverage Results" MODIFIED="1700816743487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeGameTest.ic" NAME="MazeGameTest Coverage Results" MODIFIED="1700845584480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$ShortestPathTest.ic" NAME="ShortestPathTest Coverage Results" MODIFIED="1700739553311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest__1_.ic" NAME="MazeMapTest (1) Coverage Results" MODIFIED="1700738620263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeGameTest_testGetTom.ic" NAME="MazeGameTest.testGetTom Coverage Results" MODIFIED="1700719421357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$LauncherTest.ic" NAME="LauncherTest Coverage Results" MODIFIED="1700815366606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$InterfaceTest.ic" NAME="InterfaceTest Coverage Results" MODIFIED="1700837393598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$InterfaceTest.ic" NAME="InterfaceTest Coverage Results" MODIFIED="1700844469042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30Ihateu$ShortestPathTest.ic" NAME="ShortestPathTest Coverage Results" MODIFIED="1700842647249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest_getEntry.ic" NAME="MazeMapTest.getEntry Coverage Results" MODIFIED="1700734481548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>MazeMap.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Comp3111F23G30$VertexTest.ic" NAME="VertexTest Coverage Results" MODIFIED="1700759296484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G30$VertexTest.ic" NAME="VertexTest Coverage Results" MODIFIED="1700845204383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest.ic" NAME="MazeMapTest Coverage Results" MODIFIED="1700758425293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30Ihateu$ShortestPathTest_test_shortestPath.ic" NAME="ShortestPathTest.test_shortestPath Coverage Results" MODIFIED="1700842522861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Comp3111F23G30$MazeMapTest_test_load_MazeMap.ic" NAME="MazeMapTest.test_load_MazeMap Coverage Results" MODIFIED="1700735680845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

@@ -13,22 +13,16 @@ import java.awt.event.MouseListener;
  * 4. vertex_type: the type of vertex it is<br>
  * 5. static canEdit: control whether the vertex can be edited<br>
  * 6. sizeOfSquare: the size of each square<br>
- * 7. CLEAR_VERTEX_COLOUR: white<br>
- * 8. BARRIER_COLOUR: dark gray<br>
- * 9. ENTRY_VERTEX_COLOUR: cyan<br>
- * 10. EXIT_VERTEX_COLOUR: red<br>
- * 11. SP_VERTEX_COLOUR: yellow, colour of the shortest path cells<hr>
+ * 7. CLEAR_VERTEX_COLOUR: white<br><hr>
  * OPERATIONS<br>
  * 1. Vertex(int sizeOfSquare, int x, int y, int vertex_type)<br>
- * 2. colourByType()<br>
- * 3. set_Shortest_Path()<br>
- * 4. getVertex_type()<br>
- * 5. gety()<br>
- * 6. getx()<br>
- * 7. handleMouseClick()<br>
- * 8. handleMousePressed()<br>
- * 9. handleMouseReleased()<br>
- * 10. handleMouseEntered()<br>
+ * 2. getVertex_type()<br>
+ * 3. gety()<br>
+ * 4. getx()<br>
+ * 5. handleMouseClick()<br>
+ * 6. handleMousePressed()<br>
+ * 7. handleMouseReleased()<br>
+ * 8. handleMouseEntered()<br>
  **/
 public class Vertex extends JPanel implements MouseListener {
 
@@ -59,27 +53,6 @@ public class Vertex extends JPanel implements MouseListener {
      */
     private final int sizeOfSquare;
 
-    /**
-     * colour of vertex-type 0 PATH
-     */
-    private static final Color CLEAR_VERTEX_COLOUR = Color.WHITE;
-    /**
-     * colour of vertex-type 1 BARRIER
-     */
-    private static final Color BARRIER_COLOUR = Color.DARK_GRAY;
-    /**
-     * colour of vertex-type 2 ENTRY
-     */
-    private static final Color ENTRY_VERTEX_COLOUR = Color.CYAN;
-    /**
-     * colour of vertex-type 3 EXIT
-     */
-    private static final Color EXIT_VERTEX_COLOUR = Color.RED;
-
-    /**
-     * colour of shortest path
-     */
-    private static final Color SP_VERTEX_COLOUR = Color.YELLOW;
 
     /**
      * the constructor for Vertex
@@ -94,30 +67,16 @@ public class Vertex extends JPanel implements MouseListener {
         this.y = y;
         this.vertex_type = vertex_type;
         setPreferredSize(new Dimension(sizeOfSquare, sizeOfSquare));
-        colourByType();
-        addMouseListener(this);
-    }
-
-    /**
-     * colour the Vertex according to the type
-     */
-    public void colourByType(){
         if (vertex_type == 0) {
-            setBackground(CLEAR_VERTEX_COLOUR);
+            setBackground(Color.WHITE);
         } else if (vertex_type == 1) {
-            setBackground(BARRIER_COLOUR);
+            setBackground(Color.DARK_GRAY);
         } else if (vertex_type == 2) {
-            setBackground(ENTRY_VERTEX_COLOUR);
+            setBackground(Color.CYAN);
         } else {
-            setBackground(EXIT_VERTEX_COLOUR);
+            setBackground(Color.RED);
         };
-    }
-
-    /**
-     * mutator to set the shortest path's colour
-     */
-    public void set_Shortest_Path() {
-        setBackground(SP_VERTEX_COLOUR);
+        addMouseListener(this);
     }
 
     /**
@@ -161,12 +120,12 @@ public class Vertex extends JPanel implements MouseListener {
             }
             // if the vertex is a PATH >>> change to BARRIER
             if (this.vertex_type == 0) {
-                setBackground(BARRIER_COLOUR);
+                setBackground(Color.DARK_GRAY);
                 this.vertex_type = 1;
             }
             // if the vertex is a BARRIER >>> change to PATH
             else {
-                setBackground(CLEAR_VERTEX_COLOUR);
+                setBackground(Color.WHITE);
                 this.vertex_type = 0;
             }
         }

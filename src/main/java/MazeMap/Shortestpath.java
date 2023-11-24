@@ -1,19 +1,18 @@
 package MazeMap;
 import javax.swing.*;
+import java.awt.*;
 import java.util.*;
 import java.io.PrintWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.List;
 
 /**
  * it contains a function to find the shortest path and other helper functions used by that function.<br><hr>
  * Details could be found above each function. <br><hr>
  * OPERATIONS<br>
  * 1. shortestPath(MazeMap map,Vertex start,Vertex end, int mode)<br>
- * 2. addNeighbors(Vertex cell, List<Vertex> list, MazeMap map) <br>
- * 3. getNeighbor(Vertex cell, int distance, int[][] distances,MazeMap map)<br>
- * 4. trueorderpath(Stack<Vertex> path)<br>
- * 5. writecsv(Vertex[] path)<br>
+ * 2. addNeighbors(Vertex cell, List< Vertex > list, MazeMap map) <br>
  * */
 public class Shortestpath extends JPanel {
     /**
@@ -109,7 +108,7 @@ public class Shortestpath extends JPanel {
                 e.printStackTrace();
             }
             for(int i = 0 ; i < truepath.length; i++)
-                truepath[i].set_Shortest_Path();
+                truepath[i].setBackground(Color.YELLOW);
             return truepath;
         }
             //mode 0 : Tom n Jerry

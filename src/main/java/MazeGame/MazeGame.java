@@ -44,8 +44,8 @@ public class MazeGame {
 
     private static MazeMap mazeMap;
     private final int size = 30;
-    private static Tom tom;
-    private static Jerry jerry;
+    public static Tom tom;
+    public static Jerry jerry;
     private GamePanel panel;
     public static Timer timer;
     private final int DELAY = 400; // Milliseconds, adjust for speed for Jerry
@@ -408,10 +408,12 @@ public class MazeGame {
 
         if (jerry.x == tom.x && jerry.y == tom.y) {
             timer.stop();
+            tomTimer.stop();
             JOptionPane.showMessageDialog(panel, "Tom caught Jerry! You lose.");
 
         } else if (jerry.x == exitX&& jerry.y == exitY) {
             timer.stop();
+            tomTimer.stop();
             JOptionPane.showMessageDialog(panel, "Jerry reached the Exit! You win!");
 
         }
@@ -428,21 +430,4 @@ public class MazeGame {
     public MazeMap getMazeMap() {
         return this.mazeMap;
     }
-
-    /**
-     * returns Jerry
-     * @return Jerry jerry
-     */
-    public Jerry getJerry() {
-        return this.jerry;
-    }
-
-    /**
-     * returns Tom
-     * @return Tom tom
-     */
-    public Tom getTom() {
-        return this.tom;
-    }
-
 }

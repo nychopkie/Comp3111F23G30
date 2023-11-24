@@ -13,19 +13,17 @@ import java.io.File;
 /** class that displays the game<br><hr>
  *ATTRIBUTES<br>
  * 1. MazeGame: the maze map<br>
- * 2. state: the state that the screen should be displaying<br>
- * 3. GAP: the gap size between each vertex<br>
- * 4. static testMode: for turning on test mode for unit test<hr>
+ * 2. static state: the state that the screen should be displaying<br>
+ * 3. static testMode: for turning on test mode for unit test<hr>
  * OPERATIONS<br>
  * 1. Interface()<br>
- * 2. setDisplayState(int state)<br>
- * 3. display()<br>
- * 4. showMainMenu()<br>
- * 5. showGameWindow()<br>
- * 6. showMapEdit()<br>
- * 7. showTestB()<br>
- * 8. handleNavButton(int state)<br>
- * 9. handleSPLoad()
+ * 2. display()<br>
+ * 3. showMainMenu()<br>
+ * 4. showGameWindow()<br>
+ * 5. showMapEdit()<br>
+ * 6. showTestB()<br>
+ * 7. handleNav(int state)<br>
+ * 8. handleSPLoad()
  **/
 public class Interface extends JFrame {
 
@@ -39,7 +37,7 @@ public class Interface extends JFrame {
      * 2: play game<br>
      * 5: test shortestPath<br>
      **/
-    private int state;
+    public static int state = 0;
 
     /**
      * for testing:<br>
@@ -65,7 +63,7 @@ public class Interface extends JFrame {
         pack();
 
         // init the default start screen as startmenu
-        setDisplayState(0);
+        state = 0;
 
         mazeGame = new MazeMap();
     }
@@ -75,13 +73,6 @@ public class Interface extends JFrame {
      * @param state the state of the Display
      * @return true if valid state, else false
      */
-    public boolean setDisplayState(int state){
-        if (state < 0 || state > 6){
-            return false;
-        }
-        this.state = state;
-        return true;
-    }
 
     /** refresh and display the interface according to the state */
     public void display(){
@@ -107,8 +98,8 @@ public class Interface extends JFrame {
      * handler for mouse button to test
      * @param state
      */
-    public void handleNavButton(int state){
-        setDisplayState(state);
+    public void handleNav(int state){
+        Interface.state = state;
         display();
     }
 
@@ -156,7 +147,7 @@ public class Interface extends JFrame {
         play.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                handleNavButton(1);
+                handleNav(1);
             }
         });
         navigation.add(play);
@@ -166,7 +157,7 @@ public class Interface extends JFrame {
         test.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                handleNavButton(5);
+                handleNav(5);
             }
         });
         navigation.add(test);
@@ -176,7 +167,7 @@ public class Interface extends JFrame {
         edit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                handleNavButton(2);
+                handleNav(2);
             }
         });
         navigation.add(edit);
@@ -349,7 +340,7 @@ public class Interface extends JFrame {
                     public void actionPerformed(ActionEvent e) {
                         MazeGame.timer.stop();
                         MazeGame.tomTimer.stop();
-                        handleNavButton(1);
+                        handleNav(1);
                     }
                 });
 
@@ -361,7 +352,7 @@ public class Interface extends JFrame {
                     public void actionPerformed(ActionEvent e) {
                         MazeGame.timer.stop();
                         MazeGame.tomTimer.stop();
-                        handleNavButton(0);
+                        handleNav(0);
                     }
                 });
 
@@ -384,7 +375,7 @@ public class Interface extends JFrame {
                 container.add(sideMenu,d);
             }
             else{
-                setDisplayState(0);
+                state = 0;
                 display();
                 return flag;
             }
@@ -501,7 +492,7 @@ public class Interface extends JFrame {
         back.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                handleNavButton(0);
+                handleNav(0);
             }
         });
 
@@ -714,7 +705,7 @@ public class Interface extends JFrame {
         back.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                handleNavButton(0);
+                handleNav(0);
             }
         });
 

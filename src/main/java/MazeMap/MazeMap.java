@@ -44,7 +44,7 @@ public class MazeMap extends JPanel{
     private int exit ;
 
     /** the path that the user customized map stores to*/
-    private String savePath = "Assets/map/MazeMap_Custom";
+    public static String savePath = "Assets/map/MazeMap_Custom";
 
 
     /**
@@ -123,19 +123,19 @@ public class MazeMap extends JPanel{
         return SIZE;
     }
 
-    /**
-     * Modifier that changes the save path of the function, this is only invoked in unit test
-     * @param  path the path of the saved file
-     * */
-    public void setSavePath(String path){
-        savePath = path;
-    }
-
     /** helper function to refresh map colour */
     public void refreshColour(){
         for (int i = 0; i < SIZE; ++i){
             for (int j = 0; j < SIZE; ++j){
-                MazeMapData[i][j].colourByType();
+                if (MazeMapData[i][j].vertex_type == 0) {
+                    MazeMapData[i][j].setBackground(Color.WHITE);
+                } else if (MazeMapData[i][j].vertex_type == 1) {
+                    MazeMapData[i][j].setBackground(Color.DARK_GRAY);
+                } else if (MazeMapData[i][j].vertex_type == 2) {
+                    MazeMapData[i][j].setBackground(Color.CYAN);
+                } else {
+                    MazeMapData[i][j].setBackground(Color.RED);
+                };
             }
         }
     }

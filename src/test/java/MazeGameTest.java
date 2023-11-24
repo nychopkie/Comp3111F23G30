@@ -34,8 +34,8 @@ class MazeGameTest {
         MazeGame game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
 
         assertNotNull(game.getMazeMap(), "Maze should be initialized.");
-        assertNotNull(game.getTom(), "Tom should be initialized.");
-        assertNotNull(game.getJerry(), "Jerry should be initialized.");
+        assertNotNull(MazeGame.tom, "Tom should be initialized.");
+        assertNotNull(MazeGame.jerry, "Jerry should be initialized.");
         // Assuming getMazeMap, getTom, and getJerry are methods to access these components
     }
     @Test
@@ -190,9 +190,7 @@ class MazeGameTest {
         assertTrue(tom.getx() != initialTomX || tom.gety() != initialTomY, "Tom should have moved.");
     }
 
-
     // Jerry
-
     @Test
     void testJerryMove() {
         MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
@@ -277,35 +275,11 @@ void testPaintComponentColors() {
         assertEquals(expected, actual, "The preferred size should match the expected dimension.");
     }
 
-//    @Test
-//    void testMainMethod() {
-//        String[] args = {}; // Empty arguments for the main method
-//
-//        try {
-//            MazeGame.main(args); // Attempt to run the main method
-//        } catch (Exception e) {
-//            fail("The main method should not throw an exception.");
-//        }
-//
-//    }
-
     // helper functions
     @Test
     void testGetMazeMap() {
         MazeGame game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
         assertNotNull(game.getMazeMap(), "MazeMap should not be null."); // target function
-    }
-
-    @Test
-    void testGetJerry() {
-        MazeGame game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
-        assertNotNull(game.getJerry(), "Jerry instance should not be null."); // target function
-    }
-
-    @Test
-    void testGetTom() {
-        MazeGame game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
-        assertNotNull(game.getTom(), "Tom instance should not be null."); // target function
     }
 
     @Test
