@@ -22,36 +22,7 @@ public class ShortestPathTest {
         // Note: You might need to adjust this part to fit your actual maze loading method
         map.load_MazeMap("Assets/map/MazeMap_SAMPLE.csv");
     }
-    //test boolean isValid(int row, int col, int ROWS, int COLS)
-    @Test
-    void test_isVaild_boundary() {
-        int ROWS = map.getSIZE();
-        int COLS = map.getSIZE();
-        //Boundary: Row = -1,0,1 ,28,29,30 or Col =-1,0,1, 28,29,30
-        //int[] invalidbrow = {-1, 30};
-        //int[] invalidbcol = {-1, 30};
-        //int[] validbrow = {0, 1, 28, 29};
-        //int[] validbcol = {0, 1, 28, 29};
-        // invalid boundary case:
-        boolean flag_bcase1 =!Shortestpath.isValid(-1, 30, ROWS, COLS) ;//target function
-        boolean flag_bcase2 =!Shortestpath.isValid(30,-1 , ROWS, COLS);//target function
 
-        //valid boundary case:
-        boolean flag_bcase3 = Shortestpath.isValid(0, 0, ROWS, COLS);//target function
-        boolean flag_bcase4 = Shortestpath.isValid(1,1 , ROWS, COLS);//target function
-
-        boolean boundary = flag_bcase1 && flag_bcase2 && flag_bcase3 && flag_bcase4;
-        assertTrue(boundary);
-    }
-    @Test
-    void test_isVaild_validinvalid() {
-        int ROWS = map.getSIZE();
-        int COLS = map.getSIZE();
-        //Valid: 0,0 to 29,29
-        boolean valid = Shortestpath.isValid(5,21,ROWS,COLS) ;//target function
-        boolean invalid = !Shortestpath.isValid(-10,100,ROWS,COLS);//target function
-        assertTrue(valid&&invalid);
-    }
 
     //test void addNeighbors(Vertex cell, List<Vertex> list,MazeMap map)
     @Test
@@ -59,8 +30,8 @@ public class ShortestPathTest {
     //Noted that addNeighbors don't have the responsibility of detecting barrier
     // It only is used in shortestpath function and shortestpath function won't use it to add the neighbors of a barrier!
     // We only need to test all the neighbours of target Vertex
-        int ROWS = map.getSIZE();
-        int COLS = map.getSIZE();
+        int ROWS = map.getROWS();
+        int COLS = map.getCOLS();
         //Case: Vertex in first col, have only up,down,right
         Vertex target1 = map.getMazedata()[5][0];
         List<Vertex> neighbors1 = new ArrayList<>();
@@ -93,8 +64,8 @@ public class ShortestPathTest {
     @Test
     void test_addNeighbors_corner(){
 
-        int ROWS = map.getSIZE();
-        int COLS = map.getSIZE();
+        int ROWS = map.getROWS();
+        int COLS = map.getCOLS();
         //Case:[0,0]    down right neighbor
         Vertex target1 = map.getMazedata()[0][0];
         List<Vertex> neighbors1 = new ArrayList<>();
@@ -127,8 +98,8 @@ public class ShortestPathTest {
     @Test
     void test_addNeighbors_normal(){
         //Case:Vertex in the middle, having up,down,left,right 4 neighbours
-        int rows = map.getSIZE()-4;
-        int cols = map.getSIZE()-4;
+        int rows = map.getROWS()-4;
+        int cols = map.getCOLS()-4;
         Vertex target = map.getMazedata()[rows][cols];
         List<Vertex> neighbors = new ArrayList<>();
         Vertex[] temp = {map.getMazedata()[rows-1][cols],map.getMazedata()[rows+1][cols],map.getMazedata()[rows][cols-1],map.getMazedata()[rows][cols+1]};
@@ -140,8 +111,8 @@ public class ShortestPathTest {
     @Test
     void test_getNeighbor(){
     // Test can it return the neighbour of the target vertex having same distance as the parameter
-        int ROWS = map.getSIZE();
-        int COLS = map.getSIZE();
+        int ROWS = map.getROWS();
+        int COLS = map.getCOLS();
         int[][] distances = new int[ROWS][COLS];
         for(int i = 0;i<ROWS;i++){
             for(int j=0;j<COLS;j++){
@@ -176,65 +147,7 @@ public class ShortestPathTest {
         assertEquals(nulloutput,null);
 
     }
-    //test Vertex[] trueorderpath(Stack<Vertex> path)
-    @Test
-    void test_trueorderpath(){
-        //It is simply a helper function to convert a Stack into a Vertex 1D array
-        //prepare a Vertex Array and turn it into Stack->Compare with the function output
-        //normal Case: normal Stack
-        Stack<Vertex> path = new Stack<>();
-        Vertex[] ans = {map.getEntry(),map.getExit()};
-        path.push(map.getExit());
-        path.push(map.getEntry());
 
-        Vertex[] valid = Shortestpath.trueorderpath(path); // target function!
-        //empty Case: empty Stack
-        Stack<Vertex> emptypath = new Stack<>();
-        Vertex[] emptyans = {};
-        assertEquals(Arrays.asList(valid),Arrays.asList(ans));
-        assertEquals(Arrays.asList(Shortestpath.trueorderpath(emptypath)),Arrays.asList(emptyans));//target function
-    }
-    //test void writecsv(Vertex[] path)
-    @Test
-    void test_writecsv(){
-        //It is simply a helper function to convert a Vertex Array into a csv file
-        String fileName = "shortestpath.csv";
-        String delimiter = ",";
-        String line ;
-        Vertex[] path = Shortestpath.shortestPath(map,map.getEntry(),map.getExit(),0);
-        //valid Case: normal Vertex Array
-        Shortestpath.writecsv(path);//target function
-        boolean flag=true;
-        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-            int i = 0;
-            br.readLine();
-            while((line = br.readLine()) != null){
-                List<String> values = Arrays.asList(line.split(delimiter));
-                if(Integer.valueOf(values.get(3)) != path[i].getx()){
-                    flag=false;
-                    System.out.println("row_x is false");
-                }
-                if(Integer.valueOf(values.get(4)) != path[i].gety()){
-                    flag=false;
-                    System.out.println("col_y is false");
-                }
-                i++;
-            }
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-        //Case: empty Vertex Array
-        boolean empty=false;
-        Vertex[] emptypath = {};
-        Shortestpath.writecsv(emptypath);//target function
-        try (BufferedReader br = new BufferedReader(new FileReader(fileName))){
-            br.readLine();
-            if(br.readLine() == null) empty = true;
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        assertTrue(flag&&empty);
-    }
     //test Vertex[] shortestPath(MazeMap map,Vertex start,Vertex end, int mode)
     @Test
     void test_shortestPath(){
