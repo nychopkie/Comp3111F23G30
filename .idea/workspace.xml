@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="Fixed filename problem">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="Oh god the test case in Shortestpath is reduced and also the number of function">
       <change beforePath="$PROJECT_DIR$/Assets/map/MazeMap_Custom.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/map/MazeMap_Custom.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shortestpath.csv" beforeDir="false" afterPath="$PROJECT_DIR$/shortestpath.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/Shortestpath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/Shortestpath.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ShortestPathTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ShortestPathTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/Shortestpath.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/Shortestpath.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ShortestPathTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ShortestPathTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +91,7 @@
       <recent name="A" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Launcher">
+  <component name="RunManager" selected="JUnit.ShortestPathTest">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Interface.Launcher" />
       <module name="Comp3111F23G30" />
@@ -146,9 +143,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Launcher" />
         <item itemvalue="JUnit.ShortestPathTest" />
         <item itemvalue="JUnit.ShortestPathTest.test_shortestPath" />
+        <item itemvalue="Application.Launcher" />
         <item itemvalue="JUnit.java in Comp3111F23G30" />
         <item itemvalue="JUnit.InterfaceTest" />
       </list>
@@ -162,14 +159,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695396481398</updated>
-    </task>
-    <task id="LOCAL-00042" summary="added todo">
-      <option name="closed" value="true" />
-      <created>1700409458337</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1700409458337</updated>
     </task>
     <task id="LOCAL-00043" summary="added todo">
       <option name="closed" value="true" />
@@ -555,7 +544,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700821043480</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="Oh god the test case in Shortestpath is reduced and also the number of function">
+      <option name="closed" value="true" />
+      <created>1700843010822</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1700843010822</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -582,7 +579,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="merged the function for final build?" />
     <MESSAGE value="ammended the description" />
     <MESSAGE value="merged dev-build to master" />
     <MESSAGE value="Unit testing doe and make the functions public to fullfil the requirement" />
@@ -607,7 +603,8 @@
     <MESSAGE value="fixed loadmap" />
     <MESSAGE value="finalized game screen" />
     <MESSAGE value="Fixed filename problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed filename problem" />
+    <MESSAGE value="Oh god the test case in Shortestpath is reduced and also the number of function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Oh god the test case in Shortestpath is reduced and also the number of function" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G30$LauncherTest.ic" NAME="LauncherTest Coverage Results" MODIFIED="1700815366606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

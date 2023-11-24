@@ -11,10 +11,7 @@ import java.io.FileNotFoundException;
  * Details could be found above each function. <br>
  * @operations:
  * 1. shortestPath(MazeMap map,Vertex start,Vertex end, int mode)<br>
- * 2. addNeighbors(Vertex cell, List<Vertex> list, MazeMap map) <br>
- * 3. getNeighbor(Vertex cell, int distance, int[][] distances,MazeMap map)<br>
- * 4. trueorderpath(Stack<Vertex> path)<br>
- * 5. writecsv(Vertex[] path)<br>
+ * 2. getNeighbor(Vertex cell, int distance, int[][] distances,MazeMap map)<br>
  * */
 public class Shortestpath extends JPanel {
     /**
@@ -53,7 +50,13 @@ public class Shortestpath extends JPanel {
                 if (distances[cell.getx()][cell.gety()] == Integer.MAX_VALUE
                         && MazeMapData[cell.getx()][cell.gety()].getVertex_type() != 1 ) {
                     distances[cell.getx()][cell.gety()] = distance;
-                    addNeighbors(cell, nextCells, map);
+                    int[][] ds = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+                    for (int[] d : ds) {
+                        int row = cell.getx() + d[0];
+                        int col = cell.gety() + d[1];
+                        if (row >= 0 && row < ROWS && col >= 0 && col < COLS)
+                            nextCells.add(MazeMapData[row][col]);
+                    }
                 }
             }
             // prepare for next round
@@ -118,24 +121,6 @@ public class Shortestpath extends JPanel {
             return truepath;
     }
 
-    /**
-     * the function to add all valid neighbors of a target vertex into a list.
-     * @param cell  the target vertex that we want to find its neighbors.
-     * @param list  the list that storing the neighbors of target vertex after the function.
-     * @param map   the Maze map that the user decided to play.
-     */
-    public static void addNeighbors(Vertex cell, List<Vertex> list, MazeMap map) {
-        int[][] ds = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-        Vertex[][] MazeMapData = map.getMazedata();
-        int ROWS = map.getROWS();
-        int COLS = map.getCOLS();
-        for (int[] d : ds) {
-            int row = cell.getx() + d[0];
-            int col = cell.gety() + d[1];
-            if (row >= 0 && row < ROWS && col >= 0 && col < COLS)
-                list.add(MazeMapData[row][col]);
-        }
-    }
 
     /**
      * the function to get the neighbor of the target cell, which is with a particular distance value.
