@@ -233,26 +233,6 @@ class MazeGameTest {
         assertEquals(Direction.LEFT, jerry.getDirection(), "Jerry's initial direction should be left.");
     }
 
-
-
-    @Test
-    void testIsValidMove() {
-        MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
-        MazeGame.Jerry jerry = mazeGame.new Jerry(0, 0);
-
-        Vertex[][] mockMaze = new Vertex[10][10]; // Create a mock maze
-
-        // Initialize the maze with open paths (e.g., vertex type 0)
-        for (int i = 0; i < mockMaze.length; i++) {
-            for (int j = 0; j < mockMaze[i].length; j++) {
-                mockMaze[i][j] = new Vertex(0, i, j, 0); // Assuming Vertex constructor
-            }
-        }
-
-        assertTrue(jerry.isValidMove(1, 1, mockMaze), "Move should be valid in an open path.");//target function
-        // You can add more assertions for different scenarios, like moving into a wall or outside the maze.
-    }
-
     @Test
     void testSetDirection() {
         MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
@@ -326,14 +306,6 @@ void testPaintComponentColors() {
     void testGetTom() {
         MazeGame game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
         assertNotNull(game.getTom(), "Tom instance should not be null."); // target function
-    }
-
-    @Test
-    void testStopTimer() {
-        MazeGame game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
-        MazeGame.Jerry jerry = game.new Jerry(3, 0);
-        game.stopTimer(); // target function
-        assertEquals(3, jerry.gety());
     }
 
     @Test

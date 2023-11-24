@@ -4,19 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="deleted container class, and ammended javadoc">
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="reduced redundant functions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shortestpath.csv" beforeDir="false" afterPath="$PROJECT_DIR$/shortestpath.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interface/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/Interface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MazeGame/MazeGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeGame/MazeGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/MazeMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MazeMap/Vertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MazeMap/Vertex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MazeMapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MazeMapTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/VertexTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/VertexTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MazeGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MazeGameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$13.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$14.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Interface/Interface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Interface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Direction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$GameEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$GameEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$GamePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Jerry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Jerry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Tom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame$Tom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeGame/MazeGame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/MazeMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MazeMap/Vertex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MazeMap/Vertex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/MazeGameTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MazeGameTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/MazeMapTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MazeMapTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/VertexTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/VertexTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +114,7 @@
       <recent name="A" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Launcher">
+  <component name="RunManager" selected="JUnit.MazeGameTest">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Interface.Launcher" />
       <module name="Comp3111F23G30" />
@@ -106,15 +124,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ContainerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Comp3111F23G30" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ContainerTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -148,13 +157,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MazeGameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Comp3111F23G30" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MazeGameTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MazeGameTest" />
         <item itemvalue="Application.Launcher" />
         <item itemvalue="JUnit.InterfaceTest" />
         <item itemvalue="JUnit.InterfaceTest.test_handleSPLoad" />
         <item itemvalue="JUnit.InterfaceTest.test_display" />
-        <item itemvalue="JUnit.ContainerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -166,14 +184,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695396481398</updated>
-    </task>
-    <task id="LOCAL-00049" summary="amended">
-      <option name="closed" value="true" />
-      <created>1700544754236</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1700544754236</updated>
     </task>
     <task id="LOCAL-00050" summary="amended">
       <option name="closed" value="true" />
@@ -559,7 +569,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700837618171</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="reduced redundant functions">
+      <option name="closed" value="true" />
+      <created>1700838595228</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1700838595228</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -586,7 +604,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="chnages path to relative path" />
     <MESSAGE value="added mazemap and vertex unit test" />
     <MESSAGE value="added accessor for unit test" />
     <MESSAGE value="made stuff better to test" />
@@ -611,7 +628,8 @@
     <MESSAGE value="ammended javadoc of MazeMap class" />
     <MESSAGE value="ammended javadoc" />
     <MESSAGE value="deleted container class, and ammended javadoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted container class, and ammended javadoc" />
+    <MESSAGE value="reduced redundant functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="reduced redundant functions" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

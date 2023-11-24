@@ -347,7 +347,8 @@ public class Interface extends JFrame {
                 restart.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        MazeGame.stopTimer();
+                        MazeGame.timer.stop();
+                        MazeGame.tomTimer.stop();
                         handleNavButton(1);
                     }
                 });
@@ -358,7 +359,8 @@ public class Interface extends JFrame {
                 back.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        MazeGame.stopTimer();
+                        MazeGame.timer.stop();
+                        MazeGame.tomTimer.stop();
                         handleNavButton(0);
                     }
                 });

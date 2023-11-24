@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 
 /** class that shows the map of the game<br><hr>
- *ATTRIBUTES<br>
+ * ATTRIBUTES<br>
  * 1. MazeMapData: the map data of all vertices<br>
  * 2. SIZE: the size of the map<br>
  * 3. PIXEL_SIZE: the pixel size of each vertex<br>
