@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="added javadoc">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="9daa7312-12b1-47b1-b3ce-1d63480366fb" name="Changes" comment="added the user run .jar, now the main function is to unit test mainly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shortestpath.csv" beforeDir="false" afterPath="$PROJECT_DIR$/shortestpath.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="dev-build" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -162,22 +160,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695396481398</updated>
-    </task>
-    <task id="LOCAL-00048" summary="added comments">
-      <option name="closed" value="true" />
-      <created>1700544636283</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1700544636283</updated>
-    </task>
-    <task id="LOCAL-00049" summary="amended">
-      <option name="closed" value="true" />
-      <created>1700544754236</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1700544754236</updated>
     </task>
     <task id="LOCAL-00050" summary="amended">
       <option name="closed" value="true" />
@@ -555,7 +537,23 @@
       <option name="project" value="LOCAL" />
       <updated>1700852139640</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="ignore">
+      <option name="closed" value="true" />
+      <created>1700893842962</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1700893842962</updated>
+    </task>
+    <task id="LOCAL-00098" summary="added the user run .jar, now the main function is to unit test mainly">
+      <option name="closed" value="true" />
+      <created>1700893922702</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1700893922702</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -569,7 +567,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/dev-build" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -582,8 +580,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="merged dev-build to master" />
-    <MESSAGE value="Unit testing doe and make the functions public to fullfil the requirement" />
     <MESSAGE value="modified the dialog boc to close automatically" />
     <MESSAGE value="chnages path to relative path" />
     <MESSAGE value="added mazemap and vertex unit test" />
@@ -607,7 +603,9 @@
     <MESSAGE value="Fixed filename problem" />
     <MESSAGE value="Finished javadoc for all functions" />
     <MESSAGE value="added javadoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="added javadoc" />
+    <MESSAGE value="ignore" />
+    <MESSAGE value="added the user run .jar, now the main function is to unit test mainly" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the user run .jar, now the main function is to unit test mainly" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G30$DummyCreationTest.ic" NAME="DummyCreationTest Coverage Results" MODIFIED="1698466969049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
