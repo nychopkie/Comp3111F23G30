@@ -1,17 +1,18 @@
 package MazeMap;
 import javax.swing.*;
+import java.awt.*;
 import java.util.*;
 import java.io.PrintWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.List;
 
 /**
- * ============ Shortestpath Class ============
- * it contains a function to find the shortest path and other helper functions used by that function.<br>
- * Details could be found above each function. <br>
- * @operations:
+ * it contains a function to find the shortest path and other helper functions used by that function.<br><hr>
+ * Details could be found above each function. <br><hr>
+ * OPERATIONS<br>
  * 1. shortestPath(MazeMap map,Vertex start,Vertex end, int mode)<br>
- * 2. getNeighbor(Vertex cell, int distance, int[][] distances,MazeMap map)<br>
+ * 2. getNeighbors(Vertex cell, List< Vertex > list, MazeMap map) <br>
  * */
 public class Shortestpath extends JPanel {
     /**
@@ -27,8 +28,8 @@ public class Shortestpath extends JPanel {
      *                  Null if map do not have a possible path from the starting vertex to the ending vertex.
      */
     public static Vertex[] shortestPath(MazeMap map,Vertex start,Vertex end, int mode){
-        int ROWS= map.getROWS();
-        int COLS= map.getCOLS();
+        int ROWS= map.getSIZE();
+        int COLS= map.getSIZE();
         Vertex[][] MazeMapData =map.getMazedata();
         Stack<Vertex> path = new Stack<>();
         int[][] distances = new int[ROWS][COLS];
@@ -113,14 +114,13 @@ public class Shortestpath extends JPanel {
                 e.printStackTrace();
             }
             for(int i = 0 ; i < truepath.length; i++)
-                truepath[i].set_Shortest_Path();
+                truepath[i].setBackground(Color.YELLOW);
             return truepath;
         }
             //mode 0 : Tom n Jerry
             //only return the path
             return truepath;
     }
-
 
     /**
      * the function to get the neighbor of the target cell, which is with a particular distance value.
@@ -133,8 +133,8 @@ public class Shortestpath extends JPanel {
      */
     public static Vertex getNeighbor(Vertex cell, int distance, int[][] distances,MazeMap map) {
         Vertex[][] MazeMapData = map.getMazedata();
-        int ROWS = map.getROWS();
-        int COLS = map.getCOLS();
+        int ROWS = map.getSIZE();
+        int COLS = map.getSIZE();
         int[][] ds = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
         for (int[] d : ds) {
             int row = cell.getx() + d[0];

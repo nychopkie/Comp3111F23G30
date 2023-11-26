@@ -23,14 +23,12 @@ public class ShortestPathTest {
         map.load_MazeMap("Assets/map/MazeMap_SAMPLE.csv");
     }
 
-
-
     //test Vertex getNeighbor(Vertex cell, int distance, int[][] distances,MazeMap map)
     @Test
     void test_getNeighbor(){
     // Test can it return the neighbour of the target vertex having same distance as the parameter
-        int ROWS = map.getROWS();
-        int COLS = map.getCOLS();
+        int ROWS = map.getSIZE();
+        int COLS = map.getSIZE();
         int[][] distances = new int[ROWS][COLS];
         for(int i = 0;i<ROWS;i++){
             for(int j=0;j<COLS;j++){
