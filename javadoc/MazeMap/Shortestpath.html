@@ -94,7 +94,7 @@ loadScripts(document, 'script');</script>
  Details could be found above each function. <br><hr>
  OPERATIONS<br>
  1. shortestPath(MazeMap map,Vertex start,Vertex end, int mode)<br>
- 2. addNeighbors(Vertex cell, List&lt; Vertex > list, MazeMap map) <br></div>
+ 2. getNeighbor(Vertex cell, int distance, int[][] distances,MazeMap map) <br></div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -248,21 +248,6 @@ loadScripts(document, 'script');</script>
 <dt>Returns:</dt>
 <dd>a Vertex array containing the shortest path between the strating point and the ending point.
                   Null if map do not have a possible path from the starting vertex to the ending vertex.</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="addNeighbors(MazeMap.Vertex,java.util.List,MazeMap.MazeMap)">
-<h3>addNeighbors</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addNeighbors</span><wbr><span class="parameters">(<a href="Vertex.html" title="class in MazeMap">Vertex</a>&nbsp;cell,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Vertex.html" title="class in MazeMap">Vertex</a>&gt;&nbsp;list,
- <a href="MazeMap.html" title="class in MazeMap">MazeMap</a>&nbsp;map)</span></div>
-<div class="block">the function to add all valid neighbors of a target vertex into a list.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>cell</code> - the target vertex that we want to find its neighbors.</dd>
-<dd><code>list</code> - the list that storing the neighbors of target vertex after the function.</dd>
-<dd><code>map</code> - the Maze map that the user decided to play.</dd>
 </dl>
 </section>
 </li>

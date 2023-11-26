@@ -12,7 +12,7 @@ import java.util.List;
  * Details could be found above each function. <br><hr>
  * OPERATIONS<br>
  * 1. shortestPath(MazeMap map,Vertex start,Vertex end, int mode)<br>
- * 2. getNeighbors(Vertex cell, List< Vertex > list, MazeMap map) <br>
+ * 2. getNeighbor(Vertex cell, int distance, int[][] distances,MazeMap map) <br>
  * */
 public class Shortestpath extends JPanel {
     /**
