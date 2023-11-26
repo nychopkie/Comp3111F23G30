@@ -11,11 +11,7 @@ import java.io.FileNotFoundException;
  * Details could be found above each function. <br>
  * @operations:
  * 1. shortestPath(MazeMap map,Vertex start,Vertex end, int mode)<br>
- * 2. addNeighbors(Vertex cell, List<Vertex> list, MazeMap map) <br>
- * 3. getNeighbor(Vertex cell, int distance, int[][] distances,MazeMap map)<br>
- * 4. isValid(int row, int col, int ROWS, int COLS)<br>
- * 5. trueorderpath(Stack<Vertex> path)<br>
- * 6. writecsv(Vertex[] path)<br>
+ * 2. getNeighbor(Vertex cell, int distance, int[][] distances,MazeMap map)<br>
  * */
 public class Shortestpath extends JPanel {
     /**
@@ -54,7 +50,13 @@ public class Shortestpath extends JPanel {
                 if (distances[cell.getx()][cell.gety()] == Integer.MAX_VALUE
                         && MazeMapData[cell.getx()][cell.gety()].getVertex_type() != 1 ) {
                     distances[cell.getx()][cell.gety()] = distance;
-                    addNeighbors(cell, nextCells, map);
+                    int[][] ds = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+                    for (int[] d : ds) {
+                        int row = cell.getx() + d[0];
+                        int col = cell.gety() + d[1];
+                        if (row >= 0 && row < ROWS && col >= 0 && col < COLS)
+                            nextCells.add(MazeMapData[row][col]);
+                    }
                 }
             }
             // prepare for next round
@@ -70,44 +72,55 @@ public class Shortestpath extends JPanel {
                 path.push(cell);
             }
         }
-        Vertex[] truepath = trueorderpath(path);
+
+        int capacity = path.size();
+        Vertex[] truepath = new Vertex[capacity];
+        Iterator<Vertex> ite = path.iterator();
+        for(int i=capacity-1; i >= 0 ;i--){
+            truepath[i] = ite.next();
+        }
+
         if (distances[end.getx()][end.gety()] == Integer.MAX_VALUE)
             return null;
         else if (mode == 1){
             //Entry n Exit
             //print the path and highlight the path
-            writecsv(truepath);
+            PrintWriter pw;
+            try {
+                pw = new PrintWriter(new File("shortestpath.csv"));
+
+                StringBuffer csvHeader = new StringBuffer("");
+                StringBuffer csvData = new StringBuffer("");
+                csvHeader.append("PathType,PathNo,Index,Row_X,Col_Y\n");
+                pw.write(csvHeader.toString());
+                for (int i = 0; i < truepath.length; i++) {
+                    csvData.append("SP");
+                    csvData.append(',');
+                    csvData.append("1");
+                    csvData.append(',');
+                    csvData.append(Integer.toString(i+1));
+                    csvData.append(',');
+                    csvData.append(Integer.toString(truepath[i].getx()));
+                    csvData.append(',');
+                    csvData.append(Integer.toString(truepath[i].gety()));
+                    csvData.append(',');
+                    csvData.append('\n');
+                }
+                pw.write(csvData.toString());
+                pw.close();
+
+            }catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
             for(int i = 0 ; i < truepath.length; i++)
                 truepath[i].set_Shortest_Path();
             return truepath;
         }
-
-            //Tom n Jerry
+            //mode 0 : Tom n Jerry
             //only return the path
             return truepath;
-
-
-
     }
 
-    /**
-     * the function to add all valid neighbors of a target vertex into a list.
-     * @param cell  the target vertex that we want to find its neighbors.
-     * @param list  the list that storing the neighbors of target vertex after the function.
-     * @param map   the Maze map that the user decided to play.
-     */
-    public static void addNeighbors(Vertex cell, List<Vertex> list, MazeMap map) {
-        int[][] ds = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-        Vertex[][] MazeMapData = map.getMazedata();
-        int ROWS = map.getROWS();
-        int COLS = map.getCOLS();
-        for (int[] d : ds) {
-            int row = cell.getx() + d[0];
-            int col = cell.gety() + d[1];
-            if (isValid(row, col, ROWS,COLS))
-                list.add(MazeMapData[row][col]);
-        }
-    }
 
     /**
      * the function to get the neighbor of the target cell, which is with a particular distance value.
@@ -126,76 +139,11 @@ public class Shortestpath extends JPanel {
         for (int[] d : ds) {
             int row = cell.getx() + d[0];
             int col = cell.gety() + d[1];
-            if (isValid(row, col, ROWS,COLS)&&
+            if ((row >= 0 && row < ROWS && col >= 0 && col < COLS)&&
                     distances[row][col] == distance)
                 return MazeMapData[row][col];
         }
         return null;
     }
-
-    /**
-     * the function to check whether the row and column value of a vertex is valid.
-     * @param row   the row number of that vertex.
-     * @param col   the column number of that vertex.
-     * @param ROWS  the maximum number of rows of the maze map that user decided to play.
-     * @param COLS  the maximum number of columns of the maze map that user decided to play.
-     * @return      A boolean indicating whether the row and column value are valid.
-     */
-    public static boolean isValid(int row, int col, int ROWS, int COLS) {
-        return row >= 0 && row < ROWS && col >= 0 && col < COLS;
-    }
-
-    /**
-     * the function to convert a Stack storing the shortest path into a Vertex array.
-     * @param path  The stack that storing the shortest path calculated from the starting vertex to the
-     *              ending vertex.
-     * @return      A Vertex array that storing the shortest path same as the stack.
-     */
-
-    public static Vertex[] trueorderpath(Stack<Vertex> path){
-        //reverse the order of stack
-        int capacity = path.size();
-        Vertex[] truepath = new Vertex[capacity];
-        Iterator<Vertex> ite = path.iterator();
-        for(int i=capacity-1; i >= 0 ;i--){
-            truepath[i] = ite.next();
-        }
-
-        return truepath;
-    }
-
-    /**
-     * the function to write the shortest path into a csv file called "shortestpath.csv" in certain format.
-     * @param path      the vertex array that storing the shortest path.
-     */
-    public static void writecsv(Vertex[] path){
-        PrintWriter pw;
-        try {
-            pw = new PrintWriter(new File("shortestpath.csv"));
-
-            StringBuffer csvHeader = new StringBuffer("");
-            StringBuffer csvData = new StringBuffer("");
-            csvHeader.append("PathType,PathNo,Index,Row_X,Col_Y\n");
-            pw.write(csvHeader.toString());
-            for (int i = 0; i < path.length; i++) {
-                csvData.append("SP");
-                csvData.append(',');
-                csvData.append("1");
-                csvData.append(',');
-                csvData.append(Integer.toString(i+1));
-                csvData.append(',');
-                csvData.append(Integer.toString(path[i].getx()));
-                csvData.append(',');
-                csvData.append(Integer.toString(path[i].gety()));
-                csvData.append(',');
-                csvData.append('\n');
-            }
-            pw.write(csvData.toString());
-            pw.close();
-
-        }catch (FileNotFoundException e) {
-            return;
-        }
-    }
-
 }
+
