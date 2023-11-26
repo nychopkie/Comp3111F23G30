@@ -34,8 +34,8 @@ class MazeGameTest {
         MazeGame game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
 
         assertNotNull(game.getMazeMap(), "Maze should be initialized.");
-        assertNotNull(game.getTom(), "Tom should be initialized.");
-        assertNotNull(game.getJerry(), "Jerry should be initialized.");
+        assertNotNull(MazeGame.tom, "Tom should be initialized.");
+        assertNotNull(MazeGame.jerry, "Jerry should be initialized.");
         // Assuming getMazeMap, getTom, and getJerry are methods to access these components
     }
     @Test
@@ -190,34 +190,32 @@ class MazeGameTest {
         assertTrue(tom.getx() != initialTomX || tom.gety() != initialTomY, "Tom should have moved.");
     }
 
-
     // Jerry
-
     @Test
     void testJerryMove() {
         MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
 
         // Test movement UP
         MazeGame.Jerry jerryUp = mazeGame.new Jerry(5, 5);
-        jerryUp.setDirection(Direction.UP);
+        MazeGame.Jerry.direction = Direction.UP;
         jerryUp.move();//target function
         assertEquals(4, jerryUp.gety(), "Jerry should move up by one unit.");
 
         // Test movement DOWN
         MazeGame.Jerry jerryDown = mazeGame.new Jerry(5, 5);
-        jerryDown.setDirection(Direction.DOWN);
+        MazeGame.Jerry.direction = Direction.DOWN;
         jerryDown.move();//target function
         assertEquals(6, jerryDown.gety(), "Jerry should move down by one unit.");
 
         // Test movement LEFT
         MazeGame.Jerry jerryLeft = mazeGame.new Jerry(6, 5);
-        jerryLeft.setDirection(Direction.LEFT);
+        MazeGame.Jerry.direction = Direction.LEFT;
         jerryLeft.move();//target function
         assertEquals(4, jerryLeft.getx(), "Jerry should move left by one unit.");
 
         // Test movement RIGHT
         MazeGame.Jerry jerryRight = mazeGame.new Jerry(5, 6);
-        jerryRight.setDirection(Direction.RIGHT);
+        MazeGame.Jerry.direction = Direction.RIGHT;
         jerryRight.move();//target function
         assertEquals(7, jerryRight.getx(), "Jerry should move right by one unit.");
     }
@@ -230,39 +228,8 @@ class MazeGameTest {
         assertEquals(5, jerry.gety(), "Jerry's initial x should be 5.");
         assertEquals(10, jerry.getx(), "Jerry's initial y should be 10.");
         assertEquals(Color.ORANGE, jerry.getColor(), "Jerry's color should be orange.");
-        assertEquals(Direction.LEFT, jerry.getDirection(), "Jerry's initial direction should be left.");
+        assertEquals(Direction.LEFT, MazeGame.Jerry.direction, "Jerry's initial direction should be left.");
     }
-
-
-
-    @Test
-    void testIsValidMove() {
-        MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
-        MazeGame.Jerry jerry = mazeGame.new Jerry(0, 0);
-
-        Vertex[][] mockMaze = new Vertex[10][10]; // Create a mock maze
-
-        // Initialize the maze with open paths (e.g., vertex type 0)
-        for (int i = 0; i < mockMaze.length; i++) {
-            for (int j = 0; j < mockMaze[i].length; j++) {
-                mockMaze[i][j] = new Vertex(0, i, j, 0); // Assuming Vertex constructor
-            }
-        }
-
-        assertTrue(jerry.isValidMove(1, 1, mockMaze), "Move should be valid in an open path.");//target function
-        // You can add more assertions for different scenarios, like moving into a wall or outside the maze.
-    }
-
-    @Test
-    void testSetDirection() {
-        MazeGame mazeGame = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
-        MazeGame.Jerry jerry = mazeGame.new Jerry(0, 0);
-
-        jerry.setDirection(Direction.UP); // target function
-
-        assertEquals(Direction.UP, jerry.getDirection(), "Jerry's direction should be set to LEFT.");
-    }
-
 
 // test for GamePanel
 @Test
@@ -297,43 +264,11 @@ void testPaintComponentColors() {
         assertEquals(expected, actual, "The preferred size should match the expected dimension.");
     }
 
-//    @Test
-//    void testMainMethod() {
-//        String[] args = {}; // Empty arguments for the main method
-//
-//        try {
-//            MazeGame.main(args); // Attempt to run the main method
-//        } catch (Exception e) {
-//            fail("The main method should not throw an exception.");
-//        }
-//
-//    }
-
     // helper functions
     @Test
     void testGetMazeMap() {
         MazeGame game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
         assertNotNull(game.getMazeMap(), "MazeMap should not be null."); // target function
-    }
-
-    @Test
-    void testGetJerry() {
-        MazeGame game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
-        assertNotNull(game.getJerry(), "Jerry instance should not be null."); // target function
-    }
-
-    @Test
-    void testGetTom() {
-        MazeGame game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
-        assertNotNull(game.getTom(), "Tom instance should not be null."); // target function
-    }
-
-    @Test
-    void testStopTimer() {
-        MazeGame game = new MazeGame("Assets/map/MazeMap_SAMPLE.csv", screen);
-        MazeGame.Jerry jerry = game.new Jerry(3, 0);
-        game.stopTimer(); // target function
-        assertEquals(3, jerry.gety());
     }
 
     @Test
@@ -343,6 +278,5 @@ void testPaintComponentColors() {
         Dimension expected = new Dimension(750, 750); // Replace with the expected dimension
         Dimension actual = panel.getPreferredSize(); // target function
         assertEquals(expected, actual, "The preferred size should match the expected dimension.");
-
     }
 }

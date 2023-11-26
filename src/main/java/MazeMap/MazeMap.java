@@ -8,105 +8,144 @@ import java.io.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 
-/**
-* ============ MazeMap Class ============
-* @attributes:
- * 1. Vertex [30][30] MazeMapData: the map of the maze in a 2D array<br>
- *    &nbsp;&nbsp;&nbsp;&nbsp;- have 4 different values to
- *    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represent different things in the
- *    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map<br>
- * 2. ROWS: the number of rows in the map<br>
- * 3. COLS: the number of cols in the map<br>
- * 4. PIXEL_SIZE: the size of each vertex<br>
- * 5. GAP: the size of each gap
- *
- * @operations:
- * 1. load_MazeMap(csv path)<br>
- * &nbsp;&nbsp;&nbsp;&nbsp;- the function to load a pre-existing
- * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map to the screen
- *
- * */
+/** class that shows the map of the game<br><hr>
+ * ATTRIBUTES<br>
+ * 1. MazeMapData: the map data of all vertices<br>
+ * 2. SIZE: the size of the map<br>
+ * 3. PIXEL_SIZE: the pixel size of each vertex<br>
+ * 4. GAP: the gap size between each vertex<br>
+ * 5. entry: the entry's y-coordinate<br>
+ * 6. exit: the exit's y-coordinate<br>
+ * 7. savePath: the path where custom map would be saved<hr>
+ * OPERATIONS<br>
+ * 1. Default Constructor MazeMap()<br>
+ * 2. getEntry()<br>
+ * 3. getExit()<br>
+ * 4. getSIZE()<br>
+ * 5. setSavePath(String path)<br>
+ * 6. refreshColour()<br>
+ * 7. load_MazeMap(String filePath)<br>
+ * 8. save_MazeMap(String filePath)<br>
+ * 9. getMazeData()<br>
+ **/
 public class MazeMap extends JPanel{
+
     // variables for the class
     /** the maze map containing all Vertices */
     Vertex[][] MazeMapData;
 
     /** the value for the map sizing*/
-    //I change the ROWS,COLS to 3 for easier testing
-    private static final int ROWS = 30, COLS = 30,  PIXEL_SIZE = 25, GAP = 1;
-    //need exit and entry as instance variables to call shortestpath between entry n exit
-    private int entry;
-    private int exit ;
-    private String savePath = "Assets/map/MazeMap_Custom";
+    private static final int SIZE = 30, PIXEL_SIZE = 25, GAP = 1;
 
+    /** the entry point of the maze*/
+    private int entry;
+
+    /** the exit point of the maze*/
+    private int exit ;
+
+    /** the path that the user customized map stores to*/
+    public static String savePath = "Assets/map/MazeMap_Custom";
+
+
+    /**
+     * MazeMap Constructor<br>
+     * This constructor initializes an empty MazeMap
+     */
     public MazeMap() {
         super();
         // the gap colour
         setBackground(Color.GRAY);
-        setLayout(new GridLayout(ROWS, COLS, GAP, GAP));
+        setLayout(new GridLayout(SIZE, SIZE, GAP, GAP));
 
         // init the attribute in default mode
-        this.MazeMapData = new Vertex[ROWS][COLS];
+        this.MazeMapData = new Vertex[SIZE][SIZE];
+
         // helper var for choosing vertex type
         int v_type = 0;
+
         // determine an entry and exit pos
-        //Random random = new Random(0);
-        this.entry = ThreadLocalRandom.current().nextInt(1, ROWS-1);
-        this.exit = ThreadLocalRandom.current().nextInt(1, ROWS-1);
+        this.entry = ThreadLocalRandom.current().nextInt(1, SIZE-1);
+        this.exit = ThreadLocalRandom.current().nextInt(1, SIZE-1);
 
-        for (int i = 0; i < ROWS; i++) {
-            for (int j = 0; j < COLS; j++) {
+        // initializes each Vertex
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
                 // determine the v_type first
-                if (i == this.entry && j == 0) v_type = 2;                        // entry
-                else if (i == this.exit && j == ROWS-1) v_type = 3;                    // exit
-                else if (i == 0 || i == ROWS-1 || j == 0 || j == ROWS-1) v_type = 1; // barrier
-                else v_type = 0;                                             // clear vertex path
+                if (i == this.entry && j == 0) {
+                    // entry
+                    v_type = 2;
+                }
+                else if (i == this.exit && j == SIZE-1) {
+                    // exit
+                    v_type = 3;
+                }
+                else if (i == 0 || i == SIZE-1 || j == 0 || j == SIZE-1) {
+                    // barrier
+                    v_type = 1;
+                }
+                else {
+                    // clear vertex path
+                    v_type = 0;
+                }
 
-                // each of the cell in the MazeMap
+                // set each of the vertex according to the type
                 this.MazeMapData[i][j] = new Vertex(PIXEL_SIZE, i, j, v_type);
-                this.MazeMapData[i][j].changeEditState(false);
                 add(this.MazeMapData[i][j]);
             }
         }
+        Vertex.canEdit = false;
         // set size of the map
-        setPreferredSize(new Dimension(ROWS*(PIXEL_SIZE+GAP),COLS*(PIXEL_SIZE+GAP)));
+        setPreferredSize(new Dimension(SIZE*(PIXEL_SIZE+GAP),SIZE*(PIXEL_SIZE+GAP)));
     }
+
     //accessor
+    /**
+     * Returns the entry Vertex of the map
+     * @return Vertex() entry
+     * */
     public Vertex getEntry(){
         return  MazeMapData[entry][0];
     }
+
+    /**
+     * Returns the exit Vertex of the map
+     * @return Vertex() exit
+     * */
     public Vertex getExit(){
-        return MazeMapData[exit][COLS-1];
+        return MazeMapData[exit][SIZE-1];
     }
-    public int getROWS(){
-        return ROWS;
-    }
-    public int getCOLS(){
-        return COLS;
-    }
-    public void setSavePath(String path){
-        savePath = path;
+
+    /**
+     * Returns the size of the map
+     * @return int size of map
+     * */
+    public int getSIZE(){
+        return SIZE;
     }
 
     /** helper function to refresh map colour */
     public void refreshColour(){
-        for (int i = 0; i < ROWS; ++i){
-            for (int j = 0; j < COLS; ++j){
-                MazeMapData[i][j].colourByType();
+        for (int i = 0; i < SIZE; ++i){
+            for (int j = 0; j < SIZE; ++j){
+                if (MazeMapData[i][j].vertex_type == 0) {
+                    MazeMapData[i][j].setBackground(Color.WHITE);
+                } else if (MazeMapData[i][j].vertex_type == 1) {
+                    MazeMapData[i][j].setBackground(Color.DARK_GRAY);
+                } else if (MazeMapData[i][j].vertex_type == 2) {
+                    MazeMapData[i][j].setBackground(Color.CYAN);
+                } else {
+                    MazeMapData[i][j].setBackground(Color.RED);
+                };
             }
         }
     }
 
-    /** to change the map state of edit */
-    public void changeState(boolean state){
-        for (int i = 0; i < ROWS; ++i){
-            for (int j = 0; j < COLS; ++j){
-                MazeMapData[i][j].changeEditState(state);
-            }
-        }
-    }
-
-    /** load the map data csv */
+    /** Load the map data csv into MazeMap.
+     * <p>This function will only write back if the passed file is a .csv file, or the path could be found.</p>
+     *
+     * @param filePath the file path of the csv file
+     * @return true if the file is found, false if the file is not found or wrong
+     * */
     public boolean load_MazeMap(String filePath){
         if (!filePath.endsWith(".csv")) {
             JOptionPane pane = new JOptionPane("Chosen file is not a .csv file, please load a valid map.",JOptionPane.WARNING_MESSAGE);
@@ -128,7 +167,7 @@ public class MazeMap extends JPanel{
             return false;
         };
         if (!(new File(filePath).exists())){
-            JOptionPane pane = new JOptionPane("Cannot find choosen file, please try again.",JOptionPane.WARNING_MESSAGE);
+            JOptionPane pane = new JOptionPane("Cannot find chosen file, please try again.",JOptionPane.WARNING_MESSAGE);
             JDialog dialog = pane.createDialog(null, "warning");
             dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
             new Thread(new Runnable() {
@@ -150,7 +189,7 @@ public class MazeMap extends JPanel{
             int row = 0;
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(",");
-                for (int col = 0; col < COLS; col++) {
+                for (int col = 0; col < SIZE; col++) {
                     // Trim whitespace and then parse the integer
                     MazeMapData[row][col].vertex_type = Integer.parseInt(values[col].trim());
                     refreshColour();
@@ -158,11 +197,11 @@ public class MazeMap extends JPanel{
                 row++;
             }
             // change the entry and exit too
-            for (int i = 0; i < ROWS; ++i){
+            for (int i = 0; i < SIZE; ++i){
                 if (MazeMapData[i][0].vertex_type == 2){
                     entry = i;
                 }
-                if (MazeMapData[i][ROWS-1].vertex_type == 3){
+                if (MazeMapData[i][SIZE-1].vertex_type == 3){
                     exit = i;
                 }
             }
@@ -172,24 +211,26 @@ public class MazeMap extends JPanel{
         return true;
     }
 
-    /** save map data */
+    /** Save the MazeMap into a csv file.
+     * <p>
+     *     This function will save the file under Assets/map/MazeMap_Custom[i].csv where the i is the number of files that's custom
+     * </p>
+     * */
     public void save_MazeMap(){
         int n = 100;
         try {
             File file = new File(savePath + ".csv");
             for (int i = 0; i < n; i++) {
                 if (file.exists()){
-                    continue;
+                    file = new File(savePath + i + ".csv");
                 }
-                file = new File(savePath + i + ".csv");
-                break;
             }
             // write into it according to the format
             PrintWriter pw = new PrintWriter(file);
             pw.close();
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-            for (int i = 0; i < 30; i++){
-                for (int j = 0; j < 30; j++){
+            for (int i = 0; i < SIZE; i++){
+                for (int j = 0; j < SIZE; j++){
                     if (j != 0){
                         writer.write(",");
                     }
@@ -207,6 +248,10 @@ public class MazeMap extends JPanel{
         }
     }
 
+    /**
+     * Returns the map data as a 2D array of Vertex objects
+     * @return Vertex[SIZE][SIZE] the map data and the individual vertices
+     **/
     public Vertex[][] getMazedata(){
         return MazeMapData;
     }
