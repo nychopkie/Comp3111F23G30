@@ -1,7 +1,7 @@
 # Comp3111F23G30
 COMP3111 2023 Fall Semester Group 30
 
-This is the group project for HKUST COMP3111 Software Engineering in Fall 2023. The aim is to create a game using java and display software engineering skills as well as working as a team. the final documentation could be found in the repository, as well as the final build and the source code. Mind that the code in the repository is structured such that the unit tests could run smoothly for submission.
+This is the group project for HKUST COMP3111 Software Engineering in Fall 2023. The aim is to create a game using java and display software engineering skills as well as working as a team. The final documentation could be found in the repository, as well as the final build and the source code. Mind that the code in the repository is structured such that the unit tests could run smoothly for submission.
 
 ## Group Sign-up Form
 
